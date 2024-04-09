@@ -3,7 +3,6 @@ import "./scrollbar.css";
 import { useContext, useEffect } from "react";
 import { ContextData } from "../../Providers/ContextProviders/ContextProviders";
 import { IoIosMenu } from "react-icons/io";
-import { PanelGroup, Panel, Placeholder } from "rsuite";
 import "../../CSS/customCSS.css";
 import { NavLink } from "react-router-dom";
 import { LuLayoutDashboard } from "react-icons/lu";
@@ -215,7 +214,7 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <NavLink
-                    to={"/"}
+                    to={"/newExpenseReceipt"}
                     className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-slate-100"
                   >
                     <FaRegCircle /> Expense List
@@ -223,7 +222,7 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <NavLink
-                    to={"/"}
+                    to={"/expenseReceipt"}
                     className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-slate-100"
                   >
                     <FaRegCircle /> Expense Receipt
