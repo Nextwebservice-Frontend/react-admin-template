@@ -23,8 +23,8 @@ const Dashboard = () => {
   }, [])
   return (
     <div id="dBoardSideber"
-      className={`${show ? "w-full" : "w-3"
-        }  absolute md:w-full md:relative ${showText ? "" : "w-14"} no-underline text-gray-600`}
+      className={`${show ? "lg:w-full w-[270px]" : "w-3"
+        }  absolute lg:w-full lg:relative ${showText ? "" : "w-14"} no-underline text-gray-600`}
     >
       <button
         onClick={() => {

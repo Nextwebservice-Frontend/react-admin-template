@@ -14,7 +14,7 @@ const Navbar = () => {
   const { setShow, show, setShowText, showText } = useContext(ContextData);
   return (
     <>
-      <div className="flex justify-between items-center w-full lg:mx-5 xl:mx-0 mx-auto box-border px-8 shadow-xl py-5 z-10">
+      <div className="flex justify-between items-center w-full mx-auto box-border px-8 shadow-xl py-5 z-10">
         <div className="flex justify-start items-center gap-4">
           <IoIosMenu
             onClick={() => {
