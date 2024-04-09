@@ -214,7 +214,7 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <NavLink
-                    to={"/newExpenseReceipt"}
+                    to={"/expenseList"}
                     className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-slate-100"
                   >
                     <FaRegCircle /> Expense List
@@ -222,7 +222,7 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <NavLink
-                    to={"/expenseReceipt"}
+                    to={"/newExpenseReceipt"}
                     className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-slate-100"
                   >
                     <FaRegCircle /> Expense Receipt
