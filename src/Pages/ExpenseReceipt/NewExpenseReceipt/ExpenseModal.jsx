@@ -21,7 +21,7 @@ const ExpenseModal = () => {
             <div className="py-2 w-full text-center bg-[#f7f7f7]">
 
                 <button type="button "
-                    onClick={openModal} className=" bg-[#5bc0de]  w-[90%] lg:w-[300px]   h-[40px]   text-white text-lg font-bold">
+                    onClick={openModal} className=" bg-[#5bc0de]  w-[90%] h-[40px]   text-white text-lg font-bold">
                     +Add
                 </button>
 
@@ -51,7 +51,7 @@ const ExpenseModal = () => {
                                     leaveFrom="opacity-100 scale-100"
                                     leaveTo="opacity-0 scale-95"
                                 >
-                                    <Dialog.Panel className="w-[900px] transform overflow-hidden rounded-2xl bg-white  text-left align-middle shadow-xl transition-all">
+                                    <Dialog.Panel className="w-[96%] md:w-[48%] transform overflow-hidden rounded-2xl bg-white  text-left align-middle shadow-xl transition-all">
                                         <Dialog.Title
                                             as="h3"
                                             className="border py-6 pl-4 font-bold  text-xl  leading-6 text-gray-900 bg-[#f7f7f7]"
@@ -60,13 +60,13 @@ const ExpenseModal = () => {
                                         </Dialog.Title>
                                         {/* <hr className="mt-4" /> */}
 
-                                        <div className="flex justify-between gap-2 px-6">
+                                        <div className="flex flex-col md:flex-row justify-between gap-2 px-6">
                                             <div className="mt-2">
                                                 <p className="text-lg text-gray-900">Expense Category <span className="text-red-500">(required) </span> </p>
                                                 <input
                                                     type="text "
                                                     placeholder="Expense Category "
-                                                    className="input input-bordered  w-[270px] "
+                                                    className="input input-bordered w-[98%] md:w-[270px] "
                                                 />
                                             </div>
 
@@ -76,7 +76,7 @@ const ExpenseModal = () => {
                                                 <input
                                                     type="text"
                                                     placeholder="Expense"
-                                                    className="input input-bordered w-[270px] "
+                                                    className="input input-bordered w-[98%] md:w-[270px] "
                                                 />
                                             </div>
 
@@ -85,7 +85,7 @@ const ExpenseModal = () => {
                                                 <input
                                                     type="number"
                                                     placeholder="Expense Amount"
-                                                    className="input input-bordered w-[270px] bg-[#f7f7f7]"
+                                                    className="input input-bordered w-[98%] md:w-[270px] bg-[#f7f7f7]"
                                                 />
                                             </div>
 
@@ -94,7 +94,7 @@ const ExpenseModal = () => {
                                         <div className=' py-2 px-6'>
                                             <p className="label-text text-lg text-gray-900 mr-7 pb-2 ">Expense Details <span className="text-red-500">(required) </span></p>
 
-                                            <textarea className="textarea textarea-bordered w-full bg-[#f7f7f7]" placeholder="Expense Details"></textarea>
+                                            <textarea className="textarea textarea-bordered w-[98%] md:w-full bg-[#f7f7f7]" placeholder="Expense Details"></textarea>
 
                                         </div>
 
