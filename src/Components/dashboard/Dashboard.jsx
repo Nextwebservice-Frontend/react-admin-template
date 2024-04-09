@@ -28,6 +28,7 @@ const Dashboard = () => {
       setShowText(true);
     });
   }, []);
+  
   return (
     <div id="dBoardSideber"
       className={`${show ? "lg:w-full w-[270px]" : "w-3"
@@ -206,7 +207,7 @@ const Dashboard = () => {
               >
                 <li>
                   <NavLink
-                    to={"/"}
+                    to={"/expenseList"}
                     className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-slate-100"
                   >
                     <FaRegCircle /> Category List
