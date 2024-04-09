@@ -69,7 +69,7 @@ const ExpanseReceipt = () => {
 
 
                       <div>
-                            <button className='border btn btn-primary'>+Add</button>
+                            <button className='border btn btn-primary'>+Ad</button>
 
                       </div>
 
