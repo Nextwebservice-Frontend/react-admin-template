@@ -9,11 +9,7 @@ const DashboardLayout = () => {
   const { showText } = useContext(ContextData);
 
   return (
-<<<<<<< HEAD
     <div className="lg:flex gap-[1%]">
-=======
-    <div className="md:flex gap-3">
->>>>>>> 5af757f1d4a43c2725ada9679ee09fa78032d26a
       <div
         className={` ${showText ? "xl:w-[20%] lg:w-[21%] w-[30%]" : "w-[70px]"
           } `}
