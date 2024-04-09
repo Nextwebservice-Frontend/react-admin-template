@@ -2,8 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Notice from "../Pages/Notice/Notice";
 import Profile from "../Pages/Profile/Profile";
-import ExpanseReceipt from "../Pages/ExpanseReceipt/ExpanseReceipt";
-import NewExpanseReceipt from "../Pages/ExpanseReceipt/NewExpanseReceipt/NewExpanseReceipt";
+import ExpenseReceipt from "../Pages/ExpenseReceipt/ExpenseReceipt";
+import NewExpenseReceipt from "../Pages/ExpenseReceipt/NewExpenseReceipt/NewExpenseReceipt";
 
 
 const Router = createBrowserRouter([
@@ -18,12 +18,12 @@ const Router = createBrowserRouter([
             ,
            {
                 path: '/expenseReceipt',
-                element: <ExpanseReceipt />
+                element: <ExpenseReceipt />
             }
             ,
             {
                 path: '/newExpenseReceipt',
-                element: <NewExpanseReceipt />
+                element: <NewExpenseReceipt />
             },
             {
                 path: '/profile',

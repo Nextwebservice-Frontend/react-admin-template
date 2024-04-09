@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 
-const NewExpanseReceipt = () => {
+const NewExpenseReceipt = () => {
     return (
         <>
 
@@ -146,4 +146,4 @@ const NewExpanseReceipt = () => {
     );
 };
 
-export default NewExpanseReceipt;
+export default NewExpenseReceipt;
