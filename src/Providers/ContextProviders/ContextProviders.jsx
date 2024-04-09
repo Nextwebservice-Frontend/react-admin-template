@@ -5,12 +5,15 @@ const ContextProviders = ({ children }) => {
     //states
     const [show, setShow] = useState(false)
     const [showText, setShowText] = useState(true)
+    const [openAccordion,setOpenAccordion]=useState({name:false,show:false})
     // context data
     const sharedData = {
         setShow,
         show,
         setShowText,
-        showText
+        showText,
+        setOpenAccordion,
+        openAccordion
     }
     return (
         <ContextData.Provider value={sharedData}>
