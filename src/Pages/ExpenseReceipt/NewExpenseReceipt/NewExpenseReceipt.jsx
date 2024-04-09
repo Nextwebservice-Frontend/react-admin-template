@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import ExpenseModal from './ExpenseModal';
 
 const NewExpenseReceipt = () => {
     return (
@@ -124,12 +125,7 @@ const NewExpenseReceipt = () => {
 
                         <hr className='p-0 m-0 ' />
 
-
-                        <div className=" py-2 w-full text-center ">
-                            <button className=" bg-[#5cb85c] w-[300px]   h-[40px]   text-white text-lg font-bold">
-                                Save Receipt
-                            </button>
-                        </div>
+                        <ExpenseModal></ExpenseModal>
 
                     </div>
 
