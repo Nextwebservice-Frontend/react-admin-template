@@ -3,6 +3,7 @@ import DashboardLayout from "../Layout/DashboardLayout";
 import Notice from "../Pages/Notice/Notice";
 import Profile from "../Pages/Profile/Profile";
 import ExpanseReceipt from "../Pages/ExpanseReceipt/ExpanseReceipt";
+import NewExpanseReceipt from "../Pages/ExpanseReceipt/NewExpanseReceipt/NewExpanseReceipt";
 
 
 const Router = createBrowserRouter([
@@ -18,6 +19,11 @@ const Router = createBrowserRouter([
            {
                 path: '/expenseReceipt',
                 element: <ExpanseReceipt />
+            }
+            ,
+            {
+                path: '/newExpenseReceipt',
+                element: <NewExpanseReceipt />
             },
             {
                 path: '/profile',

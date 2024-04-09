@@ -44,7 +44,7 @@ const Dashboard = () => {
               <Panel  header="Expense" className="m-0 rounded-sm w-full">
                 
                   {/* <Link className="w-full">Expense Receipt</Link> */}
-                  <li className="hover:bg-slate-300 py-2 px-1"><NavLink className="text-gray-600 " to='/expenseReceipt'>Expense Receipt</NavLink></li>
+                  <li className="hover:bg-slate-300 py-2 px-1"><NavLink className="text-gray-600 " to='/newExpenseReceipt'>Expense Receipt</NavLink></li>
                   
               </Panel>
               </div>
