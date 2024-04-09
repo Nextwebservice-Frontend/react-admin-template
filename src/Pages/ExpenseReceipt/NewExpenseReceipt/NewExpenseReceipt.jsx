@@ -7,12 +7,12 @@ const NewExpenseReceipt = () => {
     return (
         <>
 
-            <div className='flex  flex-col lg:flex-row lg:w-[1350px] gap-10'>
+            <div className='flex  flex-col md:flex-row w-[96%] md:w-[1350px] md:gap-10'>
 
                 {/* Expanse receive list (1st part) */}
 
 
-                <div className='border mt-7 lg:w-[1000px]  mx-auto   rounded shadow-2xl pb-16'>
+                <div className='border mt-7 md:w-[1000px]  mx-auto   rounded shadow-2xl pb-16'>
 
 
                     <div className='flex flex-col lg:flex-row  justify-between px-5 pt-5'>
@@ -75,21 +75,17 @@ const NewExpenseReceipt = () => {
 
                         </div>
 
-
                     </div>
-
 
                 </div>
 
-
-
                 {/* Select expanse  (2nd part) */}
 
-                <div className=' w-[340px] '>
+                <div className='w-[96%] lg:w-[340px] m-2 lg:m-0 '>
 
 
                     <div className='border mt-7  mx-auto  rounded '>
-                        <h4 className='text-lg text-black pl-3 py-2 border font-bold bg-[#f7f7f7]'><strong className='flex items-center justify-center'><FaAlignRight />Select Expense</strong></h4>
+                        <h4 className='text-lg text-black pl-3 py-2 border font-bold bg-[#f7f7f7]'><strong className='flex items-center gap-2 justify-start'><FaAlignRight />Select Expense</strong></h4>
 
                         <hr className='p-0 m-0 ' />
 
@@ -102,20 +98,20 @@ const NewExpenseReceipt = () => {
                     {/* receipt notes */}
 
                     <div className='border mt-7  mx-auto  rounded '>
-                        <h4 className='text-lg text-black pl-3 py-2  font-bold bg-[#f7f7f7]'><strong>Receipt Notes</strong></h4>
+                        <h4 className='text-lg text-black pl-3 py-2  font-bold bg-[#f7f7f7]'><strong className='flex items-center gap-2 justify-start'><FaAlignRight />Receipt Notes</strong></h4>
 
                         <hr className='p-0 m-0 ' />
                         <div className='pl-3 py-2'>
                             <p className="label-text text-base mr-7 pb-2 ">Notes<span className="text-red-500">(required) </span></p>
 
-                            <textarea className="textarea textarea-bordered w-[300px]" placeholder="Bio"></textarea>
+                            <textarea className="textarea textarea-bordered w-[95%] lg:w-[300px]" placeholder="Bio"></textarea>
 
                         </div>
 
                         <hr className='p-0 m-0 ' />
 
                         <div className=" py-2 w-full text-center bg-[#f7f7f7]">
-                            <button className="  bg-[#5cb85c] w-[300px]   h-[40px]   text-white text-xl">
+                            <button className="  bg-[#5cb85c] lg:w-[300px] w-[90%]   h-[40px]   text-white text-xl">
                                Save Receipt
                             </button>
                         </div>

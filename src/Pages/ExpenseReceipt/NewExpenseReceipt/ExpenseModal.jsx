@@ -21,7 +21,7 @@ const ExpenseModal = () => {
             <div className="py-2 w-full text-center bg-[#f7f7f7]">
 
                 <button type="button "
-                    onClick={openModal} className=" bg-[#5bc0de] w-[300px]   h-[40px]   text-white text-lg font-bold">
+                    onClick={openModal} className=" bg-[#5bc0de]  w-[90%] lg:w-[300px]   h-[40px]   text-white text-lg font-bold">
                     +Add
                 </button>
 
