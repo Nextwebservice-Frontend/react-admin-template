@@ -28,7 +28,7 @@ const Dashboard = () => {
       setShowText(true);
     });
   }, []);
-  const handelCloseAccordion=()=>{
+  const handelCloseAccordion = () => {
     if (!showText && openAccordion.show) {
       setOpenAccordion({
         show: false,
@@ -38,6 +38,7 @@ const Dashboard = () => {
   }
   //accordian open function
   const HandelAccorDionOpen = (name) => {
+    console.log(name)
     if (openAccordion.name !== name) {
       setOpenAccordion({
         prev: openAccordion.name,
@@ -49,10 +50,10 @@ const Dashboard = () => {
       setOpenAccordion({
         prev: false,
         name: name,
+        prevOpen:false,
         show: !openAccordion.show,
       });
     }
-
   }
   return (
     <div id="dBoardSideber"
@@ -91,7 +92,7 @@ const Dashboard = () => {
               <MdLaptopMac /> {showText ? "Ticket" : ""}
             </NavLink>
 
-            <NavLink onClick={handelCloseAccordion} className={`hover:text-gray-600 hover:no-underline`}>
+            <div className={`hover:text-gray-600 hover:no-underline cursor-pointer`}>
               <span
                 onClick={() => HandelAccorDionOpen('Others')}
                 className="text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-between items-center gap-2 hover:bg-gray-200 rounded-md"
@@ -188,9 +189,9 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
               </ul>
-            </NavLink>
+            </div>
 
-            <NavLink onClick={handelCloseAccordion} className={`hover:text-gray-600 hover:no-underline`}>
+            <div className={`hover:text-gray-600 hover:no-underline cursor-pointer`}>
               <span
                 onClick={() => HandelAccorDionOpen('Expense')}
                 className="text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-between items-center gap-2 hover:bg-gray-200 rounded-md"
@@ -238,9 +239,9 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
               </ul>
-            </NavLink>
+            </div>
 
-            <NavLink onClick={handelCloseAccordion} className={`hover:text-gray-600 hover:no-underline`}>
+            <div className={`hover:text-gray-600 hover:no-underline cursor-pointer`}>
               <span
                 onClick={() => HandelAccorDionOpen('Blog')}
                 className="text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-between items-center gap-2 hover:bg-gray-200 rounded-md"
@@ -288,9 +289,9 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
               </ul>
-            </NavLink>
+            </div>
 
-            <NavLink onClick={handelCloseAccordion} className={`hover:text-gray-600 hover:no-underline`}>
+            <div  className={`hover:text-gray-600 hover:no-underline cursor-pointer`}>
               <span
                 onClick={() => HandelAccorDionOpen('Setting')}
                 className="text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-between items-center gap-2 hover:bg-gray-200 rounded-md"
@@ -345,7 +346,7 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
               </ul>
-            </NavLink>
+            </div>
           </nav>
         </div>
       </div>
