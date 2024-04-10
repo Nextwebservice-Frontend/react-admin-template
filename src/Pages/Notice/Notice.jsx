@@ -3,7 +3,7 @@ import { MdEqualizer } from "react-icons/md";
 
 const Notice = () => {
   return (
-    <div className="border mt-7 w-full mx-auto  p-4 rounded shadow-2xl">
+    <div className="border mt-2 w-full mx-auto  p-4 rounded shadow-2xl">
       <div className="md:grid grid-cols-2 justify-center items-center gap-6">
         <div className="w-full h-full border rounded">
           <span className="flex p-4 border-b-2 justify-start items-center gap-2 bg-gray-100">

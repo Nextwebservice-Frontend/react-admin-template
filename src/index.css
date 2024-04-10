@@ -19,17 +19,31 @@
 }
 
 .accordionOpen {
-  animation: accordion 1s;
+  animation: accordionopen 2s;
 }
 
-@keyframes accordion {
+#dBoardSideber nav .active {
+  background: rgb(209, 208, 208);
+  color: rgb(75, 73, 73);
+  text-decoration: none;
+}
+.accordionClose{
+animation: accordionclose .5s;
+}
+@keyframes accordionopen {
   from {
-      max-height: 0px;
+    max-height: 0px;
   }
+
   to {
-      max-height: 1000px;
+    max-height: 720px;
   }
 }
-#dBoardSideber nav .active {
-  background: rgb(234, 242, 248);
+@keyframes accordionclose{
+  from{
+    max-height: 720px;
+  }
+  to{
+    max-height: 0px;
+  }
 }

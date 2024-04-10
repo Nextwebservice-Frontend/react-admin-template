@@ -6,8 +6,31 @@ import { Outlet } from "react-router-dom";
 
 
 const DashboardLayout = () => {
-  const { showText } = useContext(ContextData);
+  const {
+    setShow,
+    show,
+    showText,
+    setShowText,
+    setOpenAccordion,
+    openAccordion,
+    showProfiePopUp,
+    setShowprofilePopUp,
+    showSortcutPopUp,
+    setshowSortcutPopUp
+  } = useContext(ContextData);
 
+  const handelcloseModals = () => {
+    setShow(false)
+    setShowprofilePopUp(false)
+    setshowSortcutPopUp(false)
+    if (!showText && openAccordion.show) {
+      setOpenAccordion({
+        show: false,
+        name: openAccordion.name
+      });
+    }
+    // console.log(openAccordion)
+  }
   return (
     <div className="lg:flex gap-[1%]">
       <div
@@ -16,9 +39,14 @@ const DashboardLayout = () => {
       >
         <Dashboard />
       </div>
-      <div className='w-full lg:px-5 xl:px-10 px-auto box-border'>
+      <div className='w-full lg:px-5 xl:px-10 px-auto box-border relative'>
+        {
+          ((!showText && openAccordion.show) || showSortcutPopUp || showProfiePopUp || show) && <div onClick={handelcloseModals} className={`showText openAccordion.show show bg-black min-w-full h-screen absolute left-0 top-0 z-10 bg-opacity-[0]`}>
+          </div>
+        }
+
         <div className="w-full ">
-        <Navbar />
+          <Navbar />
         </div>
         <div className="">
           <Outlet />

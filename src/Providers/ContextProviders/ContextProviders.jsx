@@ -5,7 +5,9 @@ const ContextProviders = ({ children }) => {
     //states
     const [show, setShow] = useState(false)
     const [showText, setShowText] = useState(true)
-    const [openAccordion,setOpenAccordion]=useState({name:false,show:false})
+    const [openAccordion,setOpenAccordion]=useState({name:false,show:false,prev:false,prevOpen:false})
+    const [showProfiePopUp, setShowprofilePopUp] = useState(false);
+  const [showSortcutPopUp, setshowSortcutPopUp] = useState(false);
     // context data
     const sharedData = {
         setShow,
@@ -13,7 +15,11 @@ const ContextProviders = ({ children }) => {
         setShowText,
         showText,
         setOpenAccordion,
-        openAccordion
+        openAccordion,
+        showProfiePopUp,
+        setShowprofilePopUp,
+        showSortcutPopUp,
+        setshowSortcutPopUp
     }
     return (
         <ContextData.Provider value={sharedData}>

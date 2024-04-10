@@ -9,9 +9,7 @@ import { ContextData } from "../../../Providers/ContextProviders/ContextProvider
 
 const Navbar = () => {
   // states
-  const [showProfiePopUp, setShowprofilePopUp] = useState(false);
-  const [showSortcutPopUp, setshowSortcutPopUp] = useState(false);
-  const { setShow, show, setShowText, showText } = useContext(ContextData);
+  const { setShow, show, setShowText, showText,showProfiePopUp,setShowprofilePopUp,showSortcutPopUp,setshowSortcutPopUp } = useContext(ContextData);
   return (
     <>
       <div className="flex justify-between items-center w-full mx-auto box-border px-8 shadow-xl py-5 z-10">
@@ -21,11 +19,11 @@ const Navbar = () => {
               setShow(!show);
               setShowText(!showText);
             }}
-            className="text-3xl lg:block hidden text-gray-600 mt-1 cursor-pointer"
+            className="text-3xl lg:block hidden text-gray-600 mt-1 cursor-pointer z-40"
           />
           <p className="text-2xl lg:block hidden">Dashboard</p>
         </div>
-        <div className="flex justify-end items-center gap-4 ">
+        <div className="flex justify-end items-center gap-4 z-50">
           <FaUserGroup className="text-2xl text-gray-600 mt-1 cursor-pointer" />
           <FaStore className="text-2xl text-gray-600 mt-1 cursor-pointer" />
           <CgMenuGridO
