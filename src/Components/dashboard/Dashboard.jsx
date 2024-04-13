@@ -2,18 +2,10 @@ import Logo from "./Logo/Logo";
 import "./scrollbar.css";
 import { useContext, useEffect } from "react";
 import { ContextData } from "../../Providers/ContextProviders/ContextProviders";
-import { IoIosMenu } from "react-icons/io";
 import "../../CSS/customCSS.css";
-import { Link, NavLink } from "react-router-dom";
-import { LuLayoutDashboard } from "react-icons/lu";
-import { MdLaptopMac } from "react-icons/md";
-import { AiOutlineLogout } from "react-icons/ai";
-import { FaRegCircle } from "react-icons/fa";
-import { MdOutlineLocalMall } from "react-icons/md";
-import { MdOutlineNoteAdd } from "react-icons/md";
-import { IoSettings } from "react-icons/io5";
+import { NavLink } from "react-router-dom";
 import { IoIosArrowUp } from "react-icons/io";
-import { appsAndPagesLinks } from "../../Utility/Sideber/SIderberNavLinks";
+import { SIderberNavLinks } from "../../Utility/Sideber/SIderberNavLinks";
 const Dashboard = () => {
   const {
     setShow,
@@ -57,59 +49,68 @@ const Dashboard = () => {
     }
   }
   return (
-    <div id="dBoardSideber" className="w-full mx-auto">
+    <div id="dBoardSideber" className="w-full mx-auto ">
       <Logo show={show} setShow={setShow} />
-      <div className="box-border pt-14 pl-2">
-        {/* map over all the links  */}
-        {appsAndPagesLinks.map(item => (item?.link) ? // checking link // if false this item has dropdown menu
-          <NavLink key={item?.link}
-            onClick={handelCloseAccordion}
-            to={item.link}
-            className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold  flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-          >
-            <item.icon /> {showText ? item?.menu : `${mouseEnterInSIderber ? item?.menu : ''}`}
-          </NavLink>
-          : // dropdown menus
-          <div key={item?.link}
-            className={`hover:text-gray-600 hover:no-underline cursor-pointer`}>
-            <span
-              onClick={() => HandelAccorDionOpen(item?.menu)}
-              className="text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-between items-center gap-2 hover:bg-gray-200 rounded-md"
-            >
-              <span
-                className={`flex ${showText ? 'justify-start' : 'justify-center'}  items-center gap-1`}>
-                <item.icon />
-                {showText ? item?.menu : `${mouseEnterInSIderber ? item?.menu : ''}`}
-              </span>
-              <IoIosArrowUp
-                className={`transition-all ${showText ? '' : `${mouseEnterInSIderber ? '' : 'hidden'}`} text-[12px] ${openAccordion.show && openAccordion.name === item?.menu ? "rotate-[0deg]" : "rotate-[180deg]"}`}
-              />
-            </span>
-            <ul
-              className={`ml-2 ${openAccordion.show && openAccordion.name === item?.menu
-                ? "h-auto accordionOpen"
-                : " max-h-0 "
-                } overflow-hidden z-50 ${((openAccordion.prev === item?.menu && openAccordion.prevOpen) || (!openAccordion.show && openAccordion.name === item?.menu)) ? 'accordionClose' : ''}`}
-            >
-              {Array.isArray(item.dropDown) ? // checking is dropdown menus is an array 
-                <> {item.dropDown.map(dropDownItems => //map dropdown items
-                  <li className={`${showText ? '' : `${mouseEnterInSIderber ? '' : 'hidden'}`}`} key={dropDownItems?.link}>
-                    <NavLink onClick={handelCloseAccordion}
-                      to={dropDownItems.link}
-                      className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                    >
-                      <dropDownItems.icon />  {dropDownItems.menu}
-                    </NavLink>
-                  </li>
-                )}
-                </> : //if dropdown menus is not an array then return empty fragment
-                <></>
-              }
-            </ul>
+      <div className="box-border pt-3 pl-2 h-[90vh] pr-2 overflow-y-scroll">
+        {SIderberNavLinks.map(item =>
+          <div>
+            {/* map over all the menu group  */}
+            {item?.title  && <p className="font-medium uppercase opacity-85 text-sm text-gray-500">
+            {showText ? item?.title : `${mouseEnterInSIderber ? item?.title : ''}`}
+              </p>}
+            {/* map over all the links  */}
+            {Array.isArray(item?.NavItems) && item?.NavItems.map(item => (item?.link) ? // checking link // if false this item has dropdown menu
+              <NavLink key={item?.link}
+                // onClick={handelCloseAccordion}
+                to={item.link}
+                className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80  flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
+              >
+                <item.icon /> {showText ? item?.menu : `${mouseEnterInSIderber ? item?.menu : ''}`}
+              </NavLink>
+              : // dropdown menus
+              <div key={item?.link}
+                className={`hover:text-gray-600 hover:no-underline cursor-pointer`}>
+                <span
+                  onClick={() => HandelAccorDionOpen(item?.menu)}
+                  className="text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80 flex justify-between items-center gap-2 hover:bg-gray-200 rounded-md"
+                >
+                  <span
+                    className={`flex ${showText ? 'justify-start' : 'justify-center'}  items-center gap-1`}>
+                    <item.icon />
+                    {showText ? item?.menu : `${mouseEnterInSIderber ? item?.menu : ''}`}
+                  </span>
+                  <IoIosArrowUp
+                    className={`transition-all ${showText ? '' : `${mouseEnterInSIderber ? '' : 'hidden'}`} text-[12px] ${openAccordion.show && openAccordion.name === item?.menu ? "rotate-[0deg]" : "rotate-[180deg]"}`}
+                  />
+                </span>
+                <ul
+                  className={`ml-2 ${openAccordion.show && openAccordion.name === item?.menu
+                    ? "h-auto accordionOpen"
+                    : " max-h-0 "
+                    } overflow-hidden z-50 ${((openAccordion.prev === item?.menu && openAccordion.prevOpen) || (!openAccordion.show && openAccordion.name === item?.menu)) ? 'accordionClose' : ''}`}
+                >
+                  {Array.isArray(item.dropDown) ? // checking is dropdown menus is an array 
+                    <> {item.dropDown.map(dropDownItems => //map dropdown items
+                      <li className={`${showText ? '' : `${mouseEnterInSIderber ? '' : 'hidden'}`}`} key={dropDownItems?.link}>
+                        <NavLink onClick={handelCloseAccordion}
+                          to={dropDownItems.link}
+                          className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
+                        >
+                          <dropDownItems.icon />  {dropDownItems.menu}
+                        </NavLink>
+                      </li>
+                    )}
+                    </> : //if dropdown menus is not an array then return empty fragment
+                    <></>
+                  }
+                </ul>
+              </div>
+
+
+            )}
           </div>
-
-
         )}
+
       </div>
     </div>
 

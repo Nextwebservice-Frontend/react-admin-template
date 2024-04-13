@@ -7,8 +7,7 @@ import { FaRegDotCircle } from "react-icons/fa";
 const Logo = ({ show, setShow }) => {
     const { showText, setShowText, mouseEnterInSIderber } = useContext(ContextData)
     return (
-        <div className={`relative `}>
-            <div className="flex justify-between items-center my-2 w-full absolute left-0 top-0 bg-white z-10">
+            <div className="flex justify-between items-center my-2 w-full pr-2">
                 <div className="flex items-center gap-3 p-2 ">
                     <svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg" className="">
                         <path fillRule="evenodd" clipRule="evenodd" d="M0.00172773 0V6.85398C0.00172773 6.85398 -0.133178 9.01207 1.98092 10.8388L13.6912 21.9964L19.7809 21.9181L18.8042 9.88248L16.4951 7.17289L9.23799 0H0.00172773Z" fill="#7367F0"></path>
@@ -30,7 +29,6 @@ const Logo = ({ show, setShow }) => {
                     <RxCross2 />
                 </button>
             </div>
-        </div>
     );
 };
 

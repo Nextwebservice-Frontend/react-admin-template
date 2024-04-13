@@ -22,9 +22,9 @@
   animation: accordionopen 2s;
 }
 
-#dBoardSideber nav .active {
-  background: rgb(209, 208, 208);
-  color: rgb(75, 73, 73);
+#dBoardSideber .active {
+  background: #978EF4;
+  color: #FFF;
   text-decoration: none;
 }
 .accordionClose{

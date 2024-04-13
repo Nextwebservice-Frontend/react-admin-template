@@ -59,8 +59,8 @@ const DashboardLayout = () => {
   return (
     <div className="lg:flex gap-[.3%]">
       <div id="sideber" style={{ transition: ".5s" }}
-        className={`pl-2 ${showText ? "xl:w-[20%] lg:w-[21%] w-[30%] lg:relative" : ` ${mouseEnterInSIderber ? 'xl:w-[17%] lg:w-[18%] w-[27%] pr-2 box-border' : 'w-[60px]'} absolute  min-h-screen `
-          } border-r-2 pr-2 shadow-2xl min-h-screen absolute ${show?'left-0 top-0 SideberOpen':'hidden lg:block SideberClose'} bg-white z-50  overflow-y-scroll`}
+        className={`pl-2 border-r ${showText ? "xl:w-[22%] lg:w-[23%] w-[33%] lg:relative" : ` ${mouseEnterInSIderber ? 'xl:w-[19%] lg:w-[20%] w-[29%]  box-border' : 'w-[60px]'} absolute  h-screen `
+          }   shadow-2xl min-h-screen absolute ${show?'left-0 top-0 SideberOpen':'hidden lg:block SideberClose'} bg-white z-50 `}
       >
         <Dashboard />
       </div>

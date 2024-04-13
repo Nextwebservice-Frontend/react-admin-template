@@ -4,51 +4,98 @@ import { MdOutlineMail } from "react-icons/md";
 import { GrChatOption } from "react-icons/gr";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 export const SIderberNavLinks = [
+    //groups
     {
-        link: false,
-        menu: 'Dashboards',
-        icon: RiHomeSmile2Line,
-        dropDown: [
+        title: false,//group title 
+        NavItems: [ //group links
             {
-                link: '/Analytice',
-                menu: 'Analytice',
-                icon: FaRegCircle,
+                link: false,
+                menu: 'Dashboards', //accordion  parent
+                icon: RiHomeSmile2Line,
+                dropDown: [//accordion child
+                    {
+                        link: '/Analytice',
+                        menu: 'Analytice',
+                        icon: FaRegCircle,
+                    },
+                    {
+                        link: '/CRM',
+                        menu: 'CRM',
+                        icon: FaRegCircle,
+                    },
+                    {
+                        link: '/eCommerce',
+                        menu: 'eCommerce',
+                        icon: FaRegCircle,
+                    },
+                    {
+                        link: '/logistice',
+                        menu: 'Logistice',
+                        icon: FaRegCircle,
+                    },
+                    {
+                        link: '/Academy',
+                        menu: 'Academy',
+                        icon: FaRegCircle,
+                    },
+                ]
             },
             {
-                link: '/CRM',
-                menu: 'CRM',
-                icon: FaRegCircle,
+                link: false,
+                menu: 'Layouts',
+                icon: RiHomeSmile2Line,
+                dropDown: [
+                    {
+                        link: '/Collapsed-menu',
+                        menu: 'Collapsed menu',
+                        icon: FaRegCircle,
+                    },
+                    {
+                        link: '/Content-Navbar',
+                        menu: 'Content Navbar',
+                        icon: FaRegCircle,
+                    },
+                    {
+                        link: '/Content-Nav-Sidever',
+                        menu: 'Content Nav + Sidever',
+                        icon: FaRegCircle,
+                    },
+
+                ]
             },
         ]
     },
-]
-export const appsAndPagesLinks = [
     {
-        link: '/Email',
-        menu: 'Email',
-        icon: MdOutlineMail,
-        dropDown:false
-    },
-    {
-        link: '/Chat',
-        menu: 'Chat',
-        icon: GrChatOption,
-        dropDown:false
-    },
-    {
-        link: false,
-        menu: 'eCommerce',
-        icon: HiOutlineShoppingCart,
-        dropDown: [
+        title: 'apps & pages',
+        NavItems:[
             {
-                link: '/Dashboard',
-                menu: 'Dashboard',
-                icon: FaRegCircle,
+                link: '/Email',
+                menu: 'Email',
+                icon: MdOutlineMail,
+                dropDown: false
             },
             {
-                link: '/Products',
-                menu: 'Products',
-                icon: FaRegCircle,
+                link: '/Chat',
+                menu: 'Chat',
+                icon: GrChatOption,
+                dropDown: false
+            },
+            {
+                link: false,
+                menu: 'eCommerce',
+                icon: HiOutlineShoppingCart,
+                dropDown: [
+                    {
+                        link: '/Dashboard',
+                        menu: 'Dashboard',
+                        icon: FaRegCircle,
+                    },
+                    {
+                        link: '/Products',
+                        menu: 'Products',
+                        icon: FaRegCircle,
+                    },
+                ]
             },
         ]
     },
