@@ -16,7 +16,7 @@ const ProfileModal = () => {
                     Password change
                 </button>
                 <Transition appear show={isOpen} as={Fragment}>
-                    <Dialog as="div" className="relative z-10" onClose={closeModal}>
+                    <Dialog as="div" className="relative z-10" onClose={() => setIsOpen(false)}>
                         <Transition.Child
                             as={Fragment}
                             enter="ease-out duration-300"
@@ -28,7 +28,6 @@ const ProfileModal = () => {
                         >
                             <div className="fixed inset-0 bg-black/25" />
                         </Transition.Child>
-
                         <div className="fixed inset-0 overflow-y-auto">
                             <div className="flex min-h-full items-center justify-center p-4 text-center">
                                 <Transition.Child
@@ -56,7 +55,6 @@ const ProfileModal = () => {
                                                 className="input input-bordered  w-full"
                                             />
                                         </div>
-
                                         <div className="flex gap-2">
                                             <div className="mt-2">
                                                 <h1>New Password</h1>
@@ -80,11 +78,10 @@ const ProfileModal = () => {
                                             <button
                                                 type="button"
                                                 className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                                                onClick={closeModal}
+                                                onClick={() => setIsOpen(false)}
                                             >
                                                 Close
                                             </button>
-
                                             <button className="ml-4 inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
                                                 Update
                                             </button>
