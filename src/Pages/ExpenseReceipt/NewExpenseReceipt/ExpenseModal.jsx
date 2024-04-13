@@ -4,21 +4,16 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 
 const ExpenseModal = () => {
-    let [isOpen, setIsOpen] = useState(false);
-    function closeModal() {
-        setIsOpen(false);
-    }
-    function openModal() {
-        setIsOpen(true);
-    }
+    const [isOpen, setIsOpen] = useState(false);
+  
     return (
         <>
             <div className="py-2 w-full text-center bg-[#f7f7f7]">
-                <button type="button" onClick={openModal} className="bg-[#5bc0de] w-[90%] h-[40px] text-white text-lg font-bold">
+                <button type="button" onClick={() => setIsOpen(true)} className="bg-[#5bc0de] w-[90%] h-[40px] text-white text-lg font-bold">
                     +Add
                 </button>
                 <Transition appear show={isOpen} as={Fragment}>
-                    <Dialog as="div" className="relative z-10" onClose={closeModal}>
+                    <Dialog as="div" className="relative z-10" onClose={() =>setIsOpen(false)} >
                         <Transition.Child
                             as={Fragment}
                             enter="ease-out duration-300"
@@ -86,7 +81,7 @@ const ExpenseModal = () => {
                                             <button
                                                 type="button"
                                                 className="bg-[#d9534f] inline-flex text-white justify-center rounded-md border border-transparent  px-4 py-2 text-lg font-medium hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                                                onClick={closeModal}
+                                                 onClick={() => setIsOpen(false)}
                                             >
                                                 Cancel
                                             </button>
