@@ -30,6 +30,15 @@
 .accordionClose{
 animation: accordionclose .5s;
 }
+.SideberOpen{
+animation: SideberOpen 1s;
+}
+.SideberClose{
+animation: SideberClose 1s;
+}
+
+/* animations  */
+/* accordionOpen animations */
 @keyframes accordionopen {
   from {
     max-height: 0px;
@@ -39,11 +48,33 @@ animation: accordionclose .5s;
     max-height: 720px;
   }
 }
+/* accordionClose animations */
 @keyframes accordionclose{
   from{
     max-height: 720px;
   }
   to{
     max-height: 0px;
+  }
+}
+
+@keyframes  SideberOpen{
+  from {
+    left: -600px;
+  }
+
+  to {
+    left: 0;
+  }
+}
+@keyframes  SideberClose{
+  from {
+    left: 0;
+    display: block;
+  }
+
+  to {
+    left: -600px;
+    display: none;
   }
 }

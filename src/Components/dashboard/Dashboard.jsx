@@ -3,9 +3,8 @@ import "./scrollbar.css";
 import { useContext, useEffect } from "react";
 import { ContextData } from "../../Providers/ContextProviders/ContextProviders";
 import { IoIosMenu } from "react-icons/io";
-import { PanelGroup, Panel, Placeholder } from "rsuite";
 import "../../CSS/customCSS.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { MdLaptopMac } from "react-icons/md";
 import { AiOutlineLogout } from "react-icons/ai";
@@ -14,6 +13,7 @@ import { MdOutlineLocalMall } from "react-icons/md";
 import { MdOutlineNoteAdd } from "react-icons/md";
 import { IoSettings } from "react-icons/io5";
 import { IoIosArrowUp } from "react-icons/io";
+import { appsAndPagesLinks } from "../../Utility/Sideber/SIderberNavLinks";
 const Dashboard = () => {
   const {
     setShow,
@@ -21,6 +21,7 @@ const Dashboard = () => {
     showText,
     setShowText,
     setOpenAccordion,
+    mouseEnterInSIderber,
     openAccordion,
   } = useContext(ContextData);
   useEffect(() => {
@@ -56,301 +57,62 @@ const Dashboard = () => {
     }
   }
   return (
-    <div id="dBoardSideber" style={{ transition: "1s" }}
-      className={`${show ? "lg:w-full w-[270px]" : "w-3"
-        }  absolute lg:w-full lg:relative ${showText ? "" : "w-14"}  no-underline bg-white z-[100] text-gray-600`}
-    >
-      <button
-        onClick={() => {
-          setShowText(true);
-          setShow(!show);
-        }}
-        className={`p-2 ml-5 text-gray-600 font-bold rounded-full flex  absolute top-4 z-40 ${show ? 'hidden' : 'lg:hidden'}   text-3xl  `}
-      >
-        <IoIosMenu />
-      </button>
-
-      <div
-        style={{ transition: "1s" }}
-        className={`h-screen p-2 border bg-white overflow-y-scroll relative z-10 lg:static  ${show ? "right-0" : "right-96"
-          }  `}
-      >
-        <div  className="   ">
-          <Logo show={show} setShow={setShow} />
-          <hr />
-          <nav>
-            <NavLink onClick={handelCloseAccordion}
-              to={"/"}
-              className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold  flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
+    <div id="dBoardSideber" className="w-full mx-auto">
+      <Logo show={show} setShow={setShow} />
+      <div className="box-border pt-14 pl-2">
+        {/* map over all the links  */}
+        {appsAndPagesLinks.map(item => (item?.link) ? // checking link // if false this item has dropdown menu
+          <NavLink key={item?.link}
+            onClick={handelCloseAccordion}
+            to={item.link}
+            className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold  flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
+          >
+            <item.icon /> {showText ? item?.menu : `${mouseEnterInSIderber ? item?.menu : ''}`}
+          </NavLink>
+          : // dropdown menus
+          <div key={item?.link}
+            className={`hover:text-gray-600 hover:no-underline cursor-pointer`}>
+            <span
+              onClick={() => HandelAccorDionOpen(item?.menu)}
+              className="text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-between items-center gap-2 hover:bg-gray-200 rounded-md"
             >
-              <LuLayoutDashboard /> {showText ? "Dashboard" : ""}
-            </NavLink>
-            <NavLink onClick={handelCloseAccordion}
-              to={"/"}
-              className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
+              <span
+                className={`flex ${showText ? 'justify-start' : 'justify-center'}  items-center gap-1`}>
+                <item.icon />
+                {showText ? item?.menu : `${mouseEnterInSIderber ? item?.menu : ''}`}
+              </span>
+              <IoIosArrowUp
+                className={`transition-all ${showText ? '' : `${mouseEnterInSIderber ? '' : 'hidden'}`} text-[12px] ${openAccordion.show && openAccordion.name === item?.menu ? "rotate-[0deg]" : "rotate-[180deg]"}`}
+              />
+            </span>
+            <ul
+              className={`ml-2 ${openAccordion.show && openAccordion.name === item?.menu
+                ? "h-auto accordionOpen"
+                : " max-h-0 "
+                } overflow-hidden z-50 ${((openAccordion.prev === item?.menu && openAccordion.prevOpen) || (!openAccordion.show && openAccordion.name === item?.menu)) ? 'accordionClose' : ''}`}
             >
-              <MdLaptopMac /> {showText ? "Ticket" : ""}
-            </NavLink>
+              {Array.isArray(item.dropDown) ? // checking is dropdown menus is an array 
+                <> {item.dropDown.map(dropDownItems => //map dropdown items
+                  <li className={`${showText ? '' : `${mouseEnterInSIderber ? '' : 'hidden'}`}`} key={dropDownItems?.link}>
+                    <NavLink onClick={handelCloseAccordion}
+                      to={dropDownItems.link}
+                      className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
+                    >
+                      <dropDownItems.icon />  {dropDownItems.menu}
+                    </NavLink>
+                  </li>
+                )}
+                </> : //if dropdown menus is not an array then return empty fragment
+                <></>
+              }
+            </ul>
+          </div>
 
-            <div className={`hover:text-gray-600 hover:no-underline cursor-pointer`}>
-              <span
-                onClick={() => HandelAccorDionOpen('Others')}
-                className="text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-between items-center gap-2 hover:bg-gray-200 rounded-md"
-              >
-                <span className="flex justify-start items-center gap-2">
-                  {" "}
-                  <AiOutlineLogout />
-                  {showText ? "Others" : ""}{" "}
-                </span>
-                <IoIosArrowUp
-                  className={`transition-all text-[12px] ${openAccordion.show && openAccordion.name === "Others"
-                    ? "rotate-[0deg]"
-                    : "rotate-[180deg]"
-                    }`}
-                />
-              </span>
-              <ul
-                className={`ml-2 ${showText ? "" : "absolute left-20 min-w-44 bg-white  px-3 rounded-lg "
-                  } ${openAccordion.show && openAccordion.name === "Others"
-                    ? "h-auto accordionOpen"
-                    : " max-h-0 "
-                  } overflow-hidden z-50 ${((openAccordion.prev === 'Others' && openAccordion.prevOpen) || (!openAccordion.show && openAccordion.name === "Others")) ? 'accordionClose' : ''} `}
-              >
-                <li>
-                  <NavLink onClick={handelCloseAccordion}
-                    to={"/"}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                  >
-                    <FaRegCircle /> Route List
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink onClick={handelCloseAccordion}
-                    to={"/"}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                  >
-                    <FaRegCircle /> Seat plan
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink onClick={handelCloseAccordion}
-                    to={"/"}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                  >
-                    <FaRegCircle /> Dropping point
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink onClick={handelCloseAccordion}
-                    to={"/"}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                  >
-                    <FaRegCircle /> Boarding Point
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink onClick={handelCloseAccordion}
-                    to={"/"}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                  >
-                    <FaRegCircle /> Unit list
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink onClick={handelCloseAccordion}
-                    to={"/"}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                  >
-                    <FaRegCircle /> Bus List
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink onClick={handelCloseAccordion}
-                    to={"/"}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                  >
-                    <FaRegCircle /> Bus Type
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink onClick={handelCloseAccordion}
-                    to={"/"}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                  >
-                    <FaRegCircle /> Trip List
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink onClick={handelCloseAccordion}
-                    to={"/"}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                  >
-                    <FaRegCircle /> Policy List
-                  </NavLink>
-                </li>
-              </ul>
-            </div>
 
-            <div className={`hover:text-gray-600 hover:no-underline cursor-pointer`}>
-              <span
-                onClick={() => HandelAccorDionOpen('Expense')}
-                className="text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-between items-center gap-2 hover:bg-gray-200 rounded-md"
-              >
-                <span className="flex justify-start items-center gap-2">
-                  <MdOutlineLocalMall />
-                  {showText ? "Expense" : ""}{" "}
-                </span>
-                <IoIosArrowUp
-                  className={`transition-all text-[12px] ${openAccordion.show && openAccordion.name === "Expense"
-                    ? "rotate-[0deg]"
-                    : "rotate-[180deg]"
-                    }`}
-                />
-              </span>
-              <ul
-                className={`ml-2 ${showText ? "" : "absolute left-16 min-w-44 bg-white px-3 rounded-lg"
-                  } ${openAccordion.show && openAccordion.name === "Expense"
-                    ? "h-auto accordionOpen"
-                    : " max-h-0 "
-                  } overflow-hidden z-50 ${((openAccordion.prev === 'Expense' && openAccordion.prevOpen) || (!openAccordion.show && openAccordion.name === "Expense")) ? 'accordionClose' : ''}`}
-              >
-                <li>
-                  <NavLink onClick={handelCloseAccordion}
-                    to={"/"}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                  >
-                    <FaRegCircle /> Category List
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink onClick={handelCloseAccordion}
-                    to={"/"}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                  >
-                    <FaRegCircle /> Expense List
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink onClick={handelCloseAccordion}
-                    to={"/"}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                  >
-                    <FaRegCircle /> Expense Receipt
-                  </NavLink>
-                </li>
-              </ul>
-            </div>
-
-            <div className={`hover:text-gray-600 hover:no-underline cursor-pointer`}>
-              <span
-                onClick={() => HandelAccorDionOpen('Blog')}
-                className="text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-between items-center gap-2 hover:bg-gray-200 rounded-md"
-              >
-                <span className="flex justify-start items-center gap-2">
-                  <MdOutlineNoteAdd />
-                  {showText ? "Blog" : ""}{" "}
-                </span>
-                <IoIosArrowUp
-                  className={`transition-all text-[12px] ${openAccordion.show && openAccordion.name === "Blog"
-                    ? "rotate-[0deg]"
-                    : "rotate-[180deg]"
-                    }`}
-                />
-              </span>
-              <ul
-                className={`ml-2 ${showText ? "" : "absolute left-16 min-w-44 bg-white px-3 rounded-lg"
-                  } ${openAccordion.show && openAccordion.name === "Blog"
-                    ? "h-auto accordionOpen"
-                    : " max-h-0  "
-                  } overflow-hidden z-50 ${((openAccordion.prev === 'Blog' && openAccordion.prevOpen) || (!openAccordion.show && openAccordion.name === "Blog")) ? 'accordionClose' : ''}`}
-              >
-                <li>
-                  <NavLink onClick={handelCloseAccordion}
-                    to={"/"}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                  >
-                    <FaRegCircle /> Blog List
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink onClick={handelCloseAccordion}
-                    to={"/"}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                  >
-                    <FaRegCircle /> Blog Create
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink onClick={handelCloseAccordion}
-                    to={"/"}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                  >
-                    <FaRegCircle /> Expense Receipt
-                  </NavLink>
-                </li>
-              </ul>
-            </div>
-
-            <div className={`hover:text-gray-600 hover:no-underline cursor-pointer`}>
-              <span
-                onClick={() => HandelAccorDionOpen('Setting')}
-                className="text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-between items-center gap-2 hover:bg-gray-200 rounded-md"
-              >
-                <span className="flex justify-start items-center gap-2">
-                  <IoSettings /> {showText ? "Setting " : ""}
-                </span>
-                <IoIosArrowUp
-                  className={`transition-all text-[12px] ${openAccordion.show && openAccordion.name === "Setting"
-                    ? "rotate-[0deg]"
-                    : "rotate-[180deg]"
-                    }`}
-                />
-              </span>
-              <ul
-                className={`ml-2 ${showText ? "" : "absolute left-16 min-w-44 bg-white px-3 rounded-lg"
-                  } ${openAccordion.show && openAccordion.name === "Setting"
-                    ? "h-auto   accordionOpen"
-                    : " max-h-0 "
-                  } overflow-hidden z-50 ${((openAccordion.prev === 'Setting' && openAccordion.prevOpen) || (!openAccordion.show && openAccordion.name === "Setting")) ? 'accordionClose' : ''}`}
-              >
-                <li>
-                  <NavLink onClick={handelCloseAccordion}
-                    to={"/"}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                  >
-                    <FaRegCircle /> General Setting
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink onClick={handelCloseAccordion}
-                    to={"/"}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                  >
-                    <FaRegCircle /> Photo Gallery
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink onClick={handelCloseAccordion}
-                    to={"/"}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                  >
-                    <FaRegCircle /> Role
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink onClick={handelCloseAccordion}
-                    to={"/"}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md"
-                  >
-                    <FaRegCircle /> User
-                  </NavLink>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+        )}
       </div>
     </div>
+
   );
 };
 

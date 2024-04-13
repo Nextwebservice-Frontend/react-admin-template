@@ -3,6 +3,7 @@ import DashboardLayout from "../Layout/DashboardLayout";
 import Notice from "../Pages/Notice/Notice";
 import Profile from "../Pages/Profile/Profile";
 import ExpanseReceipt from "../Pages/ExpanseReceipt/ExpanseReceipt";
+import MonthlyInvoice from "../Pages/MonthlyInvoice/MonthlyInvoice";
 
 
 const Router = createBrowserRouter([
@@ -22,7 +23,11 @@ const Router = createBrowserRouter([
             {
                 path: '/profile',
                 element: <Profile />
-            }
+            },
+            {
+                path: '/monthly-report-list',
+                element: <MonthlyInvoice />
+            },
         ]
     }
 ])
