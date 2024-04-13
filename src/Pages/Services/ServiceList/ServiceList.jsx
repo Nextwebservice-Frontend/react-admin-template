@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-
 import ServiceList2 from './ServiceList2';
 
 const ServiceList = () => {

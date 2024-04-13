@@ -9,7 +9,7 @@ export const ProductService = { getProductsData() {
                 price: 65,
                 category: 'Accessories',
                 quantity: 24,
-                inventoryStatus: 'INSTOCK',
+                inventoryStatus: 'Active',
                 rating: 5
             },
             {
@@ -21,7 +21,7 @@ export const ProductService = { getProductsData() {
                 price: 72,
                 category: 'Accessories',
                 quantity: 61,
-                inventoryStatus: 'INSTOCK',
+                inventoryStatus: 'Inactive',
                 rating: 4
             },
             {
@@ -33,7 +33,7 @@ export const ProductService = { getProductsData() {
                 price: 79,
                 category: 'Fitness',
                 quantity: 2,
-                inventoryStatus: 'LOWSTOCK',
+                inventoryStatus: 'Active',
                 rating: 3
             },
             {
@@ -1196,9 +1196,8 @@ export const ProductService = { getProductsData() {
             }
         ];
     },
-
     getProductsMini() {
-        return Promise.resolve(this.getProductsData().slice(0, 5));
+        return Promise.resolve(this.getProductsData().slice(0, 3));
     },
 
     getProductsSmall() {

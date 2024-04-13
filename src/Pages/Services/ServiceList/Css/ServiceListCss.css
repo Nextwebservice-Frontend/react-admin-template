@@ -1,0 +1,23 @@
+.p-datatable th {
+    text-align: center !important;
+}
+
+.p-datatable .p-column-header-content {
+    display: block !important;
+    align-items: center !important;
+}
+.close-button {
+    background-color: transparent;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: red;
+    border: 1px solid gray;
+    padding: 2px 4px;
+    /* Change to whatever color you want on hover */
+}
