@@ -4,6 +4,10 @@ import Notice from "../Pages/Notice/Notice";
 import Profile from "../Pages/Profile/Profile";
 import ExpenseReceipt from "../Pages/ExpenseReceipt/ExpenseReceipt";
 import NewExpenseReceipt from "../Pages/ExpenseReceipt/NewExpenseReceipt/NewExpenseReceipt";
+import ServiceList from "../Pages/Services/ServiceList/ServiceList";
+
+
+
 
 
 const Router = createBrowserRouter([
@@ -28,7 +32,12 @@ const Router = createBrowserRouter([
             {
                 path: '/profile',
                 element: <Profile />
+            },
+            {
+                path: '/serviceList',
+                element: <ServiceList></ServiceList>
             }
+            
         ]
     }
 ])

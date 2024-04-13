@@ -1,0 +1,19 @@
+/* eslint-disable no-unused-vars */
+import React from 'react';
+
+import ServiceList2 from './ServiceList2';
+
+const ServiceList = () => {
+    return (
+        <div>
+            <div className="flex flex-wrap align-items-center justify-content-between gap-2 my-5">
+                <h1 className="text-xl md:text-2xl text-900 font-bold">Service List</h1>
+            
+            </div>
+
+            <ServiceList2></ServiceList2>
+        </div>
+    );
+};
+
+export default ServiceList;

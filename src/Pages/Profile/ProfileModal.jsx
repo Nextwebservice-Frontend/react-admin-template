@@ -93,7 +93,6 @@ const ProfileModal = () => {
                     </Dialog>
                 </Transition>
             </div>
-            
         </>
     );
 };
