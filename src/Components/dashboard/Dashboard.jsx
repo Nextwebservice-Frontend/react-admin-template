@@ -13,7 +13,7 @@ import { FaRegCircle } from "react-icons/fa";
 import { MdOutlineLocalMall } from "react-icons/md";
 import { MdOutlineNoteAdd } from "react-icons/md";
 import { IoSettings } from "react-icons/io5";
-import { FaGreaterThan } from "react-icons/fa6";
+import { IoIosArrowUp } from "react-icons/io";
 const Dashboard = () => {
   const {
     setShow,
@@ -50,13 +50,13 @@ const Dashboard = () => {
       setOpenAccordion({
         prev: false,
         name: name,
-        prevOpen:false,
+        prevOpen: false,
         show: !openAccordion.show,
       });
     }
   }
   return (
-    <div id="dBoardSideber"
+    <div id="dBoardSideber" style={{ transition: "1s" }}
       className={`${show ? "lg:w-full w-[270px]" : "w-3"
         }  absolute lg:w-full lg:relative ${showText ? "" : "w-14"}  no-underline bg-white z-[100] text-gray-600`}
     >
@@ -75,7 +75,7 @@ const Dashboard = () => {
         className={`h-screen p-2 border bg-white overflow-y-scroll relative z-10 lg:static  ${show ? "right-0" : "right-96"
           }  `}
       >
-        <div className="   ">
+        <div  className="   ">
           <Logo show={show} setShow={setShow} />
           <hr />
           <nav>
@@ -102,10 +102,10 @@ const Dashboard = () => {
                   <AiOutlineLogout />
                   {showText ? "Others" : ""}{" "}
                 </span>
-                <FaGreaterThan
-                  className={`transition-all text-[9px] ${openAccordion.show && openAccordion.name === "Others"
-                    ? "rotate-[-90deg]"
-                    : "rotate-[90deg]"
+                <IoIosArrowUp
+                  className={`transition-all text-[12px] ${openAccordion.show && openAccordion.name === "Others"
+                    ? "rotate-[0deg]"
+                    : "rotate-[180deg]"
                     }`}
                 />
               </span>
@@ -200,10 +200,10 @@ const Dashboard = () => {
                   <MdOutlineLocalMall />
                   {showText ? "Expense" : ""}{" "}
                 </span>
-                <FaGreaterThan
-                  className={`transition-all text-[9px] ${openAccordion.show && openAccordion.name === "Expense"
-                    ? "rotate-[-90deg]"
-                    : "rotate-[90deg]"
+                <IoIosArrowUp
+                  className={`transition-all text-[12px] ${openAccordion.show && openAccordion.name === "Expense"
+                    ? "rotate-[0deg]"
+                    : "rotate-[180deg]"
                     }`}
                 />
               </span>
@@ -250,10 +250,10 @@ const Dashboard = () => {
                   <MdOutlineNoteAdd />
                   {showText ? "Blog" : ""}{" "}
                 </span>
-                <FaGreaterThan
-                  className={`transition-all text-[9px] ${openAccordion.show && openAccordion.name === "Blog"
-                    ? "rotate-[-90deg]"
-                    : "rotate-[90deg]"
+                <IoIosArrowUp
+                  className={`transition-all text-[12px] ${openAccordion.show && openAccordion.name === "Blog"
+                    ? "rotate-[0deg]"
+                    : "rotate-[180deg]"
                     }`}
                 />
               </span>
@@ -291,7 +291,7 @@ const Dashboard = () => {
               </ul>
             </div>
 
-            <div  className={`hover:text-gray-600 hover:no-underline cursor-pointer`}>
+            <div className={`hover:text-gray-600 hover:no-underline cursor-pointer`}>
               <span
                 onClick={() => HandelAccorDionOpen('Setting')}
                 className="text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold flex justify-between items-center gap-2 hover:bg-gray-200 rounded-md"
@@ -299,10 +299,10 @@ const Dashboard = () => {
                 <span className="flex justify-start items-center gap-2">
                   <IoSettings /> {showText ? "Setting " : ""}
                 </span>
-                <FaGreaterThan
-                  className={`transition-all text-[9px] ${openAccordion.show && openAccordion.name === "Setting"
-                    ? "rotate-[-90deg]"
-                    : "rotate-[90deg]"
+                <IoIosArrowUp
+                  className={`transition-all text-[12px] ${openAccordion.show && openAccordion.name === "Setting"
+                    ? "rotate-[0deg]"
+                    : "rotate-[180deg]"
                     }`}
                 />
               </span>
