@@ -1,15 +1,14 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-import { classNames } from 'primereact/utils';
-import { FilterMatchMode, FilterOperator } from 'primereact/api';
+import { FilterMatchMode } from 'primereact/api';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { InputText } from 'primereact/inputtext';
-import { Dropdown } from 'primereact/dropdown';
-import { MultiSelect } from 'primereact/multiselect';
 import { Tag } from 'primereact/tag';
 import { CustomerService } from './YearlyInvoiceData/InvoiceData';
+
+
 
 const YearlyInvoice2 = () => {
     const [customers, setCustomers] = useState(null);
@@ -74,40 +73,33 @@ const YearlyInvoice2 = () => {
     const onGlobalFilterChange = (e) => {
         const value = e.target.value;
         let _filters = { ...filters };
-
         _filters['global'].value = value;
-
         setFilters(_filters);
         setGlobalFilterValue(value);
     };
 
     const renderHeader = () => {
         return (
-
             <>
-            <div className="flex flex-col justify-content-end border p-4 mb-5 ">
-                <h1 className='mb-2 w-full'>Select Year <span className='text-red-500'>(Required)</span></h1>
-                <span className="p-input-icon-left ">
-                    <i className="pi pi-search" />
-                    <InputText value={globalFilterValue} onChange={onGlobalFilterChange} placeholder="Keyword Search" className='w-full border mb-5' />
-                </span>
-            </div>
-
-            <div className='border-x border-t p-4'>
+                <div className="flex flex-col justify-content-end border p-4 mb-5 ">
+                    <h1 className='mb-2 w-full text-xl'>Select Year <span className='text-red-500'>(Required)</span></h1>
+                    <span className="p-input-icon-left ">
+                        <i className="pi pi-search" />
+                        <InputText value={globalFilterValue} onChange={onGlobalFilterChange} placeholder="Keyword Search" className='w-full border mb-5 h-[40px] text-lg' />
+                    </span>
+                </div>
+                <div className='border-x border-t p-4'>
                     <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 md:border mb-4 w-full'>
                         <div className='flex border md:border-none w-full'>
                             <button className='btn rounded-none border-none text-blue-600 bg-[#f7f7f7]'>ALL</button>
-                            
                             <button className='w-[100%]  bg-[#f7f7f7]'></button>
                         </div>
-                        <button className='btn rounded-none bg-success text-white '>Report List</button>
+                        <button className='btn rounded-none bg-success text-white'>Report List</button>
                     </div>
-            </div>
+                </div>
             </>
-
         );
     };
-
     const countryBodyTemplate = (rowData) => {
         return (
             <div className="flex align-items-center justify-center gap-2">
@@ -116,10 +108,8 @@ const YearlyInvoice2 = () => {
             </div>
         );
     };
-
     const representativeBodyTemplate = (rowData) => {
         const representative = rowData.representative;
-
         return (
             <div className="flex align-items-center justify-center gap-2">
                 <img alt={representative.name} src={`https://primefaces.org/cdn/primereact/images/avatar/${representative.image}`} width="32" />
@@ -127,31 +117,31 @@ const YearlyInvoice2 = () => {
             </div>
         );
     };
-
     const statusBodyTemplate = (rowData) => {
         return <Tag value={rowData.status} severity={getSeverity(rowData.status)} />;
     };
-
     const header = renderHeader();
     return (
         <>
             <div className="card px-5  py-5 ">
                 <DataTable className='' value={customers} paginator rows={5} dataKey="id" filters={filters} filterDisplay="row" loading={loading}
                     globalFilterFields={['name', 'country.name', 'representative.name', 'status']} header={header} emptyMessage="No customers found." tableStyle={{ minWidth: '80rem' }}  >
-                    
-
-                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2',padding: '8px '}} className='border text-center' field="name" header="Name"  style={{ minWidth: '12rem' }} />
-
-                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2' }} className='border text-center' header="Country" filterField="country.name" style={{ minWidth: '12rem' }} body={countryBodyTemplate}  />
-                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2' }} className='border text-center' header="Agent"  style={{ minWidth: '14rem' }}
-                        body={representativeBodyTemplate}  />
-                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2' }} className='border text-center ' field="status" header="Status" style={{ minWidth: '12rem'}} body={statusBodyTemplate} />
+                    {/* Invoice Id col */}
+                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px ' }} className='border text-center' field="name" header="Invoice ID" style={{ minWidth: '6rem' }} />
+                    {/* CLIENT (2nd col )*/}
+                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2' }} className='border text-center' header="CLIENT" filterField="country.name" style={{ minWidth: '6rem' }} body={countryBodyTemplate} />
+                    {/* QTY 3rd col */}
+                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2' }} className='border text-center' header="QTY" style={{ minWidth: '6rem' }} />
+                    {/*NET amount 4th col */}
+                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2' }} className='border text-center ' field="status" header="NET amount" style={{ minWidth: '6rem' }} />
+                    {/*paid amount (5) col */}
+                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2' }} className='border text-center ' field="status" header="Paid amount" style={{ minWidth: '6rem' }} />
+                    {/*Due amount (6) col */}
+                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2' }} className='border text-center ' field="status" header="Due amount" style={{ minWidth: '6rem' }} />
+                    {/*Change amount (7) col */}
                     
                 </DataTable>
-        
-                
             </div>
-            
         </>
     );
 };

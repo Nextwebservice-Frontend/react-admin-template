@@ -36,40 +36,47 @@ const ExpenseModal = () => {
                                     leaveFrom="opacity-100 scale-100"
                                     leaveTo="opacity-0 scale-95"
                                 >
-                                    <Dialog.Panel className="w-[96%] md:w-[48%] transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all">
+                                    <Dialog.Panel className="w-[96%] md:w-[96%] lg:w-[90%]  xl:w-[70%] 2xl:w-[48%] transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all">
                                         <Dialog.Title
                                             as="h3"
                                             className="border py-6 pl-4 font-bold text-xl leading-6 text-gray-900 bg-[#f7f7f7]"
                                         >
-                                            Add Expense To Receipt
+                                            <div className="flex justify-between items-center gap-2 pr-6">
+                                                <h1 className="#212529 font-serif text-normal md:text-xl ">Add Expense To Receipt</h1>
+                                                <button onClick={() => setIsOpen(false)} className="close-button">X</button>
+                                            </div>
                                         </Dialog.Title>
                                         {/* <hr className="mt-4" /> */}
                                         <div className="flex flex-col md:flex-row justify-between gap-2 px-6">
-                                            <div className="mt-2">
+                                            {/* Expense Category */}
+                                            <div className="mt-2 md:w-[32%]">
                                                 <p className="text-lg text-gray-900">Expense Category<span className="text-red-500">(required)</span> </p>
                                                 <input
                                                     type="text "
                                                     placeholder="Expense Category "
-                                                    className="input input-bordered w-[98%] md:w-[270px] "
+                                                    className="input input-bordered w-full "
                                                 />
                                             </div>
-                                            <div className="mt-2">
+                                            {/* Expense */}
+                                            <div className="mt-2 md:w-[32%]">
                                                 <p className="text-lg text-gray-900">Expense<span className="text-red-500">(required)</span></p>
                                                 <input
                                                     type="text"
                                                     placeholder="Expense"
-                                                    className="input input-bordered w-[98%] md:w-[270px] "
+                                                    className="input input-bordered w-full "
                                                 />
                                             </div>
-                                            <div className="mt-2">
+                                            {/* Expense Amount */}
+                                            <div className="mt-2 md:w-[32%]">
                                                 <p className="text-lg text-gray-900">Expense Amount<span className="text-red-500">(required)</span></p>
                                                 <input
                                                     type="number"
                                                     placeholder="Expense Amount"
-                                                    className="input input-bordered w-[98%] md:w-[270px] bg-[#f7f7f7]"
+                                                    className="input input-bordered w-full bg-[#f7f7f7]"
                                                 />
                                             </div>
                                         </div>
+                                        {/* Expense Details  */}
                                         <div className=' py-2 px-6'>
                                             <p className="label-text text-lg text-gray-900 mr-7 pb-2">Expense Details <span className="text-red-500">(required) </span></p>
                                             <textarea className="textarea textarea-bordered w-[98%] md:w-full bg-[#f7f7f7]" placeholder="Expense Details"></textarea>

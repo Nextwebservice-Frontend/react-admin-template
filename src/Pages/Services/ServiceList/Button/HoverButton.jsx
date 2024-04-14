@@ -1,13 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import NewServiceModal from '../../NewServiceModal/NewServiceModal';
 
 const HoverButton = (rowData) => {
     const [showButtons, setShowButtons] = useState(false);
     return (
         <div>
             <div onMouseEnter={() => setShowButtons(true)} onMouseLeave={() => setShowButtons(false)}>
-
                 {rowData.category}
                 {showButtons && (
                     <div>
