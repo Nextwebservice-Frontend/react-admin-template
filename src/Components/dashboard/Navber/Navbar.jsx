@@ -6,6 +6,8 @@ import { useContext, useState } from "react";
 import ShortcutPopUp from "./Shortcut_pop_up/ShortcutPopUp";
 import { ContextData } from "../../../Providers/ContextProviders/ContextProviders";
 import { BiCustomize } from "react-icons/bi";
+import NotificationPopUp from "./Notification_pop_up/NotificationPopUp";
+import { HiOutlineSun } from "react-icons/hi";
 const Navbar = () => {
   // states
   const {
@@ -14,7 +16,9 @@ const Navbar = () => {
     showProfiePopUp,
     setShowprofilePopUp,
     showSortcutPopUp,
-    setshowSortcutPopUp
+    setshowSortcutPopUp,
+    showNotificationPopUp,
+    setshowNotificationPopUp
   } = useContext(ContextData);
   return (
     <>
@@ -30,19 +34,25 @@ const Navbar = () => {
           <p className="text-2xl lg:block hidden">Dashboard</p>
         </div>
         <div className="flex justify-end items-center gap-4 z-40">
-          <FaUserGroup className="text-2xl text-gray-600 mt-1 cursor-pointer" />
+          <HiOutlineSun  className="text-2xl text-gray-600 mt-1 cursor-pointer" />
           <BiCustomize
             onClick={() => {
               setShowprofilePopUp(false);
+              setshowNotificationPopUp(false)
               setshowSortcutPopUp(!showSortcutPopUp);
             }}
             className="text-2xl text-gray-600 mt-1 cursor-pointer"
           />
-          <FaRegBell  className="text-2xl text-gray-600 mt-1 cursor-pointer" />
+          <FaRegBell onClick={() => {
+            setshowSortcutPopUp(false);
+            setShowprofilePopUp(false);
+            setshowNotificationPopUp(!showNotificationPopUp)
+          }} className="text-2xl text-gray-600 mt-1 cursor-pointer" />
           <img
             onClick={() => {
-              setShowprofilePopUp(!showProfiePopUp);
               setshowSortcutPopUp(false);
+              setshowNotificationPopUp(false)
+              setShowprofilePopUp(!showProfiePopUp);
             }}
             className="md:w-8 md:h-8 h-7 w-7 rounded-full cursor-pointer"
             src={avater}
@@ -53,6 +63,7 @@ const Navbar = () => {
       <div className=" w-full  mx-auto box-border px-8 relative">
         <ProfilePopUp showProfiePopUp={showProfiePopUp} setShowprofilePopUp={setShowprofilePopUp} />
         <ShortcutPopUp showSortcutPopUp={showSortcutPopUp} setshowSortcutPopUp={setshowSortcutPopUp} />
+        <NotificationPopUp showNotificationPopUp={showNotificationPopUp} />
       </div>
     </>
   );

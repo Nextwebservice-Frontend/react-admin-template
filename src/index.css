@@ -32,6 +32,20 @@
   animation: accordionclose .5s;
 }
 
+#NotificationPopUp::-webkit-scrollbar {
+  display: none;
+}
+
+#NotificationPopUp {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#NotificationPopUp .notification:hover .removeNotification {
+  display: block;
+}
+
+
 /* animations  */
 /* accordionOpen animations */
 @keyframes accordionopen {

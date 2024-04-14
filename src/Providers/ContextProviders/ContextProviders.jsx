@@ -15,6 +15,7 @@ const ContextProviders = ({ children }) => {
     //navber  popUps
     const [showProfiePopUp, setShowprofilePopUp] = useState(false);
     const [showSortcutPopUp, setshowSortcutPopUp] = useState(false);
+    const [showNotificationPopUp, setshowNotificationPopUp] = useState(false);
     // context data
     const sharedData = {
         setShow,
@@ -28,7 +29,9 @@ const ContextProviders = ({ children }) => {
         showSortcutPopUp,
         setshowSortcutPopUp,
         mouseEnterInSIderber, 
-        setmouseEnterInSIderber
+        setmouseEnterInSIderber,
+        showNotificationPopUp, 
+        setshowNotificationPopUp
     }
     return (
         <ContextData.Provider value={sharedData}>

@@ -4,7 +4,7 @@ import { ShortcutPopUpMenu } from "../../../../Utility/Navber/Shortcut_pop_up_me
 const ShortcutPopUp = ({ showSortcutPopUp,setshowSortcutPopUp }) => {
 
     return (
-        <div className={`absolute shadow-lg rounded-lg border lg:right-32 md:right-10 right-0 z-20 -top-12 mt-10 bg-white ${showSortcutPopUp ? "popup" : "hidden"}  max-h-[90vh] overflow-y-auto`}>
+        <div className={`absolute shadow-lg rounded-lg border lg:right-24 md:right-20 right-0 z-20 -top-12 mt-10 bg-white ${showSortcutPopUp ? "popup" : "hidden"}  max-h-[90vh] overflow-y-auto`}>
             <span className='flex justify-between items-center min-w-80 max-w-80 sm:max-w-96 sm:min-w-96 text-lg p-3 text-gray-600 font-semibold opacity-70'>
                 Shortcuts
                 <button>
