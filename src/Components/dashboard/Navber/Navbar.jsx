@@ -1,5 +1,5 @@
 import { IoIosMenu } from "react-icons/io";
-import { FaStore, FaUserGroup } from "react-icons/fa6";
+import { FaRegBell, FaStore, FaUserGroup } from "react-icons/fa6";
 import avater from "../../../assets/avator.jpg";
 import ProfilePopUp from "./profile_pop_up/ProfilePopUp";
 import { useContext, useState } from "react";
@@ -8,7 +8,14 @@ import { ContextData } from "../../../Providers/ContextProviders/ContextProvider
 import { BiCustomize } from "react-icons/bi";
 const Navbar = () => {
   // states
-  const { setShow, show, setShowText, showText, showProfiePopUp, setShowprofilePopUp, showSortcutPopUp, setshowSortcutPopUp } = useContext(ContextData);
+  const {
+    setShow,
+    setShowText,
+    showProfiePopUp,
+    setShowprofilePopUp,
+    showSortcutPopUp,
+    setshowSortcutPopUp
+  } = useContext(ContextData);
   return (
     <>
       <div className="flex justify-between items-center w-full mx-auto box-border px-2 shadow-xl py-5 z-10">
@@ -24,7 +31,6 @@ const Navbar = () => {
         </div>
         <div className="flex justify-end items-center gap-4 z-40">
           <FaUserGroup className="text-2xl text-gray-600 mt-1 cursor-pointer" />
-          <FaStore className="text-2xl text-gray-600 mt-1 cursor-pointer" />
           <BiCustomize
             onClick={() => {
               setShowprofilePopUp(false);
@@ -32,6 +38,7 @@ const Navbar = () => {
             }}
             className="text-2xl text-gray-600 mt-1 cursor-pointer"
           />
+          <FaRegBell  className="text-2xl text-gray-600 mt-1 cursor-pointer" />
           <img
             onClick={() => {
               setShowprofilePopUp(!showProfiePopUp);
@@ -44,8 +51,8 @@ const Navbar = () => {
         </div>
       </div>
       <div className=" w-full  mx-auto box-border px-8 relative">
-        <ProfilePopUp showProfiePopUp={showProfiePopUp} setShowprofilePopUp={setShowprofilePopUp}/>
-        <ShortcutPopUp showSortcutPopUp={showSortcutPopUp} />
+        <ProfilePopUp showProfiePopUp={showProfiePopUp} setShowprofilePopUp={setShowprofilePopUp} />
+        <ShortcutPopUp showSortcutPopUp={showSortcutPopUp} setshowSortcutPopUp={setshowSortcutPopUp} />
       </div>
     </>
   );
