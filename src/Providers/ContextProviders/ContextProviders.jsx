@@ -10,8 +10,18 @@ const ContextProviders = ({ children }) => {
     //mouse enter In sideber 
     const [mouseEnterInSIderber, setmouseEnterInSIderber] = useState(false)
     //current accordion status and previous accordion status
-    const [openAccordion, setOpenAccordion] = useState({ name: false, show: false, prev: false, prevOpen: false })
-
+    const [openAccordion, setOpenAccordion] = useState({
+        name: false, show: false,
+        prev: false, prevOpen: false,
+    })
+    const [openSubMenuAccordion, setOpenSubMenuAccordion] = useState({
+        subMenu: false, subMenuOpen: false,
+        prevSubMenu: false, prevSubMenuOpen: false,
+    })
+    const [openSubMenuAccordion2, setOpenSubMenuAccordion2] = useState({
+        subMenu: false, subMenuOpen: false,
+        prevSubMenu: false, prevSubMenuOpen: false,
+    })
     //navber  popUps
     const [showProfiePopUp, setShowprofilePopUp] = useState(false);
     const [showSortcutPopUp, setshowSortcutPopUp] = useState(false);
@@ -31,6 +41,12 @@ const ContextProviders = ({ children }) => {
         // open sideber accordion menu
         setOpenAccordion,
         openAccordion,
+        //open submenu accordion
+        openSubMenuAccordion, 
+        setOpenSubMenuAccordion,
+        //open submenu accordion
+        openSubMenuAccordion2, 
+        setOpenSubMenuAccordion2,
         //open profile popup in navber
         showProfiePopUp,
         setShowprofilePopUp,
@@ -47,10 +63,10 @@ const ContextProviders = ({ children }) => {
         showThemePopUp,
         setshowThemePopUp,
         //open language changer popup
-        showLanguagePopUp, 
+        showLanguagePopUp,
         setshowLanguagePopUp,
         //search option open
-        showSearchOption, 
+        showSearchOption,
         setshowSearchOption
     }
     return (

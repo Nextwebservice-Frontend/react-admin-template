@@ -37,12 +37,6 @@ const DashboardLayout = () => {
     setshowThemePopUp(false)
     setshowLanguagePopUp(false)
     setshowSearchOption(false)
-    if (!showText && openAccordion.show) {
-      setOpenAccordion({
-        show: false,
-        name: openAccordion.name
-      });
-    }
     // console.log(openAccordion)
   }
   useEffect(() => {

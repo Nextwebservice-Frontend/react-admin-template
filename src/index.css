@@ -22,15 +22,16 @@
   animation: accordionopen 2s;
 }
 
+.accordionClose {
+  animation: accordionclose .5s;
+}
+
 #dBoardSideber .active {
   background: #978EF4;
   color: #FFF;
   text-decoration: none;
 }
 
-.accordionClose {
-  animation: accordionclose .5s;
-}
 
 #NotificationPopUp::-webkit-scrollbar {
   display: none;
@@ -45,9 +46,9 @@
   display: block;
 }
 
-
 /* animations  */
 /* accordionOpen animations */
+
 @keyframes accordionopen {
   from {
     max-height: 0px;
@@ -57,6 +58,7 @@
     max-height: 720px;
   }
 }
+
 
 /* accordionClose animations */
 @keyframes accordionclose {
