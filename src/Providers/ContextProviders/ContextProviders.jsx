@@ -4,7 +4,7 @@ export const ContextData = createContext({})
 const ContextProviders = ({ children }) => {
     //states
     //show sideber in mobile menu
-    const [show, setShow] = useState(true)
+    const [show, setShow] = useState(false)
     //show sideber text
     const [showText, setShowText] = useState(true)
     //mouse enter In sideber 

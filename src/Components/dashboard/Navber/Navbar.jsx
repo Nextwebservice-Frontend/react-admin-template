@@ -9,13 +9,6 @@ import { BiCustomize } from "react-icons/bi";
 const Navbar = () => {
   // states
   const { setShow, show, setShowText, showText, showProfiePopUp, setShowprofilePopUp, showSortcutPopUp, setshowSortcutPopUp } = useContext(ContextData);
-  //   <IoIosMenu
-  //   onClick={() => {
-  //     setShow(!show);
-  //     setShowText(!showText);
-  //   }}
-  //   className="text-3xl lg:block hidden text-gray-600 mt-1 cursor-pointer z-40"
-  // />
   return (
     <>
       <div className="flex justify-between items-center w-full mx-auto box-border px-2 shadow-xl py-5 z-10">
@@ -29,7 +22,7 @@ const Navbar = () => {
           />
           <p className="text-2xl lg:block hidden">Dashboard</p>
         </div>
-        <div className="flex justify-end items-center gap-4 z-50">
+        <div className="flex justify-end items-center gap-4 z-40">
           <FaUserGroup className="text-2xl text-gray-600 mt-1 cursor-pointer" />
           <FaStore className="text-2xl text-gray-600 mt-1 cursor-pointer" />
           <BiCustomize
@@ -50,8 +43,8 @@ const Navbar = () => {
           />
         </div>
       </div>
-      <div className=" w-full lg:mx-5 xl:mx-10 mx-auto box-border px-8 relative">
-        <ProfilePopUp showProfiePopUp={showProfiePopUp} />
+      <div className=" w-full  mx-auto box-border px-8 relative">
+        <ProfilePopUp showProfiePopUp={showProfiePopUp} setShowprofilePopUp={setShowprofilePopUp}/>
         <ShortcutPopUp showSortcutPopUp={showSortcutPopUp} />
       </div>
     </>

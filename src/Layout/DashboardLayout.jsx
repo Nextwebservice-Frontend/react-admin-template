@@ -59,12 +59,12 @@ const DashboardLayout = () => {
   return (
     <div className="lg:flex gap-[.3%]">
       <div id="sideber" style={{ transition: ".5s" }}
-        className={`pl-2 border-r ${showText ? "xl:w-[22%] lg:w-[23%] w-[33%] lg:relative" : ` ${mouseEnterInSIderber ? 'xl:w-[19%] lg:w-[20%] w-[29%]  box-border' : 'w-[60px]'} absolute  h-screen `
-          }   shadow-2xl min-h-screen absolute ${show?'left-0 top-0 SideberOpen':'hidden lg:block SideberClose'} bg-white z-50 `}
+        className={`pl-2 z-50 border-r ${showText ? "xl:w-[22%] lg:w-[23%] sm:w-[33%] w-[75%]  lg:relative" : ` ${mouseEnterInSIderber ? 'xl:w-[19%] lg:w-[20%] sm:w-[33%] w-[75%]  box-border' : 'w-[60px]'} absolute  h-screen `
+          }   shadow-2xl min-h-screen absolute ${show ? 'left-0 top-0 SideberOpen' : 'hidden lg:block SideberClose'} bg-white z-50 `}
       >
         <Dashboard />
       </div>
-      <div style={{ transition: "1s" }} className={`w-full ${showText?'':'lg:ml-16'} lg:px-3 xl:px-6  px-auto box-border relative`}>
+      <div style={{ transition: "1s" }} className={`w-full ${showText ? '' : 'lg:ml-16'} lg:px-3 xl:px-6  px-auto box-border relative`}>
         {
           ((!showText && openAccordion.show) || showSortcutPopUp || showProfiePopUp || show) && <div onClick={handelcloseModals} className={`showText openAccordion.show show bg-black min-w-full h-screen absolute left-0 top-0 z-10 bg-opacity-[0]`}>
           </div>

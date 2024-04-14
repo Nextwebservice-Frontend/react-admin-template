@@ -27,14 +27,9 @@
   color: #FFF;
   text-decoration: none;
 }
-.accordionClose{
-animation: accordionclose .5s;
-}
-.SideberOpen{
-animation: SideberOpen 1s;
-}
-.SideberClose{
-animation: SideberClose 1s;
+
+.accordionClose {
+  animation: accordionclose .5s;
 }
 
 /* animations  */
@@ -48,17 +43,19 @@ animation: SideberClose 1s;
     max-height: 720px;
   }
 }
+
 /* accordionClose animations */
-@keyframes accordionclose{
-  from{
+@keyframes accordionclose {
+  from {
     max-height: 720px;
   }
-  to{
+
+  to {
     max-height: 0px;
   }
 }
 
-@keyframes  SideberOpen{
+@keyframes SideberOpen {
   from {
     left: -600px;
   }
@@ -67,7 +64,8 @@ animation: SideberClose 1s;
     left: 0;
   }
 }
-@keyframes  SideberClose{
+
+@keyframes SideberClose {
   from {
     left: 0;
     display: block;
@@ -76,5 +74,15 @@ animation: SideberClose 1s;
   to {
     left: -600px;
     display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .SideberOpen {
+    animation: SideberOpen .5s;
+  }
+
+  .SideberClose {
+    animation: SideberClose 1s;
   }
 }
