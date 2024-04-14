@@ -86,6 +86,7 @@ const Profile = () => {
                       {/* defaultValue={Email} */}
                     </div>
                   </div>
+                  {/* Profile Photo */}
                   <div className="ml-4 md:ml-4">
                     <h1 className="md:mt-5  text-base font-medium ">
                       Profile Photo

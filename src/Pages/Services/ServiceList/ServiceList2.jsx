@@ -59,7 +59,7 @@ const ServiceList2 = () => {
     return (
         <>
             <div className=" border p-4 ">
-                <DataTable className='' value={products} header={header} tableStyle={{ minWidth: '80rem' }}  >
+                <DataTable className='' value={products} header={header} tableStyle={{ minWidth: '70rem' }}  >
                     {/* image column */}
                     <Column header="Image" headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px ' }} className='border' body={imageBodyTemplate}></Column>
                     {/* category name column */}

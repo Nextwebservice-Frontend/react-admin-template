@@ -8,16 +8,18 @@
 }
 .close-button {
     background-color: transparent;
-    color: black;
+    color: gray;
     border: none;
     cursor: pointer;
     font-size: 20px;
     transition: color 0.3s ease;
+    font-weight: medium;
+
 }
 
 .close-button:hover {
-    color: red;
-    border: 1px solid gray;
-    padding: 2px 4px;
+    color: black;
+    
+    
     /* Change to whatever color you want on hover */
 }
