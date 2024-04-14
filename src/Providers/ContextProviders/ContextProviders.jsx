@@ -16,22 +16,33 @@ const ContextProviders = ({ children }) => {
     const [showProfiePopUp, setShowprofilePopUp] = useState(false);
     const [showSortcutPopUp, setshowSortcutPopUp] = useState(false);
     const [showNotificationPopUp, setshowNotificationPopUp] = useState(false);
+    const [showThemePopUp, setshowThemePopUp] = useState(false);
     // context data
     const sharedData = {
+        //open sideber in tab or mobile
         setShow,
         show,
+        //show and hide text in large device
         setShowText,
         showText,
+        // open sideber accordion menu
         setOpenAccordion,
         openAccordion,
+        //open profile popup in navber
         showProfiePopUp,
         setShowprofilePopUp,
+        //open Sortcut popup in navber
         showSortcutPopUp,
         setshowSortcutPopUp,
-        mouseEnterInSIderber, 
+        //mouse enter in sideber
+        mouseEnterInSIderber,
         setmouseEnterInSIderber,
-        showNotificationPopUp, 
-        setshowNotificationPopUp
+        //open notification popup in navber
+        showNotificationPopUp,
+        setshowNotificationPopUp,
+        //open theme popup in navber
+        showThemePopUp,
+        setshowThemePopUp
     }
     return (
         <ContextData.Provider value={sharedData}>

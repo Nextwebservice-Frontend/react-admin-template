@@ -8,6 +8,8 @@ import { ContextData } from "../../../Providers/ContextProviders/ContextProvider
 import { BiCustomize } from "react-icons/bi";
 import NotificationPopUp from "./Notification_pop_up/NotificationPopUp";
 import { HiOutlineSun } from "react-icons/hi";
+import ThemePopUp from "./Theme_pop_up/ThemePopUp";
+import { IoLanguageOutline } from "react-icons/io5";
 const Navbar = () => {
   // states
   const {
@@ -18,7 +20,9 @@ const Navbar = () => {
     showSortcutPopUp,
     setshowSortcutPopUp,
     showNotificationPopUp,
-    setshowNotificationPopUp
+    setshowNotificationPopUp,
+    showThemePopUp,
+    setshowThemePopUp
   } = useContext(ContextData);
   return (
     <>
@@ -34,11 +38,23 @@ const Navbar = () => {
           <p className="text-2xl lg:block hidden">Dashboard</p>
         </div>
         <div className="flex justify-end items-center gap-4 z-40">
-          <HiOutlineSun  className="text-2xl text-gray-600 mt-1 cursor-pointer" />
+          <IoLanguageOutline  onClick={() => {
+            setShowprofilePopUp(false);
+            setshowNotificationPopUp(false)
+            setshowSortcutPopUp(false);
+            setshowThemePopUp(false)
+          }} className="text-2xl text-gray-600 mt-1 cursor-pointer" />
+          <HiOutlineSun onClick={() => {
+            setShowprofilePopUp(false);
+            setshowNotificationPopUp(false)
+            setshowSortcutPopUp(false);
+            setshowThemePopUp(!showThemePopUp)
+          }} className="text-2xl text-gray-600 mt-1 cursor-pointer" />
           <BiCustomize
             onClick={() => {
               setShowprofilePopUp(false);
               setshowNotificationPopUp(false)
+              setshowThemePopUp(false)
               setshowSortcutPopUp(!showSortcutPopUp);
             }}
             className="text-2xl text-gray-600 mt-1 cursor-pointer"
@@ -46,12 +62,14 @@ const Navbar = () => {
           <FaRegBell onClick={() => {
             setshowSortcutPopUp(false);
             setShowprofilePopUp(false);
+            setshowThemePopUp(false)
             setshowNotificationPopUp(!showNotificationPopUp)
           }} className="text-2xl text-gray-600 mt-1 cursor-pointer" />
           <img
             onClick={() => {
               setshowSortcutPopUp(false);
               setshowNotificationPopUp(false)
+              setshowThemePopUp(false)
               setShowprofilePopUp(!showProfiePopUp);
             }}
             className="md:w-8 md:h-8 h-7 w-7 rounded-full cursor-pointer"
@@ -64,6 +82,7 @@ const Navbar = () => {
         <ProfilePopUp showProfiePopUp={showProfiePopUp} setShowprofilePopUp={setShowprofilePopUp} />
         <ShortcutPopUp showSortcutPopUp={showSortcutPopUp} setshowSortcutPopUp={setshowSortcutPopUp} />
         <NotificationPopUp showNotificationPopUp={showNotificationPopUp} />
+        <ThemePopUp showThemePopUp={showThemePopUp} setshowThemePopUp={setshowThemePopUp}/>
       </div>
     </>
   );
