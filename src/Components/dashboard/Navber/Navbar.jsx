@@ -64,7 +64,7 @@ const Navbar = () => {
             className="text-3xl lg:hidden block text-gray-600 mt-1 cursor-pointer z-40"
           />
           <button onClick={() => setshowSearchOption(true)} className="text-2xl flex justify-start items-center gap-2">
-            <IoSearchOutline /> <span className="text-base font-semibold text-gray-500 opacity-70">search (ctrl + /)</span>
+            <IoSearchOutline /> <span className="text-base font-semibold md:block hidden text-gray-500 opacity-70">search (ctrl + /)</span>
           </button>
         </div>
         <div className="flex justify-end items-center gap-4 z-40">
