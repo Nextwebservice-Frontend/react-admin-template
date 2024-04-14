@@ -10,6 +10,7 @@ import NotificationPopUp from "./Notification_pop_up/NotificationPopUp";
 import { HiOutlineSun } from "react-icons/hi";
 import ThemePopUp from "./Theme_pop_up/ThemePopUp";
 import { IoLanguageOutline } from "react-icons/io5";
+import LanguagePopUp from "./Language_pop_up/LanguagePopUp";
 const Navbar = () => {
   // states
   const {
@@ -22,7 +23,9 @@ const Navbar = () => {
     showNotificationPopUp,
     setshowNotificationPopUp,
     showThemePopUp,
-    setshowThemePopUp
+    setshowThemePopUp,
+    showLanguagePopUp,
+    setshowLanguagePopUp
   } = useContext(ContextData);
   return (
     <>
@@ -38,16 +41,18 @@ const Navbar = () => {
           <p className="text-2xl lg:block hidden">Dashboard</p>
         </div>
         <div className="flex justify-end items-center gap-4 z-40">
-          <IoLanguageOutline  onClick={() => {
+          <IoLanguageOutline onClick={() => {
             setShowprofilePopUp(false);
             setshowNotificationPopUp(false)
             setshowSortcutPopUp(false);
             setshowThemePopUp(false)
+            setshowLanguagePopUp(!showLanguagePopUp)
           }} className="text-2xl text-gray-600 mt-1 cursor-pointer" />
           <HiOutlineSun onClick={() => {
             setShowprofilePopUp(false);
             setshowNotificationPopUp(false)
             setshowSortcutPopUp(false);
+            setshowLanguagePopUp(false)
             setshowThemePopUp(!showThemePopUp)
           }} className="text-2xl text-gray-600 mt-1 cursor-pointer" />
           <BiCustomize
@@ -55,6 +60,7 @@ const Navbar = () => {
               setShowprofilePopUp(false);
               setshowNotificationPopUp(false)
               setshowThemePopUp(false)
+              setshowLanguagePopUp(false)
               setshowSortcutPopUp(!showSortcutPopUp);
             }}
             className="text-2xl text-gray-600 mt-1 cursor-pointer"
@@ -63,6 +69,7 @@ const Navbar = () => {
             setshowSortcutPopUp(false);
             setShowprofilePopUp(false);
             setshowThemePopUp(false)
+            setshowLanguagePopUp(false)
             setshowNotificationPopUp(!showNotificationPopUp)
           }} className="text-2xl text-gray-600 mt-1 cursor-pointer" />
           <img
@@ -70,6 +77,7 @@ const Navbar = () => {
               setshowSortcutPopUp(false);
               setshowNotificationPopUp(false)
               setshowThemePopUp(false)
+              setshowLanguagePopUp(false)
               setShowprofilePopUp(!showProfiePopUp);
             }}
             className="md:w-8 md:h-8 h-7 w-7 rounded-full cursor-pointer"
@@ -82,7 +90,8 @@ const Navbar = () => {
         <ProfilePopUp showProfiePopUp={showProfiePopUp} setShowprofilePopUp={setShowprofilePopUp} />
         <ShortcutPopUp showSortcutPopUp={showSortcutPopUp} setshowSortcutPopUp={setshowSortcutPopUp} />
         <NotificationPopUp showNotificationPopUp={showNotificationPopUp} />
-        <ThemePopUp showThemePopUp={showThemePopUp} setshowThemePopUp={setshowThemePopUp}/>
+        <ThemePopUp showThemePopUp={showThemePopUp} setshowThemePopUp={setshowThemePopUp} />
+        <LanguagePopUp showLanguagePopUp={showLanguagePopUp} setshowLanguagePopUp={setshowLanguagePopUp} />
       </div>
     </>
   );

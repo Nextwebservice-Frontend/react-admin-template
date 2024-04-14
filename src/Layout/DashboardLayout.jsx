@@ -21,7 +21,9 @@ const DashboardLayout = () => {
     setshowNotificationPopUp,
     showNotificationPopUp,
     showThemePopUp,
-    setshowThemePopUp
+    setshowThemePopUp,
+    showLanguagePopUp,
+    setshowLanguagePopUp
   } = useContext(ContextData);
 
   const handelcloseModals = () => {
@@ -30,6 +32,7 @@ const DashboardLayout = () => {
     setshowSortcutPopUp(false)
     setshowNotificationPopUp(false)
     setshowThemePopUp(false)
+    setshowLanguagePopUp(false)
     if (!showText && openAccordion.show) {
       setOpenAccordion({
         show: false,
@@ -72,7 +75,7 @@ const DashboardLayout = () => {
       </div>
       <div style={{ transition: "1s" }} className={`w-full ${showText ? '' : 'lg:ml-16'} lg:px-3 xl:px-6  px-auto box-border relative`}>
         {
-          ((!showText && openAccordion.show) || showSortcutPopUp || showProfiePopUp || show || showNotificationPopUp || showThemePopUp) && <div onClick={handelcloseModals} className={`showText openAccordion.show show bg-black min-w-full h-screen absolute left-0 top-0 z-10 bg-opacity-[0]`}>
+          ((!showText && openAccordion.show) || showSortcutPopUp || showProfiePopUp || show || showNotificationPopUp || showThemePopUp || showLanguagePopUp) && <div onClick={handelcloseModals} className={`showText openAccordion.show show bg-black min-w-full h-screen absolute left-0 top-0 z-10 bg-opacity-[0]`}>
           </div>
         }
 

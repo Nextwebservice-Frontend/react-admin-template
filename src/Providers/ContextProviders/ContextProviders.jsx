@@ -17,6 +17,7 @@ const ContextProviders = ({ children }) => {
     const [showSortcutPopUp, setshowSortcutPopUp] = useState(false);
     const [showNotificationPopUp, setshowNotificationPopUp] = useState(false);
     const [showThemePopUp, setshowThemePopUp] = useState(false);
+    const [showLanguagePopUp, setshowLanguagePopUp] = useState(false);
     // context data
     const sharedData = {
         //open sideber in tab or mobile
@@ -42,7 +43,10 @@ const ContextProviders = ({ children }) => {
         setshowNotificationPopUp,
         //open theme popup in navber
         showThemePopUp,
-        setshowThemePopUp
+        setshowThemePopUp,
+        //open language changer popup
+        showLanguagePopUp, 
+        setshowLanguagePopUp
     }
     return (
         <ContextData.Provider value={sharedData}>
