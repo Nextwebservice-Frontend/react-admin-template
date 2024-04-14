@@ -52,15 +52,15 @@ const Dashboard = () => {
     <div id="dBoardSideber" className="w-full mx-auto ">
       <Logo show={show} setShow={setShow} />
       <div className="box-border pt-3 pl-2 h-[90vh] pr-2 overflow-y-scroll">
-        {SIderberNavLinks.map(item =>
-          <div>
+        {SIderberNavLinks.map((item,index) =>
+          <div key={index}>
             {/* map over all the menu group  */}
             {item?.title  && <p className="font-medium uppercase opacity-85 text-sm text-gray-500">
             {showText ? item?.title : `${mouseEnterInSIderber ? item?.title : ''}`}
               </p>}
             {/* map over all the links  */}
-            {Array.isArray(item?.NavItems) && item?.NavItems.map(item => (item?.link) ? // checking link // if false this item has dropdown menu
-              <NavLink key={item?.link}
+            {Array.isArray(item?.NavItems) && item?.NavItems.map((item,index) => (item?.link) ? // checking link // if false this item has dropdown menu
+              <NavLink key={index}
                 // onClick={handelCloseAccordion}
                 to={item.link}
                 className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80  flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
@@ -68,7 +68,7 @@ const Dashboard = () => {
                 <item.icon /> {showText ? item?.menu : `${mouseEnterInSIderber ? item?.menu : ''}`}
               </NavLink>
               : // dropdown menus
-              <div key={item?.link}
+              <div key={index}
                 className={`hover:text-gray-600 hover:no-underline cursor-pointer`}>
                 <span
                   onClick={() => HandelAccorDionOpen(item?.menu)}
@@ -90,8 +90,8 @@ const Dashboard = () => {
                     } overflow-hidden z-50 ${((openAccordion.prev === item?.menu && openAccordion.prevOpen) || (!openAccordion.show && openAccordion.name === item?.menu)) ? 'accordionClose' : ''}`}
                 >
                   {Array.isArray(item.dropDown) ? // checking is dropdown menus is an array 
-                    <> {item.dropDown.map(dropDownItems => //map dropdown items
-                      <li className={`${showText ? '' : `${mouseEnterInSIderber ? '' : 'hidden'}`}`} key={dropDownItems?.link}>
+                    <> {item.dropDown.map((dropDownItems,index) => //map dropdown items
+                      <li className={`${showText ? '' : `${mouseEnterInSIderber ? '' : 'hidden'}`}`} key={index}>
                         <NavLink onClick={handelCloseAccordion}
                           to={dropDownItems.link}
                           className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"

@@ -13,8 +13,8 @@ const ShortcutPopUp = ({ showSortcutPopUp,setshowSortcutPopUp }) => {
             </span>
             <div className='grid grid-cols-2 gap-0 justify-center items-center text-gray-500 mt-2 '>
                 {
-                    ShortcutPopUpMenu.map(item =>
-                        <button onClick={()=>setshowSortcutPopUp(false)} key={item?.title} className='flex justify-center items-center font-semibold flex-col border py-4 gap-2 tracking-[.8px] hover:bg-slate-100 transition-all'>
+                    ShortcutPopUpMenu.map((item ,index)=>
+                        <button onClick={()=>setshowSortcutPopUp(false)} key={index} className='flex justify-center items-center font-semibold flex-col border py-4 gap-2 tracking-[.8px] hover:bg-slate-100 transition-all'>
                             <item.icon className='text-xl' />
                             {item.title}
                             <span className="-mt-[6px] font-normal block opacity-70">{item?.subTitle}</span>

@@ -42,8 +42,8 @@ const NotificationPopUp = ({ showNotificationPopUp }) => {
                 </button>
             </span>
             <div id='NotificationPopUp' className=' text-gray-500 flex justify-start min-w-80 max-w-80 sm:max-w-96 sm:min-w-96 items-start  flex-col  border-t max-h-[50vh] overflow-y-auto'>
-                {NotificationData.map(item =>
-                    <div key={item.title} className='border-b w-full py-3 cursor-pointer notification relative hover:bg-slate-100'>
+                {NotificationData.map((item, index) =>
+                    <div key={index} className='border-b w-full py-3 cursor-pointer notification relative hover:bg-slate-100'>
                         <div className='flex justify-start items-start gap-2 box-border px-2 w-full'>
                             <img className='w-10 h-10 rounded-full' src={item?.avater} alt="" />
                             <div>
