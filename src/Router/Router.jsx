@@ -2,8 +2,13 @@ import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Notice from "../Pages/Notice/Notice";
 import Profile from "../Pages/Profile/Profile";
-import ExpanseReceipt from "../Pages/ExpanseReceipt/ExpanseReceipt";
-import MonthlyInvoice from "../Pages/MonthlyInvoice/MonthlyInvoice";
+import ExpenseReceipt from "../Pages/ExpenseReceipt/ExpenseReceipt";
+import NewExpenseReceipt from "../Pages/ExpenseReceipt/NewExpenseReceipt/NewExpenseReceipt";
+import ServiceList from "../Pages/Services/ServiceList/ServiceList";
+import YearlyInvoice from "../Pages/Reports/YearlyInvoice/YearlyInvoice";
+
+
+
 
 
 const Router = createBrowserRouter([
@@ -16,18 +21,28 @@ const Router = createBrowserRouter([
                 element: <Notice />
             }
             ,
-           {
+            {
                 path: '/expenseReceipt',
-                element: <ExpanseReceipt />
+                element: <ExpenseReceipt />
+            }
+            ,
+            {
+                path: '/newExpenseReceipt',
+                element: <NewExpenseReceipt />
             },
             {
                 path: '/profile',
                 element: <Profile />
             },
             {
-                path: '/monthly-report-list',
-                element: <MonthlyInvoice />
+                path: '/serviceList',
+                element: <ServiceList />
             },
+            {
+                path: '/yearlyInvoiceList',
+                element: <YearlyInvoice />
+            }
+
         ]
     }
 ])
