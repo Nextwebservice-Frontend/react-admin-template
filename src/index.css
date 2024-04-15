@@ -16,7 +16,7 @@
 }
 
 .accordionClose {
-  animation: accordionclose .5s;
+  animation: accordionclose .2s;
 }
 
 #dBoardSideber .active {
