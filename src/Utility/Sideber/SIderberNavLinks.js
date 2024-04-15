@@ -246,12 +246,12 @@ export const SIderberNavLinks = [
                         subMenu: [
                             {
                                 link: '/Order-List',
-                                menu: 'Category List',
+                                menu: 'Order List',
                                 icon: FaRegCircle,
                                 subMenu2: false
                             },
                             {
-                                link: '/Order-Details',
+                                link: '/Order-List',
                                 menu: 'Order Details',
                                 icon: FaRegCircle,
                                 subMenu2: false
