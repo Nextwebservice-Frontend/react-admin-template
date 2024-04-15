@@ -25,14 +25,14 @@ const Dashboard = () => {
       setShowText(true);
     });
   }, []);
-  const handelCloseAccordion = () => {
-    if (!showText && openAccordion.show) {
-      setOpenAccordion({
-        show: false,
-        name: openAccordion.name,
-      });
-    }
-  };
+  // const handelCloseAccordion = () => {
+  //   if (!showText && openAccordion.show) {
+  //     setOpenAccordion({
+  //       show: false,
+  //       name: openAccordion.name,
+  //     });
+  //   }
+  // };
   //accordian open function
   const HandelAccorDionOpen = (name) => {
     if (openAccordion.name !== name) {
@@ -95,14 +95,14 @@ const Dashboard = () => {
       {/* logo  */}
       <Logo show={show} setShow={setShow} />
       <div 
-      className="box-border pt-3 pl-2 h-[90vh] pr-2 overflow-y-scroll">
+      className={`box-border pt-3 pl-2 h-[90vh] pr-2  ${mouseEnterInSIderber?'overflow-y-scroll':'overflow-y-scroll lg:overflow-hidden'}`}>
         {/* map over all the menu group  */}
         {SIderberNavLinks.map((item, index) => (
           <div key={index}>
             {/* check is there any title for this menu group or not  */}
             {item?.title && (
               <p 
-              className="font-medium uppercase opacity-85 text-sm text-gray-500">
+              className="font-medium uppercase opacity-85 text-xs pt-3 pb-1 text-gray-500">
                 {/* check show menu text or not // if true then mouse entered or not  */}
                 {showText
                   ? item?.title

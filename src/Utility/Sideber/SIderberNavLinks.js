@@ -51,6 +51,32 @@ export const SIderberNavLinks = [
             },
             {
                 link: false,
+                menu: 'service',
+                icon: RiHomeSmile2Line,
+                dropDown: [
+                    {
+                        link: '/serviceList',
+                        menu: 'service',
+                        icon: FaRegCircle,
+                        subMenu: false
+                    },
+                ]
+            },
+            {
+                link: false,
+                menu: 'Expance',
+                icon: RiHomeSmile2Line,
+                dropDown: [
+                    {
+                        link: '/yearlyInvoiceList',
+                        menu: 'yearly Invoice List',
+                        icon: FaRegCircle,
+                        subMenu: false
+                    },
+                ]
+            },
+            {
+                link: false,
                 menu: 'Layouts',
                 icon: RiHomeSmile2Line,
                 dropDown: [
@@ -219,13 +245,13 @@ export const SIderberNavLinks = [
                         icon: FaRegCircle,
                         subMenu: [
                             {
-                                link:'/Order-List',
+                                link: '/Order-List',
                                 menu: 'Category List',
                                 icon: FaRegCircle,
                                 subMenu2: false
                             },
                             {
-                                link:'/Order-Details',
+                                link: '/Order-Details',
                                 menu: 'Order Details',
                                 icon: FaRegCircle,
                                 subMenu2: false
@@ -238,52 +264,52 @@ export const SIderberNavLinks = [
                         icon: FaRegCircle,
                         subMenu: [
                             {
-                                link:'/All-Customers',
+                                link: '/All-Customers',
                                 menu: 'All Customers',
                                 icon: FaRegCircle,
                                 subMenu2: false
                             },
                             {
-                                link:false,
+                                link: false,
                                 menu: 'Customer-Details',
                                 icon: FaRegCircle,
                                 subMenu2: [
                                     {
-                                        link:'/Overview',
+                                        link: '/Overview',
                                         menu: 'Overview',
                                         icon: FaRegCircle,
                                     },
                                     {
-                                        link:'/Security-Customers',
+                                        link: '/Security-Customers',
                                         menu: 'Security',
                                         icon: FaRegCircle,
                                     },
                                     {
-                                        link:'/Address-&-Billing',
+                                        link: '/Address-&-Billing',
                                         menu: 'Address & Billing',
                                         icon: FaRegCircle,
                                     },
                                     {
-                                        link:'/Notifications',
+                                        link: '/Notifications',
                                         menu: 'Notifications',
                                         icon: FaRegCircle,
                                     },
                                 ]
                             },
                             {
-                                link:'/Manage-Reviews',
+                                link: '/Manage-Reviews',
                                 menu: 'Manage Reviews',
                                 icon: FaRegCircle,
                                 subMenu2: false
                             },
                             {
-                                link:'/Referrals',
+                                link: '/Referrals',
                                 menu: 'Referrals',
                                 icon: FaRegCircle,
                                 subMenu2: false
                             },
                             {
-                                link:'/Settings',
+                                link: '/Settings',
                                 menu: 'Settings',
                                 icon: FaRegCircle,
                                 subMenu2: false
@@ -295,75 +321,75 @@ export const SIderberNavLinks = [
             {
                 link: false,
                 menu: 'Academy',
-                icon: IoBookOutline ,
+                icon: IoBookOutline,
                 dropDown: [
                     {
                         link: '/Dashboard',
                         menu: 'Dashboard',
                         icon: FaRegCircle,
-                        subMenu:false
+                        subMenu: false
                     },
                     {
                         link: '/My-Course',
                         menu: 'My Course',
                         icon: FaRegCircle,
-                        subMenu:false
+                        subMenu: false
                     },
                     {
                         link: '/Course-Details',
                         menu: 'Course Details',
                         icon: FaRegCircle,
-                        subMenu:false
+                        subMenu: false
                     },
                 ]
             },
             {
                 link: false,
                 menu: 'Logistics',
-                icon: HiOutlineTruck  ,
+                icon: HiOutlineTruck,
                 dropDown: [
                     {
                         link: '/Dashboard',
                         menu: 'Dashboard',
                         icon: FaRegCircle,
-                        subMenu:false
+                        subMenu: false
                     },
                     {
                         link: '/Fleet',
                         menu: 'Fleet',
                         icon: FaRegCircle,
-                        subMenu:false
+                        subMenu: false
                     },
                 ]
             },
             {
                 link: false,
                 menu: 'Invoice',
-                icon: TbFileDollar  ,
+                icon: TbFileDollar,
                 dropDown: [
                     {
                         link: '/List',
                         menu: 'List',
                         icon: FaRegCircle,
-                        subMenu:false
+                        subMenu: false
                     },
                     {
                         link: '/Preview',
                         menu: 'Preview',
                         icon: FaRegCircle,
-                        subMenu:false
+                        subMenu: false
                     },
                     {
                         link: '/Edit',
                         menu: 'Edit',
                         icon: FaRegCircle,
-                        subMenu:false
+                        subMenu: false
                     },
                     {
                         link: '/Add',
                         menu: 'Add',
                         icon: FaRegCircle,
-                        subMenu:false
+                        subMenu: false
                     },
                 ]
             },
