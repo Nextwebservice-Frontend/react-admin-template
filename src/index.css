@@ -2,21 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.popup {
-  animation: popUp .4s
+.HideTextAnimation {
+  animation: HideTextAnimation 1s;
 }
 
-@keyframes popUp {
-  from {
-    opacity: 0;
-    top: 70px;
-  }
-
-  to {
-    opacity: 1;
-    top: -48px;
-  }
+.NavberwidhtAnimationOpen {
+  animation: NavberwidhtAnimationOpen 1s;
 }
+
 
 .accordionOpen {
   animation: accordionopen 2s;
@@ -59,7 +52,7 @@
   }
 }
 
-
+/* animations  */
 /* accordionClose animations */
 @keyframes accordionclose {
   from {
@@ -71,6 +64,7 @@
   }
 }
 
+/* sidebre animations  */
 @keyframes SideberOpen {
   from {
     left: -600px;
@@ -93,6 +87,42 @@
   }
 }
 
+/* navber animation  */
+@keyframes NavberwidhtAnimationOpen {
+  from {
+    margin-left: 22%;
+  }
+
+  to {
+    margin-left: 60px;
+  }
+}
+
+@keyframes NavberwidhtAnimationClose {
+  from {
+    margin-left: -22%;
+  }
+
+  to {
+    margin-left: 1px;
+  }
+}
+
+@keyframes HideTextAnimation {
+  from {
+    width: 22%;
+  }
+
+  to {
+    width: 60px;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .NavberwidhtAnimationClose {
+    animation: NavberwidhtAnimationClose .5s;
+  }
+}
 @media screen and (max-width: 1024px) {
   .SideberOpen {
     animation: SideberOpen .5s;

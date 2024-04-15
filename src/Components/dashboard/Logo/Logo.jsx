@@ -7,7 +7,7 @@ import logo from '../../../assets/logo.png'
 import Shortlogo from '../../../assets/Shortlogo.png'
 // eslint-disable-next-line react/prop-types
 const Logo = ({ show, setShow }) => {
-    const { showText, setShowText, mouseEnterInSIderber } = useContext(ContextData)
+    const { showText, setShowText, mouseEnterInSIderber,setmouseEnterInSIderber } = useContext(ContextData)
     return (
         <div className="flex justify-between items-center my-2 w-full pr-2">
             <div className="flex items-center gap-3 p-2 ">
@@ -15,7 +15,10 @@ const Logo = ({ show, setShow }) => {
                     showText ? <img src={logo} alt="" /> : mouseEnterInSIderber ? <img src={logo} alt="" /> : <img src={Shortlogo} alt="" />
                 }
             </div>
-            <button onClick={() => setShowText(!showText)} className={`text-xl  ${!mouseEnterInSIderber && !showText ? 'hidden' : 'lg:block hidden'} mt-2`}>
+            <button onClick={() => {
+                setShowText(!showText)
+                setmouseEnterInSIderber(false)
+                }} className={`text-xl  ${!mouseEnterInSIderber && !showText ? 'hidden' : 'lg:block hidden'} mt-2`}>
                 {
                     showText ? <FaRegCircle /> : <FaRegDotCircle />
                 }

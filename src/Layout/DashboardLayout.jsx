@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import Dashboard from "../Components/dashboard/Dashboard";
 import { ContextData } from "../Providers/ContextProviders/ContextProviders";
 import Navbar from "../Components/dashboard/Navber/Navbar";
@@ -11,7 +11,6 @@ const DashboardLayout = () => {
     setShow,
     show,
     showText,
-    setOpenAccordion,
     openAccordion,
     showProfiePopUp,
     setShowprofilePopUp,
@@ -63,16 +62,26 @@ const DashboardLayout = () => {
     };
   }, []);
 
+  // animation 
+  const [SideberOpenAnimation, setSideberOpenAnimation] = useState(true)
+  useEffect(() => {
+    if (showText === SideberOpenAnimation) {
+      return
+    } else {
+      setSideberOpenAnimation(showText)
+    }
+  }, [showText])
+
   return (
     <div className="lg:flex gap-[.3%] lg:px-0 px-3">
       {/* sideber  */}
       <div id="sideber" style={{ transition: ".5s" }}
-        className={`max-w-80 pl-2 z-50 border-r ${showText ? "xl:w-[22%] lg:w-[23%] sm:w-[33%] w-[75%]  lg:relative" : ` ${mouseEnterInSIderber ? 'xl:w-[19%] lg:w-[20%] sm:w-[33%] w-[75%]  box-border' : 'w-[60px]'} absolute  h-screen `} shadow-2xl min-h-screen absolute ${show ? 'left-0 top-0 SideberOpen' : 'hidden lg:block SideberClose'} bg-white z-50 `}
+        className={`max-w-80 pl-2 z-50 border-r ${showText ? ` xl:w-[22%] lg:w-[23%] sm:w-[33%] w-[75%]  lg:relative` : `HideTextAnimation ${mouseEnterInSIderber ? 'xl:w-[19%] lg:w-[20%] sm:w-[33%] w-[75%]  box-border' : 'w-[60px]'} absolute  h-screen `} shadow-2xl min-h-screen absolute ${show ? 'left-0 top-0 SideberOpen' : 'hidden lg:block SideberClose'} bg-white z-50 `}
       >
         <Dashboard />
       </div>
-      {/* popup & accordion close in click dive  */}
-      <div style={{ transition: "1s" }} className={`w-full ${showText ? '' : 'lg:ml-16'} lg:px-3 xl:px-6  px-auto box-border relative`}>
+      <div style={{ transition: "1s" }} className={`w-full ${showText ? `NavberwidhtAnimationClose` : 'lg:ml-16 NavberwidhtAnimationOpen '} lg:px-3 xl:px-6  px-auto box-border relative`}>
+        {/* popup & accordion close in click dive  */}
         {
           ((!showText && openAccordion.show) || showSortcutPopUp || showProfiePopUp || show || showNotificationPopUp || showThemePopUp || showLanguagePopUp || showSearchOption) && <div onClick={handelcloseModals} className={`showText openAccordion.show show bg-black min-w-full h-screen absolute left-0 top-0 z-10 bg-opacity-[0]`}>
           </div>
