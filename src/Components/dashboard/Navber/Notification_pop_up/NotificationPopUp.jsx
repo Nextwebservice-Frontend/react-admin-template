@@ -34,16 +34,16 @@ const NotificationPopUp = ({ showNotificationPopUp }) => {
         },
     ]
     return (//${showNotificationPopUp ? "popup" : "hidden"}
-        <div className={`absolute ${showNotificationPopUp ? "popup" : "hidden"} shadow-lg rounded-lg border lg:right-20 md:right-16 right-0 z-20 -top-12 mt-10 bg-white max-h-[90vh] overflow-y-auto`}>
-            <span className='flex justify-between items-center min-w-80 max-w-80 sm:max-w-96 sm:min-w-96 text-lg p-3 text-gray-600 font-semibold opacity-70'>
+        <div className={`absolute ${showNotificationPopUp ? "popup" : "hidden"} shadow-lg rounded-lg border lg:right-20 md:right-16 right-0 z-20 -top-12 mt-10 bg-white max-h-[93vh] overflow-y-auto min-w-full max-w-full sm:max-w-[350px] sm:min-w-[350px]`}>
+            <span className='flex justify-between items-center  text-lg p-3 text-gray-600 font-semibold opacity-70'>
                 Notification
                 <button>
                     <HiOutlineMailOpen className='text-2xl' />
                 </button>
             </span>
-            <div id='NotificationPopUp' className=' text-gray-500 flex justify-start min-w-80 max-w-80 sm:max-w-96 sm:min-w-96 items-start  flex-col  border-t max-h-[50vh] overflow-y-auto'>
+            <div id='NotificationPopUp' className=' text-gray-500 flex justify-start items-start flex-col  border-t max-h-[60vh] overflow-y-auto'>
                 {NotificationData.map((item, index) =>
-                    <div key={index} className='border-b w-full py-3 cursor-pointer notification relative hover:bg-slate-100'>
+                    <div key={index} className='border-b w-full py-3 px-2 cursor-pointer notification relative hover:bg-slate-100'>
                         <div className='flex justify-start items-start gap-2 box-border px-2 w-full'>
                             <img className='w-10 h-10 rounded-full' src={item?.avater} alt="" />
                             <div>
