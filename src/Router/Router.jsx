@@ -8,6 +8,7 @@ import ServiceList from "../Pages/Services/ServiceList/ServiceList";
 import YearlyInvoice from "../Pages/Reports/YearlyInvoice/YearlyInvoice";
 import Role from "../Pages/Role/Role";
 import Login from "../Pages/Login/Login";
+import NewRole from "../Pages/Role/NewRole";
 
 
 
@@ -47,6 +48,10 @@ const Router = createBrowserRouter([
             {
                 path: '/role',
                 element: <Role />
+            },
+            {
+                path: '/newRole',
+                element: <NewRole />
             },
         ]
     },

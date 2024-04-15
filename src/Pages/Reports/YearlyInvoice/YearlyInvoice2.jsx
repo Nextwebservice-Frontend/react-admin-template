@@ -125,19 +125,19 @@ const YearlyInvoice2 = () => {
         <>
             <div className="card px-5  py-5 ">
                 <DataTable className='' value={customers} paginator rows={5} dataKey="id" filters={filters} filterDisplay="row" loading={loading}
-                    globalFilterFields={['name', 'country.name', 'representative.name', 'status']} header={header} emptyMessage="No customers found." tableStyle={{ minWidth: '80rem' }}  >
+                    globalFilterFields={['name', 'country.name', 'representative.name', 'status']} header={header} emptyMessage="No customers found." tableStyle={{ minWidth: '80vw' }}  >
                     {/* Invoice Id col */}
-                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px ' }} className='border text-center' field="name" header="Invoice ID" style={{ minWidth: '6rem' }} />
+                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px ' }} className='border text-center' field="name" header="Invoice ID" style={{ minWidth: '10%' }} />
                     {/* CLIENT (2nd col )*/}
-                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2' }} className='border text-center' header="CLIENT" filterField="country.name" style={{ minWidth: '6rem' }} body={countryBodyTemplate} />
+                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2' }} className='border text-center' header="CLIENT" filterField="country.name" style={{ minWidth: '5%' }} body={countryBodyTemplate} />
                     {/* QTY 3rd col */}
-                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2' }} className='border text-center' header="QTY" style={{ minWidth: '6rem' }} />
+                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2' }} className='border text-center' header="QTY" style={{ minWidth: '10%' }} />
                     {/*NET amount 4th col */}
-                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2' }} className='border text-center ' field="status" header="NET amount" style={{ minWidth: '6rem' }} />
+                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2' }} className='border text-center ' field="status" header="NET amount" style={{ minWidth: '25%' }} />
                     {/*paid amount (5) col */}
-                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2' }} className='border text-center ' field="status" header="Paid amount" style={{ minWidth: '6rem' }} />
+                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2' }} className='border text-center ' field="status" header="Paid amount" style={{ minWidth: '25%' }} />
                     {/*Due amount (6) col */}
-                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2' }} className='border text-center ' field="status" header="Due amount" style={{ minWidth: '6rem' }} />
+                    <Column headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2' }} className='border text-center ' field="status" header="Due amount" style={{ minWidth: '25%' }} />
                     {/*Change amount (7) col */}
                     
                 </DataTable>

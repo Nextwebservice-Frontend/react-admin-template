@@ -1,22 +1,6 @@
-import { useEffect, useState } from "react";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import RoleTable from "./RoleTable";
 
-
 const Role = () => {
-    const axiosSecure = useAxiosSecure();
-    const [role, setRole] = useState(null);
-
-    const faceData = async() => {
-        const res = await axiosSecure('/api/roles-create');
-        setRole(res.data)
-    }
-
-    useEffect(() => {
-        faceData()
-    }, [])
-
-    
     return (
         <div>
         <div className="flex flex-wrap align-items-center justify-content-between gap-2 my-5">

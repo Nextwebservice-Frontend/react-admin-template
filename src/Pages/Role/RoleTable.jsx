@@ -1,80 +1,87 @@
-
-import { useState, useEffect } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-// import { Rating } from 'primereact/rating';
-import { Tag } from 'primereact/tag';
-import { ProductService } from '../Services/ServiceList/ProductService';
-import '../Services/ServiceList/Css/ServiceListCss.css'
-import HoverButton from '../Services/ServiceList/Button/HoverButton';
-import RoleModal from './RoleModal';
+import { Link } from "react-router-dom";
+import useRoleAccessApi from "../../API/useRoleAccessApi";
 
 const RoleTable = () => {
-    const [products, setProducts] = useState([]);
+  const [roleAccess] = useRoleAccessApi();
+  return (
+    <>
+      <div className=" border p-4 ">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 md:border mb-4 w-full">
+          <div className="flex border md:border-none w-full">
+            <button className="btn rounded-none border-none text-white bg-green-500">
+              ALL
+            </button>
+            <button className="btn rounded-none border-none text-blue-600 bg-[#f7f7f7]">
+              Active
+            </button>
+            <button className="btn rounded-none border-none text-blue-600 bg-[#f7f7f7]">
+              Inactive
+            </button>
+            <button className="w-[100%] bg-[#f7f7f7]"></button>
+          </div>
+          <Link to='/newRole' className="btn rounded-none bg-green-500 text-white hover:bg-green-600">
+            New Role
+          </Link>
+        </div>
 
-    useEffect(() => {
-        ProductService.getProductsMini().then((data) => setProducts(data));
-    }, []);
-
-    const formatCurrency = (value) => {
-        return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-    };
-    const imageBodyTemplate = (product) => {
-        return <img src={`https://primefaces.org/cdn/primereact/images/product/${product.image}`} alt={product.image} className="w-[70px] h-[50px] my-4 mx-auto shadow-2 border-round " />;
-    };
-    const priceBodyTemplate = (product) => {
-        return formatCurrency(product.price);
-    };
-    // const ratingBodyTemplate = (product) => {
-    //     return <Rating value={product.rating} readOnly cancel={false} />;
-    // };
-    const statusBodyTemplate = (product) => {
-        return <Tag value={product.inventoryStatus} className='text-white bg-green-600 px-2 rounded-md' severity={getSeverity(product)}></Tag>;
-    };
-    const getSeverity = (product) => {
-        switch (product.inventoryStatus) {
-            case 'Active':
-                return 'success';
-
-            case 'Inactive':
-                return 'warning';
-
-            default:
-                return null;
-        }
-    };
-    const header = (
-        <>
-            <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 md:border mb-4 w-full'>
-                <div className='flex border md:border-none w-full'>
-                    <button className='btn rounded-none border-none text-white bg-green-500'>ALL</button>
-                    <button className='btn rounded-none border-none text-blue-600 bg-[#f7f7f7]'>Active</button>
-                    <button className='btn rounded-none border-none text-blue-600 bg-[#f7f7f7]'>Inactive</button>
-                    <button className='w-[100%]  bg-[#f7f7f7]'></button>
-                </div>
-                <RoleModal />
-            </div>
-        </>
-    );
-
-    return (
-        <>
-            <div className=" border p-4 ">
-                <DataTable className='' value={products} header={header} tableStyle={{ minWidth: '70rem' }}  >
-                    {/* image column */}
-                    <Column header="Image" headerStyle={{ border: '1px solid #e5e7eb', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px ' }} className='border' body={imageBodyTemplate}></Column>
-                    {/* category name column */}
-                    <Column field="category" className='border text-center' headerStyle={{ border: '1px solid #e5e7eb', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px ' }} header="Category Name" body={HoverButton} ></Column>
-                    {/* service name column */}
-                    <Column field="price" className='border  text-center' header="Service Name" headerStyle={{ border: '1px solid #e5e7eb', textTransform: 'uppercase', textAlign: 'center', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px' }} body={priceBodyTemplate}></Column>
-                    {/*service price column */}
-                    <Column field="price" className='border text-center' header="Service Price" headerStyle={{ border: '1px solid #e5e7eb', textTransform: 'uppercase', textAlign: 'center', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px' }} body={priceBodyTemplate}></Column>
-                    {/* Status column */}
-                    <Column header="Status" headerStyle={{ border: '1px solid #e5e7eb', textTransform: 'uppercase', textAlign: 'right', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px' }} className='border text-center' body={statusBodyTemplate}></Column>
-                </DataTable>
-            </div>
-        </>
-    );
+        <div className="relative overflow-x-auto shadow-md rounded-sm">
+          <table className="w-full text-sm text-left rtl:text-right text-gray-500">
+            <thead className="text-xs text-black uppercase bg-gray-200">
+              <tr>
+                <th
+                  scope="col"
+                  className="px-6 py-3 border-r border-r-white w-2/12"
+                >
+                  Name
+                </th>
+                <th
+                  scope="col"
+                  className="px-6 py-3 border-r border-r-white w-1/12"
+                >
+                  Gurd
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Permission
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-white border-b text-black hover:bg-gray-50">
+                <th className="px-6 py-6 font-medium whitespace-nowrap border-r border-r-gray-300">
+                  Admin
+                </th>
+                <td className="px-6 py-4 border-r border-r-gray-300">Web</td>
+                <td className="px-6 py-4 border-r border-r-gray-300 flex flex-wrap gap-1">
+                  {roleAccess?.map((item, idx) => (
+                    <span
+                      key={idx}
+                      className="bg-yellow-600 text-white rounded-sm text-xs p-1"
+                    >
+                      {item.name}
+                    </span>
+                  ))}
+                </td>
+              </tr>
+              <tr className="bg-white border-b text-black hover:bg-gray-50">
+                <th
+                  className={`px-6 py-6 font-medium whitespace-nowrap border-r border-r-gray-300 relative group`}
+                >
+                  Admin
+                  <div className="absolute opacity-0 group-hover:opacity-100">
+                    <button className="text-md font-bold text-yellow-600">
+                      Edit
+                    </button>
+                  </div>
+                </th>
+                <td className="px-6 py-4 border-r border-r-gray-300">Web</td>
+                <td className="px-6 py-4 border-r border-r-gray-300 flex flex-wrap gap-1"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default RoleTable;
