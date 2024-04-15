@@ -10,7 +10,7 @@ import { IoIosArrowForward } from "react-icons/io";
 const Dashboard = () => {
   const permission = JSON.parse(localStorage.getItem('access'))
   const haveAccess = permission.map(item => `/${item.name}`)
-  console.log(haveAccess);
+ 
 
   const {
     setShow,
