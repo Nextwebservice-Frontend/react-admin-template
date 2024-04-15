@@ -18,13 +18,13 @@ export const SIderberNavLinks = [
                 icon: RiHomeSmile2Line,
                 dropDown: [//accordion child
                     {
-                        link: '/Analytice',
+                        link: '/analytice',
                         menu: 'Analytice',
                         icon: FaRegCircle,
                         subMenu: false
                     },
                     {
-                        link: '/CRM',
+                        link: '/crm',
                         menu: 'CRM',
                         icon: FaRegCircle,
                         subMenu: false
@@ -42,7 +42,7 @@ export const SIderberNavLinks = [
                         subMenu: false
                     },
                     {
-                        link: '/Academy',
+                        link: '/academy',
                         menu: 'Academy',
                         icon: FaRegCircle,
                         subMenu: false
@@ -64,7 +64,7 @@ export const SIderberNavLinks = [
             },
             {
                 link: false,
-                menu: 'Expance',
+                menu: 'Expanse',
                 icon: RiHomeSmile2Line,
                 dropDown: [
                     {
@@ -81,55 +81,55 @@ export const SIderberNavLinks = [
                 icon: RiHomeSmile2Line,
                 dropDown: [
                     {
-                        link: '/Collapsed-menu',
+                        link: '/collapsed-menu',
                         menu: 'Collapsed menu',
                         icon: FaRegCircle,
                         subMenu: false
                     },
                     {
-                        link: '/Content-Navbar',
+                        link: '/content-Navbar',
                         menu: 'Content Navbar',
                         icon: FaRegCircle,
                         subMenu: false
                     },
                     {
-                        link: '/Content-Nav-Sidever',
+                        link: '/content-Nav-Sidever',
                         menu: 'Content Nav + Sidever',
                         icon: FaRegCircle,
                         subMenu: false
                     },
                     {
-                        link: '/Horizontal',
+                        link: '/corizontal',
                         menu: 'Horizontal',
                         icon: FaRegCircle,
                         subMenu: false
                     },
                     {
-                        link: '/Without-menu',
+                        link: '/without-menu',
                         menu: 'Without menu',
                         icon: FaRegCircle,
                         subMenu: false
                     },
                     {
-                        link: '/Without-navbar',
+                        link: '/without-navbar',
                         menu: 'Without navbar',
                         icon: FaRegCircle,
                         subMenu: false
                     },
                     {
-                        link: '/Fluid',
+                        link: '/fluid',
                         menu: 'Fluid',
                         icon: FaRegCircle,
                         subMenu: false
                     },
                     {
-                        link: '/Container',
+                        link: '/container',
                         menu: 'Container',
                         icon: FaRegCircle,
                         subMenu: false
                     },
                     {
-                        link: '/Blank',
+                        link: '/blank',
                         menu: 'Blank',
                         icon: FaRegCircle,
                         subMenu: false
@@ -143,31 +143,31 @@ export const SIderberNavLinks = [
                 icon: VscFiles,
                 dropDown: [
                     {
-                        link: '/Landing',
+                        link: '/landing',
                         menu: 'Landing',
                         icon: FaRegCircle,
                         subMenu: false
                     },
                     {
-                        link: '/Pricing',
+                        link: '/pricing',
                         menu: 'Pricing',
                         icon: FaRegCircle,
                         subMenu: false
                     },
                     {
-                        link: '/Payment',
+                        link: '/payment',
                         menu: 'Payment',
                         icon: FaRegCircle,
                         subMenu: false
                     },
                     {
-                        link: '/Checkout',
+                        link: '/checkout',
                         menu: 'Checkout',
                         icon: FaRegCircle,
                         subMenu: false
                     },
                     {
-                        link: '/Help-Center',
+                        link: '/help-Center',
                         menu: 'Help Center',
                         icon: FaRegCircle,
                         subMenu: false
@@ -180,25 +180,25 @@ export const SIderberNavLinks = [
         title: 'apps & pages',
         NavItems: [
             {
-                link: '/Email',
+                link: '/email',
                 menu: 'Email',
                 icon: MdOutlineMail,
                 dropDown: false
             },
             {
-                link: '/Chat',
+                link: '/chat',
                 menu: 'Chat',
                 icon: GrChatOption,
                 dropDown: false
             },
             {
-                link: '/Calendar',
+                link: '/calendar',
                 menu: 'Calendar',
                 icon: CiCalendarDate,
                 dropDown: false
             },
             {
-                link: '/Kanban',
+                link: '/kanban',
                 menu: 'Kanban',
                 icon: TbLayoutKanban,
                 dropDown: false
@@ -210,7 +210,7 @@ export const SIderberNavLinks = [
                 dropDown: [
                     {
                         link: '/',
-                        menu: 'Dashboard',
+                        menu: 'dashboard',
                         icon: FaRegCircle,
                         subMenu: false
                     },
@@ -220,19 +220,19 @@ export const SIderberNavLinks = [
                         icon: FaRegCircle,
                         subMenu: [
                             {
-                                link: '/Product-List',
+                                link: '/product-List',
                                 menu: 'Product List',
                                 icon: FaRegCircle,
                                 subMenu2: false
                             },
                             {
-                                link: '/Add-Product',
+                                link: '/add-Product',
                                 menu: 'Add Product',
                                 icon: FaRegCircle,
                                 subMenu2: false
                             },
                             {
-                                link: '/Category-List',
+                                link: '/category-List',
                                 menu: 'Category List',
                                 icon: FaRegCircle,
                                 subMenu2: false
@@ -245,13 +245,13 @@ export const SIderberNavLinks = [
                         icon: FaRegCircle,
                         subMenu: [
                             {
-                                link: '/Order-List',
+                                link: '/order-List',
                                 menu: 'Order List',
                                 icon: FaRegCircle,
                                 subMenu2: false
                             },
                             {
-                                link: '/Order-List',
+                                link: '/order-List',
                                 menu: 'Order Details',
                                 icon: FaRegCircle,
                                 subMenu2: false
@@ -260,11 +260,11 @@ export const SIderberNavLinks = [
                     },
                     {
                         link: false,
-                        menu: 'Customer',
+                        menu: 'customer',
                         icon: FaRegCircle,
                         subMenu: [
                             {
-                                link: '/All-Customers',
+                                link: '/all-Customers',
                                 menu: 'All Customers',
                                 icon: FaRegCircle,
                                 subMenu2: false
@@ -275,22 +275,22 @@ export const SIderberNavLinks = [
                                 icon: FaRegCircle,
                                 subMenu2: [
                                     {
-                                        link: '/Overview',
+                                        link: '/overview',
                                         menu: 'Overview',
                                         icon: FaRegCircle,
                                     },
                                     {
-                                        link: '/Security-Customers',
+                                        link: '/security-Customers',
                                         menu: 'Security',
                                         icon: FaRegCircle,
                                     },
                                     {
-                                        link: '/Address-&-Billing',
+                                        link: '/address-&-Billing',
                                         menu: 'Address & Billing',
                                         icon: FaRegCircle,
                                     },
                                     {
-                                        link: '/Notifications',
+                                        link: '/notifications',
                                         menu: 'Notifications',
                                         icon: FaRegCircle,
                                     },
@@ -303,13 +303,13 @@ export const SIderberNavLinks = [
                                 subMenu2: false
                             },
                             {
-                                link: '/Referrals',
+                                link: '/referrals',
                                 menu: 'Referrals',
                                 icon: FaRegCircle,
                                 subMenu2: false
                             },
                             {
-                                link: '/Settings',
+                                link: '/settings',
                                 menu: 'Settings',
                                 icon: FaRegCircle,
                                 subMenu2: false

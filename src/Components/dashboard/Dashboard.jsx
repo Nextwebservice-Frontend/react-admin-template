@@ -1,16 +1,16 @@
 import Logo from "./Logo/Logo";
 import "./scrollbar.css";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { ContextData } from "../../Providers/ContextProviders/ContextProviders";
 import "../../CSS/customCSS.css";
 import { NavLink } from "react-router-dom";
 import { SIderberNavLinks } from "../../Utility/Sideber/SIderberNavLinks";
 import { IoIosArrowForward } from "react-icons/io";
-import { permission } from "../../Utility/Permission";
 
 const Dashboard = () => {
-  // const permission = JSON.parse(localStorage.getItem('access'))
-  const HaveAcces = permission.map(item => `/${item.name}`)
+  const permission = JSON.parse(localStorage.getItem('access'))
+  const haveAccess = permission.map(item => `/${item.name}`)
+  console.log(haveAccess);
 
   const {
     setShow,
@@ -25,11 +25,13 @@ const Dashboard = () => {
     openSubMenuAccordion2,
     setOpenSubMenuAccordion2,
   } = useContext(ContextData);
+
   useEffect(() => {
     window.addEventListener("resize", () => {
       setShowText(true);
     });
   }, []);
+
   // const handelCloseAccordion = () => {
   //   if (!showText && openAccordion.show) {
   //     setOpenAccordion({
@@ -39,6 +41,7 @@ const Dashboard = () => {
   //   }
   // };
   //accordian open function
+
   const HandelAccorDionOpen = (name) => {
     if (openAccordion.name !== name) {
       setOpenAccordion({
@@ -56,6 +59,7 @@ const Dashboard = () => {
       });
     }
   };
+
   //submenu accordion open function
   const handelSubMenuAccordion = (name) => {
     if (openSubMenuAccordion.subMenu !== name) {
@@ -124,13 +128,12 @@ const Dashboard = () => {
                   : `${mouseEnterInSIderber ? item?.title : ""}`}
               </p>
             )}
-            {/ map over all the menu links inside of every group /}
+             {/* map over all the menu links inside of every group */}
             {Array.isArray(item?.NavItems) &&
               item?.NavItems.map((item, index) =>
                 item?.link ? ( // checking link // if false this item has dropdown menu
-                  HaveAcces.includes(item.link) && <NavLink
+                  haveAccess.includes(item.link) && <NavLink
                     key={index}
-                    // 
                     to={item.link}
                     className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80  flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
                   >
@@ -228,7 +231,7 @@ const Dashboard = () => {
                                         className={` ${openSubMenuAccordion2.subMenuOpen && openSubMenuAccordion2.subMenu === subMenu?.menu ? "h-full accordionOpen" : " max-h-0 "} overflow-hidden z-50 ${(openSubMenuAccordion2.prevSubMenu === subMenu?.menu && openSubMenuAccordion2.prevSubMenuOpen) || (!openSubMenuAccordion2.prevSubMenuOpen && openSubMenuAccordion2.subMenu === subMenu?.menu) ? "" : ""}`}
                                       >
                                         {subMenu.subMenu2.map((subMenu2, index) => {
-                                          return HaveAcces.includes(subMenu2.link) && <li
+                                          return haveAccess.includes(subMenu2.link) && <li
                                             className={`${showText ? "" : `${mouseEnterInSIderber ? "" : "hidden"}`}`}
                                             key={index}
                                           >
@@ -244,7 +247,7 @@ const Dashboard = () => {
                                         )}
                                       </ul>
                                     </> :
-                                      HaveAcces.includes(subMenu.link) && <li
+                                      haveAccess.includes(subMenu.link) && <li
                                         className={`${showText ? "" : `${mouseEnterInSIderber ? "" : "hidden"}`}`}
                                         key={index}
                                       >
@@ -261,7 +264,7 @@ const Dashboard = () => {
                                 </ul>
                               </>
                             ) : (//is there is no subAccordion menu then return li 
-                              HaveAcces.includes(dropDownItems.link) && < li
+                              haveAccess.includes(dropDownItems.link) && < li
                                 className={`${showText ? "" : `${mouseEnterInSIderber ? "" : "hidden"}`}`
                                 }
                                 key={index}
