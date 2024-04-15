@@ -4,8 +4,8 @@ import { ShortcutPopUpMenu } from "../../../../Utility/Navber/Shortcut_pop_up_me
 const ShortcutPopUp = ({ showSortcutPopUp, setshowSortcutPopUp }) => {
 
     return (
-        <div className={`absolute shadow-lg rounded-lg border lg:right-24 md:right-20 right-0 z-20 -top-12 mt-10 bg-white ${showSortcutPopUp ? "popup" : "hidden"}  max-h-[90vh] overflow-y-hidden`}>
-            <span className='flex justify-between items-center min-w-80 max-w-80 sm:max-w-80 sm:min-w-80 text-lg p-3 text-gray-600 font-semibold opacity-70'>
+        <div className={`absolute shadow-lg rounded-lg border lg:right-24 md:right-20 right-0 z-20 -top-12 overflow-hidden mt-10 bg-white ${showSortcutPopUp ? "popup" : "hidden"}  max-h-[90vh] overflow-y-hidden min-w-full max-w-full sm:max-w-80 sm:min-w-80`}>
+            <span className='flex justify-between items-center  text-lg p-3 text-gray-600 font-semibold opacity-70'>
                 Shortcuts
                 <button>
                     <BiCustomize className='text-2xl' />

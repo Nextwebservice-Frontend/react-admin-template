@@ -3,7 +3,7 @@ import { LanguagePopUpOptions } from '../../../../Utility/Navber/Language_pop_up
 
 const LanguagePopUp = ({ showLanguagePopUp, setshowLanguagePopUp }) => {
     return (//${showLanguagePopUp ? "popup" : "hidden"}
-        <div className={` ${showLanguagePopUp ? "popup" : "hidden"} py-4 shadow mt-10 rounded box-border border absolute md:right-44 z-10 right-28 -top-12 bg-white min-w-40`}>
+        <div className={` ${showLanguagePopUp ? "popup" : "hidden"} py-4 shadow mt-10 rounded box-border border absolute md:right-44 z-10 sm:right-28 right-0 -top-12 bg-white  min-w-full max-w-full sm:max-w-4min-w-40 sm:min-w-40`}>
             <div className='px-4 '>
                 {
                     LanguagePopUpOptions.map((item,index) =>
