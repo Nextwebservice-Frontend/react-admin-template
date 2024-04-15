@@ -67,11 +67,11 @@ const YearlyInvoice = () => {
                 <div className="flex flex-wrap align-items-center justify-content-between gap-2 my-5">
                     <h1 className="text-xl md:text-2xl text-900 font-bold ml-4 md:ml-0">Yearly Report List</h1>
                 </div>
-                <div className="flex flex-col justify-content-end border p-4 mb-5 ">
+                <div className="flex flex-col justify-content-end border p-4 mb-5 rounded-lg">
                     <h1 className='mb-2 w-full text-xl'>Search Here <span className='text-red-500'>(Required)</span></h1>
                     <span className="p-input-icon-left ">
                         <i className="pi pi-search" />
-                        <InputText value={globalFilterValue} onChange={onGlobalFilterChange} placeholder="Keyword Search" className='w-full border mb-5 h-[40px] text-lg' />
+                        <InputText value={globalFilterValue} onChange={onGlobalFilterChange} placeholder="Keyword Search" className='w-full border mb-5 h-[40px] text-lg text-lg' />
                     </span>
                 </div>
                 {/* Data table */}

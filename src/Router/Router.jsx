@@ -9,13 +9,6 @@ import YearlyInvoice from "../Pages/Reports/YearlyInvoice/YearlyInvoice";
 import DataTableTools from "../Pages/ReactDataTable/DataTableTools";
 import TableTanStack from "../Pages/ReactDataTable/TableTanStack";
 
-
-
-
-
-
-
-
 const Router = createBrowserRouter([
     {
         path: '/',

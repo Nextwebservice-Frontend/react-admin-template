@@ -11,7 +11,6 @@ const TableTanStack = () => {
             header: 'ID',
             accessorKey: 'id',
             footer: 'ID'
-
         },
         {
             header: 'Make',
@@ -23,29 +22,24 @@ const TableTanStack = () => {
             header: 'Model',
             accessorKey: 'model',
             footer: 'Model'
-
         }
         ,
         {
             header: 'Price',
             accessorKey: 'price',
             footer: 'Price'
-
         }
         ,
         {
             header: 'Month',
             accessorKey: 'month',
             footer: 'Month',
-        
-
         },
         {
             header: 'Date of birth',
             accessorKey: 'dob',
             footer: 'Date of birth',
             cell : info => DateTime.fromISO(info.getValue()).toLocaleString(DateTime.DATE_MED),
-
         }
     ]
     const [sorting, setSorting] = useState([])
@@ -67,47 +61,64 @@ const TableTanStack = () => {
     return (
         <>
             <div className='w3-container'>
-                <input type="text my-5 py-10" value={filtering} onChange={(e) => setFiltering(e.target.value)} placeholder='type here' />
-                <table className='w3-table-all'>
-                    <thead>
-                        {table.getHeaderGroups().map(headerGroup => (
-                            <tr key={headerGroup.id}>
-                                {headerGroup.headers.map(header => <th key={header.id}>
-                                    {flexRender(
-                                        header.column.columnDef.header, header.getContext()
-                                    )}
+                <div className="flex flex-wrap align-items-center justify-content-between gap-2 my-5 ">
+                    <h1 className="text-xl md:text-2xl text-900 font-bold ml-4 md:ml-0">Yearly Report List</h1>
+                </div>
 
-                                    {
-                                        {
-                                            asc:'asc',desc:'desc'
-                                        }[header.column.getIsSorted()?? null]
-                                    }
-                                </th>)}
-
-                            </tr>
-
-                        ))}
-
-                    </thead>
-                  
-                    <tbody>
-                        {table.getRowModel().rows.map(row =>(
-                            <tr key={row.id}>
-                                {row.getVisibleCells().map(cell =>(
-                                    <td key={cell.id}>
-                                        {flexRender(cell.column.columnDef.cell,cell.getContext())}
-                                    </td>
+                <div className="flex flex-col justify-content-end border p-4 mb-5 rounded-lg">
+                    <h1 className='mb-2 w-full text-xl'>Search Here <span className='text-red-500'>(Required)</span></h1>
+                    <span>
+                        <input className='border w-full py-2 rounded-sm text-lg pl-3' type="text" value={filtering} onChange={(e) => setFiltering(e.target.value)} placeholder='Search here' />
+                    </span>                  
+                </div>  
+                <div className='border p-4 rounded-lg'>
+                    <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 md:border mb-4 w-full'>
+                        <div className='flex border md:border-none w-full'>
+                            <button className='btn rounded-none border-none text-blue-600 bg-[#f7f7f7]'>ALL</button>
+                            <button className='w-[100%]  bg-[#f7f7f7]'></button>
+                        </div>
+                        <button className='btn rounded-none bg-success text-white'>Report List</button>
+                    </div>
+                    {/* table start here */}
+                    <div className='' style={{ overflow: 'auto' }} >
+                        <table className='w3-table-all '>
+                            <thead>
+                                {table.getHeaderGroups().map(headerGroup => (
+                                    <tr key={headerGroup.id}>
+                                        {headerGroup.headers.map(header => <th key={header.id} className='border'>
+                                            {flexRender(
+                                                header.column.columnDef.header, header.getContext()
+                                            )}
+                                            {
+                                                {
+                                                    asc: 'asc', desc: 'desc'
+                                                }[header.column.getIsSorted() ?? null]
+                                            }
+                                        </th>)}
+                                    </tr>
                                 ))}
-                            </tr>
-                        ))}
-                        
-                    </tbody>
-                </table>
-                <div>
-                    <button className='btn' onClick={() => table.setPageIndex(0)}>First page</button>
-                    <button className='btn' disabled={!table.getCanPreviousPage()} onClick={() =>table.previousPage()}>Previous page</button>
-                    <button className='btn' disabled={!table.getCanNextPage()} onClick={() =>table.nextPage()}>Next page</button>
-                    <button className='btn' onClick={() =>table.setPageIndex(table.getPageCount()-1)}>Last page</button>
+                            </thead>
+                            <tbody className=''>
+                                {table.getRowModel().rows.map(row => (
+                                    <tr key={row.id} >
+                                        {row.getVisibleCells().map(cell => (
+                                            <td key={cell.id} className='border'>
+                                                {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                            </td>
+                                        ))}
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                        <div className='text-center mt-2'>
+                            <button className='btn text-sm md:text-base' onClick={() => table.setPageIndex(0)}>First page</button>
+                            <button className='btn text-sm md:text-base' disabled={!table.getCanPreviousPage()} onClick={() => table.previousPage()}>Previous page</button>
+                            <button className='btn text-sm md:text-base' disabled={!table.getCanNextPage()} onClick={() => table.nextPage()}>Next page</button>
+                            <button className='btn text-sm md:text-base' onClick={() => table.setPageIndex(table.getPageCount() - 1)}>Last page</button>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </>
