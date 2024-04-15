@@ -39,6 +39,14 @@
   display: block;
 }
 
+#contentScrollber::-webkit-scrollbar {
+  display: none;
+}
+#contentScrollber{
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 /* animations  */
 /* accordionOpen animations */
 
@@ -123,6 +131,7 @@
     animation: NavberwidhtAnimationClose .5s;
   }
 }
+
 @media screen and (max-width: 1024px) {
   .SideberOpen {
     animation: SideberOpen .5s;

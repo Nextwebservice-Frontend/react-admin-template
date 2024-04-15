@@ -80,7 +80,7 @@ const DashboardLayout = () => {
       >
         <Dashboard />
       </div>
-      <div style={{ transition: "1s" }} className={`w-full ${showText ? `NavberwidhtAnimationClose` : 'lg:ml-16 NavberwidhtAnimationOpen '} lg:px-3 xl:px-6  px-auto box-border relative`}>
+      <div style={{ transition: "1s" }} className={`w-full bg-[#F8F7FA] pt-3 box-border ${showText ? `NavberwidhtAnimationClose` : 'lg:ml-16 NavberwidhtAnimationOpen '} lg:px-3 xl:px-6  px-auto box-border relative`}>
         {/* popup & accordion close in click dive  */}
         {
           ((!showText && openAccordion.show) || showSortcutPopUp || showProfiePopUp || show || showNotificationPopUp || showThemePopUp || showLanguagePopUp || showSearchOption) && <div onClick={handelcloseModals} className={`showText openAccordion.show show bg-black min-w-full h-screen absolute left-0 top-0 z-10 bg-opacity-[0]`}>
@@ -91,7 +91,7 @@ const DashboardLayout = () => {
           <Navbar />
         </div>
         {/* outlet  */}
-        <div className="">
+        <div id="contentScrollber" className="max-h-[88vh] overflow-y-auto overflow-x-hidden ">
           <Outlet />
         </div>
       </div>

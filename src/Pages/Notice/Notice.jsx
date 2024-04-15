@@ -3,10 +3,11 @@ import { MdEqualizer } from "react-icons/md";
 
 const Notice = () => {
   return (
-    <div className="border mt-2 w-full mx-auto  p-4 rounded shadow-2xl">
+    <>
+    <div className="border mt-2 w-full mx-auto bg-white p-4 rounded shadow-2xl">
       <div className="md:grid grid-cols-2 justify-center items-center gap-6">
         <div className="w-full h-full border rounded">
-          <span className="flex p-4 border-b-2 justify-start items-center gap-2 bg-gray-100">
+          <span className="flex p-4 py-2 border-b-2 justify-start items-center gap-2 bg-gray-100">
             <MdOutlineCampaign className="text-2xl" />
             <h3 className="font-bold">নোটিশ</h3>
           </span>
@@ -18,7 +19,7 @@ const Notice = () => {
           </p>
         </div>
         <div className="w-full h-full border rounded md:mt-0 mt-5">
-          <span className="flex p-4 border-b-2 justify-start items-center gap-2 bg-gray-100">
+          <span className="flex p-4 py-2 border-b-2 justify-start items-center gap-2 bg-gray-100">
             <MdOutlineCampaign className="text-2xl" />
             <h3 className="font-bold">ব্যাবহারকারী</h3>
           </span>
@@ -33,7 +34,7 @@ const Notice = () => {
       </div>
       <div className="md:grid grid-cols-3 justify-center items-center gap-6 mt-10">
         <div className="w-full h-full border rounded">
-          <span className="flex font-bold p-4 border-b-2 justify-start items-center gap-2 bg-gray-100">
+          <span className="flex font-bold p-4 py-2 border-b-2 justify-start items-center gap-2 bg-gray-100">
             <MdEqualizer className="text-2xl" />
             <h3>Users</h3>
           </span>
@@ -45,6 +46,7 @@ const Notice = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
