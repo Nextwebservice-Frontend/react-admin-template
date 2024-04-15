@@ -37,6 +37,14 @@ const Dashboard = () => {
   //     });
   //   }
   // };
+  // const handelCloseAccordion = () => {
+  //   if (!showText && openAccordion.show) {
+  //     setOpenAccordion({
+  //       show: false,
+  //       name: openAccordion.name,
+  //     });
+  //   }
+  // };
   //accordian open function
   const HandelAccorDionOpen = (name) => {
     if (openAccordion.name !== name) {
@@ -57,7 +65,6 @@ const Dashboard = () => {
   };
   //submenu accordion open function
   const handelSubMenuAccordion = (name) => {
-    // console.log(openSubMenuAccordion)
     if (openSubMenuAccordion.subMenu !== name) {
       setOpenSubMenuAccordion({
         prevSubMenu: openSubMenuAccordion.subMenu,
@@ -116,7 +123,7 @@ const Dashboard = () => {
         {/* map over all the menu group  */}
         {SIderberNavLinks.map((item, index) => (
           <div key={index}>
-            {/* check is there any title for this menu group or not  */}
+            {/* check is there any title for this menu group or not */}
             {item?.title && (
               <p
                 className="font-medium uppercase opacity-85 text-xs pt-3 pb-1 text-gray-500">
@@ -126,7 +133,6 @@ const Dashboard = () => {
                   : `${mouseEnterInSIderber ? item?.title : ""}`}
               </p>
             )}
-            {/* map over all the menu links inside of every group */}
             {Array.isArray(item?.NavItems) &&
               item?.NavItems.map((item, index) =>
                 item?.link ? ( // checking link // if false this item has dropdown menu
@@ -137,7 +143,7 @@ const Dashboard = () => {
                     className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80  flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
                   >
                     <item.icon />
-                    {/* check show menu text or not // if true then mouse entered or not  */}
+                    {/* check show menu text or not if true then mouse entered or not */}
                     {showText ? item?.menu : `${mouseEnterInSIderber ? item?.menu : ""}`}
                   </NavLink>
                 ) : (
@@ -147,6 +153,7 @@ const Dashboard = () => {
                     className={`hover:text-gray-600 hover:no-underline cursor-pointer`}
                   >
                     <span
+                      //accordion open function call
                       //accordion open function call
                       onClick={() => HandelAccorDionOpen(item?.menu)}
                       className="text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80 flex justify-between items-center gap-2 hover:bg-gray-200 rounded-md"
@@ -197,87 +204,84 @@ const Dashboard = () => {
                                 </li>
                                 <ul
                                   // check is subaccordion menu open or not 
-                                  className={` ${openSubMenuAccordion.subMenuOpen && openSubMenuAccordion.subMenu === dropDownItems?.menu ? "h-full accordionOpen" : " max-h-0 "} overflow-hidden z-50 ${(openSubMenuAccordion.prevSubMenu === dropDownItems?.menu && openSubMenuAccordion.prevSubMenuOpen) || (!openSubMenuAccordion.prevSubMenuOpen && openSubMenuAccordion.subMenu === dropDownItems?.menu) ? "" : ""}`}
-                                >
-                                  {/* map over all subAccordion menus  */}
-                                  {dropDownItems.subMenu.map((subMenu, index) => {
-                                    return !subMenu.link &&
-                                      Array.isArray(subMenu.subMenu2) ? <>
-                                      <li
-                                        onClick={() => {//open sub accordion menu
-                                          handelSubMenuAccordion2(subMenu.menu);
-                                        }}
-                                        className={`${showText ? "" : `${mouseEnterInSIderber ? "" : "hidden"}`}`}
-                                        key={index}
+                                    className={` ${openSubMenuAccordion.subMenuOpen && openSubMenuAccordion.subMenu === dropDownItems?.menu? "h-full accordionOpen": " max-h-0 "} overflow-hidden z-50 ${(openSubMenuAccordion.prevSubMenu ===dropDownItems?.menu &&openSubMenuAccordion.prevSubMenuOpen) ||(!openSubMenuAccordion.prevSubMenuOpen &&openSubMenuAccordion.subMenu ===dropDownItems?.menu)? "": ""}`}
+                                  >
+                                    {/* map over all subAccordion menus  */}
+                                    {dropDownItems.subMenu.map((subMenu, index) => 
+                                      { return !subMenu.link &&
+                                       Array.isArray(subMenu.subMenu2) ? <>
+                                           <li
+                                    onClick={() => {//open sub accordion menu
+                                      handelSubMenuAccordion2(subMenu.menu);
+                                    }}
+                                    className={`${ showText? "": `${mouseEnterInSIderber ? "" : "hidden" }`}`}
+                                    key={index}
+                                  >
+                                    <span
+                                      
+                                      className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
+                                    >
+                                      <span
+                                        className={`flex ${showText? "justify-start": "justify-start"} w-full items-center gap-1`}
                                       >
-                                        <span
-
-                                          className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
-                                        >
-                                          <span
-                                            className={`flex ${showText ? "justify-start" : "justify-start"} w-full items-center gap-1`}
-                                          >
-                                            <dropDownItems.icon />
-                                            {showText ? subMenu?.menu : `${mouseEnterInSIderber ? subMenu?.menu : ""}`}
-                                          </span>
-                                          <IoIosArrowForward
-                                            className={`transition-all ${showText ? "" : `${mouseEnterInSIderber ? "" : "hidden"}`} text-[12px] ${openSubMenuAccordion2.subMenuOpen && openSubMenuAccordion2.subMenu === subMenu?.menu ? "rotate-[90deg]" : "rotate-[90deg"}`}
-                                          />
-                                        </span>
-                                      </li>
-                                      <ul
-                                        // check is subaccordion menu open or not 
-                                        className={` ${openSubMenuAccordion2.subMenuOpen && openSubMenuAccordion2.subMenu === subMenu?.menu ? "h-full accordionOpen" : " max-h-0 "} overflow-hidden z-50 ${(openSubMenuAccordion2.prevSubMenu === subMenu?.menu && openSubMenuAccordion2.prevSubMenuOpen) || (!openSubMenuAccordion2.prevSubMenuOpen && openSubMenuAccordion2.subMenu === subMenu?.menu) ? "" : ""}`}
-                                      >
-                                        {subMenu.subMenu2.map((subMenu2, index) => {
-                                          return HaveAcces.includes(subMenu2.link) && <li
-                                            className={`${showText ? "" : `${mouseEnterInSIderber ? "" : "hidden"}`}`}
-                                            key={index}
-                                          >
-                                            <NavLink
-
-                                              to={subMenu2.link}
-                                              className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
-                                            >
-                                              <subMenu.icon /> {subMenu2.menu}
-                                            </NavLink>
-                                          </li>
-                                        }
-                                        )}
-                                      </ul>
-                                    </> :
-                                      HaveAcces.includes(subMenu.link) && <li
-                                        className={`${showText ? "" : `${mouseEnterInSIderber ? "" : "hidden"}`}`}
-                                        key={index}
-                                      >
-                                        <NavLink
-
-                                          to={subMenu.link}
-                                          className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
-                                        >
-                                          <subMenu.icon /> {subMenu.menu}
-                                        </NavLink>
-                                      </li>
-                                  }
+                                        <dropDownItems.icon />
+                                        {showText? subMenu?.menu: `${mouseEnterInSIderber ? subMenu?.menu: ""}`}
+                                      </span>
+                                      <IoIosArrowForward 
+                                        className={`transition-all ${
+                                          showText? "": `${mouseEnterInSIderber? "": "hidden"}`} text-[12px] ${openSubMenuAccordion2.subMenuOpen && openSubMenuAccordion2.subMenu ===subMenu?.menu? "rotate-[90deg]": "rotate-[90deg"}`}
+                                      />
+                                    </span>
+                                  </li>
+                                       <ul
+                                  // check is subaccordion menu open or not 
+                                    className={` ${openSubMenuAccordion2.subMenuOpen && openSubMenuAccordion2.subMenu === subMenu?.menu? "h-full accordionOpen": " max-h-0 "} overflow-hidden z-50 ${(openSubMenuAccordion2.prevSubMenu ===subMenu?.menu &&openSubMenuAccordion2.prevSubMenuOpen) ||(!openSubMenuAccordion2.prevSubMenuOpen &&openSubMenuAccordion2.subMenu ===subMenu?.menu)? "": ""}`}
+                                  >
+                                       {subMenu.subMenu2.map((subMenu2,index)=> <li
+                                       className={`${showText? "": `${mouseEnterInSIderber? "" : "hidden" }`}`}
+                                       key={index}
+                                     >
+                                       <NavLink
+                                         
+                                         to={subMenu2.link}
+                                         className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
+                                       >
+                                         <subMenu.icon /> {subMenu2.menu}
+                                       </NavLink>
+                                     </li> 
                                   )}
-                                </ul>
-                              </>
-                            ) : (//is there is no subAccordion menu then return li 
-                              HaveAcces.includes(dropDownItems.link) && < li
-                                className={`${showText ? "" : `${mouseEnterInSIderber ? "" : "hidden"}`}`
-                                }
-                                key={index}
-                              >
-                                <NavLink
-
-                                  to={dropDownItems.link}
-                                  className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
+                                  </ul>
+                                       </>:<li
+                                       className={`${showText? "": `${mouseEnterInSIderber? "" : "hidden" }`}`}
+                                       key={index}
+                                     >
+                                       <NavLink
+                                         
+                                         to={subMenu.link}
+                                         className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
+                                       >
+                                         <subMenu.icon /> {subMenu.menu}
+                                       </NavLink>
+                                     </li>
+                                        }
+                                    )}
+                                  </ul>
+                                </>
+                              ) : (//is there is no subAccordion menu then return li 
+                                <li
+                                  className={`${showText? "": `${ mouseEnterInSIderber ? "" : "hidden"}`}`}
+                                  key={index}
                                 >
-                                  <dropDownItems.icon /> {dropDownItems.menu}
-                                </NavLink>
-                              </li>
-                            );
-                          }
+                                  <NavLink
+                                    
+                                    to={dropDownItems.link}
+                                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
+                                  >
+                                    <dropDownItems.icon /> {dropDownItems.menu}
+                                  </NavLink>
+                                </li>
+                              );
+                            }
                           )}
                         </> //if dropdown menus is not an array then return empty fragment
                       ) : (

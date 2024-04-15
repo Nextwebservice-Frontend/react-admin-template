@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { createContext, useState } from 'react'
 //create context
 export const ContextData = createContext({})
