@@ -1,6 +1,10 @@
 .p-datatable th {
     text-align: center !important;
 }
+.w3-table-all th{
+    align-items: center !important;
+
+}
 .p-datatable .p-column-header-content {
     display: block !important;
     align-items: center !important;

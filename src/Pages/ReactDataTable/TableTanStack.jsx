@@ -3,6 +3,8 @@ import React, { useMemo, useState } from 'react';
 import { useReactTable, getCoreRowModel, flexRender,getPaginationRowModel,getSortedRowModel, getFilteredRowModel } from '@tanstack/react-table';
 import JsonData from '../../../public/rowData.json'
 import {DateTime} from 'luxon'
+import './CSS/TableTanStackCss.css'
+import { FaGreaterThan, FaLessThan } from "react-icons/fa";
 
 const TableTanStack = () => {
     const data = useMemo(() => JsonData, [])
@@ -44,7 +46,6 @@ const TableTanStack = () => {
     ]
     const [sorting, setSorting] = useState([])
     const [filtering, setFiltering] = useState('')
-
     const table = useReactTable({
         data, columns, getCoreRowModel: getCoreRowModel(), 
         getPaginationRowModel: getPaginationRowModel(), 
@@ -64,7 +65,6 @@ const TableTanStack = () => {
                 <div className="flex flex-wrap align-items-center justify-content-between gap-2 my-5 ">
                     <h1 className="text-xl md:text-2xl text-900 font-bold ml-4 md:ml-0">Yearly Report List</h1>
                 </div>
-
                 <div className="flex flex-col justify-content-end border p-4 mb-5 rounded-lg">
                     <h1 className='mb-2 w-full text-xl'>Search Here <span className='text-red-500'>(Required)</span></h1>
                     <span>
@@ -82,10 +82,10 @@ const TableTanStack = () => {
                     {/* table start here */}
                     <div className='' style={{ overflow: 'auto' }} >
                         <table className='w3-table-all '>
-                            <thead>
+                            <thead >
                                 {table.getHeaderGroups().map(headerGroup => (
                                     <tr key={headerGroup.id}>
-                                        {headerGroup.headers.map(header => <th key={header.id} className='border'>
+                                        {headerGroup.headers.map(header => <th key={header.id} className='border bg-[#f2f2f2]'>
                                             {flexRender(
                                                 header.column.columnDef.header, header.getContext()
                                             )}
@@ -102,7 +102,7 @@ const TableTanStack = () => {
                                 {table.getRowModel().rows.map(row => (
                                     <tr key={row.id} >
                                         {row.getVisibleCells().map(cell => (
-                                            <td key={cell.id} className='border'>
+                                            <td key={cell.id} className='border text-center'>
                                                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
                                             </td>
                                         ))}
@@ -110,16 +110,20 @@ const TableTanStack = () => {
                                 ))}
                             </tbody>
                         </table>
-                        <div className='text-center mt-2'>
-                            <button className='btn text-sm md:text-base' onClick={() => table.setPageIndex(0)}>First page</button>
-                            <button className='btn text-sm md:text-base' disabled={!table.getCanPreviousPage()} onClick={() => table.previousPage()}>Previous page</button>
-                            <button className='btn text-sm md:text-base' disabled={!table.getCanNextPage()} onClick={() => table.nextPage()}>Next page</button>
-                            <button className='btn text-sm md:text-base' onClick={() => table.setPageIndex(table.getPageCount() - 1)}>Last page</button>
+                        {/* pagination */}
+                        <div className='text-end mt-2'>
+                            {/* first page */}
+                            <button className='btn rounded-full mr-2 text-xs md:text-base' onClick={() => table.setPageIndex(0)}><FaGreaterThan /> </button>
+                            {/* previous page */}
+                            <button className='btn px-1 mr-2 text-xs md:text-base' disabled={!table.getCanPreviousPage()} onClick={() => table.previousPage()}>Previous </button>
+                            {/* next page */}
+                            <button className='btn text-xs px-2 md:text-base' disabled={!table.getCanNextPage()} onClick={() => table.nextPage()}>Next </button>
+                            {/* last page */}
+                            <button className='btn rounded-full  ml-2 text-xs md:text-base' onClick={() => table.setPageIndex(table.getPageCount() - 1)}> <FaLessThan /></button>
                         </div>
-
                     </div>
-
                 </div>
+                
             </div>
         </>
     );

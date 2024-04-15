@@ -4,6 +4,19 @@ import ProfileModal from "./ProfileModal";
 import '../Services/ServiceList/Css/ServiceListCss.css'
 
 const Profile = () => {
+  const [image,setImage ] = useState("");
+
+  const convertToBase64 = (e) =>{
+    const reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload = () => {
+      setImage(reader.result);
+    }
+    reader.onerror = error => {
+      console.log("Error : ",error);
+    };
+
+  }
   return (
     <div className="">
       <h1 className="my-8 w-full mx-auto font-bold text-3xl">Personal Profile</h1>
@@ -96,14 +109,13 @@ const Profile = () => {
                     <h1 className="md:mt-5  text-base font-medium ">
                       Profile Photo
                     </h1>
-                    <div className=" md:w-full h-[140px] rounded-xl border-4 border-dashed ">
-                      <img
-                        className="h-[100px] md:w-[90%] lg:w-[240px] mx-auto "
+                    <div className=" md:w-full h-[240px] md:h-[140px] rounded-xl border-4 border-dashed ">
+                      {image == "" || image == null ? <img
+                        className="md:h-[100px] h-[200px] md:w-[100%] lg:w-[100%] mx-auto "
                         src="https://cdn-icons-png.flaticon.com/512/4211/4211763.png"
                         alt=""
-                      />
-                      <input type="file" id="myFile" name="filename text-center "></input>
-                     
+                      /> : <img src={image} className="w-full md:w-[100%] lg:w-[100%] h-[200px] md:h-[100px] p-2" alt="" />}
+                      <span className="text-lg  md:text-xs  xl:text-base pl-2"><input type="file" id="myFile" accept="image/" name="filename" className="" onChange={convertToBase64}></input></span> 
                     </div>
                   </div>
                 </div>
