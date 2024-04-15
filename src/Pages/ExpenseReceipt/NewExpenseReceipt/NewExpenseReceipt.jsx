@@ -6,7 +6,6 @@ import { FaAlignRight } from "react-icons/fa";
 const NewExpenseReceipt = () => {
     return (
         <>
-            {/* md:w-[1000px] */}
             <div className='flex flex-col md:flex-row w-[96%] mx-auto md:w-[100%] gap-10'>
                 {/* Expanse receive list (1st part) */}
                 <div className='border mt-7 w-full md:w-[76%] mx-auto rounded shadow-2xl pb-16'>

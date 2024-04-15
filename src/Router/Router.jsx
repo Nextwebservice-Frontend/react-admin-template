@@ -6,6 +6,11 @@ import ExpenseReceipt from "../Pages/ExpenseReceipt/ExpenseReceipt";
 import NewExpenseReceipt from "../Pages/ExpenseReceipt/NewExpenseReceipt/NewExpenseReceipt";
 import ServiceList from "../Pages/Services/ServiceList/ServiceList";
 import YearlyInvoice from "../Pages/Reports/YearlyInvoice/YearlyInvoice";
+import DataTableTools from "../Pages/ReactDataTable/DataTableTools";
+import TableTanStack from "../Pages/ReactDataTable/TableTanStack";
+
+
+
 
 
 
@@ -41,6 +46,16 @@ const Router = createBrowserRouter([
             {
                 path: '/yearlyInvoiceList',
                 element: <YearlyInvoice />
+            },
+            // react - data - table - component
+            {
+                path: '/tableData',
+                element: <DataTableTools></DataTableTools>
+            },
+            // tanstack table
+            {
+                path: '/tableTanStack',
+                element: <TableTanStack></TableTanStack>
             }
 
         ]

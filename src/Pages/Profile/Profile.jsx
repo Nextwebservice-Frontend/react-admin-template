@@ -6,7 +6,7 @@ import '../Services/ServiceList/Css/ServiceListCss.css'
 const Profile = () => {
   return (
     <div className="">
-      <h1 className="my-10 md:w-[750px]  lg:w-[1300px] mx-auto font-bold text-3xl">Personal Profile</h1>
+      <h1 className="my-8 w-full mx-auto font-bold text-3xl">Personal Profile</h1>
       <div className="flex flex-col md:flex-row gap-8 justify-center">
         {/* user details part */}
         <div className="card w-full md:w-[40%] lg:w-[30%]  bg-base-100 shadow-xl rounded-lg border">
@@ -15,7 +15,7 @@ const Profile = () => {
           </h1>
           <figure>
             <img
-              className="w-[120px] h-[120px] md:w-[46%] lg:w-[35%]  rounded-lg"
+              className="w-[110px] h-[110px] rounded-lg"
               src="https://redinvoice.com/backend/app-assets/images/avatars/11.png"
               alt="girls-image"
             />
@@ -28,11 +28,11 @@ const Profile = () => {
           <button className="w-[24%] md:w-[32%] border mx-auto rounded-lg text-white bg-[#6C757D] font-bol mb-3">SuperAdmin</button>
           <div className=" p-0 pl-5 mb-4">
             {/* superAdmin name */}
-            <h2 className=""><span className="font-bold text-lg">Name :</span> SuperAdmin</h2>
+            <h2 className=""><span className="font-bold text-lg md:text-base lg:text-base xl:text-lg">Name :</span> SuperAdmin</h2>
             {/* superAdmin email */}
-            <p className=""><span className="font-bold text-lg"> Email :</span>  admindhaka@gmail.com</p>
+            <p className=""><span className="font-bold text-lg md:text-base lg:text-base xl:text-lg "> Email :</span><span className="lg:text-sm xl:text-base">admindhaka@gmail.com</span></p>
             {/* superAdmin phone number*/}
-            <p className=""><span className="font-bold text-lg">Mobile: </span>  01799600000</p>
+            <p className=""><span className="font-bold text-lg md:text-base lg:text-base xl:text-lg">Mobile: </span><span className="lg:text-sm xl:text-base">01799600000</span></p>
           </div>
           {/* profile modal component */}
           <ProfileModal></ProfileModal>
@@ -50,7 +50,7 @@ const Profile = () => {
                     {/* name */}
                     <div className="form-control pl-4 mt-4">
                       <label className="">
-                        <span className="label-text text-base font-medium">
+                        <span className="label-text text-base  font-medium">
                           Name<span className="pl-1 text-red-400">(required)</span>
                         </span>
                       </label>
