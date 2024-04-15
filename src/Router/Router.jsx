@@ -4,6 +4,8 @@ import Notice from "../Pages/Notice/Notice";
 import Profile from "../Pages/Profile/Profile";
 import NewExpenseReceipt from "../Pages/ExpenseReceipt/NewExpenseReceipt/NewExpenseReceipt";
 import ExpenseList from "../Pages/ExpenseList/ExpenseList";
+import ExpanseReceipt from "../Pages/ExpanseReceipt/ExpanseReceipt";
+import MonthlyInvoice from "../Pages/MonthlyInvoice/MonthlyInvoice";
 
 
 const Router = createBrowserRouter([
@@ -14,6 +16,11 @@ const Router = createBrowserRouter([
             {
                 path: '/',
                 element: <Notice />
+            }
+            ,
+           {
+                path: '/expenseReceipt',
+                element: <ExpanseReceipt />
             },
             {
                 path: '/newExpenseReceipt',
@@ -27,6 +34,11 @@ const Router = createBrowserRouter([
                 path: '/profile',
                 element: <Profile />
             }
+            },
+            {
+                path: '/monthly-report-list',
+                element: <MonthlyInvoice />
+            },
         ]
     }
 ])

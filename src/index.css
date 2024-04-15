@@ -19,17 +19,86 @@
 }
 
 .accordionOpen {
-  animation: accordion 1s;
+  animation: accordionopen 2s;
 }
 
-@keyframes accordion {
+.accordionClose {
+  animation: accordionclose .5s;
+}
+
+#dBoardSideber .active {
+  background: #978EF4;
+  color: #FFF;
+  text-decoration: none;
+}
+
+
+#NotificationPopUp::-webkit-scrollbar {
+  display: none;
+}
+
+#NotificationPopUp {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#NotificationPopUp .notification:hover .removeNotification {
+  display: block;
+}
+
+/* animations  */
+/* accordionOpen animations */
+
+@keyframes accordionopen {
   from {
-      max-height: 0px;
+    max-height: 0px;
   }
+
   to {
-      max-height: 1000px;
+    max-height: 720px;
   }
 }
-#dBoardSideber nav .active {
-  background: rgb(234, 242, 248);
+
+
+/* accordionClose animations */
+@keyframes accordionclose {
+  from {
+    max-height: 720px;
+  }
+
+  to {
+    max-height: 0px;
+  }
+}
+
+@keyframes SideberOpen {
+  from {
+    left: -600px;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+@keyframes SideberClose {
+  from {
+    left: 0;
+    display: block;
+  }
+
+  to {
+    left: -600px;
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .SideberOpen {
+    animation: SideberOpen .5s;
+  }
+
+  .SideberClose {
+    animation: SideberClose 1s;
+  }
 }
