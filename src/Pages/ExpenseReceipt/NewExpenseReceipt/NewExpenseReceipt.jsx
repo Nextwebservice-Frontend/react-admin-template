@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-import React from 'react';
 import ExpenseModal from './ExpenseModal';
 import { FaAlignRight } from "react-icons/fa";
 

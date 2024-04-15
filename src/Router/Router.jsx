@@ -6,6 +6,8 @@ import ExpenseReceipt from "../Pages/ExpenseReceipt/ExpenseReceipt";
 import NewExpenseReceipt from "../Pages/ExpenseReceipt/NewExpenseReceipt/NewExpenseReceipt";
 import ServiceList from "../Pages/Services/ServiceList/ServiceList";
 import YearlyInvoice from "../Pages/Reports/YearlyInvoice/YearlyInvoice";
+import Role from "../Pages/Role/Role";
+import Login from "../Pages/Login/Login";
 
 
 
@@ -41,9 +43,16 @@ const Router = createBrowserRouter([
             {
                 path: '/yearlyInvoiceList',
                 element: <YearlyInvoice />
-            }
-
+            },
+            {
+                path: '/role',
+                element: <Role />
+            },
         ]
+    },
+    {
+        path: '/login',
+        element: <Login />
     }
 ])
 

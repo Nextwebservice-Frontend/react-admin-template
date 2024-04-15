@@ -6,6 +6,7 @@ import "../../CSS/customCSS.css";
 import { NavLink } from "react-router-dom";
 import { SIderberNavLinks } from "../../Utility/Sideber/SIderberNavLinks";
 import { IoIosArrowForward } from "react-icons/io";
+import { FaRegCircle } from "react-icons/fa";
 const Dashboard = () => {
   const {
     setShow,
@@ -109,7 +110,9 @@ const Dashboard = () => {
                   : `${mouseEnterInSIderber ? item?.title : ""}`}
               </p>
             )}
+
             {/* map over all the menu links inside of every group */}
+            
             {Array.isArray(item?.NavItems) &&
               item?.NavItems.map((item, index) =>
                 item?.link ? ( // checking link // if false this item has dropdown menu
@@ -151,14 +154,14 @@ const Dashboard = () => {
                     >
                       {Array.isArray(item.dropDown) ? ( // checking is dropdown menus is an array
                         <>
-                          {item.dropDown.map((dropDownItems,index ) => {//map dropdown items
+                          {item?.dropDown.map((dropDownItems,index ) => {//map dropdown items
                           //check is there any sub dropdown menu avilable or not
-                              return !dropDownItems.link &&
-                                Array.isArray(dropDownItems.subMenu) ? (
+                              return !dropDownItems?.link &&
+                                Array.isArray(dropDownItems?.subMenu) ? (
                                 <>
                                   <li
                                     onClick={() => {//open sub accordion menu
-                                      handelSubMenuAccordion(dropDownItems.menu);
+                                      handelSubMenuAccordion(dropDownItems?.menu);
                                     }}
                                     className={`${ showText? "": `${mouseEnterInSIderber ? "" : "hidden" }`}`}
                                     key={index}
@@ -170,7 +173,7 @@ const Dashboard = () => {
                                       <span
                                         className={`flex ${showText? "justify-start": "justify-start"} w-full items-center gap-1`}
                                       >
-                                        <dropDownItems.icon />
+                                        <FaRegCircle />
                                         {showText? dropDownItems?.menu: `${mouseEnterInSIderber ? dropDownItems?.menu: ""}`}
                                       </span>
                                       <IoIosArrowForward 
@@ -201,7 +204,7 @@ const Dashboard = () => {
                                       <span
                                         className={`flex ${showText? "justify-start": "justify-start"} w-full items-center gap-1`}
                                       >
-                                        <dropDownItems.icon />
+                                        <FaRegCircle />
                                         {showText? subMenu?.menu: `${mouseEnterInSIderber ? subMenu?.menu: ""}`}
                                       </span>
                                       <IoIosArrowForward 
@@ -223,7 +226,7 @@ const Dashboard = () => {
                                          to={subMenu2.link}
                                          className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
                                        >
-                                         <subMenu.icon /> {subMenu2.menu}
+                                         <FaRegCircle /> {subMenu2.menu}
                                        </NavLink>
                                      </li> 
                                   )}
@@ -237,7 +240,7 @@ const Dashboard = () => {
                                          to={subMenu.link}
                                          className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
                                        >
-                                         <subMenu.icon /> {subMenu.menu}
+                                         <FaRegCircle /> {subMenu.menu}
                                        </NavLink>
                                      </li>
                                         }
@@ -251,10 +254,10 @@ const Dashboard = () => {
                                 >
                                   <NavLink
                                     
-                                    to={dropDownItems.link}
+                                    to={dropDownItems?.link}
                                     className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
                                   >
-                                    <dropDownItems.icon /> {dropDownItems.menu}
+                                    <FaRegCircle /> {dropDownItems?.menu}
                                   </NavLink>
                                 </li>
                               );
