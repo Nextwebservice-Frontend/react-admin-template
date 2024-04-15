@@ -37,14 +37,6 @@ const Dashboard = () => {
   //     });
   //   }
   // };
-  // const handelCloseAccordion = () => {
-  //   if (!showText && openAccordion.show) {
-  //     setOpenAccordion({
-  //       show: false,
-  //       name: openAccordion.name,
-  //     });
-  //   }
-  // };
   //accordian open function
   const HandelAccorDionOpen = (name) => {
     if (openAccordion.name !== name) {

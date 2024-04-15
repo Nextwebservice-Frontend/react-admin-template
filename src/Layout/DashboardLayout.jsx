@@ -73,10 +73,10 @@ const DashboardLayout = () => {
   }, [showText])
 
   return (
-    <div className="lg:flex gap-[.3%] lg:px-0 px-3">
+    <div className="lg:flex lg:px-0 px-3">
       {/* sideber  */}
       <div id="sideber" style={{ transition: ".5s" }}
-        className={`max-w-80 pl-2 z-50 border-r ${showText ? ` xl:w-[22%] lg:w-[23%] sm:w-[33%] w-[75%]  lg:relative` : `HideTextAnimation ${mouseEnterInSIderber ? 'xl:w-[19%] lg:w-[20%] sm:w-[33%] w-[75%]  box-border' : 'w-[60px]'} absolute  h-screen `} shadow-2xl min-h-screen absolute ${show ? 'left-0 top-0 SideberOpen' : 'hidden lg:block SideberClose'} bg-white z-50 `}
+        className={`max-w-80 pl-2 z-50 border-r ${showText ? ` xl:w-[22%] lg:w-[23%] sm:w-[33%] w-[75%]  lg:relative` : `HideTextAnimation ${mouseEnterInSIderber ? 'xl:w-[19%] lg:w-[20%] sm:w-[33%] w-[75%]  box-border' : 'w-[64px]'} absolute  h-screen `} shadow-2xl min-h-screen absolute ${show ? 'left-0 top-0 SideberOpen' : 'hidden lg:block SideberClose'} bg-white z-50 `}
       >
         <Dashboard />
       </div>
