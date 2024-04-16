@@ -41,7 +41,7 @@ const ThemePopUp = ({ showThemePopUp, setshowThemePopUp }) => {
         }
     }, [theme])
     return (//
-        <div className={`${showThemePopUp ? "popup" : "hidden"} py-4 shadow mt-10 rounded box-border border absolute md:right-36 z-10 sm:right-20 right-0 -top-12 bg-white min-w-full max-w-full sm:max-w-4min-w-40 sm:min-w-40`}>
+        <div className={`${showThemePopUp ? "popup" : "hidden"} py-4 shadow mt-10 rounded box-border border absolute md:right-36 z-10 sm:right-20 right-[2%] sm:-top-12 -top-8 bg-white min-w-[96%] max-w-[96%] sm:max-w-4min-w-40 sm:min-w-40`}>
             <div className='px-4 '>
                 {
                     ThemeOptions.map((item, index) =>

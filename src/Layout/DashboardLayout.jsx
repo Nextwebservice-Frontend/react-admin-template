@@ -73,14 +73,14 @@ const DashboardLayout = () => {
   }, [showText])
 
   return (
-    <div className="lg:flex lg:px-0 px-3 bg-white dark:bg-[#25293C] overflow-hidden h-screen w-full">
+    <div className="lg:flex lg:px-0 px-3 bg-[#F8F7FA] dark:bg-[#25293C] overflow-hidden h-screen w-full">
       {/* sideber  */}
       <div id="sideber" style={{ transition: ".5s" }}
         className={`max-w-80 pl-2 z-50 border-r dark:border-r-0 ${showText ? `2xl:w-[19%] xl:w-[22%] lg:w-[23%] sm:w-[33%] w-[75%]  lg:relative` : `HideTextAnimation ${mouseEnterInSIderber ? 'xl:w-[19%] lg:w-[20%] sm:w-[33%] w-[75%]  box-border' : 'w-[80px] min-w-[80px]'} absolute  h-screen `} shadow-2xl min-h-screen absolute ${show ? 'left-0 top-0 SideberOpen' : 'hidden lg:block SideberClose'} bg-white dark:bg-[#25293C] dark:text-gray-100 z-50 `}
       >
         <Dashboard />
       </div>
-      <div style={{ transition: "1s" }} className={`w-full h-screen pt-3 box-border ${showText ? `NavberwidhtAnimationClose` : 'lg:ml-[80px] NavberwidhtAnimationOpen '} lg:px-3 xl:px-6 px-3 px-auto box-border relative`}>
+      <div style={{ transition: "1s" }} className={`w-full h-screen  pt-3 box-border ${showText ? `NavberwidhtAnimationClose` : 'lg:ml-[80px] NavberwidhtAnimationOpen '} lg:px-3 xl:px-6 px-3 px-auto box-border relative`}>
         {/* popup & accordion close in click dive  */}
         {
           ((!showText && openAccordion.show) || showSortcutPopUp || showProfiePopUp || show || showNotificationPopUp || showThemePopUp || showLanguagePopUp || showSearchOption) && <div onClick={handelcloseModals} className={`showText openAccordion.show show bg-black min-w-full h-screen absolute left-0 top-0 z-10 bg-opacity-[0]`}>
@@ -91,7 +91,7 @@ const DashboardLayout = () => {
           <Navbar />
         </div>
         {/* outlet  */}
-        <div id="contentScrollber" className="max-h-[88vh] overflow-y-auto overflow-x-hidden ">
+        <div id="contentScrollber" className="max-h-[88vh] overflow-y-auto overflow-x-hidden">
           <Outlet />
         </div>
       </div>

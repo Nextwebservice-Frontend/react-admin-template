@@ -34,7 +34,7 @@ const NotificationPopUp = ({ showNotificationPopUp }) => {
         },
     ]
     return (//${showNotificationPopUp ? "popup" : "hidden"}
-        <div className={`absolute ${showNotificationPopUp ? "popup" : "hidden"} shadow-lg rounded-lg border lg:right-20 md:right-16 right-0 z-20 -top-12 mt-10 bg-white max-h-[93vh] overflow-y-auto min-w-full max-w-full sm:max-w-[350px] sm:min-w-[350px]`}>
+        <div className={`absolute ${showNotificationPopUp ? "popup" : "hidden"} shadow-lg rounded-lg border lg:right-20 md:right-16 right-[2%] z-20 sm:-top-12 -top-8  mt-10 bg-white max-h-[93vh] overflow-y-auto min-w-[96%] max-w-[96%] sm:max-w-[350px] sm:min-w-[350px]`}>
             <span className='flex justify-between items-center  text-lg p-3 text-gray-600 font-semibold opacity-70'>
                 Notification
                 <button>

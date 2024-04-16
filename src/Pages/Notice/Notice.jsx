@@ -3,10 +3,9 @@ import { MdEqualizer } from "react-icons/md";
 
 const Notice = () => {
   return (
-    <>
-      <div  className="border mt-2 w-full mx-auto bg-white p-4 rounded shadow-2xl">
+      <div  className="border md:mt-6 mt-3 w-full mx-auto bg-white p-4 rounded ">
         <div className="md:grid grid-cols-2 justify-center items-center gap-6">
-          <div className="w-full h-full border rounded">
+          <div style={{boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px'}} className="w-full h-full border rounded ">
             <span className="flex p-4 py-2 border-b-2 justify-start items-center gap-2 bg-gray-100">
               <MdOutlineCampaign className="text-2xl" />
               <h3 className="font-bold">নোটিশ</h3>
@@ -18,7 +17,7 @@ const Notice = () => {
               করা যেতে পারে।
             </p>
           </div>
-          <div className="w-full h-full border rounded md:mt-0 mt-5">
+          <div style={{boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px'}} className="w-full h-full border rounded md:mt-0 mt-5">
             <span className="flex p-4 py-2 border-b-2 justify-start items-center gap-2 bg-gray-100">
               <MdOutlineCampaign className="text-2xl" />
               <h3 className="font-bold">ব্যাবহারকারী</h3>
@@ -32,8 +31,8 @@ const Notice = () => {
             </p>
           </div>
         </div>
-        <div className="md:grid grid-cols-3 justify-center items-center gap-6 mt-10">
-          <div className="w-full h-full border rounded">
+        <div className="md:grid grid-cols-3 justify-center items-center gap-6 mt-10 bg-white">
+          <div style={{boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px'}} className="w-full h-full border rounded">
             <span className="flex font-bold p-4 py-2 border-b-2 justify-start items-center gap-2 bg-gray-100">
               <MdEqualizer className="text-2xl" />
               <h3>Users</h3>
@@ -46,7 +45,7 @@ const Notice = () => {
           </div>
         </div>
       </div>
-    </>
+
   );
 };
 
