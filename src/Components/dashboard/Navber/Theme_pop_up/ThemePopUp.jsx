@@ -48,7 +48,7 @@ const ThemePopUp = ({ showThemePopUp, setshowThemePopUp }) => {
                         <button key={index} onClick={() => {
                             setTheme(item.name)
                             setshowThemePopUp(false)
-                        }} className={`w-full flex ${theme === item.name ? 'bg-[#978EF4] text-white' : ''} justify-start capitalize items-center gap-3 text-gray-500 text-base hover:text-gray-500 hover:no-underline hover:bg-slate-100 p-1 rounded-md transition-all`}>
+                        }} className={`w-full flex  justify-start capitalize items-center gap-3 text-gray-500 text-base hover:text-gray-500 hover:no-underline hover:bg-slate-100 p-1 rounded-md transition-all`}>
                             <item.icon className='text-2xl' />
                             {item?.name}
                         </button>)

@@ -16,7 +16,7 @@
 }
 
 .accordionClose {
-  animation: accordionclose .2s;
+  animation: accordionclose .8s;
 }
 
 #dBoardSideber .active {
@@ -25,6 +25,20 @@
   text-decoration: none;
 }
 
+#sideberScrollber::-webkit-scrollbar {
+  -ms-overflow-style: none; 
+  scrollbar-width: 1px;
+  position: absolute;
+  right: 10px; 
+}
+
+#sideberScrollber::-webkit-scrollbar-thumb {
+  background-color: rgb(65, 65, 65, 0.2); 
+}
+
+#sideberScrollber::-webkit-scrollbar {
+  width: 1px;
+}
 
 #NotificationPopUp::-webkit-scrollbar {
   display: none;
@@ -42,11 +56,13 @@
 #contentScrollber::-webkit-scrollbar {
   display: none;
 }
-#contentScrollber{
+
+#contentScrollber {
   scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 /* animations  */
 /* accordionOpen animations */
 

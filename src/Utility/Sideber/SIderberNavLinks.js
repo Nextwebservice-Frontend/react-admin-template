@@ -21,60 +21,40 @@ export const SIderberNavLinks = [
                         link: '/Analytice',
                         menu: 'Analytice',
                         icon: FaRegCircle,
+                        access: 'Analytice',
                         subMenu: false
                     },
                     {
                         link: '/CRM',
                         menu: 'CRM',
                         icon: FaRegCircle,
+                        access: 'CRM',
                         subMenu: false
                     },
                     {
                         link: '/eCommerce',
                         menu: 'eCommerce',
                         icon: FaRegCircle,
+                        access: 'eCommerce',
                         subMenu: false
                     },
                     {
                         link: '/logistice',
                         menu: 'Logistice',
                         icon: FaRegCircle,
+                        access: 'logistice',
                         subMenu: false
                     },
                     {
                         link: '/Academy',
                         menu: 'Academy',
                         icon: FaRegCircle,
+                        access: 'Academy',
                         subMenu: false
                     },
                 ]
             },
-            {
-                link: false,
-                menu: 'service',
-                icon: RiHomeSmile2Line,
-                dropDown: [
-                    {
-                        link: '/serviceList',
-                        menu: 'service',
-                        icon: FaRegCircle,
-                        subMenu: false
-                    },
-                ]
-            },
-            {
-                link: false,
-                menu: 'Expance',
-                icon: RiHomeSmile2Line,
-                dropDown: [
-                    {
-                        link: '/yearlyInvoiceList',
-                        menu: 'yearly Invoice List',
-                        icon: FaRegCircle,
-                        subMenu: false
-                    },
-                ]
-            },
+
             {
                 link: false,
                 menu: 'Layouts',
@@ -84,54 +64,63 @@ export const SIderberNavLinks = [
                         link: '/Collapsed-menu',
                         menu: 'Collapsed menu',
                         icon: FaRegCircle,
+                        access: 'Collapsed-menu',
                         subMenu: false
                     },
                     {
                         link: '/Content-Navbar',
                         menu: 'Content Navbar',
                         icon: FaRegCircle,
+                        access: 'Content-Navbar',
                         subMenu: false
                     },
                     {
                         link: '/Content-Nav-Sidever',
                         menu: 'Content Nav + Sidever',
                         icon: FaRegCircle,
+                        access: 'Content-Nav-Sidever',
                         subMenu: false
                     },
                     {
                         link: '/Horizontal',
                         menu: 'Horizontal',
                         icon: FaRegCircle,
+                        access: 'Horizontal',
                         subMenu: false
                     },
                     {
                         link: '/Without-menu',
                         menu: 'Without menu',
                         icon: FaRegCircle,
+                        access: 'Without-menu',
                         subMenu: false
                     },
                     {
                         link: '/Without-navbar',
                         menu: 'Without navbar',
                         icon: FaRegCircle,
+                        access: 'Without-navbar',
                         subMenu: false
                     },
                     {
                         link: '/Fluid',
                         menu: 'Fluid',
                         icon: FaRegCircle,
+                        access: 'Fluid',
                         subMenu: false
                     },
                     {
                         link: '/Container',
                         menu: 'Container',
                         icon: FaRegCircle,
+                        access: 'Container',
                         subMenu: false
                     },
                     {
                         link: '/Blank',
                         menu: 'Blank',
                         icon: FaRegCircle,
+                        access: 'Blank',
                         subMenu: false
                     },
 
@@ -146,6 +135,7 @@ export const SIderberNavLinks = [
                         link: '/Landing',
                         menu: 'Landing',
                         icon: FaRegCircle,
+                        access: 'Landing',
                         subMenu: false
                     },
                     {
@@ -158,18 +148,21 @@ export const SIderberNavLinks = [
                         link: '/Payment',
                         menu: 'Payment',
                         icon: FaRegCircle,
+                        access: 'Payment',
                         subMenu: false
                     },
                     {
                         link: '/Checkout',
                         menu: 'Checkout',
                         icon: FaRegCircle,
+                        access: 'Checkout',
                         subMenu: false
                     },
                     {
                         link: '/Help-Center',
                         menu: 'Help Center',
                         icon: FaRegCircle,
+                        access: 'Help-Center',
                         subMenu: false
                     },
                 ]
@@ -183,140 +176,29 @@ export const SIderberNavLinks = [
                 link: '/Email',
                 menu: 'Email',
                 icon: MdOutlineMail,
+                access: 'Email',
                 dropDown: false
             },
             {
                 link: '/Chat',
                 menu: 'Chat',
                 icon: GrChatOption,
+                access: 'Chat',
                 dropDown: false
             },
             {
                 link: '/Calendar',
                 menu: 'Calendar',
                 icon: CiCalendarDate,
+                access: 'Calendar',
                 dropDown: false
             },
             {
                 link: '/Kanban',
                 menu: 'Kanban',
                 icon: TbLayoutKanban,
+                access: 'Kanban',
                 dropDown: false
-            },
-            {
-                link: false,
-                menu: 'eCommerce',
-                icon: HiOutlineShoppingCart,
-                dropDown: [
-                    {
-                        link: '/',
-                        menu: 'Dashboard',
-                        icon: FaRegCircle,
-                        subMenu: false
-                    },
-                    {
-                        link: false,
-                        menu: 'Products',
-                        icon: FaRegCircle,
-                        subMenu: [
-                            {
-                                link: '/Product-List',
-                                menu: 'Product List',
-                                icon: FaRegCircle,
-                                subMenu2: false
-                            },
-                            {
-                                link: '/Add-Product',
-                                menu: 'Add Product',
-                                icon: FaRegCircle,
-                                subMenu2: false
-                            },
-                            {
-                                link: '/Category-List',
-                                menu: 'Category List',
-                                icon: FaRegCircle,
-                                subMenu2: false
-                            },
-                        ]
-                    },
-                    {
-                        link: false,
-                        menu: 'Order',
-                        icon: FaRegCircle,
-                        subMenu: [
-                            {
-                                link: '/Order-List',
-                                menu: 'Order List',
-                                icon: FaRegCircle,
-                                subMenu2: false
-                            },
-                            {
-                                link: '/Order-List',
-                                menu: 'Order Details',
-                                icon: FaRegCircle,
-                                subMenu2: false
-                            },
-                        ]
-                    },
-                    {
-                        link: false,
-                        menu: 'Customer',
-                        icon: FaRegCircle,
-                        subMenu: [
-                            {
-                                link: '/All-Customers',
-                                menu: 'All Customers',
-                                icon: FaRegCircle,
-                                subMenu2: false
-                            },
-                            {
-                                link: false,
-                                menu: 'Customer-Details',
-                                icon: FaRegCircle,
-                                subMenu2: [
-                                    {
-                                        link: '/Overview',
-                                        menu: 'Overview',
-                                        icon: FaRegCircle,
-                                    },
-                                    {
-                                        link: '/Security-Customers',
-                                        menu: 'Security',
-                                        icon: FaRegCircle,
-                                    },
-                                    {
-                                        link: '/Address-&-Billing',
-                                        menu: 'Address & Billing',
-                                        icon: FaRegCircle,
-                                    },
-                                    {
-                                        link: '/Notifications',
-                                        menu: 'Notifications',
-                                        icon: FaRegCircle,
-                                    },
-                                ]
-                            },
-                            {
-                                link: '/Manage-Reviews',
-                                menu: 'Manage Reviews',
-                                icon: FaRegCircle,
-                                subMenu2: false
-                            },
-                            {
-                                link: '/Referrals',
-                                menu: 'Referrals',
-                                icon: FaRegCircle,
-                                subMenu2: false
-                            },
-                            {
-                                link: '/Settings',
-                                menu: 'Settings',
-                                icon: FaRegCircle,
-                                subMenu2: false
-                            },
-                        ]
-                    },
-                ]
             },
             {
                 link: false,
@@ -327,18 +209,21 @@ export const SIderberNavLinks = [
                         link: '/Dashboard',
                         menu: 'Dashboard',
                         icon: FaRegCircle,
+                        access: 'Dashboard',
                         subMenu: false
                     },
                     {
                         link: '/My-Course',
                         menu: 'My Course',
                         icon: FaRegCircle,
+                        access: 'My-Course',
                         subMenu: false
                     },
                     {
                         link: '/Course-Details',
                         menu: 'Course Details',
                         icon: FaRegCircle,
+                        access: 'Course-Details',
                         subMenu: false
                     },
                 ]
@@ -352,13 +237,35 @@ export const SIderberNavLinks = [
                         link: '/Dashboard',
                         menu: 'Dashboard',
                         icon: FaRegCircle,
+                        access: 'Dashboard',
                         subMenu: false
                     },
                     {
                         link: '/Fleet',
                         menu: 'Fleet',
                         icon: FaRegCircle,
+                        access: 'Fleet',
                         subMenu: false
+                    },
+                    {
+                        link: false,
+                        menu: 'Fleet',
+                        icon: FaRegCircle,
+                        subMenu: [
+                            {
+                                link: '/Dashboard',
+                                menu: 'Dashboard',
+                                icon: FaRegCircle,
+                                access: 'Dashboard',
+                                subMenu2:false
+                            },
+                            {
+                                link: false,
+                                menu: 'Dashboard',
+                                icon: FaRegCircle,
+                                subMenu2: false
+                            },
+                        ]
                     },
                 ]
             },
@@ -371,24 +278,28 @@ export const SIderberNavLinks = [
                         link: '/List',
                         menu: 'List',
                         icon: FaRegCircle,
+                        access: 'List',
                         subMenu: false
                     },
                     {
                         link: '/Preview',
                         menu: 'Preview',
                         icon: FaRegCircle,
+                        access: 'Preview',
                         subMenu: false
                     },
                     {
                         link: '/Edit',
                         menu: 'Edit',
                         icon: FaRegCircle,
+                        access: 'Edit',
                         subMenu: false
                     },
                     {
                         link: '/Add',
                         menu: 'Add',
                         icon: FaRegCircle,
+                        access: 'Add',
                         subMenu: false
                     },
                 ]
