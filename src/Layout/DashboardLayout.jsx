@@ -74,9 +74,9 @@ const DashboardLayout = () => {
 
   return (
     <div className="lg:flex lg:px-0 px-[6px] bg-[#F8F7FA] dark:bg-[#25293C] overflow-hidden h-screen w-full">
-      {/* sideber  */}
+      {/* sideber  dark:bg-[#2F3349] dark:bg-[#25293C]*/}
       <div id="sideber" style={{ transition: ".5s" }}
-        className={`max-w-80 pl-2 z-50 border-r dark:border-r-0 ${showText ? `2xl:w-[19%] xl:w-[22%] lg:w-[23%] sm:w-[33%] w-[75%]  lg:relative` : `HideTextAnimation ${mouseEnterInSIderber ? 'xl:w-[19%] lg:w-[20%] sm:w-[33%] w-[75%]  box-border' : 'w-[80px] min-w-[80px]'} absolute  h-screen `} shadow-2xl min-h-screen absolute ${show ? 'left-0 top-0 SideberOpen' : 'hidden lg:block SideberClose'} bg-white dark:bg-[#25293C] dark:text-gray-100 z-50 `}
+        className={`max-w-80 pl-2 z-50 border-r dark:border-r-0 ${showText ? `2xl:w-[19%] xl:w-[22%] lg:w-[23%] sm:w-[33%] w-[75%]  lg:relative` : `HideTextAnimation ${mouseEnterInSIderber ? 'xl:w-[19%] lg:w-[20%] sm:w-[33%] w-[75%]  box-border' : 'w-[80px] min-w-[80px]'} absolute  h-screen `} shadow-2xl min-h-screen absolute ${show ? 'left-0 top-0 SideberOpen' : 'hidden lg:block SideberClose'} bg-white dark:bg-[#2F3349] dark:text-gray-100 z-50 `}
       >
         <Dashboard />
       </div>

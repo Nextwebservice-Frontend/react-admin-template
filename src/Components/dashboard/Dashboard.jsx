@@ -105,7 +105,7 @@ const Dashboard = () => {
   return (
     <div
       id="dBoardSideber"
-      className="w-full mx-auto dark:bg-[#2F3349]">
+      className="w-full mx-auto ">
       {/* logo  */}
       <Logo show={show} setShow={setShow} />
       <div id="sideberScrollber"
@@ -116,7 +116,7 @@ const Dashboard = () => {
             {/* check is there any title for this menu group or not */}
             {item?.title && (
               <p
-                className="font-medium uppercase opacity-85 text-xs pt-3 pb-1 text-gray-500 dark:text-gray-100">
+                className="font-medium uppercase opacity-85 text-xs pt-3 pb-1 text-gray-500 dark:text-gray-300">
                 {/* check show menu text or not // if true then mouse entered or not  */}
                 {showText
                   ? item?.title

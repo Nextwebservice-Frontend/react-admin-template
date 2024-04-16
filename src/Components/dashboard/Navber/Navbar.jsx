@@ -54,8 +54,8 @@ const Navbar = () => {
       <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className="flex bg-white dark:bg-[#2F3249] rounded-md justify-between items-center w-full mx-auto box-border px-2 shadow-md py-4 z-10 relative">
         {showSearchOption &&
           <div className="w-full h-full absolute rounded-md bg-white dark:bg-[#2F3249] z-50 top-0 left-0 flex justify-start items-center gap-1 box-border px-6">
-            <input type="text" name="search" placeholder=" Search..." className="font-semibold dark:text-[#6B74A6] bg-transparent text-base opacity-65 tracking-wider outline-none focus:border-0 focus:outline-none border-0 w-full" />
-            <RxCross1 onClick={() => setshowSearchOption(false)} className="cursor-pointer" />
+            <input type="text" name="search" placeholder=" Search..." className="font-semibold dark:text-gray-300 bg-transparent text-base opacity-65 tracking-wider outline-none focus:border-0 focus:outline-none border-0 w-full" />
+            <RxCross1 onClick={() => setshowSearchOption(false)} className="cursor-pointer dark:text-gray-300" />
           </div>
         }
         <div className="flex justify-start items-center gap-4">
@@ -67,7 +67,7 @@ const Navbar = () => {
             className="text-3xl lg:hidden block text-gray-600 dark:text-gray-100 mt-1 cursor-pointer z-40"
           />
           <button onClick={() => setshowSearchOption(true)} className="text-2xl flex justify-start items-center gap-2">
-            <IoSearchOutline /> <span className="text-base font-semibold md:block hidden dark:text-[#6B74A6] text-gray-500 opacity-70">search (ctrl + /)</span>
+            <IoSearchOutline className="dark:text-gray-300"/> <span className="text-base font-semibold md:block hidden dark:text-[#6B74A6] text-gray-500 opacity-70">search (ctrl + /)</span>
           </button>
         </div>
         <div className="flex justify-end items-center gap-4 z-40">
@@ -77,14 +77,14 @@ const Navbar = () => {
             setshowSortcutPopUp(false);
             setshowThemePopUp(false)
             setshowLanguagePopUp(!showLanguagePopUp)
-          }} className="text-2xl text-gray-600 dark:text-gray-100  mt-1 cursor-pointer" />
+          }} className="text-2xl text-gray-600 dark:text-gray-300  mt-1 cursor-pointer" />
           <button onClick={() => {
             setShowprofilePopUp(false);
             setshowNotificationPopUp(false)
             setshowSortcutPopUp(false);
             setshowLanguagePopUp(false)
             setshowThemePopUp(!showThemePopUp)
-          }} className="text-2xl text-gray-600 dark:text-gray-100 mt-1 cursor-pointer" >
+          }} className="text-2xl text-gray-600 dark:text-gray-300 mt-1 cursor-pointer" >
             {theme === 'light' ? <HiOutlineSun /> : theme === 'dark' ? <IoMoonOutline /> : <CiMonitor />}
 
           </button>
@@ -96,7 +96,7 @@ const Navbar = () => {
               setshowLanguagePopUp(false)
               setshowSortcutPopUp(!showSortcutPopUp);
             }}
-            className="text-2xl text-gray-600 dark:text-gray-100 mt-1 cursor-pointer"
+            className="text-2xl text-gray-600 dark:text-gray-300 mt-1 cursor-pointer"
           />
           <FaRegBell onClick={() => {
             setshowSortcutPopUp(false);
@@ -104,7 +104,7 @@ const Navbar = () => {
             setshowThemePopUp(false)
             setshowLanguagePopUp(false)
             setshowNotificationPopUp(!showNotificationPopUp)
-          }} className="text-2xl text-gray-600 dark:text-gray-100 mt-1 cursor-pointer" />
+          }} className="text-2xl text-gray-600 dark:text-gray-300 mt-1 cursor-pointer" />
           <img
             onClick={() => {
               setshowSortcutPopUp(false);
