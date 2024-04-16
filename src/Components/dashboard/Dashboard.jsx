@@ -99,7 +99,6 @@ const Dashboard = () => {
       for (const dropDown of dropDowns) {
         // console.log(dropDown);
         const Links = dropDown.querySelectorAll('li');
-        console.log(Links.length)
         Links.length <= 0 && dropDown.parentElement.classList.add('hidden')
       }
     }
@@ -118,7 +117,7 @@ const Dashboard = () => {
             {/* check is there any title for this menu group or not */}
             {item?.title && (
               <p
-                className="font-medium uppercase opacity-85 text-xs pt-3 pb-1 text-gray-500">
+                className="font-medium uppercase opacity-85 text-xs pt-3 pb-1 text-gray-500 dark:dark:text-gray-100">
                 {/* check show menu text or not // if true then mouse entered or not  */}
                 {showText
                   ? item?.title
@@ -132,7 +131,7 @@ const Dashboard = () => {
                     key={index}
                     // 
                     to={item.link}
-                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80  flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
+                    className=" my-1 text-[16px] hover:pl-2 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-2 hover:text-gray-600 font-semibold opacity-80  flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
                   >
                     <item.icon />
                     {/* check show menu text or not if true then mouse entered or not */}
@@ -172,7 +171,7 @@ const Dashboard = () => {
                             return !dropDownItems.link &&
                               Array.isArray(dropDownItems.subMenu) ? (
                               <>
-                                <li
+                                <li 
                                   onClick={() => {//open sub accordion menu
                                     handelSubMenuAccordion(dropDownItems.menu);
                                   }}
@@ -194,7 +193,7 @@ const Dashboard = () => {
                                     />
                                   </span>
                                 </li>
-                                <ul
+                                <ul 
                                   // check is subaccordion menu open or not 
                                     className={` ${openSubMenuAccordion.subMenuOpen && openSubMenuAccordion.subMenu === dropDownItems?.menu? "h-full accordionOpen": " max-h-0 "} overflow-hidden z-50 ${(openSubMenuAccordion.prevSubMenu ===dropDownItems?.menu &&openSubMenuAccordion.prevSubMenuOpen) ||(!openSubMenuAccordion.prevSubMenuOpen &&openSubMenuAccordion.subMenu ===dropDownItems?.menu)? "": ""}`}
                                   >
