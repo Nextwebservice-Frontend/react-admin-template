@@ -12,7 +12,7 @@ const Logo = ({ show, setShow }) => {
         <div className="flex justify-between items-center my-2 w-full pr-2 pb-4">
             <div className="flex items-center gap-3 p-2 w-full">
                 {
-                    showText ? <img src={logo} alt="" /> : mouseEnterInSIderber ? <img src={logo} alt="" /> : <img className="h-8 w-full object-cover" src={Shortlogo} alt="" />
+                    showText ? <img src={logo} alt="" /> : mouseEnterInSIderber ? <img src={logo} alt="" /> : <img className="h-12 w-full object-cover" src={Shortlogo} alt="" />
                 }
             </div>
             <button onClick={() => {
