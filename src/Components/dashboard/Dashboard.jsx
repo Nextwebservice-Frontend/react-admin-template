@@ -105,7 +105,7 @@ const Dashboard = () => {
   return (
     <div
       id="dBoardSideber"
-      className="w-full mx-auto ">
+      className="w-full mx-auto dark:bg-[#2F3349]">
       {/* logo  */}
       <Logo show={show} setShow={setShow} />
       <div id="sideberScrollber"

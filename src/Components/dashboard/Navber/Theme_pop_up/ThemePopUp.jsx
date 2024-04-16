@@ -1,13 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { CiMonitor } from 'react-icons/ci'
 import { HiOutlineSun } from 'react-icons/hi'
 import { IoMoonOutline } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
+import { ContextData } from '../../../../Providers/ContextProviders/ContextProviders'
 
 const ThemePopUp = ({ showThemePopUp, setshowThemePopUp }) => {
-    const [theme, setTheme] = useState(
-        localStorage.getItem('theme')
-    )
+    const {
+        theme, 
+        setTheme
+    }=useContext(ContextData)
+    // const [theme, setTheme] = useState(
+    //     localStorage.getItem('theme')
+    // )
     const HTMLelement = document.getElementById('HTMLelement')
     const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const ThemeOptions = [
