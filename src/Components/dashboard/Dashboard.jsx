@@ -272,8 +272,8 @@ const Dashboard = () => {
     }
   };
   return (
-    <div
-    id="dBoardSideber"
+    <div 
+    id="dBoardSideber" 
     className="w-full mx-auto ">
       {/* logo  */}
       <Logo show={show} setShow={setShow} />
@@ -506,7 +506,7 @@ const Dashboard = () => {
                 </div>
                 )
               )}
-            </div>
+          </div>
         ))}
         </div>
     </div>

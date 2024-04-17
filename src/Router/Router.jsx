@@ -3,10 +3,11 @@ import DashboardLayout from "../Layout/DashboardLayout";
 import Notice from "../Pages/Notice/Notice";
 import Profile from "../Pages/Profile/Profile";
 import NewExpenseReceipt from "../Pages/ExpenseReceipt/NewExpenseReceipt/NewExpenseReceipt";
-import ExpenseList from "../Pages/ExpenseList/ExpenseList";
-import ExpanseReceipt from "../Pages/ExpanseReceipt/ExpanseReceipt";
-import MonthlyInvoice from "../Pages/MonthlyInvoice/MonthlyInvoice";
-
+import ServiceList from "../Pages/Services/ServiceList/ServiceList";
+import YearlyInvoice from "../Pages/Reports/YearlyInvoice/YearlyInvoice";
+import GeneralSetting from "../Pages/Settings/GeneralSetting/GeneralSetting";
+import Button from "../Pages/Button/Button";
+import Provider from "../Pages/Others/Provider";
 
 const Router = createBrowserRouter([
     {
@@ -18,29 +19,37 @@ const Router = createBrowserRouter([
                 element: <Notice />
             }
             ,
-           {
-                path: '/expenseReceipt',
-                element: <ExpanseReceipt />
-            },
+            {
+                path: '/profile',
+                element: <Profile />
+            }
+          ,
             {
                 path: '/newExpenseReceipt',
                 element: <NewExpenseReceipt />
             },
             {
-                path: '/expenseList',
-                element: <ExpenseList />
+                path: '/serviceList',
+                element: <ServiceList />
             },
             {
-                path: '/profile',
-                element: <Profile />
+                path: '/yearlyInvoiceList',
+                element: <YearlyInvoice />
+            },
+            {
+                path: '/generalSetting',
+                element: <GeneralSetting />
             }
-            },
+            ,
             {
-                path: '/monthly-report-list',
-                element: <MonthlyInvoice />
-            },
-
-            
+                path: '/provider',
+                element: <Provider></Provider>
+            }
+            ,
+            {
+                path: '/btn',
+                element: <Button></Button>
+            }
         ]
     }
 ])
