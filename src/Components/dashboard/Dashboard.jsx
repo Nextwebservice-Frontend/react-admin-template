@@ -118,7 +118,7 @@ const Dashboard = () => {
             {/* check is there any title for this menu group or not */}
             {item?.title && (
               <p
-                className="font-medium uppercase opacity-85 text-xs pt-3 pb-1 pl-2 text-gray-500 dark:text-gray-300">
+                className={`font-medium uppercase ${showText ? 'block' : mouseEnterInSIderber ? 'block' : 'hidden'} opacity-85 text-xs pt-3 pb-1 pl-2 text-gray-500 dark:text-gray-300`}>
                 {/* check show menu text or not // if true then mouse entered or not  */}
                 {showText
                   ? item?.title

@@ -7,6 +7,7 @@ import { VscFiles } from "react-icons/vsc";
 import { CiCalendarDate } from "react-icons/ci";
 import { TbFileDollar, TbLayoutKanban } from "react-icons/tb";
 import { IoBookOutline } from "react-icons/io5";
+import { AiFillAppstore } from "react-icons/ai";
 export const SIderberNavLinks = [
     //groups
     {
@@ -175,14 +176,14 @@ export const SIderberNavLinks = [
             {
                 link: '/demo',
                 menu: 'Demo',
-                icon: MdEmojiObjects,
+                icon: AiFillAppstore ,
                 access: 'Email',
                 dropDown: false
             },
             {
                 link: false,
                 menu: 'Demo dropdowns',
-                icon: MdEmojiObjects,
+                icon: AiFillAppstore,
                 dropDown: [
                     {
                         link: '/Demo dropdown',
