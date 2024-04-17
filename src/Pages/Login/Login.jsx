@@ -29,7 +29,6 @@ const Login = () => {
           toast.success(res.data.message);
           e.target.reset();
           localStorage.setItem("token", res.data.access_token);
-          localStorage.setItem('access', JSON.stringify(res.data.userPermissionData))
           setLoading(false)
           navigate("/");
         }

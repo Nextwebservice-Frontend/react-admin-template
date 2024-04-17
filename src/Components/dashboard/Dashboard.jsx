@@ -6,11 +6,11 @@ import "../../CSS/customCSS.css";
 import { NavLink } from "react-router-dom";
 import { SIderberNavLinks } from "../../Utility/Sideber/SIderberNavLinks";
 import { IoIosArrowForward } from "react-icons/io";
+import { UserContext } from "../../Providers/UserProvider/UserProvider";
+import Loader from "../../Utility/Loader/Loader";
 
 const Dashboard = () => {
-  const permission = JSON.parse(localStorage.getItem('access'))
-  const haveAccess = permission.map(item => `${item.name}`)
-  haveAccess.push('/')
+  const {user} = useContext(UserContext);
 
   const {
     setShow,
@@ -109,6 +109,12 @@ const Dashboard = () => {
   }, []);
 
 
+  const haveAccess = user?.userPermissionData?.map(item => `${item.name}`)
+  if(haveAccess){
+    haveAccess?.push('/')
+  } else{
+    return <Loader />
+  }
 
   return (
     <div
