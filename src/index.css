@@ -25,19 +25,25 @@
   text-decoration: none;
 }
 
-#dBoardSideber::-webkit-scrollbar {
-  -ms-overflow-style: none; 
-  scrollbar-width: 1px;
-  position: absolute;
-  right: 10px; 
-}
 
-#dBoardSideber::-webkit-scrollbar-thumb {
+
+/* #dBoardSideber::-webkit-scrollbar-thumb {
   background-color: rgb(65, 65, 65, 0.2); 
-}
+} */
 
 #dBoardSideber::-webkit-scrollbar {
   width: 1px;
+}
+#dBoardSideber::-webkit-scrollbar-track {
+  position:absolute;
+  left: 20px;
+  display: none;
+}
+#dBoardSideber::-webkit-scrollbar-thumb {
+  background: rgb(255, 0, 0,0.0);
+}
+#dBoardSideber:hover::-webkit-scrollbar-thumb {
+  background: rgba(85, 83, 83, 0.5);
 }
 
 #NotificationPopUp::-webkit-scrollbar {

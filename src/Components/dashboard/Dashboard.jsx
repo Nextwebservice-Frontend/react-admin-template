@@ -107,7 +107,7 @@ const Dashboard = () => {
   return (
     <div
       id="dBoardSideber"
-      className={`w-full mx-auto h-[100vh] ${mouseEnterInSIderber ? 'overflow-y-scroll' : 'overflow-y-scroll lg:overflow-hidden'}`}>
+      className={`w-full mx-auto h-[100vh] overflow-y-auto `}>
       {/* logo  */}
       <Logo show={show} setShow={setShow} />
       <div id="sideberScrollber"
@@ -131,7 +131,7 @@ const Dashboard = () => {
                   HaveAcces.includes(item.access) && <NavLink
                     key={index}
                     to={item.link}
-                    className={`my-[6px] text-[15px] hover:pl-4 ${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[8px] dark:hover:text-gray-600 font-medium opacity-80  flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
+                    className={`my-[6px] text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 ${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[8px]  font-medium opacity-80  flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                   >
                     <item.icon className={`text-xl`} />
                     {/* check show menu text or not if true then mouse entered or not */}
@@ -141,13 +141,13 @@ const Dashboard = () => {
                   // dropdown menus
                   <div
                     key={index}
-                    className={`dark:hover:text-gray-600 hover:no-underline cursor-pointer`}
+                    className={` hover:no-underline cursor-pointer`}
                   >
                     <span
                       //accordion open function call
                       //accordion open function call
                       onClick={() => HandelAccorDionOpen(item?.menu)}
-                      className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} text-[15px] hover:pl-4 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-2 dark:hover:text-gray-600 font-semibold opacity-80 flex justify-between items-center gap-2 hover:bg-gray-200 rounded-md`}
+                      className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-2  font-semibold opacity-80 flex justify-between items-center gap-2 hover:bg-gray-200 rounded-md`}
                     >
                       <span
                         className={`flex ${showText ? "justify-start" : "justify-start"} items-center gap-1`}
@@ -180,7 +180,7 @@ const Dashboard = () => {
                                 >
                                   <span
 
-                                    className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px]  text-[15px] hover:pl-4 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-2 dark:hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
+                                    className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px]  text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-2  font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                                   >
                                     <span
                                       className={`flex ${showText ? "justify-start" : "justify-start"} w-full items-center gap-1`}
@@ -210,7 +210,7 @@ const Dashboard = () => {
                                       >
                                         <span
 
-                                          className={`my-[6px] ${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} text-[15px] hover:pl-4 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-2 dark:hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
+                                          className={`my-[6px] ${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-2  font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                                         >
                                           <span
                                             className={`flex ${showText ? "justify-start" : "justify-start"} w-full items-center gap-1`}
@@ -235,7 +235,7 @@ const Dashboard = () => {
                                             <NavLink
 
                                               to={subMenu2.link}
-                                              className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px] text-[15px] hover:pl-4 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[6px] dark:hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
+                                              className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px] text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[6px]  font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                                             >
                                               <subMenu.icon className="text-[10px]"/> {subMenu2.menu}
                                             </NavLink>
@@ -250,7 +250,7 @@ const Dashboard = () => {
                                       <NavLink
 
                                         to={subMenu.link}
-                                        className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px] text-[15px] hover:pl-4 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[6px] dark:hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
+                                        className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px] text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[6px]  font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                                       >
                                         <subMenu.icon className="text-[10px]"/> {subMenu.menu}
                                       </NavLink>
@@ -267,7 +267,7 @@ const Dashboard = () => {
                                 <NavLink
 
                                   to={dropDownItems.link}
-                                  className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px] text-[15px] hover:pl-4 text-gray-600  dark:text-gray-100 hover:no-underline px-1 transition-all py-[6px] dark:hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
+                                  className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px] text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600  dark:text-gray-100 hover:no-underline px-1 transition-all py-[6px]  font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                                 >
                                   <dropDownItems.icon className="text-[10px]"/> {dropDownItems.menu}
                                 </NavLink>
