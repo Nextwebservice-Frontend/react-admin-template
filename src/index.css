@@ -101,8 +101,8 @@
 
 @keyframes SideberClose {
   from {
-    left: 0;
     display: block;
+    left: 0;
   }
 
   to {
