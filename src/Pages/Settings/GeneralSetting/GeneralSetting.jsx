@@ -141,8 +141,6 @@ const GeneralSetting = () => {
                                 </div>
                             </div>
                             {/* invoice back color */}
-                           
-
                             {/* invoice terms */}
                             <div className="pl-4 pr-6 mb-4">
                                 <p className="label-text text-base mr-7 pb-2">Invoice Terms<span className="text-red-500 pl-1">(required)</span></p>
