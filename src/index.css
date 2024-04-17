@@ -25,18 +25,18 @@
   text-decoration: none;
 }
 
-#sideberScrollber::-webkit-scrollbar {
+#dBoardSideber::-webkit-scrollbar {
   -ms-overflow-style: none; 
   scrollbar-width: 1px;
   position: absolute;
   right: 10px; 
 }
 
-#sideberScrollber::-webkit-scrollbar-thumb {
+#dBoardSideber::-webkit-scrollbar-thumb {
   background-color: rgb(65, 65, 65, 0.2); 
 }
 
-#sideberScrollber::-webkit-scrollbar {
+#dBoardSideber::-webkit-scrollbar {
   width: 1px;
 }
 

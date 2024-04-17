@@ -105,11 +105,11 @@ const Dashboard = () => {
   return (
     <div
       id="dBoardSideber"
-      className="w-full mx-auto ">
+      className={`w-full mx-auto h-[100vh] ${ mouseEnterInSIderber ? 'overflow-y-scroll' : 'overflow-y-scroll lg:overflow-hidden'}`}>
       {/* logo  */}
       <Logo show={show} setShow={setShow} />
       <div id="sideberScrollber"
-        className={`box-border px-4 h-[88vh] pb-4   ${mouseEnterInSIderber ? 'overflow-y-scroll' : 'overflow-y-scroll lg:overflow-hidden'}`}>
+        className={`box-border  pb-4  ${showText ? 'px-2' : mouseEnterInSIderber ? 'px-2' : 'px-4'} `}>
         {/* map over all the menu group  */}
         {SIderberNavLinks.map((item, index) => (
           <div key={index}>
