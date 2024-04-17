@@ -28,7 +28,7 @@ const TextEditor = ({ placeholder }) => {
     return (
         <>
             <h3 className='my-4 capitalize'>my text Editor</h3>
-            <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className={`border-none rounded-md ${(theme === 'dark' || darkModeQuery.matches) ? 'darkThemeActivate' : ''} rounded-md dark:bg-[#2F3349]`}>
+            <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className={`border-none rounded-md ${(theme === 'dark' || darkModeQuery.matches) ? 'darkThemeActivate' : ''} rounded-md dark:bg-[#2F3349] bg-gray-100`}>
                 <ReactQuill
                     theme="snow"
                     value={value}
