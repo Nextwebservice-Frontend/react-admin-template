@@ -1,5 +1,6 @@
 import { MdOutlineCampaign } from "react-icons/md";
 import { FaRegUser, FaUsersBetweenLines } from "react-icons/fa6";
+import TextEditor from "../../Components/dashboard/TextEditor/TextEditor";
 
 const Notice = () => {
   return (
@@ -51,6 +52,7 @@ const Notice = () => {
           </button>
         </div>
       </div>
+      <TextEditor placeholder={`start`}/>
     </div>
 
   );

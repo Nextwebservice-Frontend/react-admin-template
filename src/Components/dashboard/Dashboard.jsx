@@ -74,7 +74,7 @@ const Dashboard = () => {
       });
     }
   };
-  console.log(openSubMenuAccordion)
+  // console.log(openSubMenuAccordion)
   const handelSubMenuAccordion2 = (name) => {
     // console.log(openSubMenuAccordion)
     if (openSubMenuAccordion2.subMenu !== name) {
