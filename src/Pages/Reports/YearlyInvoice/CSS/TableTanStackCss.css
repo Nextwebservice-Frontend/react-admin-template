@@ -8,3 +8,11 @@
     vertical-align: top;
 }
 
+input[type="file"] {
+
+    display: none;
+}
+
+#uploadImage {
+    display: inline-block;
+}

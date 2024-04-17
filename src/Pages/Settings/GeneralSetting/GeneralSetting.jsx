@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import '../../Reports/YearlyInvoice/CSS/TableTanStackCss.css'
+import { IoIosImages } from "react-icons/io";
+import InvoiceTerms from './InvoiceTerm/InvoiceTerms';
 
 const GeneralSetting = () => {
     const [image, setImage] = useState("");
@@ -38,22 +40,14 @@ const GeneralSetting = () => {
                                     </h1>
                                     {/* image */}
                                     <div className='flex justify-between items-end mb-2 lg:mb-4 '>
-                                        <div className="md:w-[50%] h-[200px] md:h-[185px] pt-2">
+                                        <div className="md:w-[300px] h-[150px] pt-2">
                                             {image == "" || image == null ?
-                                                <button >
-                                                    <img
-                                                        className="h-[150px] w-[250px]"
-                                                        src="https://i.ibb.co/Lv9p0W3/upload-image-icon.png"
-                                                        alt="gh"
-                                                    />
-                                                    <span className="text-lg  md:text-xs xl:text-base">
-                                                        <input type="file" id="myFile" accept="image/" onChange={convertToBase64} name="filename" className="mt-2" >
-                                                        </input>
-                                                    </span>
-                                                </button> :
-                                                <img src={image} className="h-full md:h-[175px]  w-[250px]" alt="" />}
+                                                <label id="uploadImage" htmlFor="uploadBtn" className="h-[100%] w-[100%] text-start"><IoIosImages className="h-[100%] w-[100%]" /></label>
+                                                : <img src={image} className="w-[100%] h-[100%] p-2" alt="" />}
+                                            <span className="text-lg md:text-xs xl:text-base pl-2"></span>
+                                            <input type="file" id="uploadBtn" onChange={convertToBase64} />
                                         </div>
-                                        <div className='text-2xl md:pr-10 w-[50%] text-end '>
+                                        <div className='text-2xl md:pr-8 pb-2 w-[50%] text-end'>
                                             <h1 className=''>X</h1>
                                         </div>
                                     </div>
@@ -107,22 +101,14 @@ const GeneralSetting = () => {
                                         <span className="pl-1 text-red-400">( Recommended W:250px,H:150px)</span>
                                     </h1>
                                     <div className='flex justify-between items-end mb-2 lg:mb-4 '>
-                                        <div className="md:w-[50%] h-[200px] md:h-[185px] pt-2">
+                                        <div className="md:w-[300px] h-[150px] pt-2">
                                             {image == "" || image == null ?
-                                                <div>
-                                                    <img
-                                                        className="h-[150px] w-[250px]"
-                                                        src="https://i.ibb.co/Lv9p0W3/upload-image-icon.png"
-                                                        alt="gh"
-                                                    />
-                                                    <span className="text-lg  md:text-xs xl:text-base">
-                                                        <input type="file" id="myFile" accept="image/" name="filename" className="mt-2" onChange={convertToBase64}>
-                                                        </input>
-                                                    </span>
-                                                </div> :
-                                                <img src={image} className="h-full md:h-[175px]  w-[250px]" alt="" />}
+                                                <label id="uploadImage" htmlFor="uploadBtn" className="h-[100%] w-[100%] text-start"><IoIosImages className="h-[100%] w-[100%]" /></label>
+                                                : <img src={image} className="w-[100%] h-[100%] p-2" alt="" />}
+                                            <span className="text-lg md:text-xs xl:text-base pl-2"></span>
+                                            <input type="file" id="uploadBtn" onChange={convertToBase64} />
                                         </div>
-                                        <div className='text-2xl md:pr-10 w-[50%] text-end '>
+                                        <div className='text-2xl md:pr-8 pb-2 w-[50%] text-end'>
                                             <h1 className=''>X</h1>
                                         </div>
                                     </div>
@@ -155,11 +141,15 @@ const GeneralSetting = () => {
                                 </div>
                             </div>
                             {/* invoice back color */}
-                            <div>
-
-                            </div>
+                           
 
                             {/* invoice terms */}
+                            <div className="pl-4 pr-6 mb-4">
+                                <p className="label-text text-base mr-7 pb-2">Invoice Terms<span className="text-red-500 pl-1">(required)</span></p>
+                                <InvoiceTerms className=""></InvoiceTerms>
+                               
+
+                            </div>
                         </form>
                     </div>
                     <div className=" pl-5 border py-4 px-6 bg-[#21252908] text-end">
