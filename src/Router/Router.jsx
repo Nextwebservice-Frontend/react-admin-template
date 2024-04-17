@@ -50,7 +50,6 @@ const Router = createBrowserRouter([
                 path: '/btn',
                 element: <Button></Button>
             }
-
         ]
     }
 ])
