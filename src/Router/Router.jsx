@@ -39,6 +39,8 @@ const Router = createBrowserRouter([
                 path: '/monthly-report-list',
                 element: <MonthlyInvoice />
             },
+
+            
         ]
     }
 ])
