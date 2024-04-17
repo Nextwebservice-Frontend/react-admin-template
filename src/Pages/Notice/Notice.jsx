@@ -4,12 +4,12 @@ import TextEditor from "../../Components/dashboard/TextEditor/TextEditor";
 
 const Notice = () => {
   return (
-    <div className=" dark:text-gray-300  mt-[10px] w-full mx-auto p-4 px-0 rounded ">
+    <div className=" dark:text-gray-300 text-gray-600 mt-[10px] w-full mx-auto p-4 px-0 rounded ">
       <div className="md:grid grid-cols-2 justify-center items-center gap-6">
         <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className="w-full h-full border dark:border-none rounded-md dark:bg-[#2F3349]">
           <span style={{ borderRadius: '4px 4px 0 0' }} className="flex p-4 py-2 border-b-2 dark:border-none  justify-start items-center gap-2 bg-gray-100 dark:bg-gray-500 ">
             <MdOutlineCampaign className="text-2xl" />
-            <h3 className="font-bold">নোটিশ</h3>
+            <h3 className="font-bold ">নোটিশ</h3>
           </span>
           <p className="p-4 ">
             প্রতিষ্ঠানের ডাটা সুরক্ষার কথা মাথায় রেখে আমরা সফটওয়্যারের ডিলিট

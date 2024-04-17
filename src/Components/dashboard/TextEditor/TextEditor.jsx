@@ -1,9 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { ContextData } from '../../../Providers/ContextProviders/ContextProviders';
 
 const TextEditor = ({ placeholder }) => {
+    const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const { theme } = useContext(ContextData)
     const modules = {
         toolbar: [
@@ -27,7 +28,7 @@ const TextEditor = ({ placeholder }) => {
     return (
         <>
             <h3 className='my-4 capitalize'>my text Editor</h3>
-            <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className={`border-none rounded-md ${theme === 'dark' ? 'darkThemeActivate' : ''} rounded-md dark:bg-[#2F3349]`}>
+            <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className={`border-none rounded-md ${(theme === 'dark' || darkModeQuery.matches) ? 'darkThemeActivate' : ''} rounded-md dark:bg-[#2F3349]`}>
                 <ReactQuill
                     theme="snow"
                     value={value}
