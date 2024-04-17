@@ -170,11 +170,11 @@ export const SIderberNavLinks = [
         ]
     },
     {
-        title: 'demo',
+        title: 'demos',
         NavItems: [
             {
                 link: '/demo',
-                menu: 'Demos',
+                menu: 'Demo',
                 icon: MdEmojiObjects,
                 access: 'Email',
                 dropDown: false

@@ -185,7 +185,7 @@ const Dashboard = () => {
                                     <span
                                       className={`flex ${showText ? "justify-start" : "justify-start"} w-full items-center gap-1`}
                                     >
-                                      <dropDownItems.icon />
+                                      <dropDownItems.icon className="text-[10px]"/>
                                       {showText ? dropDownItems?.menu : `${mouseEnterInSIderber ? dropDownItems?.menu : ""}`}
                                     </span>
                                     <IoIosArrowForward
@@ -215,7 +215,7 @@ const Dashboard = () => {
                                           <span
                                             className={`flex ${showText ? "justify-start" : "justify-start"} w-full items-center gap-1`}
                                           >
-                                            <dropDownItems.icon />
+                                            <dropDownItems.icon className="text-[10px]"/>
                                             {showText ? subMenu?.menu : `${mouseEnterInSIderber ? subMenu?.menu : ""}`}
                                           </span>
                                           <IoIosArrowForward
@@ -237,7 +237,7 @@ const Dashboard = () => {
                                               to={subMenu2.link}
                                               className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px] text-[15px] hover:pl-4 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[6px] dark:hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                                             >
-                                              <subMenu.icon /> {subMenu2.menu}
+                                              <subMenu.icon className="text-[10px]"/> {subMenu2.menu}
                                             </NavLink>
                                           </li>
                                         }
@@ -252,7 +252,7 @@ const Dashboard = () => {
                                         to={subMenu.link}
                                         className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px] text-[15px] hover:pl-4 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[6px] dark:hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                                       >
-                                        <subMenu.icon /> {subMenu.menu}
+                                        <subMenu.icon className="text-[10px]"/> {subMenu.menu}
                                       </NavLink>
                                     </li>
                                   }
@@ -269,7 +269,7 @@ const Dashboard = () => {
                                   to={dropDownItems.link}
                                   className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px] text-[15px] hover:pl-4 text-gray-600  dark:text-gray-100 hover:no-underline px-1 transition-all py-[6px] dark:hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                                 >
-                                  <dropDownItems.icon /> {dropDownItems.menu}
+                                  <dropDownItems.icon className="text-[10px]"/> {dropDownItems.menu}
                                 </NavLink>
                               </li>
                             );
