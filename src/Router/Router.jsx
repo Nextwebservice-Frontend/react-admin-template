@@ -2,11 +2,12 @@ import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Notice from "../Pages/Notice/Notice";
 import Profile from "../Pages/Profile/Profile";
-import ExpenseReceipt from "../Pages/ExpenseReceipt/ExpenseReceipt";
 import NewExpenseReceipt from "../Pages/ExpenseReceipt/NewExpenseReceipt/NewExpenseReceipt";
 import ServiceList from "../Pages/Services/ServiceList/ServiceList";
 import YearlyInvoice from "../Pages/Reports/YearlyInvoice/YearlyInvoice";
-import TableTanStack from "../Pages/ReactDataTable/TableTanStack";
+import GeneralSetting from "../Pages/Settings/GeneralSetting/GeneralSetting";
+import Button from "../Pages/Button/Button";
+import Provider from "../Pages/Others/Provider";
 
 const Router = createBrowserRouter([
     {
@@ -19,17 +20,13 @@ const Router = createBrowserRouter([
             }
             ,
             {
-                path: '/expenseReceipt',
-                element: <ExpenseReceipt />
+                path: '/profile',
+                element: <Profile />
             }
-            ,
+          ,
             {
                 path: '/newExpenseReceipt',
                 element: <NewExpenseReceipt />
-            },
-            {
-                path: '/profile',
-                element: <Profile />
             },
             {
                 path: '/serviceList',
@@ -39,10 +36,19 @@ const Router = createBrowserRouter([
                 path: '/yearlyInvoiceList',
                 element: <YearlyInvoice />
             },
-            // tanstack table
             {
-                path: '/tableTanStack',
-                element: <TableTanStack></TableTanStack>
+                path: '/generalSetting',
+                element: <GeneralSetting />
+            }
+            ,
+            {
+                path: '/provider',
+                element: <Provider></Provider>
+            }
+            ,
+            {
+                path: '/btn',
+                element: <Button></Button>
             }
 
         ]

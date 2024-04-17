@@ -23,7 +23,7 @@ const Profile = () => {
       <div className="flex flex-col md:flex-row gap-8 justify-center">
         {/* user details part */}
         <div className="card w-full md:w-[40%] lg:w-[30%]  bg-base-100 shadow-xl rounded-lg border">
-          <h1 className="text-2xl font-medium pl-5 mb-6 border py-4 ">
+          <h1 className="text-2xl font-medium pl-5 mb-6 border-b py-4 ">
             User Details
           </h1>
           <figure>
@@ -52,8 +52,8 @@ const Profile = () => {
         </div>
         {/* Update Profile Basic part(2nd part) */}
         <div className="mt-5  md:mt-0 md:w-[60%] lg:w-[70%]">
-          <div className="card  bg-base-100 shadow-xl border ">
-            <h1 className="text-2xl font-medium pl-5 mb-2 border py-4 ">
+          <div className="card bg-base-100 shadow-xl border rounded-lg">
+            <h1 className="text-2xl font-medium pl-5 mb-2 border-b py-4 ">
               Update Profile Basic
             </h1>
             <div className="w-full">
@@ -70,7 +70,7 @@ const Profile = () => {
                       <input
                         type="name"
                         placeholder="Name"
-                        className="input input-bordered  lg:w-full"
+                        className="input input-bordered  lg:w-full py-0"
                         required
                       />
                     </div>
