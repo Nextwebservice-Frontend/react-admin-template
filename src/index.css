@@ -1,11 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* Example CSS to customize React Quill toolbar */
-
-
-
-/* Add more CSS rules to customize other parts of the editor */
 
 .HideTextAnimation {
   animation: HideTextAnimation 1s;
