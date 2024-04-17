@@ -17,7 +17,6 @@ function App() {
         <div className={`xl:w-[82%] lg:w-[78%] w-full`}>
           <Home />
         </div>
-
       </div>
     </>
   )
