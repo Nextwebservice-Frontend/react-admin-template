@@ -42,7 +42,7 @@ const ProfileModal = () => {
                                     <Dialog.Panel className="w-[96%] md:w-[96%] lg:w-[90%]  xl:w-[70%] 2xl:w-[48%] transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all">
                                         <Dialog.Title
                                             as="h3"
-                                            className="border py-6 pl-4 font-bold text-xl leading-6 text-gray-900 bg-[#f7f7f7]"
+                                            className="border py-4 pl-4 font-bold text-xl leading- text-gray-900 bg-[#f7f7f7]"
                                         >
                                             <div className="flex justify-between items-center gap-2 pr-6">
                                                 <h1 className="#212529 font-serif text-normal md:text-xl ">Password Update</h1>
@@ -78,7 +78,7 @@ const ProfileModal = () => {
                                                 />
                                             </div>
                                         </div>
-                                        <div className="bg-[#f7f7f7] mt-4 p-6 border flex gap-2 justify-end">
+                                        <div className="bg-[#f7f7f7] mt-4 px-6 py-4 border flex gap-2 justify-end">
                                             <button className="bg-[#5cb85c] text-lg text-white ml-4 inline-flex justify-center rounded-md border border-transparent  px-4 py-2  font-medium  hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
                                                 Update
                                             </button>
