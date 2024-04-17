@@ -1,29 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Example CSS to customize React Quill toolbar */
 
-.popup {
-  animation: popUp .4s
+
+
+/* Add more CSS rules to customize other parts of the editor */
+
+.HideTextAnimation {
+  animation: HideTextAnimation 1s;
 }
 
-@keyframes popUp {
-  from {
-    opacity: 0;
-    top: 70px;
-  }
-
-  to {
-    opacity: 1;
-    top: -48px;
-  }
+.NavberwidhtAnimationOpen {
+  animation: NavberwidhtAnimationOpen 1s;
 }
+
 
 .accordionOpen {
   animation: accordionopen 2s;
 }
 
 .accordionClose {
-  animation: accordionclose .5s;
+  animation: accordionclose .8s;
 }
 
 #dBoardSideber .active {
@@ -32,6 +30,26 @@
   text-decoration: none;
 }
 
+
+
+/* #dBoardSideber::-webkit-scrollbar-thumb {
+  background-color: rgb(65, 65, 65, 0.2); 
+} */
+
+#dBoardSideber::-webkit-scrollbar {
+  width: 1px;
+}
+#dBoardSideber::-webkit-scrollbar-track {
+  position:absolute;
+  left: 20px;
+  display: none;
+}
+#dBoardSideber::-webkit-scrollbar-thumb {
+  background: rgb(255, 0, 0,0.0);
+}
+#dBoardSideber:hover::-webkit-scrollbar-thumb {
+  background: rgba(85, 83, 83, 0.5);
+}
 
 #NotificationPopUp::-webkit-scrollbar {
   display: none;
@@ -46,6 +64,43 @@
   display: block;
 }
 
+#contentScrollber::-webkit-scrollbar {
+  display: none;
+}
+
+#contentScrollber {
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/* sideber transition  */
+.transitionAnimationopen{
+  transition: 1s;
+}
+.transitionAnimationclose{
+  transition: .2s;
+}
+/* text editor css  */
+.darkThemeActivate .ql-toolbar {
+  background-color: #6B7280; 
+  border: none; 
+}
+.darkThemeActivate .ql-toolbar{
+  border: none !important;
+  border-radius: 4px 4px 0 0 ;
+}
+.darkThemeActivate .ql-container {
+  border-radius: 4px;
+  border: none !important;
+}
+.ql-container{
+  min-height: 200px;
+  
+}
+
+.darkThemeActivate .ql-toolbar .ql-picker-label {
+  color: #333; 
+}
 /* animations  */
 /* accordionOpen animations */
 
@@ -59,7 +114,7 @@
   }
 }
 
-
+/* animations  */
 /* accordionClose animations */
 @keyframes accordionclose {
   from {
@@ -71,6 +126,7 @@
   }
 }
 
+/* sidebre animations  */
 @keyframes SideberOpen {
   from {
     left: -600px;
@@ -83,13 +139,50 @@
 
 @keyframes SideberClose {
   from {
-    left: 0;
     display: block;
+    left: 0;
   }
 
   to {
     left: -600px;
     display: none;
+  }
+}
+
+/* navber animation  */
+@keyframes NavberwidhtAnimationOpen {
+  from {
+    margin-left: 22%;
+  }
+
+  to {
+    margin-left: 80px;
+  }
+}
+
+@keyframes NavberwidhtAnimationClose {
+  from {
+    margin-left: -22%;
+  }
+
+  to {
+    margin-left: 1px;
+  }
+}
+
+@keyframes HideTextAnimation {
+  from {
+    width: 22%;
+  }
+
+  to {
+    width: 60px;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .NavberwidhtAnimationClose {
+    animation: NavberwidhtAnimationClose .5s;
   }
 }
 

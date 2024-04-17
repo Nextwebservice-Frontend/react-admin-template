@@ -1,17 +1,19 @@
 import { IoIosMenu } from "react-icons/io";
-import { FaRegBell, FaStore, FaUserGroup } from "react-icons/fa6";
+import { FaRegBell } from "react-icons/fa6";
 import avater from "../../../assets/avator.jpg";
 import ProfilePopUp from "./profile_pop_up/ProfilePopUp";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import ShortcutPopUp from "./Shortcut_pop_up/ShortcutPopUp";
 import { ContextData } from "../../../Providers/ContextProviders/ContextProviders";
 import { BiCustomize } from "react-icons/bi";
 import NotificationPopUp from "./Notification_pop_up/NotificationPopUp";
-import { HiOutlineSun } from "react-icons/hi";
 import ThemePopUp from "./Theme_pop_up/ThemePopUp";
 import { IoLanguageOutline, IoSearchOutline } from "react-icons/io5";
 import LanguagePopUp from "./Language_pop_up/LanguagePopUp";
 import { RxCross1 } from "react-icons/rx";
+import { CiMonitor } from 'react-icons/ci'
+import { HiOutlineSun } from 'react-icons/hi'
+import { IoMoonOutline } from 'react-icons/io5'
 const Navbar = () => {
   // states
   const {
@@ -28,7 +30,8 @@ const Navbar = () => {
     showLanguagePopUp,
     setshowLanguagePopUp,
     showSearchOption,
-    setshowSearchOption
+    setshowSearchOption,
+    theme,
   } = useContext(ContextData);
   //open search option
   const handelOpenSearchInput = () => {
@@ -48,11 +51,11 @@ const Navbar = () => {
   }, []);
   return (
     <>
-      <div className="flex justify-between items-center w-full mx-auto box-border px-2 shadow-xl py-5 z-10 relative">
+      <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className="flex bg-white dark:bg-[#2F3249] rounded-md justify-between items-center w-full mx-auto box-border px-2 sm:px-4 md:px-6 shadow-md py-4 z-10 relative">
         {showSearchOption &&
-          <div className="w-full h-full absolute bg-white z-50 top-0 left-0 flex justify-start items-center gap-1 box-border px-6">
-            <input type="text" name="search" placeholder=" Search..." className="font-semibold opacity-65 tracking-wider outline-none focus:border-0 focus:outline-none border-0 w-full" />
-            <RxCross1 onClick={() => setshowSearchOption(false)} className="cursor-pointer" />
+          <div className="w-full h-full absolute rounded-md bg-white dark:bg-[#2F3249] z-50 top-0 left-0 flex justify-start items-center gap-1 box-border px-6">
+            <input type="text" name="search" placeholder=" Search..." className="font-semibold dark:text-gray-300 bg-transparent text-base opacity-65 tracking-wider outline-none focus:border-0 focus:outline-none border-0 w-full" />
+            <RxCross1 onClick={() => setshowSearchOption(false)} className="cursor-pointer dark:text-gray-300" />
           </div>
         }
         <div className="flex justify-start items-center gap-4">
@@ -61,10 +64,10 @@ const Navbar = () => {
               setShow(true);
               setShowText(true);
             }}
-            className="text-3xl lg:hidden block text-gray-600 mt-1 cursor-pointer z-40"
+            className="text-3xl lg:hidden block text-gray-600 dark:text-gray-100 mt-1 cursor-pointer z-40"
           />
           <button onClick={() => setshowSearchOption(true)} className="text-2xl flex justify-start items-center gap-2">
-            <IoSearchOutline /> <span className="text-base font-semibold md:block hidden text-gray-500 opacity-70">search (ctrl + /)</span>
+            <IoSearchOutline className="dark:text-gray-300"/> <span className="text-base font-semibold md:block hidden dark:text-[#6B74A6] text-gray-500 opacity-70">search (ctrl + /)</span>
           </button>
         </div>
         <div className="flex justify-end items-center gap-4 z-40">
@@ -74,14 +77,17 @@ const Navbar = () => {
             setshowSortcutPopUp(false);
             setshowThemePopUp(false)
             setshowLanguagePopUp(!showLanguagePopUp)
-          }} className="text-2xl text-gray-600 mt-1 cursor-pointer" />
-          <HiOutlineSun onClick={() => {
+          }} className="text-2xl text-gray-600 dark:text-gray-300  mt-1 cursor-pointer" />
+          <button onClick={() => {
             setShowprofilePopUp(false);
             setshowNotificationPopUp(false)
             setshowSortcutPopUp(false);
             setshowLanguagePopUp(false)
             setshowThemePopUp(!showThemePopUp)
-          }} className="text-2xl text-gray-600 mt-1 cursor-pointer" />
+          }} className="text-2xl text-gray-600 dark:text-gray-300 mt-1 cursor-pointer" >
+            {theme === 'light' ? <HiOutlineSun /> : theme === 'dark' ? <IoMoonOutline /> : <CiMonitor />}
+
+          </button>
           <BiCustomize
             onClick={() => {
               setShowprofilePopUp(false);
@@ -90,7 +96,7 @@ const Navbar = () => {
               setshowLanguagePopUp(false)
               setshowSortcutPopUp(!showSortcutPopUp);
             }}
-            className="text-2xl text-gray-600 mt-1 cursor-pointer"
+            className="text-2xl text-gray-600 dark:text-gray-300 mt-1 cursor-pointer"
           />
           <FaRegBell onClick={() => {
             setshowSortcutPopUp(false);
@@ -98,7 +104,7 @@ const Navbar = () => {
             setshowThemePopUp(false)
             setshowLanguagePopUp(false)
             setshowNotificationPopUp(!showNotificationPopUp)
-          }} className="text-2xl text-gray-600 mt-1 cursor-pointer" />
+          }} className="text-2xl text-gray-600 dark:text-gray-300 mt-1 cursor-pointer" />
           <img
             onClick={() => {
               setshowSortcutPopUp(false);

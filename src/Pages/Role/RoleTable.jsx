@@ -2,15 +2,16 @@
 import { useState, useEffect } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
-import { Rating } from 'primereact/rating';
+// import { Rating } from 'primereact/rating';
 import { Tag } from 'primereact/tag';
-import { ProductService } from './ProductService';
-import NewServiceModal from '../NewServiceModal/NewServiceModal';
-import './Css/ServiceListCss.css'
-import HoverButton from './Button/HoverButton';
+import { ProductService } from '../Services/ServiceList/ProductService';
+import '../Services/ServiceList/Css/ServiceListCss.css'
+import HoverButton from '../Services/ServiceList/Button/HoverButton';
+import RoleModal from './RoleModal';
 
-const ServiceList2 = () => {
+const RoleTable = () => {
     const [products, setProducts] = useState([]);
+
     useEffect(() => {
         ProductService.getProductsMini().then((data) => setProducts(data));
     }, []);
@@ -24,9 +25,9 @@ const ServiceList2 = () => {
     const priceBodyTemplate = (product) => {
         return formatCurrency(product.price);
     };
-    const ratingBodyTemplate = (product) => {
-        return <Rating value={product.rating} readOnly cancel={false} />;
-    };
+    // const ratingBodyTemplate = (product) => {
+    //     return <Rating value={product.rating} readOnly cancel={false} />;
+    // };
     const statusBodyTemplate = (product) => {
         return <Tag value={product.inventoryStatus} className='text-white bg-green-600 px-2 rounded-md' severity={getSeverity(product)}></Tag>;
     };
@@ -46,12 +47,12 @@ const ServiceList2 = () => {
         <>
             <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 md:border mb-4 w-full'>
                 <div className='flex border md:border-none w-full'>
-                    <button className='btn rounded-none border-none text-blue-600 bg-[#f7f7f7]'>ALL</button>
+                    <button className='btn rounded-none border-none text-white bg-green-500'>ALL</button>
                     <button className='btn rounded-none border-none text-blue-600 bg-[#f7f7f7]'>Active</button>
                     <button className='btn rounded-none border-none text-blue-600 bg-[#f7f7f7]'>Inactive</button>
                     <button className='w-[100%]  bg-[#f7f7f7]'></button>
                 </div>
-                <NewServiceModal></NewServiceModal>
+                <RoleModal />
             </div>
         </>
     );
@@ -61,19 +62,19 @@ const ServiceList2 = () => {
             <div className=" border p-4 ">
                 <DataTable className='' value={products} header={header} tableStyle={{ minWidth: '70rem' }}  >
                     {/* image column */}
-                    <Column header="Image" headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px ' }} className='border' body={imageBodyTemplate}></Column>
+                    <Column header="Image" headerStyle={{ border: '1px solid #e5e7eb', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px ' }} className='border' body={imageBodyTemplate}></Column>
                     {/* category name column */}
-                    <Column field="category" className='border text-center' headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px ' }} header="Category Name" body={HoverButton} ></Column>
+                    <Column field="category" className='border text-center' headerStyle={{ border: '1px solid #e5e7eb', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px ' }} header="Category Name" body={HoverButton} ></Column>
                     {/* service name column */}
-                    <Column field="price" className='border  text-center' header="Service Name" headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', textAlign: 'center', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px' }} body={priceBodyTemplate}></Column>
+                    <Column field="price" className='border  text-center' header="Service Name" headerStyle={{ border: '1px solid #e5e7eb', textTransform: 'uppercase', textAlign: 'center', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px' }} body={priceBodyTemplate}></Column>
                     {/*service price column */}
-                    <Column field="price" className='border text-center' header="Service Price" headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', textAlign: 'center', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px' }} body={priceBodyTemplate}></Column>
+                    <Column field="price" className='border text-center' header="Service Price" headerStyle={{ border: '1px solid #e5e7eb', textTransform: 'uppercase', textAlign: 'center', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px' }} body={priceBodyTemplate}></Column>
                     {/* Status column */}
-                    <Column header="Status" headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', textAlign: 'right', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px' }} className='border text-center' body={statusBodyTemplate}></Column>
+                    <Column header="Status" headerStyle={{ border: '1px solid #e5e7eb', textTransform: 'uppercase', textAlign: 'right', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px' }} className='border text-center' body={statusBodyTemplate}></Column>
                 </DataTable>
             </div>
         </>
     );
 };
 
-export default ServiceList2;
+export default RoleTable;

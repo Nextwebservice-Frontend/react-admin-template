@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { createContext, useState } from 'react'
 //create context
 export const ContextData = createContext({})
@@ -30,6 +31,11 @@ const ContextProviders = ({ children }) => {
     const [showLanguagePopUp, setshowLanguagePopUp] = useState(false);
     //searchOption Open
     const [showSearchOption, setshowSearchOption] = useState(false);
+
+    //theme states 
+    const [theme, setTheme] = useState(
+        localStorage.getItem('theme')
+    )
     // context data
     const sharedData = {
         //open sideber in tab or mobile
@@ -42,10 +48,10 @@ const ContextProviders = ({ children }) => {
         setOpenAccordion,
         openAccordion,
         //open submenu accordion
-        openSubMenuAccordion, 
+        openSubMenuAccordion,
         setOpenSubMenuAccordion,
         //open submenu accordion
-        openSubMenuAccordion2, 
+        openSubMenuAccordion2,
         setOpenSubMenuAccordion2,
         //open profile popup in navber
         showProfiePopUp,
@@ -67,7 +73,10 @@ const ContextProviders = ({ children }) => {
         setshowLanguagePopUp,
         //search option open
         showSearchOption,
-        setshowSearchOption
+        setshowSearchOption,
+        // theme states 
+        theme, 
+        setTheme
     }
     return (
         <ContextData.Provider value={sharedData}>
