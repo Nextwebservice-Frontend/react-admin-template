@@ -178,7 +178,7 @@ const Dashboard = () => {
                                 >
                                   <span
 
-                                    className=" my-[6px] text-[15px] hover:pl-4 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-2 dark:hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
+                                    className={`${showText?'px-3':mouseEnterInSIderber?"px-3":''} my-[6px]  text-[15px] hover:pl-4 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-2 dark:hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                                   >
                                     <span
                                       className={`flex ${showText ? "justify-start" : "justify-start"} w-full items-center gap-1`}
@@ -208,7 +208,7 @@ const Dashboard = () => {
                                       >
                                         <span
 
-                                          className=" my-[6px] text-[15px] hover:pl-4 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-2 dark:hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide"
+                                          className={`my-[6px] ${showText?'px-3':mouseEnterInSIderber?"px-3":''} text-[15px] hover:pl-4 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-2 dark:hover:text-gray-600 font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                                         >
                                           <span
                                             className={`flex ${showText ? "justify-start" : "justify-start"} w-full items-center gap-1`}

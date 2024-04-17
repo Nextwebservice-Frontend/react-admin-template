@@ -1,6 +1,6 @@
 import { RiHomeSmile2Line } from "react-icons/ri";
 import { FaRegCircle } from "react-icons/fa";
-import { MdOutlineMail } from "react-icons/md";
+import { MdEmojiObjects, MdOutlineMail } from "react-icons/md";
 import { GrChatOption } from "react-icons/gr";
 import { HiOutlineShoppingCart, HiOutlineTruck } from "react-icons/hi";
 import { VscFiles } from "react-icons/vsc";
@@ -170,6 +170,100 @@ export const SIderberNavLinks = [
         ]
     },
     {
+        title: 'demo',
+        NavItems: [
+            {
+                link: '/demo',
+                menu: 'Demos',
+                icon: MdEmojiObjects,
+                access: 'Email',
+                dropDown: false
+            },
+            {
+                link: false,
+                menu: 'Demo dropdowns',
+                icon: MdEmojiObjects,
+                dropDown: [
+                    {
+                        link: '/Demo dropdown',
+                        menu: 'Demo dropdown',
+                        icon: FaRegCircle,
+                        access: 'Dashboard',
+                        subMenu: false
+                    },
+                    {
+                        link: '/Demo dropdown',
+                        menu: 'Demo dropdown',
+                        icon: FaRegCircle,
+                        access: 'Dashboard',
+                        subMenu: false
+                    },
+                    {
+                        link: false,
+                        menu: 'Demo submenus',
+                        icon: FaRegCircle,
+                        access: 'Dashboard',
+                        subMenu: [
+                            {
+                                link: '/Dashboard',
+                                menu: 'Demo submenu',
+                                icon: FaRegCircle,
+                                access: 'Dashboard',
+                                subMenu2: false
+                            },
+                            {
+                                link: '/Dashboard',
+                                menu: 'Demo submenu',
+                                icon: FaRegCircle,
+                                access: 'Dashboard',
+                                subMenu2: false
+                            },
+                            {
+                                link: '/Dashboard',
+                                menu: 'Demo submenu',
+                                icon: FaRegCircle,
+                                access: 'Dashboard',
+                                subMenu2: false
+                            },
+                            {
+                                link: false,
+                                menu: 'Demo submenu2',
+                                icon: FaRegCircle,
+                                subMenu2: [
+                                    {
+                                        link: '/Dashboard',
+                                        menu: 'Demo submenu2',
+                                        access: 'Dashboard',
+                                        icon: FaRegCircle,
+                                    },
+                                    {
+                                        link: '/Dashboard',
+                                        menu: 'Demo submenu2',
+                                        access: 'Dashboard',
+                                        icon: FaRegCircle,
+                                    },
+                                    {
+                                        link: '/Dashboard',
+                                        menu: 'Demo submenu2',
+                                        access: 'Dashboard',
+                                        icon: FaRegCircle,
+                                    },
+                                    {
+                                        link: '/Dashboard',
+                                        menu: 'Demo submenu2',
+                                        access: 'Dashboard',
+                                        icon: FaRegCircle,
+                                    },
+                                ]
+                            },
+                        ]
+                    },
+                ]
+            },
+        ]
+
+    },
+    {
         title: 'apps & pages',
         NavItems: [
             {
@@ -257,7 +351,7 @@ export const SIderberNavLinks = [
                                 menu: 'Dashboard',
                                 icon: FaRegCircle,
                                 access: 'Dashboard',
-                                subMenu2:false
+                                subMenu2: false
                             },
                             {
                                 link: false,
