@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import ProfileModal from "./ProfileModal";
-import '../Services/ServiceList/Css/ServiceListCss.css'
+import './ProfileCss/Profile.css'
+import { IoIosImages } from "react-icons/io";
 
 const Profile = () => {
   const [image,setImage ] = useState("");
@@ -17,6 +18,8 @@ const Profile = () => {
     };
 
   }
+
+  
   return (
     <div className="">
       <h1 className="my-8 w-full mx-auto font-bold text-3xl">Personal Profile</h1>
@@ -109,13 +112,12 @@ const Profile = () => {
                     <h1 className="md:mt-5  text-base font-medium ">
                       Profile Photo
                     </h1>
-                    <div className=" md:w-full h-[240px] md:h-[180px] rounded-xl border-4 border-dashed ">
-                      {image == "" || image == null ? <img
-                        className="md:h-[100px] h-[200px] md:w-[100%] lg:w-[100%] mx-auto "
-                        src="https://cdn-icons-png.flaticon.com/512/4211/4211763.png"
-                        alt=""
-                      /> : <img src={image} className="w-full md:w-[100%] lg:w-[100%] h-[200px] md:h-[100px] p-2" alt="" />}
-                      <span className="text-lg md:text-xs xl:text-base pl-2"><input type="file" id="myFile" accept="image/" name="filename" className="" onChange={convertToBase64}></input></span> 
+                    <div className="w-[100%] h-[240px] md:h-[180px] rounded-xl border-4 border-dashed ">
+                      {image == "" || image == null ? 
+                        <label id="uploadImage" htmlFor="uploadBtn" className="h-[100%] w-[100%]"><IoIosImages className="border h-[100%] w-[100%]"/></label>
+                       : <img src={image} className="w-full md:w-[100%] lg:w-[100%] h-[100%] p-2" alt="" />}
+                      <span className="text-lg md:text-xs xl:text-base pl-2"></span> 
+                      <input type="file" id="uploadBtn" onChange={convertToBase64} />
                     </div>
                   </div>
                 </div>

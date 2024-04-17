@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+import '../../Reports/YearlyInvoice/CSS/TableTanStackCss.css'
 
 const GeneralSetting = () => {
     const [image, setImage] = useState("");
@@ -35,20 +36,21 @@ const GeneralSetting = () => {
                                         Sidebar Logo
                                         <span className="pl-1 text-red-400">( Recommended W:250px,H:150px)</span>
                                     </h1>
+                                    {/* image */}
                                     <div className='flex justify-between items-end mb-2 lg:mb-4 '>
                                         <div className="md:w-[50%] h-[200px] md:h-[185px] pt-2">
                                             {image == "" || image == null ?
-                                                <div>
+                                                <button >
                                                     <img
                                                         className="h-[150px] w-[250px]"
                                                         src="https://i.ibb.co/Lv9p0W3/upload-image-icon.png"
                                                         alt="gh"
                                                     />
                                                     <span className="text-lg  md:text-xs xl:text-base">
-                                                        <input type="file" id="myFile" accept="image/" name="filename" className="mt-2" onChange={convertToBase64}>
+                                                        <input type="file" id="myFile" accept="image/" onChange={convertToBase64} name="filename" className="mt-2" >
                                                         </input>
                                                     </span>
-                                                </div> :
+                                                </button> :
                                                 <img src={image} className="h-full md:h-[175px]  w-[250px]" alt="" />}
                                         </div>
                                         <div className='text-2xl md:pr-10 w-[50%] text-end '>
