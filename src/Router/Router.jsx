@@ -8,6 +8,9 @@ import YearlyInvoice from "../Pages/Reports/YearlyInvoice/YearlyInvoice";
 import GeneralSetting from "../Pages/Settings/GeneralSetting/GeneralSetting";
 import Button from "../Pages/Button/Button";
 import Provider from "../Pages/Others/Provider";
+import ExpenseReceipt from "../Pages/ExpenseReceipt/ExpenseReceipt/ExpenseReceipt";
+import CategoryList from "../Pages/Expense/CategoryList/CategoryList";
+import ExpenseList from "../Pages/Expense/ExpenseList/ExpenseList";
 import NewRole from "../Pages/NewRole/NewRole";
 import Login from "../Pages/Login/Login";
 import LoginPage from "../Pages/LoginPage/LoginPage";
@@ -32,6 +35,11 @@ const Router = createBrowserRouter([
                 path: '/newExpenseReceipt',
                 element: <NewExpenseReceipt />
             },
+            
+            {
+                path: '/ExpenseReceipt',
+                element: <ExpenseReceipt />
+            },
             {
                 path: '/serviceList',
                 element: <ServiceList />
@@ -46,10 +54,10 @@ const Router = createBrowserRouter([
             }
             ,
             {
-                path: '/provider',
-                element: <Provider></Provider>
-            }
-            ,
+                path: '/categoryList',
+                element: <CategoryList></CategoryList>
+            },
+        
             {
                 path: '/newrole',
                 element: <NewRole></NewRole>

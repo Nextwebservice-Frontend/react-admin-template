@@ -7,11 +7,11 @@ const ProfileModal = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <>
-            <div className="pt-2 mt-3 border-t w-full text-center">
+            <div className="h-[60px] py-2 border-t w-full text-center dark:rounded-sm dark:border-none bg-[#f7f7fa] dark:bg-gray-500">
                 <button
                     type="button"
                     onClick={() => setIsOpen(true)}
-                    className="w-[90%] h-[40px] bg-[#7367F0] text-white rounded-lg"
+                    className="w-[90%] h-[100%] border bg-[#7367F0] text-white rounded-lg dark:border-none dark:text-white"
                 >
                     Password change
                 </button>
@@ -39,46 +39,46 @@ const ProfileModal = () => {
                                     leaveFrom="opacity-100 scale-100"
                                     leaveTo="opacity-0 scale-95"
                                 >
-                                    <Dialog.Panel className="w-[96%] md:w-[96%] lg:w-[90%]  xl:w-[70%] 2xl:w-[48%] transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all">
+                                    <Dialog.Panel className="w-[96%] md:w-[90%] lg:w-[75%]  xl:w-[910px] max-w-md:w-[60%] transform overflow-hidden rounded-2xl bg-white dark:bg-[#25293C] text-left align-middle shadow-xl transition-all my-10">
                                         <Dialog.Title
                                             as="h3"
-                                            className="border py-4 pl-4 font-bold text-xl leading- text-gray-900 bg-[#f7f7f7]"
+                                            className="border py-4 pl-4 font-bold text-xl leading- text-gray-900 dark:bg-gray-500 bg-[#f7f7f7] dark:border-none "
                                         >
-                                            <div className="flex justify-between items-center gap-2 pr-6">
-                                                <h1 className="#212529 font-serif text-normal md:text-xl ">Password Update</h1>
-                                                <button onClick={() => setIsOpen(false)} className="close-button">X</button>
+                                            <div className="flex justify-between items-center gap-2 pr-6 ">
+                                                <h1 className="#212529 font-serif text-normal md:text-xl dark:text-white">Password Update</h1>
+                                                <button onClick={() => setIsOpen(false)} className="close-button dark:text-white">X</button>
                                             </div>
                                         </Dialog.Title>
                                         {/*Old Password */}
                                         <div className="mt-2 md:w-full px-6">
-                                            <p className="text-lg text-gray-900">Old Password<span className="text-red-500">(required)</span> </p>
+                                            <p className="text-lg text-gray-900 dark:text-white">Old Password<span className="text-red-500">(required)</span> </p>
                                             <input
                                                 type="text "
                                                 placeholder="old Password  "
-                                                className="input input-bordered w-full "
+                                                className="input input-bordered w-full dark:bg-base-100 bg-[#f7f7fa]"
                                             />
                                         </div>
                                         <div className="flex flex-col md:flex-row justify-between gap-2 px-6">
                                             {/* New Password  */}
                                             <div className="mt-2 md:w-[50%]">
-                                                <p className="text-lg text-gray-900">New Password <span className="text-red-500">(required)</span> </p>
+                                                <p className="text-lg text-gray-900 dark:text-white">New Password <span className="text-red-500">(required)</span> </p>
                                                 <input
                                                     type="text "
                                                     placeholder="New Password  "
-                                                    className="input input-bordered w-full "
+                                                    className="input input-bordered w-full bg-[#f7f7fa] dark:bg-base-100"
                                                 />
                                             </div>
                                             {/* Confirm Password  */}
                                             <div className="mt-2 md:w-[50%]">
-                                                <p className="text-lg text-gray-900">Confirm Password <span className="text-red-500">(required)</span></p>
+                                                <p className="text-lg text-gray-900 dark:text-white">Confirm Password <span className="text-red-500">(required)</span></p>
                                                 <input
                                                     type="text"
                                                     placeholder="Confirm Password "
-                                                    className="input input-bordered w-full "
+                                                    className="input input-bordered w-full dark:bg-base-100 bg-[#f7f7fa]"
                                                 />
                                             </div>
                                         </div>
-                                        <div className="bg-[#f7f7f7] mt-4 px-6 py-4 border flex gap-2 justify-end">
+                                        <div className="bg-[#f7f7f7] mt-4 px-6 py-4 border flex gap-2 justify-end dark:bg-gray-500 dark:border-none">
                                             <button className="bg-[#5cb85c] text-lg text-white ml-4 inline-flex justify-center rounded-md border border-transparent  px-4 py-2  font-medium  hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
                                                 Update
                                             </button>

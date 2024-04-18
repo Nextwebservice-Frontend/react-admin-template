@@ -36,7 +36,7 @@ export const SIderberNavLinks = [
                 icon: MdOutlineLocalMall,
                 dropDown: [
                     {
-                        link: '/Catrgoty-list',
+                        link: '/categoryList',
                         menu: 'Categoty list',
                         icon: FaRegCircle,
                         access: 'Collapsed-menu',
@@ -94,7 +94,7 @@ export const SIderberNavLinks = [
                 icon: IoSettingsOutline,
                 dropDown: [
                     {
-                        link: '/General-Setting',
+                        link: '/generalSetting',
                         menu: 'General Setting',
                         icon: FaRegCircle,
                         access: 'Collapsed-menu',
@@ -257,8 +257,8 @@ export const SIderberNavLinks = [
                         subMenu: false
                     },
                     {
-                        link: '/provider',
-                        menu: 'provider',
+                        link: '/categoryList',
+                        menu: 'categoryList',
                         icon: FaRegCircle,
                         access: 'Fluid',
                         subMenu: false
