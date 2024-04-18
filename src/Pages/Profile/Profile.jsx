@@ -26,7 +26,7 @@ const Profile = () => {
       <div className="flex flex-col md:flex-row gap-8 justify-center">
         {/* user details part */}
         <div className="card bg-white dark:bg-[#2F3249] w-full md:w-[40%] lg:w-[30%] shadow-xl rounded-lg border dark:border-none ">
-          <h1 className="text-2xl text-black bg-[#f7f7fa] dark:bg-gray-500 dark:border-none pl-5 mb-6 border-b py-4 dark:rounded-lg dark:text-white">
+          <h1 className="text-2xl text-black bg-[#f7f7fa] dark:bg-gray-500 dark:border-none pl-5 mb-6 border-b py-2 dark:rounded-lg dark:text-white">
             User Details
           </h1>
           <figure>
@@ -57,7 +57,7 @@ const Profile = () => {
         <div className="mt-5 dark:text-white md:mt-0 md:w-[60%] lg:w-[70%]">
           {/* <div className="card bg-base-100 shadow-xl border rounded-lg"></div> */}
           <div className="card bg-white dark:bg-[#2F3249] shadow-xl border dark:border-none rounded-lg">
-            <h1 className="text-black text-2xl bg-[#f7f7fa] pl-5 mb-2 border-b py-4  dark:bg-gray-500 dark:border-none dark:rounded-lg dark:text-white">
+            <h1 className="text-black text-2xl bg-[#f7f7fa] pl-5 mb-2 border-b py-2  dark:bg-gray-500 dark:border-none dark:rounded-lg dark:text-white">
               Update Profile Basic
             </h1>
             <div className="w-full">

@@ -80,8 +80,8 @@ const YearlyInvoice = () => {
                         <button className='btn rounded-none bg-success text-white'>Report List</button>
                     </div>
                     {/* table start here */}
-                    <div className='' style={{ overflow: 'auto' }} >
-                        <table className='w3-table-all '>
+                    <div className='w-[100%]' style={{ overflow: 'auto' }} >
+                        <table className='w3-table-all w-[100%]'>
                             <thead >
                                 {table.getHeaderGroups().map(headerGroup => (
                                     <tr key={headerGroup.id}>
