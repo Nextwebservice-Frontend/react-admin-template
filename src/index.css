@@ -100,6 +100,27 @@
 .darkThemeActivate .ql-toolbar .ql-picker-label {
   color: #333; 
 }
+/* tinymce dark theme  */
+
+/* #tinymce .tox-tinymce{
+  background-color: #2F3349 !important;
+}
+#tinymce .toptobottom{
+  background-color: #2F3349 !important;
+}
+#tinymce .tox-menubar{
+  background-color: #2F3349 !important;
+}
+#tinymce .tox-menubar button{
+  background-color: #25293C !important;
+  color: rgb(202, 202, 202);
+  cursor: pointer;
+}
+#tinymce .tox-toolbar__primary{
+  background-color: #25293C !important;
+  color: rgb(202, 202, 202);
+  cursor: pointer;
+} */
 /* animations  */
 /* accordionOpen animations */
 

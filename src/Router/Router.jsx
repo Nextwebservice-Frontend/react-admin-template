@@ -8,6 +8,10 @@ import YearlyInvoice from "../Pages/Reports/YearlyInvoice/YearlyInvoice";
 import GeneralSetting from "../Pages/Settings/GeneralSetting/GeneralSetting";
 import Button from "../Pages/Button/Button";
 import Provider from "../Pages/Others/Provider";
+import NewRole from "../Pages/NewRole/NewRole";
+import Login from "../Pages/Login/Login";
+import LoginPage from "../Pages/LoginPage/LoginPage";
+import TinyMCE from "../Components/dashboard/TextEditor/TinyMCE/TinyMCE";
 
 const Router = createBrowserRouter([
     {
@@ -47,10 +51,22 @@ const Router = createBrowserRouter([
             }
             ,
             {
-                path: '/btn',
-                element: <Button></Button>
-            }
+                path: '/newrole',
+                element: <NewRole></NewRole>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/TinyMCE',
+                element: <TinyMCE></TinyMCE>
+            },
         ]
+    },
+    {
+        path: '/LoginPage',
+        element: <LoginPage></LoginPage>
     }
 ])
 

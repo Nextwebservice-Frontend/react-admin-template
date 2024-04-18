@@ -263,6 +263,13 @@ export const SIderberNavLinks = [
                         access: 'Fluid',
                         subMenu: false
                     },
+                    {
+                        link: '/LoginPage',
+                        menu: 'Login Page',
+                        icon: FaRegCircle,
+                        access: 'Fluid',
+                        subMenu: false
+                    },
 
                 ]
             },

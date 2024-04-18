@@ -157,7 +157,7 @@ const Dashboard = () => {
                       //accordion open function call
                       //accordion open function call
                       onClick={() => HandelAccorDionOpen(item?.menu)}
-                      className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3 justify-between" : 'justify-center'} text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-2  font-semibold opacity-80 flex  items-center gap-2 hover:bg-gray-200 rounded-md my-[2px]`}
+                      className={`${showText ? 'px-3 justify-between' : mouseEnterInSIderber ? "px-3 justify-between" : 'justify-center'} text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-2  font-semibold opacity-80 flex  items-center gap-2 hover:bg-gray-200 rounded-md my-[2px]`}
                     >
                       <span
                         className={`flex ${showText ? "justify-start" : "justify-start"} items-center gap-1`}
