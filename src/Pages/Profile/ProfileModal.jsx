@@ -7,11 +7,11 @@ const ProfileModal = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <>
-            <div className="py-2 mt-3 border w-full text-center">
+            <div className="h-[60px] md:mt-14 lg:mt-7 xl:mt-7 py-2 border w-full text-center  dark:rounded-lg dark:border-none bg-[#f7f7fa] dark:bg-gray-500">
                 <button
                     type="button"
                     onClick={() => setIsOpen(true)}
-                    className="w-[90%] h-[40px] border bg-[#7367F0] text-white rounded-lg"
+                    className="w-[90%] h-[100%] border bg-[#7367F0] text-white rounded-lg dark:border-none dark:text-white"
                 >
                     Password change
                 </button>

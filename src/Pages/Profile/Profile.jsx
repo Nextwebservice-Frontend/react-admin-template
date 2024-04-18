@@ -19,14 +19,14 @@ const Profile = () => {
 
   }
 
-  
+  // dark: bg - [#2F3249]
   return (
     <div className="">
-      <h1 className="my-8 w-full mx-auto font-bold text-3xl">Personal Profile</h1>
+      <h1 className="my-8 w-full mx-auto  text-3xl dark:text-white text-black ">Personal Profile</h1>
       <div className="flex flex-col md:flex-row gap-8 justify-center">
         {/* user details part */}
-        <div className="card w-full md:w-[40%] lg:w-[30%]  bg-base-100 shadow-xl rounded-lg border">
-          <h1 className="text-2xl font-medium pl-5 mb-6 border-b py-4 ">
+        <div className="card bg-white dark:bg-[#2F3249] w-full md:w-[40%] lg:w-[30%] shadow-xl rounded-lg border dark:border-none ">
+          <h1 className="text-2xl text-black bg-[#f7f7fa] dark:bg-gray-500 dark:border-none pl-5 mb-6 border-b py-4 dark:rounded-lg dark:text-white">
             User Details
           </h1>
           <figure>
@@ -37,26 +37,27 @@ const Profile = () => {
             />
           </figure>
           {/* superAdmin title */}
-          <div className="text-center">
-            <h1 className="mt-2 text-2xl font-medium ">SuperAdmin</h1>
+          <div className="text-center ">
+            <h1 className="mt-2 text-2xl dark:text-white text-black">SuperAdmin</h1>
           </div>
           {/* superAdmin button */}
-          <button className="w-[24%] md:w-[32%] border mx-auto rounded-lg text-white bg-[#6C757D] font-bol mb-3">SuperAdmin</button>
+          <button className="w-[24%] md:w-[32%] xl:w-[25%]  border mx-auto rounded-lg text-white text-xs xl:text-lg bg-[#6C757D] font-bol mb-3 dark:border-none dark:text-white">SuperAdmin</button>
           <div className=" p-0 pl-5 mb-4">
             {/* superAdmin name */}
-            <h2 className=""><span className="font-bold text-lg md:text-base lg:text-base xl:text-lg">Name :</span> SuperAdmin</h2>
+            <h2 className="dark:text-white"><span className=" font-bold text-lg md:text-base lg:text-base xl:text-lg dark:text-white text-black">Name :</span> SuperAdmin</h2>
             {/* superAdmin email */}
-            <p className=""><span className="font-bold text-lg md:text-base lg:text-base xl:text-lg "> Email :</span><span className="lg:text-sm xl:text-base">admindhaka@gmail.com</span></p>
+            <p className="dark:text-white"><span className="font-bold text-lg md:text-base lg:text-base xl:text-lg text-black dark:text-white"> Email :</span><span className="lg:text-sm xl:text-base">admindhaka@gmail.com</span></p>
             {/* superAdmin phone number*/}
-            <p className=""><span className="font-bold text-lg md:text-base lg:text-base xl:text-lg">Mobile: </span><span className="lg:text-sm xl:text-base">01799600000</span></p>
+            <p className="dark:text-white"><span className="font-bold text-lg md:text-base lg:text-base xl:text-lg text-black dark:text-white">Mobile: </span><span className="lg:text-sm xl:text-base">01799600000</span></p>
           </div>
           {/* profile modal component */}
-          <ProfileModal></ProfileModal>
+          <ProfileModal ></ProfileModal>
         </div>
         {/* Update Profile Basic part(2nd part) */}
-        <div className="mt-5  md:mt-0 md:w-[60%] lg:w-[70%]">
-          <div className="card bg-base-100 shadow-xl border rounded-lg">
-            <h1 className="text-2xl font-medium pl-5 mb-2 border-b py-4 ">
+        <div className="mt-5 dark:text-white md:mt-0 md:w-[60%] lg:w-[70%]">
+          {/* <div className="card bg-base-100 shadow-xl border rounded-lg"></div> */}
+          <div className="card bg-white dark:bg-[#2F3249] shadow-xl border dark:border-none rounded-lg">
+            <h1 className="text-black text-2xl bg-[#f7f7fa] pl-5 mb-2 border-b py-4  dark:bg-gray-500 dark:border-none dark:rounded-lg dark:text-white">
               Update Profile Basic
             </h1>
             <div className="w-full">
@@ -66,42 +67,42 @@ const Profile = () => {
                     {/* name */}
                     <div className="form-control pl-4 mt-4 mb-1">
                       <label className="">
-                        <span className="label-text text-base font-medium ">
+                        <span className="label-text text-base font-medium dark:text-white text-black">
                           Name<span className="pl-1 text-red-400">(required)</span>
                         </span>
                       </label>
                       <input
                         type="name"
                         placeholder="Name"
-                        className="input input-bordered  lg:w-full py-0"
+                        className="input input-bordered  lg:w-full py-0 bg-[#f7f7fa] "
                         required
                       />
                     </div>
                     {/* Mobile */}
                     <div className="form-control pl-4 mb-1">
                       <label className="">
-                        <span className="label-text text-base font-medium">
+                        <span className="label-text text-base font-medium dark:text-white text-black">
                           Mobile<span className="pl-1 text-red-400">(required)</span>
                         </span>
                       </label>
                       <input
                         type="number"
                         placeholder="Number"
-                        className="input input-bordered  lg:w-full"
+                        className="input input-bordered  lg:w-full bg-[#f7f7fa]"
                         required
                       />
                     </div>
                     {/* Email */}
                     <div className="form-control pl-4">
                       <label className="">
-                        <span className="label-text text-base font-medium">
+                        <span className="label-text text-base font-medium dark:text-white text-black">
                           Email<span className="pl-1 text-red-400">(required)</span>
                         </span>
                       </label>
                       <input
                         type="email"
-                        placeholder="email"
-                        className="input input-bordered  lg:w-full"
+                        placeholder="Email"
+                        className="input input-bordered  lg:w-full bg-[#f7f7fa]"
                         required
                       />
                       {/* defaultValue={Email} */}
@@ -109,12 +110,12 @@ const Profile = () => {
                   </div>
                   {/* Profile Photo */}
                   <div className="ml-4 mr-4 lg:mr-4 md:w-[35%] ">
-                    <h1 className="md:mt-5  text-base font-medium ">
+                    <h1 className="md:mt-5 text-base font-medium text-black dark:text-white">
                       Profile Photo
                     </h1>
-                    <div className="w-[100%] h-[240px] md:h-[180px] rounded-xl border-4 border-dashed ">
+                    <div className="w-[100%] h-[240px] md:h-[180px] dark:border-gray-500 rounded-xl border-4 border-dashed ">
                       {image == "" || image == null ? 
-                        <label id="uploadImage" htmlFor="uploadBtn" className="h-[100%] w-[100%]"><IoIosImages className="border h-[100%] w-[100%]"/></label>
+                        <label id="uploadImage" htmlFor="uploadBtn" className="h-[100%] w-[100%]"><IoIosImages className="h-[100%] w-[100%]"/></label>
                        : <img src={image} className="w-full md:w-[100%] lg:w-[100%] h-[100%] p-2" alt="" />}
                       <span className="text-lg md:text-xs xl:text-base pl-2"></span> 
                       <input type="file" id="uploadBtn" onChange={convertToBase64} />
@@ -124,20 +125,20 @@ const Profile = () => {
                 {/* role */}
                 <div className="form-control pl-4 pr-4">
                   <label className="label">
-                    <span className="label-text text-base font-medium ">
+                    <span className="label-text text-base font-medium dark:text-white text-black">
                       Role<span className="pl-1 text-red-400">(required)</span>
                     </span>
                   </label>
                   <input
                     type="text"
                     placeholder="Role"
-                    className="input input-bordered"
+                    className="input input-bordered bg-[#f7f7fa]"
                     required
                   />
                 </div>
                 {/* button */}
-                <div className="py-2 w-full text-center border mt-2">
-                  <button className="w-[90%] md:w-[96%] h-[40px] border bg-[#28C76F]  text-white rounded-lg">
+                <div className="py-2 w-full bg-[#f7f7fa] dark:bg-gray-500 text-center dark:border-none  border mt-2 dark:rounded-lg">
+                  <button className="w-[90%] md:w-[96%] h-[40px] border dark:border-none bg-[#28C76F]  text-white rounded-lg">
                     Update Profile
                   </button>
                 </div>

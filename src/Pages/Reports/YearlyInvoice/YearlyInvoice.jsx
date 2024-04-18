@@ -74,7 +74,7 @@ const YearlyInvoice = () => {
                 <div className='border p-4 rounded-lg'>
                     <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 md:border mb-4 w-full'>
                         <div className='flex border md:border-none w-full'>
-                            <button className='btn rounded-none border-none text-blue-600 bg-[#f7f7f7]'>ALL</button>
+                            <button className='btn rounded-none border-none text-blue-600  bg-[#f7f7f7]'>ALL</button>
                             <button className='w-[100%]  bg-[#f7f7f7]'></button>
                         </div>
                         <button className='btn rounded-none bg-success text-white'>Report List</button>

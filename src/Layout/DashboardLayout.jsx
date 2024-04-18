@@ -71,7 +71,7 @@ const DashboardLayout = () => {
       setSideberOpenAnimation(showText)
     }
   }, [showText])
-
+ 
   return (
     <div className="lg:flex lg:px-0 px-[6px] bg-[#F8F7FA] dark:bg-[#25293C] overflow-hidden w-full">
       {/* sideber  dark:bg-[#2F3349] dark:bg-[#25293C] style={{ transition: ".5s" }}*/}
