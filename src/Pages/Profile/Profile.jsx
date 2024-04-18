@@ -71,10 +71,11 @@ const Profile = () => {
                           Name<span className="pl-1 text-red-400">(required)</span>
                         </span>
                       </label>
+                      {/* bg-[#f7f7fa] */}
                       <input
                         type="name"
                         placeholder="Name"
-                        className="input input-bordered  lg:w-full py-0 bg-[#f7f7fa] "
+                        className="input input-bordered lg:w-full py-0 bg-[#f7f7fa] dark:bg-[#cfcfdd] "
                         required
                       />
                     </div>
@@ -88,7 +89,7 @@ const Profile = () => {
                       <input
                         type="number"
                         placeholder="Number"
-                        className="input input-bordered  lg:w-full bg-[#f7f7fa]"
+                        className="input input-bordered  lg:w-full bg-[#f7f7fa] dark:bg-[#cfcfdd]"
                         required
                       />
                     </div>
@@ -102,7 +103,7 @@ const Profile = () => {
                       <input
                         type="email"
                         placeholder="Email"
-                        className="input input-bordered  lg:w-full bg-[#f7f7fa]"
+                        className="input input-bordered  lg:w-full bg-[#f7f7fa] dark:bg-[#cfcfdd]"
                         required
                       />
                       {/* defaultValue={Email} */}
@@ -110,7 +111,7 @@ const Profile = () => {
                   </div>
                   {/* Profile Photo */}
                   <div className="ml-4 mr-4 lg:mr-4 md:w-[35%] ">
-                    <h1 className="md:mt-5 text-base font-medium text-black dark:text-white">
+                    <h1 className="md:mt-5 text-base font-medium text-black dark:text-white ">
                       Profile Photo
                     </h1>
                     <div className="w-[100%] h-[240px] md:h-[180px] dark:border-gray-500 rounded-xl border-4 border-dashed ">
@@ -132,7 +133,7 @@ const Profile = () => {
                   <input
                     type="text"
                     placeholder="Role"
-                    className="input input-bordered bg-[#f7f7fa]"
+                    className="input input-bordered bg-[#f7f7fa] dark:bg-[#cfcfdd]"
                     required
                   />
                 </div>
