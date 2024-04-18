@@ -1,6 +1,5 @@
 import { MdOutlineCampaign } from "react-icons/md";
 import { FaRegUser, FaUsersBetweenLines } from "react-icons/fa6";
-import TextEditor from "../../Components/dashboard/TextEditor/TextEditor";
 
 const Notice = () => {
   return (
@@ -39,7 +38,7 @@ const Notice = () => {
           </div>
         </div>
       </div>
-      <div className="md:grid grid-cols-3 justify-center items-center gap-6 mt-10 ">
+      <div className="md:grid grid-cols-3 justify-center items-center gap-6 mt-7 ">
         <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className="w-full h-full border dark:border-none rounded-md dark:bg-[#2F3349]">
           <span style={{ borderRadius: '4px 4px 0 0' }} className="flex p-4 py-2 border-b-2 dark:border-none  justify-start items-center gap-2 bg-gray-100 dark:bg-gray-500 ">
             <FaRegUser className="text-xl" />
@@ -52,7 +51,6 @@ const Notice = () => {
           </button>
         </div>
       </div>
-      <TextEditor placeholder={`start`}/>
     </div>
 
   );

@@ -105,10 +105,10 @@ const Dashboard = () => {
     }
   }, []);
   return (
-    <div
+    <div 
       id="dBoardSideber"
-      className={`w-full mx-auto h-[100vh] overflow-y-auto `}>
-      {/* logo  */}
+      className={`w-full mx-auto h-[100vh] overflow-y-auto`}>
+      {/* logo   */}
       <Logo show={show} setShow={setShow} />
       <div id="sideberScrollber"
         className={`box-border  pb-4  ${showText ? 'px-2' : mouseEnterInSIderber ? 'px-2' : 'px-4'} `}>

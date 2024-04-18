@@ -32,11 +32,9 @@
 } */
 
 #dBoardSideber::-webkit-scrollbar {
-  width: 1px;
+  width: .6px;
 }
 #dBoardSideber::-webkit-scrollbar-track {
-  position:absolute;
-  left: 20px;
   display: none;
 }
 #dBoardSideber::-webkit-scrollbar-thumb {
@@ -70,10 +68,10 @@
 }
 /* sideber transition  */
 .transitionAnimationopen{
-  transition: 1s;
+  transition: .5s;
 }
 .transitionAnimationclose{
-  transition: .2s;
+  transition: .1s;
 }
 /* text editor css  */
 .darkThemeActivate .ql-toolbar {
@@ -147,7 +145,7 @@
 /* navber animation  */
 @keyframes NavberwidhtAnimationOpen {
   from {
-    margin-left: 22%;
+    margin-left: 260px;
   }
 
   to {
@@ -157,7 +155,7 @@
 
 @keyframes NavberwidhtAnimationClose {
   from {
-    margin-left: -22%;
+    margin-left: -260px;
   }
 
   to {
@@ -167,7 +165,7 @@
 
 @keyframes HideTextAnimation {
   from {
-    width: 22%;
+    width: 260px;
   }
 
   to {
