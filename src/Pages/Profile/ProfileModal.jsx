@@ -7,16 +7,16 @@ const ProfileModal = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <>
-            <div className="py-2 mt-3 border w-full text-center">
+            <div className="pt-2 mt-3 border-t w-full text-center">
                 <button
                     type="button"
                     onClick={() => setIsOpen(true)}
-                    className="w-[90%] h-[40px] border bg-[#7367F0] text-white rounded-lg"
+                    className="w-[90%] h-[40px] bg-[#7367F0] text-white rounded-lg"
                 >
                     Password change
                 </button>
                 <Transition appear show={isOpen} as={Fragment}>
-                    <Dialog as="div" className="relative z-10" onClose={() => setIsOpen(true)} >
+                    <Dialog as="div" className="relative z-50" onClose={() => setIsOpen(true)} >
                         <Transition.Child
                             as={Fragment}
                             enter="ease-out duration-300"

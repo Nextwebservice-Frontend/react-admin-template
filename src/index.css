@@ -27,6 +27,7 @@
 #dBoardSideber .activeLink {
   background: rgb(229 231 235);
   border-radius: 4px;
+  color: black;
   text-decoration: none;
 }
 
@@ -37,7 +38,7 @@
 } */
 
 #dBoardSideber::-webkit-scrollbar {
-  width: .6px;
+  width: 2px;
 }
 #dBoardSideber::-webkit-scrollbar-track {
   display: none;
@@ -46,7 +47,7 @@
   background: rgb(255, 0, 0,0.0);
 }
 #dBoardSideber:hover::-webkit-scrollbar-thumb {
-  background: rgba(85, 83, 83, 0.5);
+  background: #28C76F;
 }
 
 #NotificationPopUp::-webkit-scrollbar {
@@ -184,7 +185,7 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .SideberOpen {
     animation: SideberOpen .5s;
   }

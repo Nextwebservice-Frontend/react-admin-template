@@ -46,7 +46,7 @@ const Notice = () => {
           </span>
           <p className="px-4 py-2 font-bold">total</p>
           <p className="px-4 py-2 font-bold text-xl">2</p>
-          <button className="bg-blue-500 w-full py-2 hover:bg-blue-600 text-white font-medium">
+          <button className="bg-blue-500 w-full py-2 rounded-b-md hover:bg-blue-600 text-white font-medium">
             User list
           </button>
         </div>

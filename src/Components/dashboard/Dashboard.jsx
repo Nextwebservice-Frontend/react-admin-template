@@ -12,7 +12,6 @@ const Dashboard = () => {
   const HaveAcces = permission.map(item => `${item.name}`)
   // console.log(HaveAcces)
   const location = useLocation()
-  console.log(location)
   const {
     setShow,
     show,
@@ -31,14 +30,6 @@ const Dashboard = () => {
       setShowText(true);
     });
   }, []);
-  // const handelCloseAccordion = () => {
-  //   if (!showText && openAccordion.show) {
-  //     setOpenAccordion({
-  //       show: false,
-  //       name: openAccordion.name,
-  //     });
-  //   }
-  // };
   //accordian open function
   const HandelAccorDionOpen = (name) => {
     if (openAccordion.name !== name) {
@@ -107,39 +98,30 @@ const Dashboard = () => {
     }
   }, []);
   useEffect(() => {
-    const activeLinks = document.querySelectorAll('#dBoardSideber .active');
-    const allLinks = document.querySelectorAll('#dBoardSideber a');
-    if (allLinks) {
-      for (const allLink of allLinks) {
-        const parentli = allLink.parentElement;
-        const parentDiv = parentli.parentElement;
-        const dropDownButton = parentDiv.previousElementSibling;
-        console.log(dropDownButton)
-        if (dropDownButton) {
+    const dropDownButtons = document.querySelectorAll('#dropDownButton')
+    if (dropDownButtons) {
+      for (const dropDownButton of dropDownButtons) {
+        const isActive = dropDownButton.parentElement.querySelectorAll('#dropDowns .active')
+
+        if (isActive.length>0) {
+          for (const activeLink of isActive) {
+            activeLink.closest('#dropDowns').parentElement.querySelector('#dropDownButton').classList.add('activeLink')
+          }
+        }else{
           dropDownButton.classList.remove('activeLink')
         }
       }
     }
-    if (activeLinks) {
-      for (const activeLink of activeLinks) {
-        const parentli = activeLink.parentElement;
-        const parentDiv = parentli.parentElement;
-        const dropDownButton = parentDiv.previousElementSibling;
-        if (dropDownButton) {
-          dropDownButton.classList.add('activeLink')
-          console.log(dropDownButton)
-        }
-      }
-    }
-  }, [location.pathname])
+
+  }, [location.pathname,showText,mouseEnterInSIderber])
   return (
     <div
       id="dBoardSideber"
-      className={`w-full mx-auto h-[100vh] overflow-y-auto`}>
+      className={`w-full mx-auto h-[100vh] overflow-y-scroll`}>
       {/* logo   */}
-      <Logo show={show} setShow={setShow} />
       <div id="sideberScrollber"
-        className={`box-border  pb-4  ${showText ? 'px-2' : mouseEnterInSIderber ? 'px-2' : 'px-4'} `}>
+        className={`box-border  pb-4 w-[calc(100% - 2px)] ${showText ? 'px-2' : mouseEnterInSIderber ? 'px-2' : 'px-4'} `}>
+        <Logo show={show} setShow={setShow} />
         {/* map over all the menu group  */}
         {SIderberNavLinks.map((item, index) => (
           <div key={index}>
@@ -159,7 +141,7 @@ const Dashboard = () => {
                   HaveAcces.includes(item.access) && <NavLink
                     key={index}
                     to={item.link}
-                    className={`my-[6px] text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 ${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[8px]  font-medium opacity-80  flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
+                    className={`my-[6px] text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 ${showText ? 'px-3' : mouseEnterInSIderber ? "px-3 justify-start" : 'justify-center'} text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[8px]  font-medium opacity-80  flex  items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                   >
                     <item.icon className={`text-xl`} />
                     {/* check show menu text or not if true then mouse entered or not */}
@@ -175,7 +157,7 @@ const Dashboard = () => {
                       //accordion open function call
                       //accordion open function call
                       onClick={() => HandelAccorDionOpen(item?.menu)}
-                      className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-2  font-semibold opacity-80 flex justify-between items-center gap-2 hover:bg-gray-200 rounded-md`}
+                      className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3 justify-between" : 'justify-center'} text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-2  font-semibold opacity-80 flex  items-center gap-2 hover:bg-gray-200 rounded-md my-[2px]`}
                     >
                       <span
                         className={`flex ${showText ? "justify-start" : "justify-start"} items-center gap-1`}
@@ -193,7 +175,7 @@ const Dashboard = () => {
                       className={`ml-2 ${openAccordion.show && openAccordion.name === item?.menu ? "h-auto accordionOpen" : " max-h-0 "} overflow-hidden z-50 ${(openAccordion.prev === item?.menu && openAccordion.prevOpen) || (!openAccordion.show && openAccordion.name === item?.menu) ? "accordionClose" : ""}`}
                     >
                       {Array.isArray(item.dropDown) ? ( // checking is dropdown menus is an array
-                        <>
+                        <div >
                           {item.dropDown.map((dropDownItems, index) => {//map dropdown items
                             //check is there any sub dropdown menu avilable or not
                             return !dropDownItems.link &&
@@ -221,14 +203,14 @@ const Dashboard = () => {
                                     />
                                   </span>
                                 </li>
-                                <ul
+                                <ul //id="dropDowns"
                                   // check is subaccordion menu open or not 
                                   className={` ${openSubMenuAccordion.subMenuOpen && openSubMenuAccordion.subMenu === dropDownItems?.menu ? "h-full accordionOpen" : " max-h-0 "} overflow-hidden z-50 ${(openSubMenuAccordion.prevSubMenu === dropDownItems?.menu && openSubMenuAccordion.prevSubMenuOpen) || (!openSubMenuAccordion.subMenuOpen && openSubMenuAccordion.subMenu === dropDownItems?.menu) ? "accordionClose" : ""}`}
                                 >
                                   {/* map over all subAccordion menus  */}
                                   {dropDownItems.subMenu.map((subMenu, index) => {
                                     return !subMenu.link &&
-                                      Array.isArray(subMenu.subMenu2) ? <div>
+                                      Array.isArray(subMenu.subMenu2) ? <div >
                                       <li id="dropDownButton"
                                         onClick={() => {//open sub accordion menu
                                           handelSubMenuAccordion2(subMenu.menu);
@@ -251,7 +233,7 @@ const Dashboard = () => {
                                           />
                                         </span>
                                       </li>
-                                      <ul id='dropDowns'
+                                      <ul //id='dropDowns'
                                         // check is subaccordion menu open or not 
                                         className={` ${openSubMenuAccordion2.subMenuOpen && openSubMenuAccordion2.subMenu === subMenu?.menu ? "h-full accordionOpen" : " max-h-0 "} overflow-hidden z-50 ${(openSubMenuAccordion2.prevSubMenu === subMenu?.menu && openSubMenuAccordion2.prevSubMenuOpen) || (!openSubMenuAccordion2.subMenuOpen && openSubMenuAccordion2.subMenu === subMenu?.menu) ? "accordionClose" : ""}`}
                                       >
@@ -303,7 +285,7 @@ const Dashboard = () => {
                             );
                           }
                           )}
-                        </> //if dropdown menus is not an array then return empty fragment
+                        </div> //if dropdown menus is not an array then return empty fragment
                       ) : (
                         <></>
                       )}

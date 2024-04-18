@@ -1,68 +1,143 @@
 import { RiHomeSmile2Line, RiPagesLine } from "react-icons/ri";
 import { FaRegCircle } from "react-icons/fa";
-import { MdEmojiObjects, MdOutlineMail } from "react-icons/md";
+import { MdEmojiObjects, MdOutlineDashboard, MdOutlineLocalMall, MdOutlineMail } from "react-icons/md";
 import { GrChatOption } from "react-icons/gr";
 import { HiOutlineShoppingCart, HiOutlineTruck } from "react-icons/hi";
 import { VscFiles } from "react-icons/vsc";
 import { CiCalendarDate } from "react-icons/ci";
 import { TbFileDollar, TbLayoutKanban } from "react-icons/tb";
-import { IoBookOutline } from "react-icons/io5";
+import { IoBookOutline, IoSettingsOutline } from "react-icons/io5";
 import { AiFillAppstore } from "react-icons/ai";
+import { LuUsers2 } from "react-icons/lu";
+import { BiPrinter } from "react-icons/bi";
 export const SIderberNavLinks = [
     //groups
     {
         title: false,//group title 
         NavItems: [ //group links
             {
+                link: '/',
+                menu: 'Dashboard',
+                access: 'Collapsed-menu',
+                icon: MdOutlineDashboard,
+                dropDown: false,
+            },
+            {
+                link: '/Client',
+                menu: 'Client',
+                access: 'Collapsed-menu',
+                icon: LuUsers2,
+                dropDown: false,
+            },
+            {
                 link: false,
-                menu: 'Dashboards', //accordion  parent
-                icon: RiHomeSmile2Line,
-                dropDown: [//accordion child
+                menu: 'Expense',
+                access: 'Collapsed-menu',
+                icon: MdOutlineLocalMall,
+                dropDown: [
                     {
-                        link: '/btn',
-                        menu: 'btn',
+                        link: '/Catrgoty-list',
+                        menu: 'Categoty list',
                         icon: FaRegCircle,
-                        access: 'Analytice',
+                        access: 'Collapsed-menu',
                         subMenu: false
                     },
                     {
-                        link: '/Analytice',
-                        menu: 'Analytice',
+                        link: '/Expense-list',
+                        menu: 'Expense list',
                         icon: FaRegCircle,
-                        access: 'Analytice',
+                        access: 'Collapsed-menu',
                         subMenu: false
                     },
                     {
-                        link: '/CRM',
-                        menu: 'CRM',
+                        link: '/Expense-list',
+                        menu: 'Expense Receipt',
                         icon: FaRegCircle,
-                        access: 'CRM',
-                        subMenu: false
-                    },
-                    {
-                        link: '/eCommerce',
-                        menu: 'eCommerce',
-                        icon: FaRegCircle,
-                        access: 'eCommerce',
-                        subMenu: false
-                    },
-                    {
-                        link: '/logistice',
-                        menu: 'Logistice',
-                        icon: FaRegCircle,
-                        access: 'logistice',
-                        subMenu: false
-                    },
-                    {
-                        link: '/Academy',
-                        menu: 'Academy',
-                        icon: FaRegCircle,
-                        access: 'Academy',
+                        access: 'Collapsed-menu',
                         subMenu: false
                     },
                 ]
             },
-
+            {
+                link: false,
+                menu: 'Reports',
+                access: 'Collapsed-menu',
+                icon: BiPrinter,
+                dropDown: [
+                    {
+                        link: '/Yearly-Expense',
+                        menu: 'Yearly Expense',
+                        icon: FaRegCircle,
+                        access: 'Collapsed-menu',
+                        subMenu: false
+                    },
+                    {
+                        link: '/Monthly-Expense',
+                        menu: 'Monthly Expense',
+                        icon: FaRegCircle,
+                        access: 'Collapsed-menu',
+                        subMenu: false
+                    },
+                    {
+                        link: '/Between Expense',
+                        menu: 'Between Expense',
+                        icon: FaRegCircle,
+                        access: 'Collapsed-menu',
+                        subMenu: false
+                    },
+                ]
+            },
+            {
+                link: false,
+                menu: 'Settings',
+                access: 'Collapsed-menu',
+                icon: IoSettingsOutline,
+                dropDown: [
+                    {
+                        link: '/General-Setting',
+                        menu: 'General Setting',
+                        icon: FaRegCircle,
+                        access: 'Collapsed-menu',
+                        subMenu: false
+                    },
+                    {
+                        link: '/Role',
+                        menu: 'Role',
+                        icon: FaRegCircle,
+                        access: 'Collapsed-menu',
+                        subMenu: false
+                    },
+                    {
+                        link: '/User',
+                        menu: 'User',
+                        icon: FaRegCircle,
+                        access: 'Collapsed-menu',
+                        subMenu: false
+                    },
+                ]
+            },
+            {
+                link: false,
+                menu: 'Blogs',
+                access: 'Collapsed-menu',
+                icon: RiPagesLine ,
+                dropDown: [
+                    {
+                        link: '/Blog-list',
+                        menu: 'Blog list',
+                        icon: FaRegCircle,
+                        access: 'Collapsed-menu',
+                        subMenu: false
+                    },
+                    {
+                        link: '/New-Blog',
+                        menu: 'New Blog',
+                        icon: FaRegCircle,
+                        access: 'Collapsed-menu',
+                        subMenu: false
+                    },
+                ]
+            },
             {
                 link: false,
                 menu: 'Layouts',
@@ -137,7 +212,7 @@ export const SIderberNavLinks = [
             {
                 link: false,
                 menu: 'Pages',
-                icon: RiPagesLine ,
+                icon: RiPagesLine,
                 dropDown: [
                     {
                         link: '/',
@@ -240,7 +315,7 @@ export const SIderberNavLinks = [
             {
                 link: '/demo',
                 menu: 'Demo',
-                icon: AiFillAppstore ,
+                icon: AiFillAppstore,
                 access: 'Email',
                 dropDown: false
             },
@@ -277,7 +352,7 @@ export const SIderberNavLinks = [
                                 subMenu2: false
                             },
                             {
-                                link: '/Dashboard',
+                                link: '/btn',
                                 menu: 'Demo submenu',
                                 icon: FaRegCircle,
                                 access: 'Dashboard',
@@ -302,7 +377,7 @@ export const SIderberNavLinks = [
                                         icon: FaRegCircle,
                                     },
                                     {
-                                        link: '/Dashboard',
+                                        link: '/btn',
                                         menu: 'Demo submenu2',
                                         access: 'Dashboard',
                                         icon: FaRegCircle,
