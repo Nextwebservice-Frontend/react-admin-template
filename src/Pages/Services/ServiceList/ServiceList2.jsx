@@ -24,9 +24,7 @@ const ServiceList2 = () => {
     const priceBodyTemplate = (product) => {
         return formatCurrency(product.price);
     };
-    const ratingBodyTemplate = (product) => {
-        return <Rating value={product.rating} readOnly cancel={false} />;
-    };
+   
     const statusBodyTemplate = (product) => {
         return <Tag value={product.inventoryStatus} className='text-white bg-green-600 px-2 rounded-md' severity={getSeverity(product)}></Tag>;
     };

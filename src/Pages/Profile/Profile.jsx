@@ -21,12 +21,12 @@ const Profile = () => {
 
   // dark: bg - [#2F3249]
   return (
-    <div className="">
+    <div className="mb-16">
       <h1 className="my-4 w-full mx-auto  text-3xl dark:text-white text-black ">Personal Profile</h1>
       <div className="flex flex-col md:flex-row gap-8 justify-center">
         {/* user details part */}
         <div className="card bg-white dark:bg-[#2F3249] w-full md:w-[40%] lg:w-[30%] shadow-xl rounded-lg border dark:border-none ">
-          <h1 className="text-2xl text-black bg-[#f7f7fa] dark:bg-gray-500 dark:border-none pl-5 mb-6 border-b py-2 dark:rounded-lg dark:text-white">
+          <h1 className="text-2xl text-black bg-[#f7f7fa] dark:bg-gray-500 dark:border-none pl-5 mb-6 border-b py-2 dark:rounded-sm dark:text-white">
             User Details
           </h1>
           <figure>
@@ -41,8 +41,8 @@ const Profile = () => {
             <h1 className="mt-2 text-2xl dark:text-white text-black">SuperAdmin</h1>
           </div>
           {/* superAdmin button */}
-          <button className="w-[24%] md:w-[32%] xl:w-[25%]  border mx-auto rounded-lg text-white text-xs xl:text-lg bg-[#6C757D] font-bol mb-3 dark:border-none dark:text-white">SuperAdmin</button>
-          <div className=" p-0 pl-5 mb-4">
+          <button className="w-[24%] md:w-[32%] xl:w-[33%]  border mx-auto rounded-lg text-white text-xs xl:text-lg bg-[#6C757D] font-bol mb-3 dark:border-none dark:text-white">SuperAdmin</button>
+          <div className=" p-0 pl-5 mb-10">
             {/* superAdmin name */}
             <h2 className="dark:text-white"><span className=" font-bold text-lg md:text-base lg:text-base xl:text-lg dark:text-white text-black">Name :</span> SuperAdmin</h2>
             {/* superAdmin email */}
@@ -57,7 +57,7 @@ const Profile = () => {
         <div className="mt-5 dark:text-white md:mt-0 md:w-[60%] lg:w-[70%]">
           {/* <div className="card bg-base-100 shadow-xl border rounded-lg"></div> */}
           <div className="card bg-white dark:bg-[#2F3249] shadow-xl border dark:border-none rounded-lg">
-            <h1 className="text-black text-2xl bg-[#f7f7fa] pl-5 mb-2 border-b py-2  dark:bg-gray-500 dark:border-none dark:rounded-lg dark:text-white">
+            <h1 className="text-black text-2xl bg-[#f7f7fa] pl-5 mb-2 border-b py-2  dark:bg-gray-500 dark:border-none dark:rounded-sm dark:text-white">
               Update Profile Basic
             </h1>
             <div className="w-full">
@@ -138,7 +138,7 @@ const Profile = () => {
                   />
                 </div>
                 {/* button */}
-                <div className="py-2 w-full bg-[#f7f7fa] dark:bg-gray-500 text-center dark:border-none  border mt-2 dark:rounded-lg">
+                <div className="py-2 w-full bg-[#f7f7fa] dark:bg-gray-500 text-center dark:border-none  border mt-2 dark:rounded-sm">
                   <button className="w-[90%] md:w-[96%] h-[40px] border dark:border-none bg-[#28C76F]  text-white rounded-lg">
                     Update Profile
                   </button>

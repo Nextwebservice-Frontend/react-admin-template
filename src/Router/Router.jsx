@@ -8,6 +8,9 @@ import YearlyInvoice from "../Pages/Reports/YearlyInvoice/YearlyInvoice";
 import GeneralSetting from "../Pages/Settings/GeneralSetting/GeneralSetting";
 import Button from "../Pages/Button/Button";
 import Provider from "../Pages/Others/Provider";
+import ExpenseReceipt from "../Pages/ExpenseReceipt/ExpenseReceipt/ExpenseReceipt";
+import CategoryList from "../Pages/Expense/CategoryList/CategoryList";
+import ExpenseList from "../Pages/Expense/ExpenseList/ExpenseList";
 
 const Router = createBrowserRouter([
     {
@@ -23,10 +26,20 @@ const Router = createBrowserRouter([
                 path: '/profile',
                 element: <Profile />
             }
+            ,
+            {
+                path: '/expenseList',
+                element: <ExpenseList></ExpenseList>
+            }
           ,
             {
                 path: '/newExpenseReceipt',
                 element: <NewExpenseReceipt />
+            },
+            
+            {
+                path: '/ExpenseReceipt',
+                element: <ExpenseReceipt />
             },
             {
                 path: '/serviceList',
@@ -42,6 +55,11 @@ const Router = createBrowserRouter([
             }
             ,
             {
+                path: '/categoryList',
+                element: <CategoryList></CategoryList>
+            }
+            ,
+            {
                 path: '/provider',
                 element: <Provider></Provider>
             }
@@ -50,6 +68,7 @@ const Router = createBrowserRouter([
                 path: '/btn',
                 element: <Button></Button>
             }
+            
         ]
     }
 ])

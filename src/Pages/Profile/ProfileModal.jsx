@@ -7,7 +7,7 @@ const ProfileModal = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <>
-            <div className="h-[60px] md:mt-14 lg:mt-7 xl:mt-7 py-2 border w-full text-center  dark:rounded-lg dark:border-none bg-[#f7f7fa] dark:bg-gray-500">
+            <div className="h-[60px] py-2 border-t w-full text-center dark:rounded-sm dark:border-none bg-[#f7f7fa] dark:bg-gray-500">
                 <button
                     type="button"
                     onClick={() => setIsOpen(true)}
@@ -16,7 +16,7 @@ const ProfileModal = () => {
                     Password change
                 </button>
                 <Transition appear show={isOpen} as={Fragment}>
-                    <Dialog as="div" className="relative z-10" onClose={() => setIsOpen(true)} >
+                    <Dialog as="div" className="relative z-50" onClose={() => setIsOpen(true)} >
                         <Transition.Child
                             as={Fragment}
                             enter="ease-out duration-300"
@@ -39,7 +39,7 @@ const ProfileModal = () => {
                                     leaveFrom="opacity-100 scale-100"
                                     leaveTo="opacity-0 scale-95"
                                 >
-                                    <Dialog.Panel className="w-[96%] md:w-[96%] lg:w-[90%]  xl:w-[70%] 2xl:w-[48%] transform overflow-hidden rounded-2xl bg-white dark:bg-[#25293C] text-left align-middle shadow-xl transition-all">
+                                    <Dialog.Panel className="w-[96%] md:w-[90%] lg:w-[75%]  xl:w-[910px] max-w-md:w-[60%] transform overflow-hidden rounded-2xl bg-white dark:bg-[#25293C] text-left align-middle shadow-xl transition-all my-10">
                                         <Dialog.Title
                                             as="h3"
                                             className="border py-4 pl-4 font-bold text-xl leading- text-gray-900 dark:bg-gray-500 bg-[#f7f7f7] dark:border-none "

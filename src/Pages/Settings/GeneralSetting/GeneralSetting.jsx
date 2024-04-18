@@ -19,22 +19,22 @@ const GeneralSetting = () => {
     }
 
     return (
-        <div>
+        <div className='mb-16'>
             {/* General Setting  */}
             <div className="flex flex-wrap align-items-center justify-content-between gap-2 my-5 pl-1">
                 <h1 className="w-full mx-auto  text-3xl dark:text-white text-black ">General Settings</h1>
             </div>
-            {/* Sidebar part */}
+            {/* Sidebar part bg-[#21252908]*/}
             <div className="mt-5 md:mt-0">
-                <div className="bg-base-100 shadow-xl border rounded-lg">
-                    <h1 className="text-3xl font-normal pl-4 mb-2 border-b py-4 bg-[#21252908]">
+                <div className="bg-white dark:bg-[#2F3249] shadow-xl border dark:border-none rounded-lg">
+                    <h1 className="text-3xl font-normal pl-4 mb-2 border-b py-2 bg-[#0d0e0e08] dark:bg-gray-500 dark:border-none dark:text-white text-black dark:rounded-sm">
                         Sidebar
                     </h1>
                     <div className="w-full">
                         <form className="">
                             <div className="flex flex-col md:flex-row justify-between lg:gap-4 w-full ">
                                 <div className="ml-4 mr-4 lg:mr-4 md:w-[50%] ">
-                                    <h1 className="md:mt-2 font-bold text-lg">
+                                    <h1 className="md:mt-2 font-bold text-lg text-black dark:text-white">
                                         Sidebar Logo
                                         <span className="pl-1 text-red-400">( Recommended W:250px,H:150px)</span>
                                     </h1>
@@ -42,37 +42,37 @@ const GeneralSetting = () => {
                                     <div className='flex justify-between items-end mb-2 lg:mb-4 '>
                                         <div className="md:w-[300px] h-[150px] pt-2">
                                             {image == "" || image == null ?
-                                                <label id="uploadImage" htmlFor="uploadBtn" className="h-[100%] w-[100%] text-start"><IoIosImages className="h-[100%] w-[100%]" /></label>
+                                                <label id="uploadImage" htmlFor="uploadBtn" className="h-[100%] w-[100%] text-start"><IoIosImages className="h-[100%] w-[100%] text-gray-600 dark:text-white" /></label>
                                                 : <img src={image} className="w-[100%] h-[100%] p-2" alt="" />}
                                             <span className="text-lg md:text-xs xl:text-base pl-2"></span>
                                             <input type="file" id="uploadBtn" onChange={convertToBase64} />
                                         </div>
                                         <div className='text-2xl md:pr-8 pb-2 w-[50%] text-end'>
-                                            <h1 className=''>X</h1>
+                                            <h1 className='text-gray-600 dark:text-white'>X</h1>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="w-full md:w-[65%] lg:w-[50%] pr-4 md:pr-6 pl-4 md:pl-0">
                                     {/* name */}
-                                    <div className=" mt-6">
-                                        <label htmlFor="width" className="text-xl leading-6 text-[#212529] font-serif">
+                                    <div className=" mt-2">
+                                        <label htmlFor="width" className="text-xl leading-6 text-[#212529] dark:text-white font-serif">
                                             Logo Width<span className="pl-1 text-red-400">(In pixel)</span>
                                         </label>
                                         <input
                                             type="number"
                                             name="logoWidth"
-                                            className=" block w-full mt-2 rounded-md border-0 py-2.5 pl-4 pr-3 text-gray-200 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-300 sm:text-sm sm:leading-6"
+                                            className=" block w-full mt-2 rounded-md border-0 py-2.5 pl-4 pr-3 text-gray-200 ring-1 ring-inset ring-gray-300 placeholder:text-gray-600 focus:ring-1 focus:ring-inset focus:ring-gray-300 sm:text-sm sm:leading-6 dark:border-none bg-[#f7f7fa] dark:bg-[#cfcfdd]"
                                             placeholder="Width"
                                         />
                                     </div>
-                                    <div className="mt-4">
-                                        <label htmlFor="height" className="text-xl leading-6 text-[#212529] font-serif">
+                                    <div className="mt-4 mb-4">
+                                        <label htmlFor="height" className="text-xl leading-6 text-[#212529] dark:text-white font-serif">
                                             Logo Height<span className="pl-1 text-red-400">(In pixel)</span>
                                         </label>
                                         <input
                                             type="number"
                                             name="logoHeight"
-                                            className="block w-full mt-2 rounded-md border-0 py-2.5 pl-4 pr-3 text-gray-200 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-300 sm:text-sm sm:leading-6"
+                                            className="block w-full mt-2 rounded-md border-0 py-2.5 pl-4 pr-3 text-gray-200 ring-1 ring-inset ring-gray-300 placeholder:text-gray-600 focus:ring-1 focus:ring-inset focus:ring-gray-300 sm:text-sm sm:leading-6 dark:border-none bg-[#f7f7fa] dark:bg-[#cfcfdd]"
                                             placeholder="Height"
                                         />
                                     </div>
@@ -80,101 +80,105 @@ const GeneralSetting = () => {
                             </div>
                         </form>
                     </div>
-                    <div className=" pl-5 border py-4 px-6 bg-[#21252908] text-end">
-                        <button className='btn text-lg  font-normal bg-[#28C76F] text-white '>Update Logo</button>
+                    <div className=" pl-5 border dark:border-none py-2 px-6  text-end bg-[#0d0e0e08] dark:bg-gray-500 dark:rounded-sm">
+                        <button className='rounded-lg text-lg border-none hover:bg-green-400 font-normal bg-[#28C76F] text-white py-1 px-2'>Update Logo</button>
                     </div>
                 </div>
             </div>
 
             {/* Invoice part */}
             <div className="mt-16">
-                <div className="bg-base-100 shadow-xl border rounded-lg">
-                    <h1 className="text-3xl font-normal pl-4 mb-2 border-b py-4 bg-[#21252908]">
+                <div className="bg-white dark:bg-[#2F3249] shadow-xl border dark:border-none rounded-lg">
+                    <h1 className="text-3xl font-normal pl-4 mb-2 border-b py-2 bg-[#0d0e0e08] dark:bg-gray-500 dark:border-none dark:text-white text-black dark:rounded-sm">
                         Invoice
                     </h1>
                     <div className="w-full">
                         <form className="">
                             <div className="flex flex-col md:flex-row justify-between lg:gap-4 w-full ">
                                 <div className="ml-4 mr-4 lg:mr-4 md:w-[50%] ">
-                                    <h1 className="md:mt-2 font-bold text-lg">
+                                    <h1 className="md:mt-2 font-bold text-lg text-black dark:text-white">
                                         Invoice Logo
                                         <span className="pl-1 text-red-400">( Recommended W:250px,H:150px)</span>
                                     </h1>
+                                    {/* image */}
                                     <div className='flex justify-between items-end mb-2 lg:mb-4 '>
                                         <div className="md:w-[300px] h-[150px] pt-2">
                                             {image == "" || image == null ?
-                                                <label id="uploadImage" htmlFor="uploadBtn" className="h-[100%] w-[100%] text-start"><IoIosImages className="h-[100%] w-[100%]" /></label>
+                                                <label id="uploadImage" htmlFor="uploadBtn" className="h-[100%] w-[100%] text-start"><IoIosImages className="h-[100%] w-[100%] text-gray-600 dark:text-white" /></label>
                                                 : <img src={image} className="w-[100%] h-[100%] p-2" alt="" />}
                                             <span className="text-lg md:text-xs xl:text-base pl-2"></span>
                                             <input type="file" id="uploadBtn" onChange={convertToBase64} />
                                         </div>
                                         <div className='text-2xl md:pr-8 pb-2 w-[50%] text-end'>
-                                            <h1 className=''>X</h1>
+                                            <h1 className='text-gray-600 dark:text-white'>X</h1>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="w-full md:w-[65%] lg:w-[50%] pr-4 md:pr-6 pl-4 md:pl-0">
-                                    {/* logo width */}
-                                    <div className=" mt-6">
-                                        <label htmlFor="width" className="text-xl leading-6 text-[#212529] font-serif">
+                                    {/* name */}
+                                    <div className=" mt-2">
+                                        <label htmlFor="width" className="text-xl leading-6 text-[#212529] dark:text-white font-serif">
                                             Logo Width<span className="pl-1 text-red-400">(In pixel)</span>
                                         </label>
                                         <input
                                             type="number"
                                             name="logoWidth"
-                                            className=" block w-full mt-2 rounded-md border-0 py-2.5 pl-4 pr-3 text-gray-200 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-300 sm:text-sm sm:leading-6"
+                                            className=" block w-full mt-2 rounded-md border-0 py-2.5 pl-4 pr-3 text-gray-200 ring-1 ring-inset ring-gray-300 placeholder:text-gray-600 focus:ring-1 focus:ring-inset focus:ring-gray-300 sm:text-sm sm:leading-6 dark:border-none bg-[#f7f7fa] dark:bg-[#cfcfdd]"
                                             placeholder="Width"
                                         />
                                     </div>
-                                    {/* logo height */}
-                                    <div className="mt-4">
-                                        <label htmlFor="height" className="text-xl leading-6 text-[#212529] font-serif">
+                                    <div className="mt-4 mb-4">
+                                        <label htmlFor="height" className="text-xl leading-6 text-[#212529] dark:text-white font-serif">
                                             Logo Height<span className="pl-1 text-red-400">(In pixel)</span>
                                         </label>
                                         <input
                                             type="number"
                                             name="logoHeight"
-                                            className="block w-full mt-2 rounded-md border-0 py-2.5 pl-4 pr-3 text-gray-200 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-300 sm:text-sm sm:leading-6"
+                                            className="block w-full mt-2 rounded-md border-0 py-2.5 pl-4 pr-3 text-gray-200 ring-1 ring-inset ring-gray-300 placeholder:text-gray-600 focus:ring-1 focus:ring-inset focus:ring-gray-300 sm:text-sm sm:leading-6 dark:border-none bg-[#f7f7fa] dark:bg-[#cfcfdd]"
                                             placeholder="Height"
                                         />
                                     </div>
                                 </div>
+
                             </div>
+
                             {/* invoice back color */}
                             {/* invoice terms */}
-                            <div className="pl-4 pr-6 mb-4">
-                                <p className="label-text text-base mr-7 pb-2">Invoice Terms<span className="text-red-500 pl-1">(required)</span></p>
+                            <div className="pl-4 pr-6 mb-4 ">
+                                <p className="label-text text-base mr-7 pb-2 text-black dark:text-white">Invoice Terms<span className="text-red-500 pl-1">(required)</span></p>
                                 <InvoiceTerms className=""></InvoiceTerms>
-                               
-
                             </div>
                         </form>
                     </div>
-                    <div className=" pl-5 border py-4 px-6 bg-[#21252908] text-end">
-                        <button className='btn text-lg  font-normal bg-[#28C76F] text-white '>Update Logo</button>
+                    <div className=" pl-5 border dark:border-none py-2 px-6  text-end bg-[#0d0e0e08] dark:bg-gray-500 dark:rounded-sm">
+                        <button className='rounded-lg text-lg border-none hover:bg-green-400 font-normal bg-[#28C76F] text-white py-1 px-2'>Update Logo</button>
                     </div>
                 </div>
             </div>
 
             {/* Footer Text */}
             <div className="mt-16">
-                <div className="bg-base-100 shadow-xl border rounded-lg">
-                    <h1 className="text-3xl font-normal pl-4 mb-2 border-b py-4 bg-[#21252908]">
+                <div className="bg-white dark:bg-[#2F3249] shadow-xl border dark:border-none rounded-lg">
+                    <h1 className="text-3xl font-normal pl-4 mb-2 border-b py-2 bg-[#0d0e0e08] dark:bg-gray-500 dark:border-none dark:text-white text-black dark:rounded-sm">
                         Footer Text
                     </h1>
                     <div className="w-full">
                         <form className="">
                             <div className='pl-4 py-2 pr-6'>
-                                <p className="label-text text-base mr-7 pb-2">Footer Text<span className="text-red-500 pl-1">(required)</span></p>
-                                <textarea className="textarea textarea-bordered w-[100%]" placeholder="Test text"></textarea>
+                                <p className="label-text text-base mr-7 pb-2 text-black dark:text-white">Footer Text<span className="text-red-500 pl-1">(required)</span></p>
+                                <textarea className="textarea textarea-bordered w-[100%] bg-white dark:bg-gray-300 text-gray-900" placeholder="Test text"></textarea>
                             </div>
                         </form>
                     </div>
-                    <div className=" pl-5 border py-4 px-6 bg-[#21252908] text-end">
-                        <button className='btn text-lg  font-normal bg-[#28C76F] text-white '>Update Text</button>
+                    <div className=" pl-5 border dark:border-none py-2 px-6  text-end bg-[#0d0e0e08] dark:bg-gray-500 dark:rounded-sm">
+                        <button className='rounded-lg text-lg border-none hover:bg-green-400 font-normal bg-[#28C76F] text-white py-1 px-2'>Update Logo</button>
                     </div>
                 </div>
             </div>
+
+
+           
+            
         </div>
     );
 };
