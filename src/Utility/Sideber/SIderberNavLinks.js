@@ -1,4 +1,4 @@
-import { RiHomeSmile2Line } from "react-icons/ri";
+import { RiHomeSmile2Line, RiPagesLine } from "react-icons/ri";
 import { FaRegCircle } from "react-icons/fa";
 import { MdEmojiObjects, MdOutlineMail } from "react-icons/md";
 import { GrChatOption } from "react-icons/gr";
@@ -18,6 +18,13 @@ export const SIderberNavLinks = [
                 menu: 'Dashboards', //accordion  parent
                 icon: RiHomeSmile2Line,
                 dropDown: [//accordion child
+                    {
+                        link: '/btn',
+                        menu: 'btn',
+                        icon: FaRegCircle,
+                        access: 'Analytice',
+                        subMenu: false
+                    },
                     {
                         link: '/Analytice',
                         menu: 'Analytice',
@@ -122,6 +129,63 @@ export const SIderberNavLinks = [
                         menu: 'Blank',
                         icon: FaRegCircle,
                         access: 'Blank',
+                        subMenu: false
+                    },
+
+                ]
+            },
+            {
+                link: false,
+                menu: 'Pages',
+                icon: RiPagesLine ,
+                dropDown: [
+                    {
+                        link: '/',
+                        menu: 'Dashboard',
+                        icon: FaRegCircle,
+                        access: 'Collapsed-menu',
+                        subMenu: false
+                    },
+                    {
+                        link: '/profile',
+                        menu: 'Profile',
+                        icon: FaRegCircle,
+                        access: 'Content-Navbar',
+                        subMenu: false
+                    },
+                    {
+                        link: '/newExpenseReceipt',
+                        menu: 'New Expense Receipt',
+                        icon: FaRegCircle,
+                        access: 'Content-Nav-Sidever',
+                        subMenu: false
+                    },
+                    {
+                        link: '/serviceList',
+                        menu: 'Service List',
+                        icon: FaRegCircle,
+                        access: 'Horizontal',
+                        subMenu: false
+                    },
+                    {
+                        link: '/yearlyInvoiceList',
+                        menu: 'Yearly Invoice',
+                        icon: FaRegCircle,
+                        access: 'Without-menu',
+                        subMenu: false
+                    },
+                    {
+                        link: '/generalSetting',
+                        menu: 'General Setting',
+                        icon: FaRegCircle,
+                        access: 'Without-navbar',
+                        subMenu: false
+                    },
+                    {
+                        link: '/provider',
+                        menu: 'provider',
+                        icon: FaRegCircle,
+                        access: 'Fluid',
                         subMenu: false
                     },
 

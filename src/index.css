@@ -24,6 +24,11 @@
   color: #FFF;
   text-decoration: none;
 }
+#dBoardSideber .activeLink {
+  background: rgb(229 231 235);
+  border-radius: 4px;
+  text-decoration: none;
+}
 
 
 

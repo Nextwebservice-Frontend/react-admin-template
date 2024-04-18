@@ -3,7 +3,7 @@ import "./scrollbar.css";
 import { useContext, useEffect, useState } from "react";
 import { ContextData } from "../../Providers/ContextProviders/ContextProviders";
 import "../../CSS/customCSS.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { SIderberNavLinks } from "../../Utility/Sideber/SIderberNavLinks";
 import { IoIosArrowForward } from "react-icons/io";
 import { permission } from "../../Utility/Sideber/permision";
@@ -11,6 +11,8 @@ import { permission } from "../../Utility/Sideber/permision";
 const Dashboard = () => {
   const HaveAcces = permission.map(item => `${item.name}`)
   // console.log(HaveAcces)
+  const location = useLocation()
+  console.log(location)
   const {
     setShow,
     show,
@@ -104,8 +106,34 @@ const Dashboard = () => {
       }
     }
   }, []);
+  useEffect(() => {
+    const activeLinks = document.querySelectorAll('#dBoardSideber .active');
+    const allLinks = document.querySelectorAll('#dBoardSideber a');
+    if (allLinks) {
+      for (const allLink of allLinks) {
+        const parentli = allLink.parentElement;
+        const parentDiv = parentli.parentElement;
+        const dropDownButton = parentDiv.previousElementSibling;
+        console.log(dropDownButton)
+        if (dropDownButton) {
+          dropDownButton.classList.remove('activeLink')
+        }
+      }
+    }
+    if (activeLinks) {
+      for (const activeLink of activeLinks) {
+        const parentli = activeLink.parentElement;
+        const parentDiv = parentli.parentElement;
+        const dropDownButton = parentDiv.previousElementSibling;
+        if (dropDownButton) {
+          dropDownButton.classList.add('activeLink')
+          console.log(dropDownButton)
+        }
+      }
+    }
+  }, [location.pathname])
   return (
-    <div 
+    <div
       id="dBoardSideber"
       className={`w-full mx-auto h-[100vh] overflow-y-auto`}>
       {/* logo   */}
@@ -143,7 +171,7 @@ const Dashboard = () => {
                     key={index}
                     className={` hover:no-underline cursor-pointer`}
                   >
-                    <span
+                    <li id="dropDownButton"
                       //accordion open function call
                       //accordion open function call
                       onClick={() => HandelAccorDionOpen(item?.menu)}
@@ -159,7 +187,7 @@ const Dashboard = () => {
                       <IoIosArrowForward
                         className={`transition-all ${showText ? "" : `${mouseEnterInSIderber ? "" : "hidden"}`} text-[12px] ${openAccordion.show && openAccordion.name === item?.menu ? "rotate-[90deg]" : "rotate-[0deg]"}`}
                       />
-                    </span>
+                    </li>
                     <ul id="dropDowns"
                       // check is accordion open or not 
                       className={`ml-2 ${openAccordion.show && openAccordion.name === item?.menu ? "h-auto accordionOpen" : " max-h-0 "} overflow-hidden z-50 ${(openAccordion.prev === item?.menu && openAccordion.prevOpen) || (!openAccordion.show && openAccordion.name === item?.menu) ? "accordionClose" : ""}`}
@@ -171,7 +199,7 @@ const Dashboard = () => {
                             return !dropDownItems.link &&
                               Array.isArray(dropDownItems.subMenu) ? (
                               <>
-                                <li
+                                <li id="dropDownButton"
                                   onClick={() => {//open sub accordion menu
                                     handelSubMenuAccordion(dropDownItems.menu);
                                   }}
@@ -185,7 +213,7 @@ const Dashboard = () => {
                                     <span
                                       className={`flex ${showText ? "justify-start" : "justify-start"} w-full items-center gap-1`}
                                     >
-                                      <dropDownItems.icon className="text-[10px]"/>
+                                      <dropDownItems.icon className="text-[10px]" />
                                       {showText ? dropDownItems?.menu : `${mouseEnterInSIderber ? dropDownItems?.menu : ""}`}
                                     </span>
                                     <IoIosArrowForward
@@ -201,7 +229,7 @@ const Dashboard = () => {
                                   {dropDownItems.subMenu.map((subMenu, index) => {
                                     return !subMenu.link &&
                                       Array.isArray(subMenu.subMenu2) ? <div>
-                                      <li
+                                      <li id="dropDownButton"
                                         onClick={() => {//open sub accordion menu
                                           handelSubMenuAccordion2(subMenu.menu);
                                         }}
@@ -215,7 +243,7 @@ const Dashboard = () => {
                                           <span
                                             className={`flex ${showText ? "justify-start" : "justify-start"} w-full items-center gap-1`}
                                           >
-                                            <dropDownItems.icon className="text-[10px]"/>
+                                            <dropDownItems.icon className="text-[10px]" />
                                             {showText ? subMenu?.menu : `${mouseEnterInSIderber ? subMenu?.menu : ""}`}
                                           </span>
                                           <IoIosArrowForward
@@ -237,7 +265,7 @@ const Dashboard = () => {
                                               to={subMenu2.link}
                                               className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px] text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[6px]  font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                                             >
-                                              <subMenu.icon className="text-[10px]"/> {subMenu2.menu}
+                                              <subMenu.icon className="text-[10px]" /> {subMenu2.menu}
                                             </NavLink>
                                           </li>
                                         }
@@ -252,7 +280,7 @@ const Dashboard = () => {
                                         to={subMenu.link}
                                         className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px] text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[6px]  font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                                       >
-                                        <subMenu.icon className="text-[10px]"/> {subMenu.menu}
+                                        <subMenu.icon className="text-[10px]" /> {subMenu.menu}
                                       </NavLink>
                                     </li>
                                   }
@@ -269,7 +297,7 @@ const Dashboard = () => {
                                   to={dropDownItems.link}
                                   className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px] text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600  dark:text-gray-100 hover:no-underline px-1 transition-all py-[6px]  font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                                 >
-                                  <dropDownItems.icon className="text-[10px]"/> {dropDownItems.menu}
+                                  <dropDownItems.icon className="text-[10px]" /> {dropDownItems.menu}
                                 </NavLink>
                               </li>
                             );
