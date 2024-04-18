@@ -55,7 +55,7 @@ const ProfileModal = () => {
                                             <input
                                                 type="text "
                                                 placeholder="old Password  "
-                                                className="input input-bordered w-full "
+                                                className="input input-bordered w-full bg-[#f7f7fa]"
                                             />
                                         </div>
                                         <div className="flex flex-col md:flex-row justify-between gap-2 px-6">
@@ -65,7 +65,7 @@ const ProfileModal = () => {
                                                 <input
                                                     type="text "
                                                     placeholder="New Password  "
-                                                    className="input input-bordered w-full "
+                                                    className="input input-bordered w-full bg-[#f7f7fa]"
                                                 />
                                             </div>
                                             {/* Confirm Password  */}
@@ -74,7 +74,7 @@ const ProfileModal = () => {
                                                 <input
                                                     type="text"
                                                     placeholder="Confirm Password "
-                                                    className="input input-bordered w-full "
+                                                    className="input input-bordered w-full bg-[#f7f7fa]"
                                                 />
                                             </div>
                                         </div>
