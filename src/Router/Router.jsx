@@ -57,13 +57,8 @@ const Router = createBrowserRouter([
             {
                 path: '/categoryList',
                 element: <CategoryList></CategoryList>
-            }
-            ,
-            {
-                path: '/provider',
-                element: <Provider></Provider>
-            }
-            ,
+            },
+        
             {
                 path: '/btn',
                 element: <Button></Button>
