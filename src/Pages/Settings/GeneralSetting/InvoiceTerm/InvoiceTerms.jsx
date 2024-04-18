@@ -11,7 +11,7 @@ const InvoiceTerms = () => {
         placeholder :"Start Typing ..."
     }
     return (
-        <div className=''>
+        <div className='bg-white dark:bg-base-100 '>
             <JoditEditor
                 ref={editor}
                 value={content}
