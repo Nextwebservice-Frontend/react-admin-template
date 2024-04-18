@@ -270,6 +270,13 @@ export const SIderberNavLinks = [
                         access: 'Fluid',
                         subMenu: false
                     },
+                    {
+                        link: '/TinyMCE',
+                        menu: 'TinyMCE',
+                        icon: FaRegCircle,
+                        access: 'Fluid',
+                        subMenu: false
+                    },
 
                 ]
             },

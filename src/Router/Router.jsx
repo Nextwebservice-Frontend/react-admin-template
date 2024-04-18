@@ -11,7 +11,7 @@ import Provider from "../Pages/Others/Provider";
 import NewRole from "../Pages/NewRole/NewRole";
 import Login from "../Pages/Login/Login";
 import LoginPage from "../Pages/LoginPage/LoginPage";
-import TinyMCE from "../Components/dashboard/TextEditor/TinyMCE/TinyMCE";
+import TinyMCE from "../Components/dashboard/TinyMCE/TinyMCE";
 
 const Router = createBrowserRouter([
     {

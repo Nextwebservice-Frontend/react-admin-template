@@ -5,11 +5,10 @@ import { FaRegCircle } from "react-icons/fa";
 import { FaRegDotCircle } from "react-icons/fa";
 import logo from '../../../assets/logo.png'
 import Shortlogo from '../../../assets/Shortlogo.png'
-// eslint-disable-next-line react/prop-types ${showText?'pl-2':`${mouseEnterInSIderber?'pl-2':''}`}
 const Logo = ({ show, setShow }) => {
     const { showText, setShowText, mouseEnterInSIderber, setmouseEnterInSIderber } = useContext(ContextData)
     return (
-        <div className={`flex ${showText?'':`${mouseEnterInSIderber?'':'pl-2'}`} justify-between  items-center my-2 w-full pb-3`}>
+        <div className={`flex ${showText?'pl-2':`${mouseEnterInSIderber?'pl-2':'pl-2'}`} justify-between  items-center my-2 w-full pb-3`}>
             <div className={`flex items-center gap-[6px]`}>
                 {
                     showText ? <img src={logo} alt="" /> : mouseEnterInSIderber ? <img src={logo} alt="" /> : <img className=" w-8" src={Shortlogo} alt="" />
