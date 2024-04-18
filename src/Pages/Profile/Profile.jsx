@@ -71,11 +71,10 @@ const Profile = () => {
                           Name<span className="pl-1 text-red-400">(required)</span>
                         </span>
                       </label>
-                      {/* bg-[#f7f7fa] */}
                       <input
                         type="name"
                         placeholder="Name"
-                        className="input input-bordered lg:w-full py-0 bg-[#f7f7fa] dark:bg-[#cfcfdd] "
+                        className="input input-bordered lg:w-full py-0 bg-[#f7f7fa] dark:bg-base-100 "
                         required
                       />
                     </div>
@@ -89,7 +88,7 @@ const Profile = () => {
                       <input
                         type="number"
                         placeholder="Number"
-                        className="input input-bordered  lg:w-full bg-[#f7f7fa] dark:bg-[#cfcfdd]"
+                        className="input input-bordered  lg:w-full bg-[#f7f7fa] dark:bg-base-100"
                         required
                       />
                     </div>
@@ -103,7 +102,7 @@ const Profile = () => {
                       <input
                         type="email"
                         placeholder="Email"
-                        className="input input-bordered  lg:w-full bg-[#f7f7fa] dark:bg-[#cfcfdd]"
+                        className="input input-bordered  lg:w-full bg-[#f7f7fa] dark:bg-base-100"
                         required
                       />
                       {/* defaultValue={Email} */}
@@ -133,7 +132,7 @@ const Profile = () => {
                   <input
                     type="text"
                     placeholder="Role"
-                    className="input input-bordered bg-[#f7f7fa] dark:bg-[#cfcfdd]"
+                    className="input input-bordered bg-[#f7f7fa] dark:dark:bg-base-100"
                     required
                   />
                 </div>
