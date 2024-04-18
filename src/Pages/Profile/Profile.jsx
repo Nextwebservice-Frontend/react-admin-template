@@ -22,7 +22,7 @@ const Profile = () => {
   // dark: bg - [#2F3249]
   return (
     <div className="">
-      <h1 className="my-8 w-full mx-auto  text-3xl dark:text-white text-black ">Personal Profile</h1>
+      <h1 className="my-4 w-full mx-auto  text-3xl dark:text-white text-black ">Personal Profile</h1>
       <div className="flex flex-col md:flex-row gap-8 justify-center">
         {/* user details part */}
         <div className="card bg-white dark:bg-[#2F3249] w-full md:w-[40%] lg:w-[30%] shadow-xl rounded-lg border dark:border-none ">

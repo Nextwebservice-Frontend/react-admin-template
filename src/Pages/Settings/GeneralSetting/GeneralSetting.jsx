@@ -22,7 +22,7 @@ const GeneralSetting = () => {
         <div>
             {/* General Setting  */}
             <div className="flex flex-wrap align-items-center justify-content-between gap-2 my-5 pl-1">
-                <h1 className="text-2xl md:text-2xl text-900 font-medium ">General Settings</h1>
+                <h1 className="w-full mx-auto  text-3xl dark:text-white text-black ">General Settings</h1>
             </div>
             {/* Sidebar part */}
             <div className="mt-5 md:mt-0">
