@@ -7,11 +7,11 @@ import { NavLink } from "react-router-dom";
 import { SIderberNavLinks } from "../../Utility/Sideber/SIderberNavLinks";
 import { IoIosArrowForward } from "react-icons/io";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { UserContext } from "../../Providers/UserProvider/UserProvider";
 
 const Dashboard = () => {
   const axiosSecure  = useAxiosSecure();
-  const [haveAccess, setHaveAccess] = useState([])
-  const [permissions, setPermissions] = useState(null)
+  const {user} = useContext(UserContext)
 
   const {
     setShow,
@@ -27,20 +27,20 @@ const Dashboard = () => {
     setOpenSubMenuAccordion2,
   } = useContext(ContextData);
 
-  useEffect(() => {
-    const auth = localStorage.getItem('token')
-    if (auth) {
-      const getUserInfo = async () => {
-        try {
-          const res = await axiosSecure('/api/profile')
-          setPermissions(res.data);
-        } catch (error) {
-          console.log(error);
-        }
-      }
-      getUserInfo();
-    }
-  }, [axiosSecure])
+  // useEffect(() => {
+  //   const auth = localStorage.getItem('token')
+  //   if (auth) {
+  //     const getUserInfo = async () => {
+  //       try {
+  //         const res = await axiosSecure('/api/profile')
+  //         setPermissions(res.data);
+  //       } catch (error) {
+  //         console.log(error);
+  //       }
+  //     }
+  //     getUserInfo();
+  //   }
+  // }, [axiosSecure])
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -130,12 +130,14 @@ const Dashboard = () => {
     }
   }, []);
 
+  const haveAccess = user?.userPermissionData?.map(item => `${item.name}`)
+  haveAccess?.push('/')
 
-  useEffect(() => {
-    const accessPermission = permissions?.userPermissionData?.map(item => `${item.name}`)
-    accessPermission?.push('/')
-    setHaveAccess(accessPermission)
-  }, [permissions])
+  if(!haveAccess) {
+    return '...'
+  }
+
+
 
   return (
     <div

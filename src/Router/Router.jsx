@@ -9,6 +9,8 @@ import YearlyInvoice from "../Pages/Reports/YearlyInvoice/YearlyInvoice";
 import Role from "../Pages/Role/Role";
 import Login from "../Pages/Login/Login";
 import NewRole from "../Pages/Role/NewRole";
+import DataTable from "../Pages/DataTable/DataTable";
+import DataTable2 from "../Pages/DataTable/DataTable2";
 
 
 
@@ -52,6 +54,14 @@ const Router = createBrowserRouter([
             {
                 path: '/newRole',
                 element: <NewRole />
+            },
+            {
+                path: '/dataTable',
+                element: <DataTable />
+            },
+            {
+                path: '/dataTable2',
+                element: <DataTable2 />
             },
         ]
     },
