@@ -16,7 +16,6 @@ const UserProvider = ({children}) => {
             try {
               const res = await axiosSecure('/api/profile')
               setUser(res.data);
-              console.log(res.data.userPermissionData);
             } catch (error) {
               console.log(error);
             }

@@ -5,8 +5,6 @@ const axiosInstance = axios.create({
     baseURL: 'https://redinvoice.com'
 })
 
-
-
 const useAxiosSecure = () => {
     axiosInstance.interceptors.request.use(
         (config) => {

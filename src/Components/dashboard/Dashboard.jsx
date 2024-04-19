@@ -1,16 +1,17 @@
 import Logo from "./Logo/Logo";
 import "./scrollbar.css";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ContextData } from "../../Providers/ContextProviders/ContextProviders";
 import "../../CSS/customCSS.css";
 import { NavLink } from "react-router-dom";
 import { SIderberNavLinks } from "../../Utility/Sideber/SIderberNavLinks";
 import { IoIosArrowForward } from "react-icons/io";
-import { UserContext } from "../../Providers/UserProvider/UserProvider";
-import Loader from "../../Utility/Loader/Loader";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const Dashboard = () => {
-  const {user} = useContext(UserContext);
+  const axiosSecure  = useAxiosSecure();
+  const [haveAccess, setHaveAccess] = useState([])
+  const [permissions, setPermissions] = useState(null)
 
   const {
     setShow,
@@ -25,6 +26,27 @@ const Dashboard = () => {
     openSubMenuAccordion2,
     setOpenSubMenuAccordion2,
   } = useContext(ContextData);
+
+  useEffect(() => {
+    const auth = localStorage.getItem('token')
+    if (auth) {
+      const getUserInfo = async () => {
+        try {
+          const res = await axiosSecure('/api/profile')
+          setPermissions(res.data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      getUserInfo();
+    }
+  }, [axiosSecure])
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setShowText(true);
+    });
+  }, []);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -109,12 +131,11 @@ const Dashboard = () => {
   }, []);
 
 
-  const haveAccess = user?.userPermissionData?.map(item => `${item.name}`)
-  if(haveAccess){
-    haveAccess?.push('/')
-  } else{
-    return <Loader />
-  }
+  useEffect(() => {
+    const accessPermission = permissions?.userPermissionData?.map(item => `${item.name}`)
+    accessPermission?.push('/')
+    setHaveAccess(accessPermission)
+  }, [permissions])
 
   return (
     <div

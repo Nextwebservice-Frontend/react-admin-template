@@ -18,6 +18,7 @@ const NewRole = () => {
   const [reportCheckedItems, setReportCheckedItems] = useState({});
   const [notificationCheckedItems, setNotificationCheckedItems] = useState({});
   const [settingCheckedItems, setSettingCheckedItems] = useState({});
+  
   const [accessRole, loading] = useRoleAccessApi();
 
   const userAccess = accessRole?.filter(
