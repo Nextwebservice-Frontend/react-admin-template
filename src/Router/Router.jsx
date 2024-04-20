@@ -11,6 +11,7 @@ import Provider from "../Pages/Others/Provider";
 import ExpenseReceipt from "../Pages/ExpenseReceipt/ExpenseReceipt/ExpenseReceipt";
 import CategoryList from "../Pages/Expense/CategoryList/CategoryList";
 import ExpenseList from "../Pages/Expense/ExpenseList/ExpenseList";
+import MonthlyInvoice from "../Pages/MonthlyInvoice/MonthlyInvoice";
 
 const Router = createBrowserRouter([
     {
@@ -59,8 +60,8 @@ const Router = createBrowserRouter([
                 element: <CategoryList></CategoryList>
             }, 
             {
-                path: '/categoryList',
-                element: <CategoryList></CategoryList>
+                path: '/monthlyInvoice',
+                element: <MonthlyInvoice></MonthlyInvoice>
             },
         
             {
