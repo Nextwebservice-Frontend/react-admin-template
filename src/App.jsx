@@ -13,11 +13,9 @@ function App() {
         <div className={` ${showText?'xl:w-[17%] lg:w-[21%] w-[30%]':'w-[70px]'} `}>
           <Dashboard />
         </div>
-
         <div className={`xl:w-[82%] lg:w-[78%] w-full`}>
           <Home />
         </div>
-
       </div>
     </>
   )

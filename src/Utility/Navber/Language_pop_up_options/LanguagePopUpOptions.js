@@ -3,4 +3,5 @@ export const LanguagePopUpOptions = [
     'French',
     'Arabic',
     'German',
+    'বাংলা'
 ]

@@ -16,7 +16,7 @@
 }
 
 .accordionClose {
-  animation: accordionclose .2s;
+  animation: accordionclose .8s;
 }
 
 #dBoardSideber .active {
@@ -24,7 +24,31 @@
   color: #FFF;
   text-decoration: none;
 }
+#dBoardSideber .activeLink {
+  background: rgb(229 231 235);
+  border-radius: 4px;
+  color: black;
+  text-decoration: none;
+}
 
+
+
+/* #dBoardSideber::-webkit-scrollbar-thumb {
+  background-color: rgb(65, 65, 65, 0.2); 
+} */
+
+#dBoardSideber::-webkit-scrollbar {
+  width: 2px;
+}
+#dBoardSideber::-webkit-scrollbar-track {
+  display: none;
+}
+#dBoardSideber::-webkit-scrollbar-thumb {
+  background: rgb(255, 0, 0,0.0);
+}
+#dBoardSideber:hover::-webkit-scrollbar-thumb {
+  background: #28C76F;
+}
 
 #NotificationPopUp::-webkit-scrollbar {
   display: none;
@@ -42,10 +66,43 @@
 #contentScrollber::-webkit-scrollbar {
   display: none;
 }
-#contentScrollber{
+
+#contentScrollber {
   scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+/* sideber transition  */
+.transitionAnimationopen{
+  transition: .5s;
+}
+.transitionAnimationclose{
+  transition: .1s;
+}
+/* text editor css  */
+.darkThemeActivate .ql-toolbar {
+  background-color: #6B7280; 
+  border: none; 
+}
+.darkThemeActivate .ql-toolbar{
+  border: none !important;
+  border-radius: 4px 4px 0 0 ;
+}
+.darkThemeActivate .ql-container {
+  border-radius: 4px;
+  border: none !important;
+}
+.ql-container{
+  min-height: 200px;
+  
+}
+
+.darkThemeActivate .ql-toolbar .ql-picker-label {
+  color: #333; 
+}
+/* role table scrober  */
+#roletable::-webkit-scrollbar {
+  display: none;
 }
 /* animations  */
 /* accordionOpen animations */
@@ -85,8 +142,8 @@
 
 @keyframes SideberClose {
   from {
-    left: 0;
     display: block;
+    left: 0;
   }
 
   to {
@@ -98,17 +155,17 @@
 /* navber animation  */
 @keyframes NavberwidhtAnimationOpen {
   from {
-    margin-left: 22%;
+    margin-left: 260px;
   }
 
   to {
-    margin-left: 60px;
+    margin-left: 80px;
   }
 }
 
 @keyframes NavberwidhtAnimationClose {
   from {
-    margin-left: -22%;
+    margin-left: -260px;
   }
 
   to {
@@ -118,7 +175,7 @@
 
 @keyframes HideTextAnimation {
   from {
-    width: 22%;
+    width: 260px;
   }
 
   to {
@@ -132,7 +189,7 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .SideberOpen {
     animation: SideberOpen .5s;
   }
