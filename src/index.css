@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.HideTextAnimation {
+  animation: HideTextAnimation 1s;
+}
+
+.NavberwidhtAnimationOpen {
+  animation: NavberwidhtAnimationOpen 1s;
+}
+
+
+.accordionOpen {
+  animation: accordionopen 2s;
+}
+
+.accordionClose {
+  animation: accordionclose .8s;
+}
+
+#dBoardSideber .active {
+  background: #978EF4;
+  color: #FFF;
+  text-decoration: none;
+}
+#dBoardSideber .activeLink {
+  background: rgb(229 231 235);
+  border-radius: 4px;
+  color: black;
+  text-decoration: none;
+}
+
+
+
+/* #dBoardSideber::-webkit-scrollbar-thumb {
+  background-color: rgb(65, 65, 65, 0.2); 
+} */
+
+#dBoardSideber::-webkit-scrollbar {
+  width: 2px;
+}
+#dBoardSideber::-webkit-scrollbar-track {
+  display: none;
+}
+#dBoardSideber::-webkit-scrollbar-thumb {
+  background: rgb(255, 0, 0,0.0);
+}
+#dBoardSideber:hover::-webkit-scrollbar-thumb {
+  background: #28C76F;
+}
+
+#NotificationPopUp::-webkit-scrollbar {
+  display: none;
+}
+
+#NotificationPopUp {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#NotificationPopUp .notification:hover .removeNotification {
+  display: block;
+}
+
+#contentScrollber::-webkit-scrollbar {
+  display: none;
+}
+
+#contentScrollber {
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/* sideber transition  */
+.transitionAnimationopen{
+  transition: .5s;
+}
+.transitionAnimationclose{
+  transition: .1s;
+}
+/* text editor css  */
+.darkThemeActivate .ql-toolbar {
+  background-color: #6B7280; 
+  border: none; 
+}
+.darkThemeActivate .ql-toolbar{
+  border: none !important;
+  border-radius: 4px 4px 0 0 ;
+}
+.darkThemeActivate .ql-container {
+  border-radius: 4px;
+  border: none !important;
+}
+.ql-container{
+  min-height: 200px;
+  
+}
+
+.darkThemeActivate .ql-toolbar .ql-picker-label {
+  color: #333; 
+}
+/* role table scrober  */
+#roletable::-webkit-scrollbar {
+  display: none;
+}
+/* animations  */
+/* accordionOpen animations */
+
+@keyframes accordionopen {
+  from {
+    max-height: 0px;
+  }
+
+  to {
+    max-height: 720px;
+  }
+}
+
+/* animations  */
+/* accordionClose animations */
+@keyframes accordionclose {
+  from {
+    max-height: 720px;
+  }
+
+  to {
+    max-height: 0px;
+  }
+}
+
+/* sidebre animations  */
+@keyframes SideberOpen {
+  from {
+    left: -600px;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+@keyframes SideberClose {
+  from {
+    display: block;
+    left: 0;
+  }
+
+  to {
+    left: -600px;
+    display: none;
+  }
+}
+
+/* navber animation  */
+@keyframes NavberwidhtAnimationOpen {
+  from {
+    margin-left: 260px;
+  }
+
+  to {
+    margin-left: 80px;
+  }
+}
+
+@keyframes NavberwidhtAnimationClose {
+  from {
+    margin-left: -260px;
+  }
+
+  to {
+    margin-left: 1px;
+  }
+}
+
+@keyframes HideTextAnimation {
+  from {
+    width: 260px;
+  }
+
+  to {
+    width: 60px;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .NavberwidhtAnimationClose {
+    animation: NavberwidhtAnimationClose .5s;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .SideberOpen {
+    animation: SideberOpen .5s;
+  }
+
+  .SideberClose {
+    animation: SideberClose 1s;
+  }
+}
