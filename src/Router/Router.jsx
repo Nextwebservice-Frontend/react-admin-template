@@ -57,6 +57,10 @@ const Router = createBrowserRouter([
             {
                 path: '/categoryList',
                 element: <CategoryList></CategoryList>
+            }, 
+            {
+                path: '/categoryList',
+                element: <CategoryList></CategoryList>
             },
         
             {
