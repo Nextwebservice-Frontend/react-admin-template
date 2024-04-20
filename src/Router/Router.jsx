@@ -15,6 +15,7 @@ import NewRole from "../Pages/NewRole/NewRole";
 import Login from "../Pages/Login/Login";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import TinyMCE from "../Components/dashboard/TinyMCE/TinyMCE";
+import PosSell from "../Pages/Pos/PosSell";
 
 const Router = createBrowserRouter([
     {
@@ -69,6 +70,10 @@ const Router = createBrowserRouter([
             {
                 path: '/TinyMCE',
                 element: <TinyMCE></TinyMCE>
+            },
+            {
+                path: '/pos',
+                element: <PosSell />
             },
         ]
     },
