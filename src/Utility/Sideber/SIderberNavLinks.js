@@ -251,48 +251,6 @@ export const SIderberNavLinks = [
                         access: 'Content-Nav-Sidever',
                         subMenu: false
                     },
-                    {
-                        link: '/Horizontal',
-                        menu: 'Horizontal',
-                        icon: FaRegCircle,
-                        access: 'Horizontal',
-                        subMenu: false
-                    },
-                    {
-                        link: '/Without-menu',
-                        menu: 'Without menu',
-                        icon: FaRegCircle,
-                        access: 'Without-menu',
-                        subMenu: false
-                    },
-                    {
-                        link: '/Without-navbar',
-                        menu: 'Without navbar',
-                        icon: FaRegCircle,
-                        access: 'Without-navbar',
-                        subMenu: false
-                    },
-                    {
-                        link: '/Fluid',
-                        menu: 'Fluid',
-                        icon: FaRegCircle,
-                        access: 'Fluid',
-                        subMenu: false
-                    },
-                    {
-                        link: '/Container',
-                        menu: 'Container',
-                        icon: FaRegCircle,
-                        access: 'Container',
-                        subMenu: false
-                    },
-                    {
-                        link: '/Blank',
-                        menu: 'Blank',
-                        icon: FaRegCircle,
-                        access: 'Blank',
-                        subMenu: false
-                    },
 
                 ]
             },
