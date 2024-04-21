@@ -28,9 +28,13 @@ const TemplateCustomizer = () => {
         setThemeChangerOpen,
         setTheme,
         navberType,
-        setNavberType
+        setNavberType,
+        setShowText,
+        showText,
+        Content,
+        setContent
     } = useContext(ContextData)
-    const [themeChack,setthemeChack]=useState(window.matchMedia('(prefers-color-scheme: dark)'))
+    const [themeChack, setthemeChack] = useState(window.matchMedia('(prefers-color-scheme: dark)'))
     useEffect(() => {
         const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)')
         setthemeChack(darkModeQuery)
@@ -91,19 +95,19 @@ const TemplateCustomizer = () => {
                     <span className="grid grid-cols-3 gap-6 pt-2">
                         <span className="cursor-pointer">
                             <div className="border rounded-md mb-[2px]">
-                                <img src={theme === 'dark' || themeChack.matches?Default_dark:Default} className=" rounded-md w-full" />
+                                <img src={theme === 'dark' || themeChack.matches ? Default_dark : Default} className=" rounded-md w-full" />
                             </div>
                             Default
                         </span>
                         <span className="cursor-pointer">
                             <div className="border rounded-md mb-[2px]">
-                                <img src={theme === 'dark' || themeChack.matches?Borderd_dark:Borderd} className=" rounded-md w-full" />
+                                <img src={theme === 'dark' || themeChack.matches ? Borderd_dark : Borderd} className=" rounded-md w-full" />
                             </div>
                             Bordered
                         </span>
                         <span className="cursor-pointer">
                             <div className="border rounded-md mb-[2px]">
-                                <img src={theme === 'dark' || themeChack.matches?SemiDark_dark:SemiDark} className=" rounded-md w-full" />
+                                <img src={theme === 'dark' || themeChack.matches ? SemiDark_dark : SemiDark} className=" rounded-md w-full" />
                             </div>
                             Semi Dark
                         </span>
@@ -114,15 +118,19 @@ const TemplateCustomizer = () => {
                     <button className="button">Layout</button>
                     <h5 className="py-0 my-0 mt-1 mb-1 dark:text-gray-300">Menu (Navigation)</h5>
                     <span className="grid grid-cols-3 gap-6 pt-2">
-                        <span className="cursor-pointer">
-                            <div className="border rounded-md mb-[2px]">
-                                <img src={theme === 'dark' || themeChack.matches?Expanded_dark:Expanded} className=" rounded-md w-full" />
+                        <span onClick={() => {
+                            setShowText(true)
+                        }} className="cursor-pointer">
+                            <div className={`border rounded-md ${showText ? 'border-[#8E85F3]' : ''} mb-[2px]`}>
+                                <img src={theme === 'dark' || themeChack.matches ? Expanded_dark : Expanded} className=" rounded-md w-full" />
                             </div>
                             Expanded
                         </span>
-                        <span className="cursor-pointer">
-                            <div className="border rounded-md mb-[2px]">
-                                <img src={theme === 'dark' || themeChack.matches?Collapsed_dark:Collapsed} className=" rounded-md w-full" />
+                        <span onClick={() => {
+                            setShowText(false)
+                        }} className="cursor-pointer">
+                            <div className={`border ${showText ? '' : 'border-[#8E85F3]'} rounded-md mb-[2px]`}>
+                                <img src={theme === 'dark' || themeChack.matches ? Collapsed_dark : Collapsed} className=" rounded-md w-full" />
                             </div>
                             Collapsed
                         </span>
@@ -150,14 +158,19 @@ const TemplateCustomizer = () => {
                     </span>
                     <h5 className="py-0 my-0 mt-4 mb-1 dark:text-gray-300">Content</h5>
                     <span className="grid grid-cols-3 gap-6 pt-2">
-                        <span className="cursor-pointer">
-                            <div className="border rounded-md mb-[2px]">
+                        <span onClick={()=>{
+                            setContent(true)
+                        }} className="cursor-pointer">
+                         
+                         <div className={`border ${Content?'border-[#8E85F3]':''} rounded-md mb-[2px]`}>
                                 <img src={Compact} className=" rounded-md w-full" />
                             </div>
                             Compact
                         </span>
-                        <span className="cursor-pointer">
-                            <div className="border rounded-md mb-[2px]">
+                        <span  onClick={()=>{
+                            setContent(false)
+                        }} className="cursor-pointer">
+                          <div className={`border ${Content?'':'border-[#8E85F3]'} rounded-md mb-[2px]`}>
                                 <img src={Wide} className=" rounded-md w-full" />
                             </div>
                             Wide

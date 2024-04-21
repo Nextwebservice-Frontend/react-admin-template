@@ -37,8 +37,9 @@ const ContextProviders = ({ children }) => {
         localStorage.getItem('theme')
     )
     //theme changer
-    const [themeChangerOpen,setThemeChangerOpen]=useState(false)
-    const [navberType,setNavberType]=useState('sticky')
+    const [themeChangerOpen, setThemeChangerOpen] = useState(false)
+    const [navberType, setNavberType] = useState('sticky');
+    const [Content, setContent] = useState(false)
     // context data
     const sharedData = {
         //open sideber in tab or mobile
@@ -78,14 +79,17 @@ const ContextProviders = ({ children }) => {
         showSearchOption,
         setshowSearchOption,
         // theme states 
-        theme, 
+        theme,
         setTheme,
         //themechenger open 
         themeChangerOpen,
         setThemeChangerOpen,
         //navber type
         navberType,
-        setNavberType
+        setNavberType,
+        //content
+        Content,
+        setContent
     }
     return (
         <ContextData.Provider value={sharedData}>

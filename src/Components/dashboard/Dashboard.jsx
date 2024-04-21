@@ -117,7 +117,7 @@ const Dashboard = () => {
   return (
     <div
       id="dBoardSideber"
-      className={`w-full mx-auto h-[100vh] overflow-y-scroll`}>
+      className={`w-full mx-auto h-[100vh] overflow-y-scroll z-[70]`}>
       {/* logo   */}
       <div id="sideberScrollber"
         className={`box-border  pb-4 w-[calc(100% - 2px)] ${showText ? 'px-2' : mouseEnterInSIderber ? 'px-2' : 'px-4'} `}>
