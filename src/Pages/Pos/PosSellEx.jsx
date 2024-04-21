@@ -248,7 +248,7 @@ const PosSell = () => {
           </div>
         </div>
 
-        <div className="grid-cols-6 border-2 border-gray-200 rounded-lg">
+        <div className="grid-cols-6 border-2 border-gray-200 rounded-lg p-4">
           <Category />
         </div>
       </div>
