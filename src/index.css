@@ -2,11 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 /* Example CSS to customize React Quill toolbar */
+:root{
+  --primary-color:#000;
+  --scoundery-color:rgb(93, 89, 108);
+  --primary-bg:#FFF
+}
 
-
-
-/* Add more CSS rules to customize other parts of the editor */
-
+@layer utilities {
+  .themeChanger {
+    @apply bg-[var(--primary-bg)];
+  }
+  .themeChanger h4 {
+    @apply text-[var(--scoundery-color)]
+  }
+  .themeChanger .button {
+    @apply text-[#8E85F3] bg-[#EAE8FD] p-2 py-1 rounded-sm my-3 dark:bg-[#3A3B64]
+  }
+  .themeChanger h5 {
+    @apply text-[var(--scoundery-color)]
+  }
+}
 .HideTextAnimation {
   animation: HideTextAnimation 1s;
 }
@@ -61,6 +76,10 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+#themeChanger {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
 #NotificationPopUp .notification:hover .removeNotification {
   display: block;
@@ -107,9 +126,56 @@
 #roletable::-webkit-scrollbar {
   display: none;
 }
+.ThemeChangerOpen{
+animation: ThemeChangerOpen .5s;
+}
+.ThemeChangerClose{
+  animation: ThemeChangerClose .5s;
+}
+.ThemeChangerTogglerClose{
+animation: ThemeChangerTogglerClose 1s;
+}
+.ThemeChangerTogglerOpen{
+  animation: ThemeChangerTogglerOpen .5s;
+}
 /* animations  */
 /* accordionOpen animations */
+@keyframes ThemeChangerTogglerOpen {
+  from {
+    right: -50px;
+  }
 
+  to {
+    right: 12px;
+  }
+}
+@keyframes ThemeChangerTogglerClose {
+  from {
+    right: 12px;
+  }
+
+  to {
+    right: -50px;
+  }
+}
+@keyframes ThemeChangerOpen {
+  from {
+    right: -700px;
+  }
+
+  to {
+    right: 0px;
+  }
+}
+@keyframes ThemeChangerClose {
+  from {
+    right: 0px;
+  }
+
+  to {
+    right: -400px;
+  }
+}
 @keyframes accordionopen {
   from {
     max-height: 0px;
