@@ -245,7 +245,7 @@ const Dashboard = () => {
                                             <NavLink
 
                                               to={subMenu2.link}
-                                              className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px] text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[6px]  font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
+                                              className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px] text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[8px]  font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                                             >
                                               <subMenu.icon className="text-[10px]" /> {subMenu2.menu}
                                             </NavLink>
@@ -260,7 +260,7 @@ const Dashboard = () => {
                                       <NavLink
 
                                         to={subMenu.link}
-                                        className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px] text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[6px]  font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
+                                        className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px] text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[8px]  font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                                       >
                                         <subMenu.icon className="text-[10px]" /> {subMenu.menu}
                                       </NavLink>
@@ -277,7 +277,7 @@ const Dashboard = () => {
                                 <NavLink
 
                                   to={dropDownItems.link}
-                                  className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px] text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600  dark:text-gray-100 hover:no-underline px-1 transition-all py-[6px]  font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
+                                  className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px] text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600  dark:text-gray-100 hover:no-underline px-1 transition-all py-[8px]  font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                                 >
                                   <dropDownItems.icon className="text-[10px]" /> {dropDownItems.menu}
                                 </NavLink>

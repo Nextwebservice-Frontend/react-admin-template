@@ -1,7 +1,7 @@
 import { MdOutlineCampaign } from "react-icons/md";
 import { FaRegUser, FaUsersBetweenLines } from "react-icons/fa6";
 import BarChart from "../../Components/dashboard/BarChart/BarChart";
-
+import Piechart from '../../Components/dashboard/Piechart/Piechart'
 const Notice = () => {
   return (
     <div className="dark:text-gray-300 text-gray-600 mt-[10px] w-full mx-auto p-4 px-0 rounded ">
@@ -35,7 +35,7 @@ const Notice = () => {
             <span className="flex justify-between items-center pt-2">
               <p>সার্ভিস</p>  <span className="min-w-fit bg-[#FCE5E6] text-[#EC6364] font-bold text-xs py-[2px] px-1 rounded">limited</span>
             </span>
-          
+
           </div>
         </div>
       </div>
@@ -93,7 +93,7 @@ const Notice = () => {
             <span className="flex justify-between items-center pt-2">
               <p>সার্ভিস</p>  <span className="min-w-fit bg-[#FCE5E6] text-[#EC6364] font-bold text-xs py-[2px] px-1 rounded">limited</span>
             </span>
-          
+
           </div>
         </div>
       </div>
@@ -110,7 +110,10 @@ const Notice = () => {
           </button>
         </div>
       </div>
-      <BarChart/>
+      <div className="lg:grid lg:grid-cols-2 gap-1 mt-6">
+        <BarChart />
+        <Piechart />
+      </div>
     </div>
 
   );

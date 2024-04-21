@@ -6,18 +6,18 @@ import { ContextData } from '../../../../Providers/ContextProviders/ContextProvi
 
 const ThemePopUp = ({ showThemePopUp, setshowThemePopUp }) => {
     const {
-        theme, 
+        theme,
         setTheme
-    }=useContext(ContextData)
+    } = useContext(ContextData)
     const HTMLelement = document.getElementById('HTMLelement')
-    const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const ThemeOptions = [
         { name: 'light', icon: HiOutlineSun },
         { name: 'dark', icon: IoMoonOutline },
         { name: 'system', icon: CiMonitor },
     ]
     const onWindoMatch = () => {
-        if (localStorage.theme === 'dark' ||  darkModeQuery.matches){
+        const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        if (theme === 'dark' || darkModeQuery.matches) {
             HTMLelement.classList.remove('Light')
             HTMLelement.classList.add('dark')
         } else {
@@ -40,10 +40,15 @@ const ThemePopUp = ({ showThemePopUp, setshowThemePopUp }) => {
                 localStorage.setItem('theme', 'light')
                 break;
             default:
-                localStorage.setItem('theme', 'system')
+                onWindoMatch()
+                localStorage.removeItem('theme')
                 break;
         }
     }, [theme])
+
+    useEffect(()=>{
+        onWindoMatch()
+    },[])
     return (//
         <div className={`${showThemePopUp ? "popup" : "hidden"} dark:bg-[#2F3249] dark:border-none dark:text-gray-300 py-4 shadow mt-10 rounded box-border border absolute md:right-36 z-10 sm:right-20 right-[2%] sm:-top-12 -top-8 bg-white min-w-[96%] max-w-[96%] sm:max-w-4min-w-40 sm:min-w-40`}>
             <div className='px-4 flex justify-start items-center gap-2 flex-col'>

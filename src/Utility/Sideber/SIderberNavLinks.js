@@ -65,13 +65,6 @@ export const SIderberNavLinks = [
                 icon: MdOutlineMedicalInformation ,
                 dropDown: [
                     {
-                        link: '/categoryList',
-                        menu: 'Categoty list',
-                        icon: FaRegCircle,
-                        access: 'Collapsed-menu',
-                        subMenu: false
-                    },
-                    {
                         link: '/serviceList',
                         menu: 'service List',
                         icon: FaRegCircle,
@@ -232,77 +225,77 @@ export const SIderberNavLinks = [
 
                 ]
             },
-            {
-                link: false,
-                menu: 'Pages',
-                icon: RiPagesLine,
-                dropDown: [
-                    {
-                        link: '/',
-                        menu: 'Dashboard',
-                        icon: FaRegCircle,
-                        access: 'Collapsed-menu',
-                        subMenu: false
-                    },
-                    {
-                        link: '/profile',
-                        menu: 'Profile',
-                        icon: FaRegCircle,
-                        access: 'Content-Navbar',
-                        subMenu: false
-                    },
-                    {
-                        link: '/newExpenseReceipt',
-                        menu: 'New Expense Receipt',
-                        icon: FaRegCircle,
-                        access: 'Content-Nav-Sidever',
-                        subMenu: false
-                    },
-                    {
-                        link: '/serviceList',
-                        menu: 'Service List',
-                        icon: FaRegCircle,
-                        access: 'Horizontal',
-                        subMenu: false
-                    },
-                    {
-                        link: '/yearlyInvoiceList',
-                        menu: 'Yearly Invoice',
-                        icon: FaRegCircle,
-                        access: 'Without-menu',
-                        subMenu: false
-                    },
-                    {
-                        link: '/generalSetting',
-                        menu: 'General Setting',
-                        icon: FaRegCircle,
-                        access: 'Without-navbar',
-                        subMenu: false
-                    },
-                    {
-                        link: '/categoryList',
-                        menu: 'categoryList',
-                        icon: FaRegCircle,
-                        access: 'Fluid',
-                        subMenu: false
-                    },
-                    {
-                        link: '/Login',
-                        menu: 'Login Page',
-                        icon: FaRegCircle,
-                        access: 'Fluid',
-                        subMenu: false
-                    },
-                    {
-                        link: '/TinyMCE',
-                        menu: 'TinyMCE',
-                        icon: FaRegCircle,
-                        access: 'Fluid',
-                        subMenu: false
-                    },
+            // {
+            //     link: false,
+            //     menu: 'Pages',
+            //     icon: RiPagesLine,
+            //     dropDown: [
+            //         {
+            //             link: '/',
+            //             menu: 'Dashboard',
+            //             icon: FaRegCircle,
+            //             access: 'Collapsed-menu',
+            //             subMenu: false
+            //         },
+            //         {
+            //             link: '/profile',
+            //             menu: 'Profile',
+            //             icon: FaRegCircle,
+            //             access: 'Content-Navbar',
+            //             subMenu: false
+            //         },
+            //         {
+            //             link: '/newExpenseReceipt',
+            //             menu: 'New Expense Receipt',
+            //             icon: FaRegCircle,
+            //             access: 'Content-Nav-Sidever',
+            //             subMenu: false
+            //         },
+            //         {
+            //             link: '/serviceList',
+            //             menu: 'Service List',
+            //             icon: FaRegCircle,
+            //             access: 'Horizontal',
+            //             subMenu: false
+            //         },
+            //         {
+            //             link: '/yearlyInvoiceList',
+            //             menu: 'Yearly Invoice',
+            //             icon: FaRegCircle,
+            //             access: 'Without-menu',
+            //             subMenu: false
+            //         },
+            //         {
+            //             link: '/generalSetting',
+            //             menu: 'General Setting',
+            //             icon: FaRegCircle,
+            //             access: 'Without-navbar',
+            //             subMenu: false
+            //         },
+            //         {
+            //             link: '/categoryList',
+            //             menu: 'categoryList',
+            //             icon: FaRegCircle,
+            //             access: 'Fluid',
+            //             subMenu: false
+            //         },
+            //         {
+            //             link: '/Login',
+            //             menu: 'Login Page',
+            //             icon: FaRegCircle,
+            //             access: 'Fluid',
+            //             subMenu: false
+            //         },
+            //         {
+            //             link: '/TinyMCE',
+            //             menu: 'TinyMCE',
+            //             icon: FaRegCircle,
+            //             access: 'Fluid',
+            //             subMenu: false
+            //         },
 
-                ]
-            },
+            //     ]
+            // },
             {
                 link: false,
                 menu: 'Front Pages',
