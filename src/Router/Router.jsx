@@ -18,7 +18,7 @@ import CreateInvoice from "../Pages/InvoicePaid/CreateInvoice";
 import Button from "../Pages/Button/Button";
 import MonthlyInvoice from "../Pages/MonthlyInvoice/MonthlyInvoice";
 import ExpenseList from "../Pages/Expense/ExpenseList/ExpenseList";
-import PrivetRoute from "../Security/PrivetRoute";
+// import PrivetRoute from "../Security/PrivetRoute";
 
 const Router = createBrowserRouter([
     {
@@ -27,7 +27,7 @@ const Router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <PrivetRoute><Notice /></PrivetRoute>
+                element: <Notice />
             }
             ,
             {
