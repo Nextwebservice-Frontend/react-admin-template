@@ -9,7 +9,7 @@ const Notice = () => {
         <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className="w-full h-full border dark:border-none rounded-md dark:bg-[#2F3349]">
           <span style={{ borderRadius: '4px 4px 0 0' }} className="flex p-4 py-2 border-b-2 dark:border-none  justify-start items-center gap-2 bg-gray-100 dark:bg-gray-500 ">
             <MdOutlineCampaign className="text-2xl" />
-            <h3 className="font-bold ">নোটিশ</h3>
+            <h6 className="font-bold text-lg ">নোটিশ</h6>
           </span>
           <p className="p-4 ">
             প্রতিষ্ঠানের ডাটা সুরক্ষার কথা মাথায় রেখে আমরা সফটওয়্যারের ডিলিট
@@ -21,7 +21,8 @@ const Notice = () => {
         <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className="w-full h-full border dark:border-none rounded-md md:mt-0 mt-5 dark:bg-[#2F3349]">
           <span style={{ borderRadius: '4px 4px 0 0' }} className="flex p-4 py-2 border-b-2 dark:border-none  justify-start items-center gap-2 bg-gray-100 dark:bg-gray-500 ">
             <FaUsersBetweenLines className="text-2xl" />
-            <h3 className="font-bold">ব্যাবহারকারী</h3>
+
+            <h6 className="font-bold text-lg">ব্যাবহারকারী</h6>
           </span>
           <div className="p-4">
             এই সফটওয়্যারটি Tiayra Laser & Aesthetic Center এর জন্য প্রস্তুতকৃত।{" "}
@@ -43,7 +44,7 @@ const Notice = () => {
         <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className="w-full h-full border dark:border-none rounded-md dark:bg-[#2F3349]">
           <span style={{ borderRadius: '4px 4px 0 0' }} className="flex p-4 py-2 border-b-2 dark:border-none  justify-start items-center gap-2 bg-gray-100 dark:bg-gray-500 ">
             <MdOutlineCampaign className="text-2xl" />
-            <h3 className="font-bold ">নোটিশ</h3>
+            <h6 className="font-bold text-lg ">নোটিশ</h6>
           </span>
           <p className="p-4 text-justify">
             প্রতিষ্ঠানের ডাটা সুরক্ষার কথা মাথায় রেখে আমরা সফটওয়্যারের ডিলিট
@@ -55,7 +56,7 @@ const Notice = () => {
         <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className="w-full h-full border dark:border-none rounded-md dark:bg-[#2F3349]">
           <span style={{ borderRadius: '4px 4px 0 0' }} className="flex p-4 py-2 border-b-2 dark:border-none  justify-start items-center gap-2 bg-gray-100 dark:bg-gray-500 ">
             <MdOutlineCampaign className="text-2xl" />
-            <h3 className="font-bold ">নোটিশ</h3>
+            <h6 className="font-bold text-lg ">নোটিশ</h6>
           </span>
           <p className="p-4 text-justify">
             প্রতিষ্ঠানের ডাটা সুরক্ষার কথা মাথায় রেখে আমরা সফটওয়্যারের ডিলিট
@@ -67,7 +68,8 @@ const Notice = () => {
         <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className="w-full h-full border dark:border-none rounded-md dark:bg-[#2F3349]">
           <span style={{ borderRadius: '4px 4px 0 0' }} className="flex p-4 py-2 border-b-2 dark:border-none  justify-start items-center gap-2 bg-gray-100 dark:bg-gray-500 ">
             <MdOutlineCampaign className="text-2xl" />
-            <h3 className="font-bold ">নোটিশ</h3>
+
+            <h6 className="font-bold text-lg ">নোটিশ</h6>
           </span>
           <p className="p-4 text-justify">
             প্রতিষ্ঠানের ডাটা সুরক্ষার কথা মাথায় রেখে আমরা সফটওয়্যারের ডিলিট
@@ -79,7 +81,8 @@ const Notice = () => {
         <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className="w-full h-full border dark:border-none rounded-md md:mt-0 mt-5 dark:bg-[#2F3349]">
           <span style={{ borderRadius: '4px 4px 0 0' }} className="flex p-4 py-2 border-b-2 dark:border-none  justify-start items-center gap-2 bg-gray-100 dark:bg-gray-500 ">
             <FaUsersBetweenLines className="text-2xl" />
-            <h3 className="font-bold">ব্যাবহারকারী</h3>
+
+            <h6 className="font-bold text-lg">ব্যাবহারকারী</h6>
           </span>
           <div className="p-4">
             এই সফটওয়্যারটি Tiayra Laser & Aesthetic Center এর জন্য প্রস্তুতকৃত।{" "}
@@ -101,7 +104,8 @@ const Notice = () => {
         <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className="w-full h-full border dark:border-none rounded-md dark:bg-[#2F3349]">
           <span style={{ borderRadius: '4px 4px 0 0' }} className="flex p-4 py-2 border-b-2 dark:border-none  justify-start items-center gap-2 bg-gray-100 dark:bg-gray-500 ">
             <FaRegUser className="text-xl" />
-            <h3>Users</h3>
+
+            <h6>Users</h6>
           </span>
           <p className="px-4 py-2 font-bold">total</p>
           <p className="px-4 py-2 font-bold text-xl">2</p>

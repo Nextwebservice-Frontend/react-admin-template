@@ -5,6 +5,7 @@ import { Dropdown } from "semantic-ui-react";
 import PosTable from "./PosTable";
 import Title from "../../Utility/TItle/Title";
 
+
 const countryOptions = [
   { key: "af", value: "af", flag: "af", text: "Afghanistan" },
   { key: "ax", value: "ax", flag: "ax", text: "Aland Islands" },
@@ -48,7 +49,6 @@ const PosSell = () => {
 
       <div className="flex flex-col md:items-start md:flex-row lg:gap-12 gap-2">
         <PosTable />
-
         <div className="md:flex-1 border border-gray-300 rounded-md">
           <Category />
         </div>

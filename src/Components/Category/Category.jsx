@@ -1,14 +1,14 @@
 import { Dropdown } from "semantic-ui-react";
 import phone from '../../assets/phone.jpg'
 
+
 const countryOptions = [
   { key: "af", value: "af", flag: "af", text: "Afghanistan" },
   { key: "ax", value: "ax", flag: "ax", text: "Aland Islands" },
   { key: "al", value: "al", flag: "al", text: "Albania" },
   { key: "dz", value: "dz", flag: "dz", text: "Algeria" },
   { key: "as", value: "as", flag: "as", text: "American Samoa" },
-  { key: "ad", value: "ad", flag: "ad", text: "Andorra" },
-  { key: "ao", value: "ao", flag: "ao", text: "Angola" }
+  { key: "ad", value: "ad", flag: "ad", text: "Andorra" }
 ];
 
 
