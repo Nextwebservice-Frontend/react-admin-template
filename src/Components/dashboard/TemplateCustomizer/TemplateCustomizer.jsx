@@ -6,9 +6,13 @@ import { MdLaptopChromebook } from "react-icons/md";
 import Default from '../../../assets/default.svg';
 import Default_dark from '../../../assets/default-dark.svg';
 import Borderd from '../../../assets/border.svg';
+import Borderd_dark from '../../../assets/border-dark.svg';
 import SemiDark from '../../../assets/semi-dark.svg';
+import SemiDark_dark from '../../../assets/semi-dark-dark.svg';
 import Collapsed from '../../../assets/collapsed.svg';
+import Collapsed_dark from '../../../assets/collapsed-dark.svg';
 import Expanded from '../../../assets/expanded.svg';
+import Expanded_dark from '../../../assets/expanded-dark.svg';
 import StickyNav from '../../../assets/sticky.svg';
 import StaticNav from '../../../assets/static.svg';
 import HiddenNav from '../../../assets/hidden.svg';
@@ -29,7 +33,8 @@ const TemplateCustomizer = () => {
     const [themeChack,setthemeChack]=useState(window.matchMedia('(prefers-color-scheme: dark)'))
     useEffect(() => {
         const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    }, [])
+        setthemeChack(darkModeQuery)
+    }, [theme])
     return (
         <div id="themeChangerParent" style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className={`sm:w-[400px] w-[300px] top-0 ${themeChangerOpen ? 'right-0 ThemeChangerOpen' : '-right-[400px] ThemeChangerClose'} themeChanger h-screen min-h-screen  bg-white absolute z-[60] dark:bg-[#2F3349] dark:text-gray-300`}>
             <div className="border-b">
@@ -86,19 +91,19 @@ const TemplateCustomizer = () => {
                     <span className="grid grid-cols-3 gap-6 pt-2">
                         <span className="cursor-pointer">
                             <div className="border rounded-md mb-[2px]">
-                                <img src={theme === 'dark' || darkModeQuery.matches?Default_dark:Default} className=" rounded-md w-full" />
+                                <img src={theme === 'dark' || themeChack.matches?Default_dark:Default} className=" rounded-md w-full" />
                             </div>
                             Default
                         </span>
                         <span className="cursor-pointer">
                             <div className="border rounded-md mb-[2px]">
-                                <img src={Borderd} className=" rounded-md w-full" />
+                                <img src={theme === 'dark' || themeChack.matches?Borderd_dark:Borderd} className=" rounded-md w-full" />
                             </div>
                             Bordered
                         </span>
                         <span className="cursor-pointer">
                             <div className="border rounded-md mb-[2px]">
-                                <img src={SemiDark} className=" rounded-md w-full" />
+                                <img src={theme === 'dark' || themeChack.matches?SemiDark_dark:SemiDark} className=" rounded-md w-full" />
                             </div>
                             Semi Dark
                         </span>
@@ -111,13 +116,13 @@ const TemplateCustomizer = () => {
                     <span className="grid grid-cols-3 gap-6 pt-2">
                         <span className="cursor-pointer">
                             <div className="border rounded-md mb-[2px]">
-                                <img src={Collapsed} className=" rounded-md w-full" />
+                                <img src={theme === 'dark' || themeChack.matches?Expanded_dark:Expanded} className=" rounded-md w-full" />
                             </div>
                             Expanded
                         </span>
                         <span className="cursor-pointer">
                             <div className="border rounded-md mb-[2px]">
-                                <img src={Expanded} className=" rounded-md w-full" />
+                                <img src={theme === 'dark' || themeChack.matches?Collapsed_dark:Collapsed} className=" rounded-md w-full" />
                             </div>
                             Collapsed
                         </span>
