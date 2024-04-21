@@ -1,154 +1,314 @@
-/* eslint-disable no-unused-vars */
-import React, { useMemo, useState } from 'react';
-import { useReactTable, getCoreRowModel, flexRender, getPaginationRowModel, getSortedRowModel, getFilteredRowModel } from '@tanstack/react-table';
-import JsonData from '../../../../public/rowData.json'
-import { DateTime } from 'luxon'
-import './CSS/TableTanStackCss.css'
-import { FaGreaterThan, FaLessThan } from "react-icons/fa";
-import { MdArrowBackIos, MdArrowForwardIos, MdKeyboardArrowLeft } from 'react-icons/md';
+import { useState, useEffect } from 'react';
+// import { classNames } from 'primereact/utils';
+import { FilterMatchMode, FilterOperator } from 'primereact/api';
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
+import { InputText } from 'primereact/inputtext';
+import { Dropdown } from 'primereact/dropdown';
+import { InputNumber } from 'primereact/inputnumber';
+import { Button } from 'primereact/button';
+import { ProgressBar } from 'primereact/progressbar';
+import { Calendar } from 'primereact/calendar';
+import { MultiSelect } from 'primereact/multiselect';
+import { Slider } from 'primereact/slider';
+import { Tag } from 'primereact/tag';
+// import { TriStateCheckbox } from 'primereact/tristatecheckbox';
+import { CustomerService } from './DataService/CustomerService';
+import "primereact/resources/themes/lara-light-cyan/theme.css";
+import { LuFilterX } from "react-icons/lu";
+import { FaMagnifyingGlass } from "react-icons/fa6";
+import { MdLocalPrintshop } from "react-icons/md";
+import { RiMenuSearchLine } from "react-icons/ri";
+import { MdLockReset } from "react-icons/md";
+
 
 const YearlyInvoice = () => {
-    const data = useMemo(() => JsonData, [])
-    const columns = [
-        {
-            header: 'ID',
-            accessorKey: 'id',
-            footer: 'ID'
-        },
-        {
-            header: 'Make',
-            accessorKey: 'make',
-            footer: 'Make'
-
-        },
-        {
-            header: 'Model',
-            accessorKey: 'model',
-            footer: 'Model'
-        }
-        ,
-        {
-            header: 'Price',
-            accessorKey: 'price',
-            footer: 'Price'
-        }
-        ,
-        {
-            header: 'Month',
-            accessorKey: 'month',
-            footer: 'Month',
-        },
-        {
-            header: 'Date of birth',
-            accessorKey: 'dob',
-            footer: 'Date of birth',
-            cell: info => DateTime.fromISO(info.getValue()).toLocaleString(DateTime.DATE_MED),
-        }
+    const [date, setDate] = useState(null);
+    const [customers, setCustomers] = useState(null);
+    const [filters, setFilters] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [globalFilterValue, setGlobalFilterValue] = useState('');
+    const representatives = [
+        { name: 'Amy Elsner', image: 'amyelsner.png' },
+        { name: 'Anna Fali', image: 'annafali.png' },
+        { name: 'Asiya Javayant', image: 'asiyajavayant.png' },
+        { name: 'Bernardo Dominic', image: 'bernardodominic.png' },
+        { name: 'Elwin Sharvill', image: 'elwinsharvill.png' },
+        { name: 'Ioni Bowcher', image: 'ionibowcher.png' },
+        { name: 'Ivan Magalhaes', image: 'ivanmagalhaes.png' },
+        { name: 'Onyama Limba', image: 'onyamalimba.png' },
+        { name: 'Stephen Shaw', image: 'stephenshaw.png' },
+        { name: 'XuXue Feng', image: 'xuxuefeng.png' }
     ]
-    const [sorting, setSorting] = useState([])
-    const [filtering, setFiltering] = useState('')
-    const table = useReactTable({
-        data, columns, getCoreRowModel: getCoreRowModel(),
-        getPaginationRowModel: getPaginationRowModel(),
-        getSortedRowModel: getSortedRowModel(),
-        getFilteredRowModel: getFilteredRowModel(),
+    const statuses = ['unqualified', 'qualified', 'new', 'negotiation', 'renewal']
+    const paginatorLeft = <Button type="button" icon="pi pi-refresh" text />;
+    const paginatorRight = <Button type="button" icon="pi pi-download" text />;
 
-        state: {
-            sorting: sorting,
-            globalFilter: filtering
-        },
-        onSortingChange: setSorting,
-        onGlobalFilterChange: setFiltering
-    })
-    return (
-        <>
-            <div className='w3-container '>
-                <div className="flex flex-wrap align-items-center justify-content-between gap-2 my-5 ">
-                    <h1 className="text-xl md:text-2xl text-900 font-bold ml-4 md:ml-0 dark:text-gray-300">Yearly Report List</h1>
+    const getSeverity = (status) => {
+        switch (status) {
+            case 'unqualified':
+                return 'danger';
+
+            case 'qualified':
+                return 'success';
+
+            case 'new':
+                return 'info';
+
+            case 'negotiation':
+                return 'warning';
+
+            case 'renewal':
+                return null;
+        }
+    };
+
+    useEffect(() => {
+        CustomerService.getCustomersMedium().then((data) => {
+            setCustomers(getCustomers(data));
+            setLoading(false);
+        });
+        initFilters();
+    }, []);
+
+    const getCustomers = (data) => {
+        return [...(data || [])].map((d) => {
+            d.date = new Date(d.date);
+
+            return d;
+        });
+    };
+
+    const formatDate = (value) => {
+        return value.toLocaleDateString('en-US', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric'
+        });
+    };
+
+    const formatCurrency = (value) => {
+        return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    };
+
+    const clearFilter = () => {
+        initFilters();
+    };
+
+    const onGlobalFilterChange = (e) => {
+        const value = e.target.value;
+        let _filters = { ...filters };
+
+        _filters['global'].value = value;
+
+        setFilters(_filters);
+        setGlobalFilterValue(value);
+    };
+
+    const initFilters = () => {
+        setFilters({
+            global: { value: null, matchMode: FilterMatchMode.CONTAINS },
+            name: { operator: FilterOperator.AND, constraints: [{ value: null, matchMode: FilterMatchMode.STARTS_WITH }] },
+            'country.name': { operator: FilterOperator.AND, constraints: [{ value: null, matchMode: FilterMatchMode.STARTS_WITH }] },
+            representative: { value: null, matchMode: FilterMatchMode.IN },
+            date: { operator: FilterOperator.AND, constraints: [{ value: null, matchMode: FilterMatchMode.DATE_IS }] },
+            balance: { operator: FilterOperator.AND, constraints: [{ value: null, matchMode: FilterMatchMode.EQUALS }] },
+            status: { operator: FilterOperator.OR, constraints: [{ value: null, matchMode: FilterMatchMode.EQUALS }] },
+            activity: { value: null, matchMode: FilterMatchMode.BETWEEN },
+            verified: { value: null, matchMode: FilterMatchMode.EQUALS }
+        });
+        setGlobalFilterValue('');
+    };
+
+    const renderHeader = () => {
+        return (
+            <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid gray', padding: '10px 0', backgroundColor: '#F6F5F2' }}>
+                <Button className='bg-green-600 px-2 text-white font-medium' type="button" onClick={clearFilter}>
+
+                    <MdLockReset />
+                    Reset
+                </Button>
+                <span className="relative">
+                    <FaMagnifyingGlass className='text-gray-400 ml-2 absolute right-2 top-4 text-lg' />
+                    <InputText className='text-lg font-normal border border-green-600 rounded-md bg-white p-2' value={globalFilterValue} onChange={onGlobalFilterChange} placeholder="Keyword Search" />
+                </span>
+            </div>
+        );
+    };
+
+    const representativeBodyTemplate = (rowData) => {
+        const representative = rowData.representative;
+
+        return (
+            <div className="flex align-items-center gap-2">
+                <img alt={representative.name} src={`https://primefaces.org/cdn/primereact/images/avatar/${representative.image}`} width="32" />
+                <span>{representative.name}</span>
+            </div>
+        );
+    };
+
+    const representativeFilterTemplate = (options) => {
+        return <MultiSelect value={options.value} options={representatives} itemTemplate={representativesItemTemplate} onChange={(e) => options.filterCallback(e.value)} optionLabel="name" placeholder="Any" className="p-column-filter" />;
+    };
+
+    const representativesItemTemplate = (option) => {
+        return (
+            <div className="flex align-items-center gap-2">
+                <img alt={option.name} src={`https://primefaces.org/cdn/primereact/images/avatar/${option.image}`} width="32" />
+                <span>{option.name}</span>
+            </div>
+        );
+    };
+
+    const dateBodyTemplate = (rowData) => {
+        return formatDate(rowData.date);
+    };
+
+    const dateFilterTemplate = (options) => {
+        return <Calendar value={options.value} onChange={(e) => options.filterCallback(e.value, options.index)} dateFormat="mm/dd/yy" placeholder="mm/dd/yyyy" mask="99/99/9999" />;
+    };
+
+    const balanceBodyTemplate = (rowData) => {
+        return formatCurrency(rowData.balance);
+    };
+
+    const balanceFilterTemplate = (options) => {
+        return <InputNumber value={options.value} onChange={(e) => options.filterCallback(e.value, options.index)} mode="currency" currency="USD" locale="en-US" />;
+    };
+
+    const statusBodyTemplate = (rowData) => {
+        return <Tag value={rowData.status} severity={getSeverity(rowData.status)} />;
+    };
+
+    const statusFilterTemplate = (options) => {
+        return <Dropdown value={options.value} options={statuses} onChange={(e) => options.filterCallback(e.value, options.index)} itemTemplate={statusItemTemplate} placeholder="Select One" className="p-column-filter" showClear />;
+    };
+
+    const statusItemTemplate = (option) => {
+        return <Tag value={option} severity={getSeverity(option)} />;
+    };
+
+    const activityBodyTemplate = (rowData) => {
+        return <ProgressBar value={rowData.activity} showValue={false} style={{ height: '6px' }}></ProgressBar>;
+    };
+
+    const activityFilterTemplate = (options) => {
+        return (
+            <>
+                <Slider value={options.value} onChange={(e) => options.filterCallback(e.value)} range className="m-3"></Slider>
+                <div className="flex align-items-center justify-content-between px-2">
+                    <span>{options.value ? options.value[0] : 0}</span>
+                    <span>{options.value ? options.value[1] : 100}</span>
                 </div>
-                <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className='dark:bg-[#2F3349] rounded-md'>
-                    <div className="flex flex-col justify-content-end border dark:border-gray-600 p-4 mb-5 rounded-lg">
-                        <h1 className='mb-2 w-full text-xl dark:text-white'>Search Here <span className='text-red-500'>(Required)</span></h1>
-                        <span>
-                            <input className='border dark:text-white dark:border-gray-600 w-full py-2 rounded-sm text-lg pl-3 dark:outline-gray-600 dark:bg-[#25293C]' type="text" value={filtering} onChange={(e) => setFiltering(e.target.value)} placeholder='Search here' />
-                        </span>
+            </>
+        );
+    };
+
+    // const verifiedBodyTemplate = (rowData) => {
+    //     return <i className={classNames('pi', { 'text-green-500 pi-check-circle': rowData.verified, 'text-red-500 pi-times-circle': !rowData.verified })}></i>;
+    // };
+
+    // const verifiedFilterTemplate = (options) => {
+    //     return (
+    //         <div className="flex align-items-center gap-2">
+    //             <label htmlFor="verified-filter" className="font-bold">
+    //                 Verified
+    //             </label>
+    //             <TriStateCheckbox inputId="verified-filter" value={options.value} onChange={(e) => options.filterCallback(e.value)} />
+    //         </div>
+    //     );
+    // };
+
+    const header = renderHeader();
+
+    return (
+        <div className='max-w-[90vw]'>
+            <h1 className="text-2xl text-black bg-[#f7f7fa] dark:bg-[#2F3349] dark:border-none mb-2 py-2 dark:rounded-sm dark:text-white">
+                Balance Sheet Report
+            </h1>
+            <div className='border p-4 rounded-sm '>
+                <div className="card border p-2 rounded-sm flex flex-col lg:flex-row lg:items-center lg:justify-between  gap-3 p-fluid">
+                    <div className="flex-auto lg:w-[47%] ">
+                        <label
+                            htmlFor="buttondisplay"
+                            className="font-bold block mb-2 text-black dark:text-white"
+                        >
+                            Start Date
+                        </label>
+                        <Calendar
+                            id="buttondisplay"
+                            className="border border-gray-400 dark:border-black dark:bg-base-100 rounded-md pl-5 pr-2 py-2"
+                            placeholder=""
+                            value={date}
+                            onChange={(e) => setDate(e.value)}
+                            showIcon
+                        />
                     </div>
-                    <div className='border dark:border-none p-4 rounded-lg'>
-                        <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 md:border dark:border-none mb-4 w-full'>
-                            <div className='flex border md:border-none w-full'>
-                                <button className='btn rounded-none border-none text-blue-600 dark:bg-gray-500 hover:bg-green-500 dark:hover:bg-green-500 dark:text-white bg-[#f7f7f7]'>ALL</button>
-                                <button className='w-[100%] dark:bg-gray-500 bg-[#f7f7f7]'></button>
-                            </div>
-                            <button className='btn rounded-none bg-success text-white'>Report List</button>
-                        </div>
-                        {/* table start here */}
-                        <div className='w-[100%]' style={{ overflow: 'auto' }} >
-                            <table className='w3-table-all w-[100%]'>
-                                <thead >
-                                    {table.getHeaderGroups().map(headerGroup => (
-                                        <tr key={headerGroup.id}>
-                                            {headerGroup.headers.map(header => <th key={header.id} className='border dark:border-gray-600 py-2 dark:bg-gray-500 bg-[#f2f2f2]'>
-                                                {flexRender(
-                                                    header.column.columnDef.header, header.getContext()
-                                                )}
-                                                {
-                                                    {
-                                                        asc: 'asc', desc: 'desc'
-                                                    }[header.column.getIsSorted() ?? null]
-                                                }
-                                            </th>)}
-                                        </tr>
-                                    ))}
-                                </thead>
-                                <tbody className=''>
-                                    {table.getRowModel().rows.map(row => (
-                                        <tr key={row.id} >
-                                            {row.getVisibleCells().map(cell => (
-                                                <td key={cell.id} className='border dark:border-gray-600 text-center dark:text-gray-300'>
-                                                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                                </td>
-                                            ))}
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                            {/* pagination */}
-                            <div className='text-end mt-2'>
-                                {/* first page */}
-                                <button className='btn rounded-full mr-2 text-xs md:text-base' onClick={() => table.setPageIndex(0)}><FaGreaterThan /> </button>
-                                {/* previous page */}
-                                <button className='btn px-1 mr-2 text-xs md:text-base' disabled={!table.getCanPreviousPage()} onClick={() => table.previousPage()}>Previous </button>
-                                {/* next page */}
-                                <button className='btn text-xs px-2 md:text-base' disabled={!table.getCanNextPage()} onClick={() => table.nextPage()}><MdArrowForwardIos />  </button>
-                                {/* last page */}
-                                <button className='btn rounded-full  ml-2 text-xs md:text-base' onClick={() => table.setPageIndex(table.getPageCount() - 1)}> <MdArrowForwardIos /></button>
-                                <div className='dark:text-white'>
-                                    <button disabled={!table.getCanPreviousPage()} onClick={() => table.previousPage()} className='p-2 hover:bg-gray-200  dark:hover:bg-gray-600 rounded-md'>
-                                        <MdArrowBackIos />
-                                    </button>
-                                    <button onClick={() => table.setPageIndex(1)} className='p-2 hover:bg-gray-200  dark:hover:bg-gray-600 rounded-md'>
-                                        1
-                                    </button>
-                                    <button onClick={() => table.setPageIndex(1)} className='p-2 hover:bg-gray-200  dark:hover:bg-gray-600 rounded-md'>
-                                        2
-                                    </button>
-                                    <button onClick={() => table.setPageIndex(1)} className='p-2 hover:bg-gray-200  dark:hover:bg-gray-600 rounded-md'>
-                                        3
-                                    </button>
+                    <div className="flex-auto lg:w-[47%] ">
+                        <label
+                            htmlFor="buttondisplay"
+                            className="font-bold block mb-2 text-black dark:text-white"
+                        >
+                            End Date
+                        </label>
+                        <Calendar
+                            id="buttondisplay"
+                            className="border border-gray-400 dark:border-black dark:bg-base-100 rounded-md pl-5 pr-2 py-2"
+                            placeholder=""
+                            value={date}
+                            onChange={(e) => setDate(e.value)}
+                            showIcon
+                        />
+                    </div>
 
-                                    <button disabled={!table.getCanNextPage()} onClick={() => table.nextPage()} className='p-2 hover:bg-gray-200  dark:hover:bg-gray-600 rounded-md'>
-                                        <MdArrowForwardIos />
-                                    </button>
-
-                                </div>
-                            </div>
-                        </div>
+                    <div className="flex-auto lg:w-[5%] lg:mt-8">
+                        <button className="btn btn-success text-white "> Search</button>
                     </div>
                 </div>
 
             </div>
-        </>
-    );
-};
 
-export default YearlyInvoice;
+            <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-none  mb-4 w-full border p-2 mt-2'>
+
+                <div className='flex flex-row items-center justify-between gap-2 md:gap-0 dark:border-black border mb-4 w-full'>
+                    <div className='flex  '>
+                        <button className='btn rounded-none border-none bg-success text-white hover:bg-green-600 '>ALL(1)</button>
+
+                        <button className='w-[100%]  bg-[#f7f7f7] dark:bg-base-100 '></button>
+                    </div>
+                    <div className="flex gap-2">
+                        <button className='btn rounded-none bg-success text-white border-none hover:bg-green-600'><RiMenuSearchLine />Filter Report </button>
+                        <button className='btn rounded-none bg-green-500 text-white border-none hover:bg-green-600'>
+                            <span><MdLocalPrintshop /></span> Make Print</button>
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+            <DataTable value={customers} paginator showGridlines rows={10} rowsPerPageOptions={[5, 10, 25, 50]} loading={loading} dataKey="id"
+                filters={filters} globalFilterFields={['name', 'country.name', 'representative.name', 'balance', 'status', 'status']} header={header}
+                emptyMessage="No customers found."
+                paginatorTemplate="RowsPerPageDropdown FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink"
+                currentPageReportTemplate="{first} to {last} of {totalRecords}" paginatorLeft={paginatorLeft} paginatorRight={paginatorRight}
+            >
+                <Column field=" Serial" header="Serial" filter filterPlaceholder="Search by name" style={{ minWidth: '12rem' }} />
+                <Column header="Date" filterField="Date" showFilterMatchModes={false} filterMenuStyle={{ width: '14rem' }} style={{ minWidth: '14rem' }}
+                    body={representativeBodyTemplate} filter filterElement={representativeFilterTemplate} />
+                <Column header="Account" filterField="Account" dataType="date" style={{ minWidth: '10rem' }} body={dateBodyTemplate} filter filterElement={dateFilterTemplate} />
+                <Column header="Status" filterField="balance" dataType="numeric" style={{ minWidth: '10rem' }} body={balanceBodyTemplate} filter filterElement={balanceFilterTemplate} />
+                <Column field="Credit" header="Status" filterMenuStyle={{ width: '14rem' }} style={{ minWidth: '12rem' }} body={statusBodyTemplate} filter filterElement={statusFilterTemplate} />
+                <Column field="Debit" header="Status" filterMenuStyle={{ width: '14rem' }} style={{ minWidth: '12rem' }} body={statusBodyTemplate} filter filterElement={statusFilterTemplate} />
+
+                <Column field="Total Balance" header="Activity" showFilterMatchModes={false} style={{ minWidth: '12rem' }} body={activityBodyTemplate} filter filterElement={activityFilterTemplate} />
+            </DataTable>
+        </div>
+    );
+}
+
+
+export default YearlyInvoice

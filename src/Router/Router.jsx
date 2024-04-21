@@ -14,6 +14,11 @@ import LoginPage from "../Pages/LoginPage/LoginPage";
 import TinyMCE from "../Components/dashboard/TinyMCE/TinyMCE";
 import RoleTable from "../Pages/Role/RoleTable";
 import PosSell from "../Pages/Pos/PosSell";
+import PaidInvoice from "../Pages/InvoicePaid/PaidInvoice";
+import CreateInvoice from "../Pages/InvoicePaid/CreateInvoice";
+import Button from "../Pages/Button/Button";
+import MonthlyInvoice from "../Pages/MonthlyInvoice/MonthlyInvoice";
+import ExpenseList from "../Pages/Expense/ExpenseList/ExpenseList";
 const Router = createBrowserRouter([
     {
         path: '/',
@@ -28,6 +33,12 @@ const Router = createBrowserRouter([
                 path: '/profile',
                 element: <Profile />
             }
+            ,
+            // 21-04-24
+            {
+                path: '/expenseList',
+                element: <ExpenseList></ExpenseList>
+            }           
           ,
             {
                 path: '/newExpenseReceipt',
@@ -55,6 +66,16 @@ const Router = createBrowserRouter([
                 path: '/categoryList',
                 element: <CategoryList></CategoryList>
             },
+            // 21-04-24
+            {
+                path: '/monthlyInvoice',
+                element: <MonthlyInvoice></MonthlyInvoice>
+            },
+
+            {
+                path: '/btn',
+                element: <Button></Button>
+            },
         
             {
                 path: '/newrole',
@@ -71,6 +92,15 @@ const Router = createBrowserRouter([
             {
                 path: '/pos',
                 element: <PosSell />
+            },
+            // 21-04-24
+            {
+                path: '/paidList',
+                element: <PaidInvoice></PaidInvoice>
+            },
+            {
+                path: '/createInvoice',
+                element: <CreateInvoice></CreateInvoice>
             },
         ]
     },
