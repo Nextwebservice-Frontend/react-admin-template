@@ -17,11 +17,12 @@ const TinyMCE = () => {
             setCurrentTheme('light')
         }
     }, [theme])
+
     const tinynce = useMemo(() => {
         return (
             <div className="pt-5 dark:tinymce" >
                 <Editor
-                    apiKey={import.meta.env.VITE_TINYMCE_KEY ? import.meta.env.VITE_TINYMCE_KEY : 'please add your api key'}
+                    apiKey="7wqqpnivnwdlll9bwskxtngeft74vderr5dfgalmxfdn6snf"
                     initialValue="<p>This is tinymce editor</p>"
                     init={{
                         selector: 'textarea',

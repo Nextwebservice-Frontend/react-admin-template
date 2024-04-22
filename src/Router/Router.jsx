@@ -18,7 +18,9 @@ import CreateInvoice from "../Pages/InvoicePaid/CreateInvoice";
 import Button from "../Pages/Button/Button";
 import MonthlyInvoice from "../Pages/MonthlyInvoice/MonthlyInvoice";
 import ExpenseList from "../Pages/Expense/ExpenseList/ExpenseList";
+import DataTableSample from "../Components/Shared/DataTable/DataTableSample";
 import LeadDetails from "../Pages/LeadDetails/LeadDetails";
+import NewRoleSample from "../Pages/NewRole/NewRoleSample";
 // import PrivetRoute from "../Security/PrivetRoute";
 
 const Router = createBrowserRouter([
@@ -80,8 +82,8 @@ const Router = createBrowserRouter([
             },
         
             {
-                path: '/newrole',
-                element: <NewRole></NewRole>
+                path: '/newRole',
+                element: <NewRoleSample />
             },
             {
                 path: '/TinyMCE',
@@ -104,6 +106,11 @@ const Router = createBrowserRouter([
             {
                 path: '/createInvoice',
                 element: <CreateInvoice></CreateInvoice>
+            },
+            //fahim
+            {
+                path: '/dataTable',
+                element: <DataTableSample />
             },
             //22-04-24
             {
