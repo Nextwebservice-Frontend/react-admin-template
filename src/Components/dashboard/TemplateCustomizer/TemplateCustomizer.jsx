@@ -60,7 +60,7 @@ const TemplateCustomizer = () => {
                     Apply Changes
                 </button>
             </div>
-            <div id="themeChanger" className="overflow-y-scroll h-[85vh]">
+            <div id="themeChanger" className="overflow-y-scroll lg:h-[85dvh] h-[83dvh]">
                 <div className="px-[26px]">
 
                     <button className="button">Theming</button>
@@ -174,21 +174,6 @@ const TemplateCustomizer = () => {
                                 <img src={Wide} className=" rounded-md w-full" />
                             </div>
                             Wide
-                        </span>
-                    </span>
-                    <h5 className="py-0 my-0 mt-4 mb-1">Direction</h5>
-                    <span className="grid grid-cols-3 gap-6 pt-2">
-                        <span className="cursor-pointer">
-                            <div className="border rounded-md mb-[2px]">
-                                <img src={Compact} className=" rounded-md w-full" />
-                            </div>
-                            Left to Right
-                        </span>
-                        <span className="cursor-pointer">
-                            <div className="border rounded-md mb-[2px]">
-                                <img src={Wide} className=" rounded-md w-full" />
-                            </div>
-                            Right to Left
                         </span>
                     </span>
                 </div>

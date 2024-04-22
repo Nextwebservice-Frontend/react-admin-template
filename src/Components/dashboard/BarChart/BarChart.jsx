@@ -32,7 +32,7 @@ const BarChart = () => {
         <h1 className="text-gray-500 text-sm">Yearly Earnings Overview</h1>
       </div>
       {/*Tabs  */}
-      <div className="flex items-center gap-6 overflow-x-auto pb-4">
+      {/* <div className="flex items-center gap-6 overflow-x-auto pb-4">
         <div className="flex flex-col items-center justify-center border-none md:border-dashed md:border md:py-3 md:px-5">
           <div className="bg-indigo-100 p-1 rounded-md">
             <IoCartOutline className="text-xl text-indigo-500 " />
@@ -57,7 +57,7 @@ const BarChart = () => {
           </div>
           <h1 className="text-gray-500 text-xl hidden md:block">Income</h1>
         </div>
-      </div>
+      </div> */}
 
       <div className="w-full ">
         <Chart

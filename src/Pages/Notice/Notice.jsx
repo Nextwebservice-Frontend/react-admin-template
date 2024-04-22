@@ -2,6 +2,7 @@ import { MdOutlineCampaign } from "react-icons/md";
 import { FaRegUser, FaUsersBetweenLines } from "react-icons/fa6";
 import BarChart from "../../Components/dashboard/BarChart/BarChart";
 import Piechart from '../../Components/dashboard/Piechart/Piechart'
+import ReactDataTable from "../../Components/dashboard/DataTable/ReactDataTable";
 const Notice = () => {
   return (
     <div className="dark:text-gray-300 text-gray-600 mt-[10px] w-full mx-auto p-4 px-0 rounded ">
@@ -101,7 +102,7 @@ const Notice = () => {
         </div>
       </div>
       <div className="md:grid grid-cols-3 justify-center items-center gap-6 mt-6 ">
-        <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className="w-full h-full border dark:border-none rounded-md dark:bg-[#2F3349]">
+        <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className="w-full h-full relative border dark:border-none rounded-md dark:bg-[#2F3349]">
           <span style={{ borderRadius: '4px 4px 0 0' }} className="flex p-4 py-2 border-b-2 dark:border-none  justify-start items-center gap-2 bg-gray-100 dark:bg-gray-500 ">
             <FaRegUser className="text-xl" />
 
@@ -109,15 +110,24 @@ const Notice = () => {
           </span>
           <p className="px-4 py-2 font-bold">total</p>
           <p className="px-4 py-2 font-bold text-xl">2</p>
-          <button className="bg-blue-500 w-full py-2 rounded-b-md hover:bg-blue-600 text-white font-medium">
+          <button className="bg-blue-500 w-full py-2 rounded-b-md absolute bottom-0 left-0 hover:bg-blue-600 text-white font-medium">
             User list
           </button>
         </div>
+        <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className="w-full h-full">
+          <div className="max-w-[320px] mx-auto">
+            <BarChart />
+          </div>
+        </div>
+        <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className="w-full h-full">
+        <div  className="max-w-[320px] mx-auto">
+            <Piechart />
+          </div>
+        </div>
       </div>
       <div className="lg:grid lg:grid-cols-2 gap-1 mt-6">
-        <BarChart />
-        <Piechart />
       </div>
+      {/* <ReactDataTable/> */}
     </div>
 
   );

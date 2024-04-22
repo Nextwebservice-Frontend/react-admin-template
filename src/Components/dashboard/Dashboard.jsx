@@ -4,12 +4,29 @@ import { useContext, useEffect, useState } from "react";
 import { ContextData } from "../../Providers/ContextProviders/ContextProviders";
 import "../../CSS/customCSS.css";
 import { NavLink, useLocation } from "react-router-dom";
-import { SIderberNavLinks } from "../../Utility/Sideber/SIderberNavLinks";
+import { SIderberNavLinks, SIderberNavLinksbl } from "../../Utility/Sideber/SIderberNavLinks";
 import { IoIosArrowForward } from "react-icons/io";
 import { permission } from "../../Utility/Sideber/permision";
 
 const Dashboard = () => {
+  const { language,
+    setLanguage } = useContext(ContextData)
   const HaveAcces = permission.map(item => `${item.name}`)
+  const [sideBerlink, setSideberLink] = useState([])
+  useEffect(() => {
+    switch (language) {
+      case 'বাংলা':
+        setSideberLink(SIderberNavLinksbl)
+        break;
+      case 'English':
+        setSideberLink(SIderberNavLinks)
+        break;
+      default:
+        setSideberLink(SIderberNavLinks)
+        break;
+    }
+  }, [language])
+  // SIderberNavLinksbl
   // console.log(HaveAcces)
   const location = useLocation()
   const {
@@ -103,17 +120,17 @@ const Dashboard = () => {
       for (const dropDownButton of dropDownButtons) {
         const isActive = dropDownButton.parentElement.querySelectorAll('#dropDowns .active')
 
-        if (isActive.length>0) {
+        if (isActive.length > 0) {
           for (const activeLink of isActive) {
             activeLink.closest('#dropDowns').parentElement.querySelector('#dropDownButton').classList.add('activeLink')
           }
-        }else{
+        } else {
           dropDownButton.classList.remove('activeLink')
         }
       }
     }
 
-  }, [location.pathname,showText,mouseEnterInSIderber])
+  }, [location.pathname, showText, mouseEnterInSIderber])
   return (
     <div
       id="dBoardSideber"
@@ -123,7 +140,7 @@ const Dashboard = () => {
         className={`box-border  pb-4 w-[calc(100% - 2px)] ${showText ? 'px-2' : mouseEnterInSIderber ? 'px-2' : 'px-4'} `}>
         <Logo show={show} setShow={setShow} />
         {/* map over all the menu group  */}
-        {SIderberNavLinks.map((item, index) => (
+        {sideBerlink.map((item, index) => (
           <div key={index}>
             {/* check is there any title for this menu group or not */}
             {item?.title && (
