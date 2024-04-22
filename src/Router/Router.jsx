@@ -18,6 +18,7 @@ import CreateInvoice from "../Pages/InvoicePaid/CreateInvoice";
 import Button from "../Pages/Button/Button";
 import MonthlyInvoice from "../Pages/MonthlyInvoice/MonthlyInvoice";
 import ExpenseList from "../Pages/Expense/ExpenseList/ExpenseList";
+import DataTableSample from "../Components/Shared/DataTable/DataTableSample";
 // import PrivetRoute from "../Security/PrivetRoute";
 
 const Router = createBrowserRouter([
@@ -103,6 +104,11 @@ const Router = createBrowserRouter([
             {
                 path: '/createInvoice',
                 element: <CreateInvoice></CreateInvoice>
+            },
+            //fahim
+            {
+                path: '/dataTable',
+                element: <DataTableSample />
             },
         ]
     },
