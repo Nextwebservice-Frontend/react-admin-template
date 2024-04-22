@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { FaAlignRight } from "react-icons/fa";
 
@@ -6,6 +7,8 @@ import { HiUsers } from "react-icons/hi";
 import Select from "react-select";
 import { Dropdown } from "semantic-ui-react";
 import 'semantic-ui-css/semantic.min.css'
+import React from "react";
+import { Calendar } from 'primereact/calendar';
 const options = [
   { value: "chocolate", label: "Chocolate" },
   { value: "strawberry", label: "Strawberry" },
@@ -41,6 +44,7 @@ const countryOptions = [
 
 
 const CreateInvoice = () => {
+  const [date, setDate] = useState(null);
   return (
     <>
       <div className="flex flex-col md:flex-row w-[96%] mx-auto md:w-[100%] gap-10 mb-20">
@@ -54,24 +58,31 @@ const CreateInvoice = () => {
 
             </div>
             
-            <div className="flex flex-col lg:items-end  my-4 lg:my-0 ">
-              <div className="mb-2">
-                <span className="label-text text-lg mr-9 text-black dark:text-white">
+            <div className="flex flex-col lg:items-end  my-4 lg:my-0 gap-2">
+              
+              <div className="flex items-center justify-between md:justify-end w-full">
+                <span className=" md:text-sm lg:text-lg text-black dark:text-white md:w-[30%] lg:w-[30%] ">
                   Invoice Date :{" "}
                 </span>
                 <input
-                  type="date"
-                  placeholder="Type here"
+                  type="Date"
+                  placeholder="Receiver"
+                  className="input input-bordered w-[220px] h-[40px] bg-[#f7f7f7] dark:bg-base-100"
                 />
               </div>
-              <div>
-                <span className="label-text text-lg text-black dark:text-white">
+
+              {/* <div className="flex justify-center">
+                <h6 className="text">Date :</h6>
+                <Calendar className="border py-3 w-full mb-2 rounded-lg pl-4 text-gray-400 " value={date} onChange={(e) => setDate(e.value)} />
+              </div> */}
+              <div className="flex  md:justify-end justify-between items-center  w-full gap-2">
+                <span className=" md:text-sm lg:text-lg text-black dark:text-white md:w-[31%] lg:w-[37%]">
                   Invoice Receiver :{" "}
                 </span>
                 <input
                   type="text"
                   placeholder="Receiver"
-                  className="input input-bordered w-[220px] h-[40px] bg-[#f7f7f7] dark:bg-base-100"
+                  className="input input-bordered w-[220px] h-[40px] bg-[#f7f7f7] dark:bg-base-100 "
                 />
               </div>
             </div>
