@@ -151,8 +151,6 @@ export const SIderberNavLinks = [
                         access: 'Collapsed-menu',
                         subMenu: false
                     },
-                    
-                  
                 ]
             },   
             
