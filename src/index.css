@@ -24,6 +24,9 @@
   }
   
 }
+.semiDark{
+  background: #2F3349;
+}
 .HideTextAnimation {
   animation: HideTextAnimation 1s;
 }
@@ -41,7 +44,6 @@
 .accordionClose {
   animation: accordionclose .8s;
 }
-
 #dBoardSideber .active {
   background: #978EF4;
   color: #FFF;

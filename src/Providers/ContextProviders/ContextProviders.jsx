@@ -40,6 +40,7 @@ const ContextProviders = ({ children }) => {
     const [language,setLanguage]=useState(
         localStorage.getItem('language') 
     )
+    const [semiDark,setSemidark]=useState(false)
     //theme changer
     const [themeChangerOpen, setThemeChangerOpen] = useState(false)
     const [navberType, setNavberType] = useState('sticky');
@@ -96,7 +97,10 @@ const ContextProviders = ({ children }) => {
         setContent,
         //language
         language,
-        setLanguage
+        //semidark
+        setLanguage,
+        semiDark,
+        setSemidark
     }
     return (
         <ContextData.Provider value={sharedData}>

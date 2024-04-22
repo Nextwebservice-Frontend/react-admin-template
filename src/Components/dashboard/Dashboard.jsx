@@ -9,8 +9,20 @@ import { IoIosArrowForward } from "react-icons/io";
 import { permission } from "../../Utility/Sideber/permision";
 
 const Dashboard = () => {
-  const { language,
-    setLanguage } = useContext(ContextData)
+  const {
+    setShow,
+    show,
+    showText,
+    setShowText,
+    setOpenAccordion,
+    mouseEnterInSIderber,
+    openAccordion,
+    openSubMenuAccordion,
+    setOpenSubMenuAccordion,
+    openSubMenuAccordion2,
+    setOpenSubMenuAccordion2,
+    language
+  } = useContext(ContextData);
   const HaveAcces = permission.map(item => `${item.name}`)
   const [sideBerlink, setSideberLink] = useState([])
   useEffect(() => {
@@ -29,19 +41,7 @@ const Dashboard = () => {
   // SIderberNavLinksbl
   // console.log(HaveAcces)
   const location = useLocation()
-  const {
-    setShow,
-    show,
-    showText,
-    setShowText,
-    setOpenAccordion,
-    mouseEnterInSIderber,
-    openAccordion,
-    openSubMenuAccordion,
-    setOpenSubMenuAccordion,
-    openSubMenuAccordion2,
-    setOpenSubMenuAccordion2,
-  } = useContext(ContextData);
+
   useEffect(() => {
     window.addEventListener("resize", () => {
       setShowText(true);
