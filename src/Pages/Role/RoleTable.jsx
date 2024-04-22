@@ -1,5 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Title from '../../Utility/TItle/Title'
+import Btn from '../../Components/Shared/Btn/Btn'
+import BtnWithIcon from '../../Components/Shared/Btn/BtnWithIcon'
+import { IoMdAddCircleOutline } from "react-icons/io";
 
 const RoleTable = () => {
     const roleAccess = [
@@ -26,7 +30,20 @@ const RoleTable = () => {
     ]
     return (
         <>
-            <h3 className="text-[28px] opacity-80 py-4 dark:text-white ">Role List</h3>
+            <Title title='Balance Sheet Report' />
+
+            <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-none w-full border p-2 mt-2'>
+                <div className='flex flex-row items-center justify-between gap-2 md:gap-0 dark:border-black w-full'>
+                    <div className='flex  '>
+                        <Btn text='All' />
+                    </div>
+                    <div className="flex gap-2">
+                        <Link to='/newRole'>
+                        <BtnWithIcon icon={<IoMdAddCircleOutline />} text='New Role' />
+                        </Link>
+                    </div>
+                </div>
+            </div>
             <div className=" border dark:border-gray-600  p-0 lg:p-4 rounded-lg">
                 <div id="roletable" style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className="relative overflow-x-auto  rounded-sm">
                     <table className="w-full  text-sm text-left rtl:text-right text-gray-500">
@@ -127,7 +144,7 @@ const RoleTable = () => {
                                         Manager
                                     </span>
                                     <div className="absolute opacity-0 group-hover:opacity-100">
-                                    <Link to={`/newrole`}>
+                                        <Link to={`/newrole`}>
                                             <button className="text-md font-bold text-[#0D6EFD]">
                                                 Edit
                                             </button>
@@ -154,7 +171,7 @@ const RoleTable = () => {
                                         Staff
                                     </span>
                                     <div className="absolute opacity-0 group-hover:opacity-100">
-                                    <Link to={`/newrole`}>
+                                        <Link to={`/newrole`}>
                                             <button className="text-md font-bold text-[#0D6EFD]">
                                                 Edit
                                             </button>
@@ -181,7 +198,7 @@ const RoleTable = () => {
                                         User
                                     </span>
                                     <div className="absolute opacity-0 group-hover:opacity-100">
-                                    <Link to={`/newrole`}>
+                                        <Link to={`/newrole`}>
                                             <button className="text-md font-bold text-[#0D6EFD]">
                                                 Edit
                                             </button>

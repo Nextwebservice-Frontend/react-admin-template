@@ -20,6 +20,7 @@ import MonthlyInvoice from "../Pages/MonthlyInvoice/MonthlyInvoice";
 import ExpenseList from "../Pages/Expense/ExpenseList/ExpenseList";
 import DataTableSample from "../Components/Shared/DataTable/DataTableSample";
 import LeadDetails from "../Pages/LeadDetails/LeadDetails";
+import NewRoleSample from "../Pages/NewRole/NewRoleSample";
 // import PrivetRoute from "../Security/PrivetRoute";
 
 const Router = createBrowserRouter([
@@ -81,8 +82,8 @@ const Router = createBrowserRouter([
             },
         
             {
-                path: '/newrole',
-                element: <NewRole></NewRole>
+                path: '/newRole',
+                element: <NewRoleSample />
             },
             {
                 path: '/TinyMCE',
