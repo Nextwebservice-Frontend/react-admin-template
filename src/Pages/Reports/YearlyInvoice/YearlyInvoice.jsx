@@ -271,7 +271,7 @@ const YearlyInvoice = () => {
 
             <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-none  mb-4 w-full border p-2 mt-2'>
 
-                <div className='flex flex-row items-center justify-between gap-2 md:gap-0 dark:border-black border mb-4 w-full'>
+                <div className='flex flex-row items-center justify-between bg-[#DDDBFB] gap-2 md:gap-0 dark:border-black border mb-4 w-full'>
                     <div className='flex  '>
                         <button className='btn rounded-none border-none bg-success text-white hover:bg-green-600 '>ALL(1)</button>
 

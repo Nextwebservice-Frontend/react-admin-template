@@ -14,12 +14,11 @@ const CategoryList = () => {
                 <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className='border dark:border-none rounded-md dark:bg-[#2F3349] p-4'>
                     <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-none  mb-4 w-full'>
 
-                        <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-gray-600 border mb-4 w-full '>
-                            <div className='flex  w-ful'>
+                        <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:bg-gray-500 bg-[#DDDBFB] dark:border-gray-600 border mb-4 w-full '>
+                            <div className='flex class  w-ful '>
                                 <button className='btn rounded-none border-none bg-success text-white hover:bg-green-600 '>ALL(1)</button>
-                                <button className='btn rounded-none border-none text-blue-600 bg-[#f7f7f7] hover:bg-green-600 dark:hover:bg-green-600 hover:text-white dark:bg-gray-600 dark:text-white'>Active(1)</button>
-                                <button className='btn rounded-none border-none text-blue-600 bg-[#f7f7f7] hover:bg-green-600  dark:hover:bg-green-600  hover:text-white dark:bg-gray-600 dark:text-white dar'>Inactive(0)</button>
-                                <button className='w-[100%]  bg-[#f7f7f7] dark:bg-base-100 '></button>
+                                <button className='btn rounded-none border-none text-blue-600 bg-[#DDDBFB] hover:bg-green-600 dark:hover:bg-green-600 hover:text-white dark:bg-gray-600  dark:text-white'>Active(1)</button>
+                                <button className='btn rounded-none border-none text-blue-600 bg-[#DDDBFB] hover:bg-green-600  dark:hover:bg-green-600  hover:text-white dark:bg-gray-600 dark:text-white dar'>Inactive(0)</button>
                             </div>
 
                             <CategoryModal></CategoryModal> 
@@ -32,7 +31,7 @@ const CategoryList = () => {
                         <table className="table border dark:border-gray-600">
                             {/* head */}
                             <thead >
-                                <tr className='uppercase text-center font-bold text-black bg-[#F2F2F2] dark:bg-gray-500 dark:border-gray-600  text-lg dark:text-white'>
+                                <tr className='uppercase text-center font-bold bg-[#DDDBFB] text-black  dark:bg-gray-500 dark:border-gray-600  text-lg dark:text-white'>
                                     <th className=' '>Name</th>
                                     <th className='border dark:border-gray-600'>status</th>
                                 </tr>

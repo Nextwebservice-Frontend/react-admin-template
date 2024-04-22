@@ -192,6 +192,13 @@ export const SIderberNavLinks = [
                     access: 'Content-Nav-Sidever',
                     subMenu: false
                 },
+                {
+                    link: '/dataTable',
+                    menu: 'Data table',
+                    icon: FaRegCircle,
+                    access: 'Content-Nav-Sidever',
+                    subMenu: false
+                },
 
             ]
         },]

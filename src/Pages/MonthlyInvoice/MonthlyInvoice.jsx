@@ -52,7 +52,7 @@ const MonthlyInvoice = () => {
       <div className="">
         <div className="border dark:border-black p-4 mt-5 rouded-lg ">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-none  mb-4 w-full">
-            <div className="flex flex-row items-center justify-between gap-2 md:gap-0 dark:border-black border mb-4 w-full">
+            <div className="flex flex-row bg-[#DDDBFB] items-center justify-between gap-2 md:gap-0 dark:border-black border mb-4 w-full">
               <div className="flex  w-ful">
                 <button className="btn rounded-none border-none bg-success text-white hover:bg-green-600 ">
                   ALL(1)
@@ -69,7 +69,7 @@ const MonthlyInvoice = () => {
             <table className="table border dark:border-black">
               {/* head */}
               <thead>
-                <tr className="uppercase text-center font-bold text-black bg-[#F2F2F2] dark:bg-base-100 dark:border-black text-lg dark:text-white">
+                <tr className="uppercase text-center font-bold text-black bg-[#DDDBFB] dark:bg-base-100 dark:border-black text-lg dark:text-white">
                   <th className=" ">Name</th>
                   <th className="border dark:border-black">status</th>
                 </tr>

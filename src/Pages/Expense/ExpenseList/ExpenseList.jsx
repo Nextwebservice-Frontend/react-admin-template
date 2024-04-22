@@ -12,12 +12,12 @@ const ExpenseList = () => {
                 <div className='border dark:border-black p-4'>
                     <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-none  mb-4 w-full'>
 
-                        <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-black border mb-4 w-full'>
+                        <div className='flex flex-col md:flex-row md:items-center md:justify-between bg-[#DDDBFB] dark:bg-gray-600 gap-2 md:gap-0 dark:border-black border mb-4 w-full'>
                             <div className='flex  w-ful'>
                                 <button className='btn rounded-none border-none bg-success text-white hover:bg-green-600 '>ALL(1)</button>
-                                <button className='btn rounded-none border-none text-blue-600 bg-[#f7f7f7] hover:bg-green-600 hover:text-white dark:bg-base-100'>Active(1)</button>
-                                <button className='btn rounded-none border-none text-blue-600 bg-[#f7f7f7] hover:bg-green-600 hover:text-white dark:bg-base-100 dar'>Inactive(0)</button>
-                                <button className='w-[100%]  bg-[#f7f7f7] dark:bg-base-100 '></button>
+                                <button className='btn rounded-none border-none text-blue-600 bg-[#DDDBFB] hover:bg-green-600 hover:text-white dark:bg-base-100'>Active(1)</button>
+                                <button className='btn rounded-none border-none text-blue-600 bg-[#DDDBFB] hover:bg-green-600 hover:text-white dark:bg-base-100 dar'>Inactive(0)</button>
+                                <button className='w-[100%]  bg-[#DDDBFB] dark:bg-base-100 '></button>
                             </div>
                             <ExpenseListModal></ExpenseListModal>
 
@@ -31,7 +31,7 @@ const ExpenseList = () => {
                         <table className="table border dark:border-black">
                             {/* head */}
                             <thead >
-                                <tr className='uppercase text-center font-bold text-black bg-[#F2F2F2] dark:bg-base-100 dark:border-black text-lg dark:text-white'>
+                                <tr className='uppercase text-center bg-[#DDDBFB] font-bold text-black  dark:bg-gray-600 dark:border-black text-lg dark:text-white'>
                                     <th className=' '>Name</th>
                                     <th className='border dark:border-black'>status</th>
 

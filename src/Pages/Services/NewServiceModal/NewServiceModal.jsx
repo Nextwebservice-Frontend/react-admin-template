@@ -8,7 +8,7 @@ const NewServiceModal = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <>
-            <button onClick={() => setIsOpen(true)} className='btn rounded-none bg-success text-white '>New Service</button>
+            <button onClick={() => setIsOpen(true)} className='btn rounded-none bg-success text-white hover:bg-green-600 hover:text-white'>New Service</button>
             <Transition appear show={isOpen} as={Fragment}>
                 <Dialog as="div" className="relative z-50" onClose={() => setIsOpen(true)} >
                     <Transition.Child

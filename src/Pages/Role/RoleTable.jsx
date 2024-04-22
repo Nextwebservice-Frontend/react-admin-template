@@ -30,7 +30,7 @@ const RoleTable = () => {
             <div className=" border dark:border-gray-600  p-0 lg:p-4 rounded-lg">
                 <div id="roletable" style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className="relative overflow-x-auto  rounded-sm">
                     <table className="w-full  text-sm text-left rtl:text-right text-gray-500">
-                        <thead className="text-sm text-black uppercase bg-gray-200 dark:bg-gray-500   dark:text-gray-300">
+                        <thead className="text-sm bg-[#DDDBFB] text-black uppercase  dark:bg-gray-500   dark:text-gray-300">
                             <tr>
                                 <th
                                     scope="col"

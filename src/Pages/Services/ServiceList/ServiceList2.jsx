@@ -42,12 +42,11 @@ const ServiceList2 = () => {
     };
     const header = (
         <>
-            <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 md:border dark:border-gray-600 mb-4 w-full dark:bg-[#2F3349]'>
+            <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 md:border bg-[#DDDBFB] dark:border-gray-600 mb-4 w-full dark:bg-[#2F3349]'>
                 <div className='flex border md:border-none w-full '>
-                    <button className='btn rounded-none border-none text-blue-600 dark:bg-gray-500 dark:text-white dark:hover:bg-green-600 bg-[#f7f7f7]'>ALL</button>
-                    <button className='btn rounded-none dark:bg-gray-500 dark:text-white dark:hover:bg-green-600 border-none text-blue-600 bg-[#f7f7f7]'>Active</button>
-                    <button className='btn rounded-none dark:bg-gray-500 dark:text-white dark:hover:bg-green-600 border-none text-blue-600 bg-[#f7f7f7]'>Inactive</button>
-                    <button className='w-[100%] dark:bg-[#2F3349] bg-[#f7f7f7]'></button>
+                    <button className='btn rounded-none border-none text-blue-600 hover:bg-green-600 hover:text-white dark:text-white dark:hover:bg-green-600 bg-[#DDDBFB]'>ALL</button>
+                    <button className='btn rounded-none bg-[#DDDBFB] hover:bg-green-600 hover:text-white dark:text-white dark:hover:bg-green-600 border-none text-blue-600 '>Active</button>
+                    <button className='btn rounded-none hover:bg-green-600 hover:text-white dark:text-white dark:hover:bg-green-600 border-none text-blue-600 bg-[#DDDBFB]'>Inactive</button>
                 </div>
                 <NewServiceModal></NewServiceModal>
             </div>
@@ -59,15 +58,15 @@ const ServiceList2 = () => {
             <div className=" border dark:border-none rounded-md p-4 dark:bg-[#2F3349]">
                 <DataTable className='' value={products} header={header} tableStyle={{ minWidth: '70rem' }}  >
                     {/* image column */}
-                    <Column header="Image"  headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px ' }} className='border' body={imageBodyTemplate}></Column>
+                    <Column header="Image"  headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#DDDBFB', padding: '8px ' }} className='border' body={imageBodyTemplate}></Column>
                     {/* category name column */}
-                    <Column field="category" className='border text-center dark:text-gray-300' headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px ' }} header="Category Name" body={HoverButton} ></Column>
+                    <Column field="category" className='border text-center dark:text-gray-300' headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', fontWeight: 'bold', backgroundColor: '#DDDBFB', padding: '8px ' }} header="Category Name" body={HoverButton} ></Column>
                     {/* service name column */}
-                    <Column field="price" className='border  text-center dark:text-gray-300' header="Service Name" headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', textAlign: 'center', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px' }} body={priceBodyTemplate}></Column>
+                    <Column field="price" className='border  text-center dark:text-gray-300' header="Service Name" headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', textAlign: 'center', fontWeight: 'bold', backgroundColor: '#DDDBFB', padding: '8px' }} body={priceBodyTemplate}></Column>
                     {/*service price column */}
-                    <Column field="price" className='border text-center dark:text-gray-300' header="Service Price" headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', textAlign: 'center', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px' }} body={priceBodyTemplate}></Column>
+                    <Column field="price" className='border text-center dark:text-gray-300' header="Service Price" headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', textAlign: 'center', fontWeight: 'bold', backgroundColor: '#DDDBFB', padding: '8px' }} body={priceBodyTemplate}></Column>
                     {/* Status column */}
-                    <Column header="Status" headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', textAlign: 'right', fontWeight: 'bold', backgroundColor: '#f2f2f2', padding: '8px' }} className='border text-center' body={statusBodyTemplate}></Column>
+                    <Column header="Status" headerStyle={{ border: '1px solid gray', textTransform: 'uppercase', textAlign: 'right', fontWeight: 'bold', backgroundColor: '#DDDBFB', padding: '8px' }} className='border text-center' body={statusBodyTemplate}></Column>
                 </DataTable>
             </div>
         </>
