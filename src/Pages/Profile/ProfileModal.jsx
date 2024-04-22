@@ -79,12 +79,12 @@ const ProfileModal = () => {
                                             </div>
                                         </div>
                                         <div className="bg-[#f7f7f7] mt-4 px-6 py-4 border flex gap-2 justify-end dark:bg-gray-500 dark:border-none">
-                                            <button className="bg-[#5cb85c] text-lg text-white ml-4 inline-flex justify-center rounded-md border border-transparent  px-4 py-2  font-medium  hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
+                                            <button className="bg-[#5cb85c] text-lg text-white ml-4 inline-flex justify-center rounded-md border border-transparent  px-4 py-2  font-medium   focus:outline-none focus-visible:ring-2  focus-visible:ring-offset-2">
                                                 Update
                                             </button>
                                             <button
                                                 type="button"
-                                                className="bg-[#d9534f] inline-flex text-white justify-center rounded-md border border-transparent  px-4 py-2 text-lg font-medium hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                                                className="bg-[#d9534f] inline-flex text-white justify-center rounded-md border border-transparent  px-4 py-2 text-lg font-medium  focus:outline-none focus-visible:ring-2  focus-visible:ring-offset-2"
                                                 onClick={() => setIsOpen(false)}
                                             >
                                                 Cancel

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { FaAlignRight } from "react-icons/fa";
 
@@ -6,6 +7,8 @@ import { HiUsers } from "react-icons/hi";
 import Select from "react-select";
 import { Dropdown } from "semantic-ui-react";
 import 'semantic-ui-css/semantic.min.css'
+import React from "react";
+import { Calendar } from 'primereact/calendar';
 const options = [
   { value: "chocolate", label: "Chocolate" },
   { value: "strawberry", label: "Strawberry" },
@@ -41,35 +44,47 @@ const countryOptions = [
 
 
 const CreateInvoice = () => {
+  const [date, setDate] = useState(null);
+
+  
   return (
     <>
-      <div className="flex flex-col md:flex-row w-[96%] mx-auto md:w-[100%] gap-10 mb-20">
+      <div className="flex flex-col md:flex-row w-[96%] mx-auto md:w-[100%] gap-10 mb-20 bg-white">
         {/* Expanse receive list (1st part) */}
         <div className="border dark:border-gray-700 mt-7 w-full md:w-[76%] mx-auto rounded shadow-2xl pb-16 ">
           <div className="flex flex-col md:flex-row  justify-between px-5 pt-5 gap-2 md:gap-20 lg:gap-2">
-            <img
-              className="mb-3 w-[90%] md:w-[50%] lg:w-[40%] h-[150px]"
-              src="https://cashbaksho.com/backend/billing_invoice_logo.png"
-              alt=""
-            />
-            <div className="flex flex-col lg:items-end  my-4 lg:my-0 ">
-              <div className="mb-2">
-                <span className="label-text text-lg mr-9 text-black dark:text-white">
+            <div className="mb-3 w-[90%] md:w-72 h-[150px] overflow-hidden">
+              <img
+                className="w-full h-full object-cover" src="https://cashbaksho.com/backend/billing_invoice_logo.png" alt=""
+              />
+
+            </div>
+            
+            <div className="flex flex-col lg:items-end  my-4 lg:my-0 gap-2">
+              
+              <div className="flex items-center justify-between md:justify-end w-full">
+                <span className=" md:text-sm lg:text-lg text-black dark:text-white md:w-[30%] lg:w-[30%] ">
                   Invoice Date :{" "}
                 </span>
                 <input
-                  type="date"
-                  placeholder="Type here"
+                  type="Date"
+                  placeholder="Receiver"
+                  className="input input-bordered w-[220px] h-[40px] bg-[#f7f7f7] dark:bg-base-100"
                 />
               </div>
-              <div>
-                <span className="label-text text-lg text-black dark:text-white">
+
+              {/* <div className="flex justify-center">
+                <h6 className="text">Date :</h6>
+                <Calendar className="border py-3 w-full mb-2 rounded-lg pl-4 text-gray-400 " value={date} onChange={(e) => setDate(e.value)} />
+              </div> */}
+              <div className="flex  md:justify-end justify-between items-center  w-full gap-2">
+                <span className=" md:text-sm lg:text-lg text-black dark:text-white md:w-[31%] lg:w-[37%]">
                   Invoice Receiver :{" "}
                 </span>
                 <input
                   type="text"
                   placeholder="Receiver"
-                  className="input input-bordered w-[220px] h-[40px] bg-[#f7f7f7] dark:bg-base-100"
+                  className="input input-bordered w-[220px] h-[40px] bg-[#f7f7f7] dark:bg-base-100 "
                 />
               </div>
             </div>
@@ -286,17 +301,16 @@ const CreateInvoice = () => {
         <div className="w-[96%] md:w-[24%] m-2 md:m-0">
           {/* billing notes */}
           <div className="border-x dark:border-gray-900 mt-7 mx-auto rounded ">
-            <h4 className="text-lg text-black bg-[#DDDBFB] dark:text-white dark:bg-base-100 pl-3 py-2 font-bold ">
+            <h4 className="text-lg text-black  dark:text-white dark:bg-base-100 pl-3 font-bold bg-[#DDDBFB] py-2">
               <strong className="flex items-center gap-2 justify-start">
                 <FaAlignRight />
                 Billing Notes
               </strong>
             </h4>
-            <hr className="p-0 m-0 dark:invisible" />
-            <div className="pl-3 py-2">
-              <p className="label-text text-black dark:text-white text-base mr-7 pb-2">
+            <div className="pl-3">
+              <label className=" text-black dark:text-white text-base ">
                 Notes<span className="text-red-500">(required)</span>
-              </p>
+              </label>
               <textarea
                 className="textarea textarea-bordered w-[95%] bg-white dark:bg-gray-600"
                 placeholder="Bio"
@@ -323,8 +337,6 @@ const CreateInvoice = () => {
                 Invoice Options
               </strong>
             </h4>
-            <hr className="p-0 m-0 " />
-
             <div className="w-[100%] px-2 mt-2">
               <label htmlFor="" className="text-black dark:text-white ">
                 Service Provider{" "}
