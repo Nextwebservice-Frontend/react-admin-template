@@ -19,6 +19,7 @@ import Button from "../Pages/Button/Button";
 import MonthlyInvoice from "../Pages/MonthlyInvoice/MonthlyInvoice";
 import ExpenseList from "../Pages/Expense/ExpenseList/ExpenseList";
 import DataTableSample from "../Components/Shared/DataTable/DataTableSample";
+import LeadDetails from "../Pages/LeadDetails/LeadDetails";
 // import PrivetRoute from "../Security/PrivetRoute";
 
 const Router = createBrowserRouter([
@@ -109,6 +110,11 @@ const Router = createBrowserRouter([
             {
                 path: '/dataTable',
                 element: <DataTableSample />
+            },
+            //22-04-24
+            {
+                path: '/leadDetails',
+                element: <LeadDetails></LeadDetails>
             },
         ]
     },
