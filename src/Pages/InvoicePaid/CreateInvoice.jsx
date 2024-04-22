@@ -47,11 +47,15 @@ const CreateInvoice = () => {
         {/* Expanse receive list (1st part) */}
         <div className="border dark:border-gray-700 mt-7 w-full md:w-[76%] mx-auto rounded shadow-2xl pb-16 ">
           <div className="flex flex-col md:flex-row  justify-between px-5 pt-5 gap-2 md:gap-20 lg:gap-2">
-            <img
-              className="mb-3 w-[90%] md:w-[50%] lg:w-[40%] h-[150px]"
-              src="https://cashbaksho.com/backend/billing_invoice_logo.png"
-              alt=""
-            />
+            <div className="mb-3 w-[90%] md:w-[50%] lg:w-[40%] h-[150px]">
+              <img
+                className="w-full h-full object-cover"
+                src="https://cashbaksho.com/backend/billing_invoice_logo.png"
+                alt=""
+              />
+
+            </div>
+            
             <div className="flex flex-col lg:items-end  my-4 lg:my-0 ">
               <div className="mb-2">
                 <span className="label-text text-lg mr-9 text-black dark:text-white">
