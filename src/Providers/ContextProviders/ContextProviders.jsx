@@ -36,6 +36,7 @@ const ContextProviders = ({ children }) => {
     const [theme, setTheme] = useState(
         localStorage.getItem('theme')
     )
+
     //theme changer
     const [themeChangerOpen, setThemeChangerOpen] = useState(false)
     const [navberType, setNavberType] = useState('sticky');

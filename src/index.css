@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 /* Example CSS to customize React Quill toolbar */
+
 :root{
   --primary-color:#000;
   --scoundery-color:rgb(93, 89, 108);
@@ -21,6 +22,7 @@
   .themeChanger h5 {
     @apply text-[var(--scoundery-color)]
   }
+  
 }
 .HideTextAnimation {
   animation: HideTextAnimation 1s;
@@ -29,6 +31,7 @@
 .NavberwidhtAnimationOpen {
   animation: NavberwidhtAnimationOpen 1s;
 }
+
 
 
 .accordionOpen {

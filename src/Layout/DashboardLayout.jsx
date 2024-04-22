@@ -77,6 +77,7 @@ const DashboardLayout = () => {
     }
   }, [showText])
 
+
   return (
     <div className="lg:flex lg:px-0 px-[6px] bg-[#F8F7FA]  dark:bg-[#25293C] overflow-hidden w-full relative">
       {/* sideber  dark:bg-[#2F3349] dark:bg-[#25293C] style={{ transition: ".5s" }}*/}
@@ -94,6 +95,7 @@ const DashboardLayout = () => {
         {/* navber  */}
 
         {/* outlet  */}
+
         <div id="contentScrollber" className="max-h-[100vh] overflow-y-auto overflow-x-hidden">
           <div className={`w-full ${navberType} top-0 z-50`}> <Navbar />
           </div>

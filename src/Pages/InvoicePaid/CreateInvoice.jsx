@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaAlignRight } from "react-icons/fa";
+
 import { MdMiscellaneousServices } from "react-icons/md";
 import { HiUsers } from "react-icons/hi";
 import Select from "react-select";
@@ -10,6 +11,7 @@ const options = [
   { value: "strawberry", label: "Strawberry" },
   { value: "vanilla", label: "Vanilla" },
 ];
+
 
 const countryOptions = [
   { key: 'af', value: 'af', flag: 'af', text: 'Afghanistan' },
@@ -39,7 +41,6 @@ const countryOptions = [
 
 
 const CreateInvoice = () => {
-
   return (
     <>
       <div className="flex flex-col md:flex-row w-[96%] mx-auto md:w-[100%] gap-10 mb-20">
@@ -59,7 +60,6 @@ const CreateInvoice = () => {
                 <input
                   type="date"
                   placeholder="Type here"
-                  className="input input-bordered w-[220px] h-[40px] bg-[#f7f7f7] dark:bg-base-100"
                 />
               </div>
               <div>
@@ -139,6 +139,7 @@ const CreateInvoice = () => {
               </p>
               <p className="text-gray-500">
                 <span className=" text-base text-gray-600">Address : </span>Uttara
+
               </p>
             </div>
           </div>
@@ -302,6 +303,7 @@ const CreateInvoice = () => {
               ></textarea>
             </div>
             <hr className="p-0 m-0 dark:invisible" />
+
             <div className="flex flex-col lg:flex-row py-2 w-full text-center bg-[#f7f7f7] dark:border-none dark:bg-base-100 gap-5 justify-between px-2 ">
               <button className="bg-primary lg:w-[40%]  h-[40px] text-white  dark:border-none flex items-center text-base px-2">
                 <span className="flex items-center text-base px-2 gap-1 mx-auto w-[100%] justify-center"><HiUsers /> Client</span>
@@ -372,7 +374,6 @@ const CreateInvoice = () => {
             </div>
 
           </div>
-
         </div>
       </div>
     </>

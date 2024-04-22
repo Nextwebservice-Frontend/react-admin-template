@@ -1,7 +1,7 @@
+
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-// eslint-disable-next-line no-unused-vars
 import { BsThreeDotsVertical } from "react-icons/bs";
 import './css/dropdown.css'
 import { Menu } from '@headlessui/react';
@@ -17,7 +17,6 @@ const PaidInvoice = () => {
                 <div className="flex flex-wrap align-items-center justify-content-between gap-2 my-5">
                     <h1 className="w-full mx-auto  text-3xl dark:text-white text-black ">Paid Invoice List</h1>
                 </div>
-
                 <div className='border dark:border-black p-4'>
                     <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-none  mb-4 w-full'>
 
@@ -30,7 +29,6 @@ const PaidInvoice = () => {
                                 <button className='w-[100%]  bg-[#f7f7f7] dark:bg-base-100 '></button>
                             </div>
                             <Link to="/createInvoice"> <button className='btn rounded-none bg-success text-white border-none hover:bg-green-600 text-lg'>Create Invoice</button></Link>
-
 
                         </div>
 
@@ -47,11 +45,11 @@ const PaidInvoice = () => {
                                     <th className=' '>Billing creation</th>
                                     <th className=' '>Status</th>
                                     <th className=' '>Action</th>
-
                                 </tr>
                             </thead>
                             <tbody className=' text-center'>
                                 {/* row 1 */}
+
 
                                 <tr>
                                     <th
@@ -59,9 +57,11 @@ const PaidInvoice = () => {
                                     >
                                         Beauty
                                         {/* <div className="absolute text-center  opacity-0 group-hover:opacity-100 flex items-center ">
+
                                             <h1 className="text-base font-bold text-blue-600 text-center">
                                                 Edit <span className='text-black'>|</span> <span className='text-yellow-400'>Inactive</span>
                                             </h1>
+
 
                                         </div> */}
                                     </th>
@@ -96,7 +96,6 @@ const PaidInvoice = () => {
                                             )}
                                         </div>
                                     </td>
-
                                 </tr>
 
                             </tbody>

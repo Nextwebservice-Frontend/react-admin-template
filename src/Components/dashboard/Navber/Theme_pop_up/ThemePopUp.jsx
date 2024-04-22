@@ -25,8 +25,6 @@ const ThemePopUp = ({ showThemePopUp, setshowThemePopUp }) => {
             HTMLelement.classList.add('Light')
         }
     }
-
-
     useEffect(() => {
         onWindoMatch()
         switch (theme) {
@@ -65,6 +63,7 @@ const ThemePopUp = ({ showThemePopUp, setshowThemePopUp }) => {
         darkModeMediaQuery.addListener(handleThemeChange);
         handleThemeChange(darkModeMediaQuery);
     }, [])
+    
     return (
         <div className={`${showThemePopUp ? "popup" : "hidden"} dark:bg-[#2F3249] dark:border-none dark:text-gray-300 py-4 shadow mt-10 rounded box-border border absolute md:right-36 z-10 sm:right-20 right-[2%] sm:-top-12 -top-8 bg-white min-w-[96%] max-w-[96%] sm:max-w-4min-w-40 sm:min-w-40`}>
             <div className='px-4 flex justify-start items-center gap-2 flex-col'>
