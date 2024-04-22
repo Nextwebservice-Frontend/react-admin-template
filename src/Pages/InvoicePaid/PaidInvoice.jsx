@@ -18,15 +18,14 @@ const PaidInvoice = () => {
                     <h1 className="w-full mx-auto  text-3xl dark:text-white text-black ">Paid Invoice List</h1>
                 </div>
                 <div className='border dark:border-black p-4'>
-                    <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-none  mb-4 w-full'>
+                    <div className='flex  flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-none  mb-4 w-full'>
 
-                        <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-black border mb-4 w-full'>
+                        <div className='flex flex-col bg-[#DDDBFB] dark:bg-gray-600 md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-black border mb-4 w-full'>
                             <div className='flex  w-ful'>
                                 <button className='btn rounded-none border-none bg-success text-white hover:bg-green-600 '>ALL(1)</button>
-                                <button className='btn rounded-none border-none text-blue-600 bg-[#f7f7f7] hover:bg-green-600 hover:text-white dark:bg-base-100'>Paid(0)</button>
-                                <button className='btn rounded-none border-none text-blue-600 bg-[#f7f7f7] hover:bg-green-600 hover:text-white dark:bg-base-100 dar'>Unpaid(1)</button>
-                                <button className='btn rounded-none border-none text-blue-600 bg-[#f7f7f7] hover:bg-green-600 hover:text-white dark:bg-base-100 dar'>Pending(1)</button>
-                                <button className='w-[100%]  bg-[#f7f7f7] dark:bg-base-100 '></button>
+                                <button className='btn rounded-none border-none text-blue-600 bg-[#DDDBFB] hover:bg-green-600 hover:text-white dark:bg-base-100'>Paid(0)</button>
+                                <button className='btn rounded-none border-none text-blue-600 bg-[#DDDBFB] hover:bg-green-600 hover:text-white dark:bg-base-100 dar'>Unpaid(1)</button>
+                                <button className='btn rounded-none border-none text-blue-600 bg-[#DDDBFB] hover:bg-green-600 hover:text-white dark:bg-base-100 dar'>Pending(1)</button>
                             </div>
                             <Link to="/createInvoice"> <button className='btn rounded-none bg-success text-white border-none hover:bg-green-600 text-lg'>Create Invoice</button></Link>
 
@@ -38,7 +37,7 @@ const PaidInvoice = () => {
                         <table className="table border dark:border-black">
                             {/* head */}
                             <thead >
-                                <tr className='uppercase text-center font-bold text-black bg-[#F2F2F2] dark:bg-base-100 dark:border-black text-lg dark:text-white'>
+                                <tr className='uppercase text-center font-bold text-black bg-[#DDDBFB] dark:bg-gray-600 dark:border-black text-lg dark:text-white'>
                                     <th className=' '>Invoice Id</th>
                                     <th className='border dark:border-black'>Client name</th>
                                     <th className=' '>Payment method</th>

@@ -117,7 +117,7 @@ const LeadDetails = () => {
                 <div className='md:w-[60%] lg:w-[70%] '>
                     <div className=' mb-5 '>
                         <Tab.Group>
-                            <Tab.List className="flex justify-start items-start text-black p-1 border mb-6 rounded-md ">
+                            <Tab.List className="flex justify-start bg-[#DDDBFB] items-start text-black p-1 border mb-6 rounded-md ">
                                 <Tab
                                     className={({ selected }) =>
                                         classNames(
@@ -181,13 +181,12 @@ const LeadDetails = () => {
                                                 <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className='border dark:border-none rounded-md dark:bg-[#2F3349] p-4'>
                                                     <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-none  mb-4 w-full'>
 
-                                                        <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-gray-600 border mb-4 w-full '>
-                                                            <div className='flex  w-ful'>
+                                                        <div className='flex bg-[#DDDBFB] flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-gray-600 border mb-4 w-full '>
+                                                            <div className='flex  w-ful '>
                                                                 {/* <button className='btn rounded-none border-none bg-success text-white hover:bg-green-600 '>ALL(1)</button> */}
                                                                 <Btn text="All" />
-                                                                <button className='btn rounded-none border-none text-blue-600 bg-[#f7f7f7] hover:bg-green-600 dark:hover:bg-green-600 hover:text-white dark:bg-gray-600 dark:text-white'>Active(1)</button>
-                                                                <button className='btn rounded-none border-none text-blue-600 bg-[#f7f7f7] hover:bg-green-600  dark:hover:bg-green-600  hover:text-white dark:bg-gray-600 dark:text-white dar'>Inactive(0)</button>
-                                                                <button className='w-[100%]  bg-[#f7f7f7] dark:bg-base-100 '></button>
+                                                                <button className='btn rounded-none border-none text-blue-600 bg-[#DDDBFB] hover:bg-green-600 dark:hover:bg-green-600 hover:text-white dark:bg-gray-600 dark:text-white'>Active(1)</button>
+                                                                <button className='btn rounded-none border-none text-blue-600 bg-[#DDDBFB] hover:bg-green-600  dark:hover:bg-green-600  hover:text-white dark:bg-gray-600 dark:text-white dar'>Inactive(0)</button>
                                                             </div>
 
                                                             <CategoryModal></CategoryModal>

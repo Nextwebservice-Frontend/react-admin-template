@@ -4,14 +4,11 @@ import { useContext, useEffect, useState } from "react";
 import { ContextData } from "../../Providers/ContextProviders/ContextProviders";
 import "../../CSS/customCSS.css";
 import { NavLink, useLocation } from "react-router-dom";
-import { SIderberNavLinks } from "../../Utility/Sideber/SIderberNavLinks";
+import { SIderberNavLinks, SIderberNavLinksbl } from "../../Utility/Sideber/SIderberNavLinks";
 import { IoIosArrowForward } from "react-icons/io";
 import { permission } from "../../Utility/Sideber/permision";
 
 const Dashboard = () => {
-  const HaveAcces = permission.map(item => `${item.name}`)
-  // console.log(HaveAcces)
-  const location = useLocation()
   const {
     setShow,
     show,
@@ -24,7 +21,27 @@ const Dashboard = () => {
     setOpenSubMenuAccordion,
     openSubMenuAccordion2,
     setOpenSubMenuAccordion2,
+    language
   } = useContext(ContextData);
+  const HaveAcces = permission.map(item => `${item.name}`)
+  const [sideBerlink, setSideberLink] = useState([])
+  useEffect(() => {
+    switch (language) {
+      case 'বাংলা':
+        setSideberLink(SIderberNavLinksbl)
+        break;
+      case 'English':
+        setSideberLink(SIderberNavLinks)
+        break;
+      default:
+        setSideberLink(SIderberNavLinks)
+        break;
+    }
+  }, [language])
+  // SIderberNavLinksbl
+  // console.log(HaveAcces)
+  const location = useLocation()
+
   useEffect(() => {
     window.addEventListener("resize", () => {
       setShowText(true);
@@ -103,27 +120,27 @@ const Dashboard = () => {
       for (const dropDownButton of dropDownButtons) {
         const isActive = dropDownButton.parentElement.querySelectorAll('#dropDowns .active')
 
-        if (isActive.length>0) {
+        if (isActive.length > 0) {
           for (const activeLink of isActive) {
             activeLink.closest('#dropDowns').parentElement.querySelector('#dropDownButton').classList.add('activeLink')
           }
-        }else{
+        } else {
           dropDownButton.classList.remove('activeLink')
         }
       }
     }
 
-  }, [location.pathname,showText,mouseEnterInSIderber])
+  }, [location.pathname, showText, mouseEnterInSIderber])
   return (
     <div
       id="dBoardSideber"
-      className={`w-full mx-auto h-[100vh] overflow-y-scroll`}>
+      className={`w-full mx-auto h-[100vh] overflow-y-scroll z-[70]`}>
       {/* logo   */}
       <div id="sideberScrollber"
         className={`box-border  pb-4 w-[calc(100% - 2px)] ${showText ? 'px-2' : mouseEnterInSIderber ? 'px-2' : 'px-4'} `}>
         <Logo show={show} setShow={setShow} />
         {/* map over all the menu group  */}
-        {SIderberNavLinks.map((item, index) => (
+        {sideBerlink.map((item, index) => (
           <div key={index}>
             {/* check is there any title for this menu group or not */}
             {item?.title && (
@@ -181,7 +198,7 @@ const Dashboard = () => {
                             //check is there any sub dropdown menu avilable or not
                             return !dropDownItems.link &&
                               Array.isArray(dropDownItems.subMenu) ? (
-                              <>
+                              <div key={index}>
                                 <li id="dropDownButton"
                                   onClick={() => {//open sub accordion menu
                                     handelSubMenuAccordion(dropDownItems.menu);
@@ -211,13 +228,13 @@ const Dashboard = () => {
                                   {/* map over all subAccordion menus  */}
                                   {dropDownItems.subMenu.map((subMenu, index) => {
                                     return !subMenu.link &&
-                                      Array.isArray(subMenu.subMenu2) ? <div >
+                                      Array.isArray(subMenu.subMenu2) ? <div key={index}>
                                       <li id="dropDownButton"
                                         onClick={() => {//open sub accordion menu
                                           handelSubMenuAccordion2(subMenu.menu);
                                         }}
                                         className={`${showText ? "" : `${mouseEnterInSIderber ? "" : "hidden"}`}`}
-                                        key={index}
+
                                       >
                                         <span
 
@@ -269,7 +286,7 @@ const Dashboard = () => {
                                   }
                                   )}
                                 </ul>
-                              </>
+                              </div>
                             ) : (//is there is no subAccordion menu then return li 
                               HaveAcces.includes(dropDownItems.access) && <li
                                 className={`${showText ? "" : `${mouseEnterInSIderber ? "" : "hidden"}`}`}

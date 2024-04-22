@@ -286,7 +286,7 @@ const CreateInvoice = () => {
         <div className="w-[96%] md:w-[24%] m-2 md:m-0">
           {/* billing notes */}
           <div className="border-x dark:border-gray-900 mt-7 mx-auto rounded ">
-            <h4 className="text-lg text-black dark:text-white dark:bg-base-100 pl-3 py-2 font-bold bg-[#f7f7f7]">
+            <h4 className="text-lg text-black bg-[#DDDBFB] dark:text-white dark:bg-base-100 pl-3 py-2 font-bold ">
               <strong className="flex items-center gap-2 justify-start">
                 <FaAlignRight />
                 Billing Notes
@@ -317,7 +317,7 @@ const CreateInvoice = () => {
 
 
           <div className="border dark:border-none mt-7 mx-auto rounded">
-            <h4 className="text-lg text-black dark:text-white pl-3 py-2 border font-bold bg-[#f7f7f7] dark:bg-base-100 dark:border-none ">
+            <h4 className="text-lg text-black dark:text-white pl-3 py-2 border font-bold bg-[#DDDBFB] dark:bg-base-100 dark:border-none ">
               <strong className="flex items-center gap-2 justify-start">
                 <FaAlignRight />
                 Invoice Options

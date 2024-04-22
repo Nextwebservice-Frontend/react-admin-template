@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import  { useContext, useEffect } from 'react'
 import { CiMonitor } from 'react-icons/ci'
 import { HiOutlineSun } from 'react-icons/hi'
 import { IoMoonOutline } from 'react-icons/io5'
@@ -48,22 +48,26 @@ const ThemePopUp = ({ showThemePopUp, setshowThemePopUp }) => {
     useEffect(() => {
         onWindoMatch()
     }, [])
+    // console.log()
     useEffect(() => {
         const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
         function handleThemeChange(e) {
-            if (e.matches) {
-                HTMLelement.classList.remove('Light')
-                HTMLelement.classList.add('dark')
-            } else {
-                HTMLelement.classList.remove('dark')
-                HTMLelement.classList.add('Light')
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    HTMLelement.classList.remove('Light')
+                    HTMLelement.classList.add('dark')
+                } else {
+                    HTMLelement.classList.remove('dark')
+                    HTMLelement.classList.add('Light')
+                }
             }
+
         }
 
         darkModeMediaQuery.addListener(handleThemeChange);
         handleThemeChange(darkModeMediaQuery);
     }, [])
-    
+
     return (
         <div className={`${showThemePopUp ? "popup" : "hidden"} dark:bg-[#2F3249] dark:border-none dark:text-gray-300 py-4 shadow mt-10 rounded box-border border absolute md:right-36 z-10 sm:right-20 right-[2%] sm:-top-12 -top-8 bg-white min-w-[96%] max-w-[96%] sm:max-w-4min-w-40 sm:min-w-40`}>
             <div className='px-4 flex justify-start items-center gap-2 flex-col'>

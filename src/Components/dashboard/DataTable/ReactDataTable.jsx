@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from 'react';
-// import { classNames } from 'primereact/utils';
 import { FilterMatchMode, FilterOperator } from 'primereact/api';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
@@ -13,17 +12,15 @@ import { Calendar } from 'primereact/calendar';
 import { MultiSelect } from 'primereact/multiselect';
 import { Slider } from 'primereact/slider';
 import { Tag } from 'primereact/tag';
-// import { TriStateCheckbox } from 'primereact/tristatecheckbox';
-import { CustomerService } from './DataService/CustomerService';
 import "primereact/resources/themes/lara-light-cyan/theme.css";
-import { LuFilterX } from "react-icons/lu";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { MdLocalPrintshop } from "react-icons/md";
 import { RiMenuSearchLine } from "react-icons/ri";
 import { MdLockReset } from "react-icons/md";
+import { TableData } from './TableData/TableData';
 
+const ReactDataTable = () => {
 
-const YearlyInvoice = () => {
     const [date, setDate] = useState(null);
     const [customers, setCustomers] = useState(null);
     const [filters, setFilters] = useState(null);
@@ -65,7 +62,7 @@ const YearlyInvoice = () => {
     };
 
     useEffect(() => {
-        CustomerService.getCustomersMedium().then((data) => {
+        TableData.getCustomersMedium().then((data) => {
             setCustomers(getCustomers(data));
             setLoading(false);
         });
@@ -205,20 +202,6 @@ const YearlyInvoice = () => {
         );
     };
 
-    // const verifiedBodyTemplate = (rowData) => {
-    //     return <i className={classNames('pi', { 'text-green-500 pi-check-circle': rowData.verified, 'text-red-500 pi-times-circle': !rowData.verified })}></i>;
-    // };
-
-    // const verifiedFilterTemplate = (options) => {
-    //     return (
-    //         <div className="flex align-items-center gap-2">
-    //             <label htmlFor="verified-filter" className="font-bold">
-    //                 Verified
-    //             </label>
-    //             <TriStateCheckbox inputId="verified-filter" value={options.value} onChange={(e) => options.filterCallback(e.value)} />
-    //         </div>
-    //     );
-    // };
 
     const header = renderHeader();
 
@@ -271,7 +254,7 @@ const YearlyInvoice = () => {
 
             <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-none  mb-4 w-full border p-2 mt-2'>
 
-                <div className='flex flex-row items-center justify-between bg-[#DDDBFB] gap-2 md:gap-0 dark:border-black border mb-4 w-full'>
+                <div className='flex flex-row items-center justify-between gap-2 md:gap-0 dark:border-black border mb-4 w-full'>
                     <div className='flex  '>
                         <button className='btn rounded-none border-none bg-success text-white hover:bg-green-600 '>ALL(1)</button>
 
@@ -297,7 +280,7 @@ const YearlyInvoice = () => {
                 paginatorTemplate="RowsPerPageDropdown FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink"
                 currentPageReportTemplate="{first} to {last} of {totalRecords}" paginatorLeft={paginatorLeft} paginatorRight={paginatorRight}
             >
-                <Column field=" Serial" header="Serial" filter filterPlaceholder="Search by name" style={{ minWidth: '12rem' }} />
+                {/* <Column field="  l" header="Serial" filter filterPlaceholder="Search by name" style={{ minWidth: '12rem' }} /> */}
                 <Column header="Date" filterField="Date" showFilterMatchModes={false} filterMenuStyle={{ width: '14rem' }} style={{ minWidth: '14rem' }}
                     body={representativeBodyTemplate} filter filterElement={representativeFilterTemplate} />
                 <Column header="Account" filterField="Account" dataType="date" style={{ minWidth: '10rem' }} body={dateBodyTemplate} filter filterElement={dateFilterTemplate} />
@@ -311,5 +294,4 @@ const YearlyInvoice = () => {
     );
 }
 
-
-export default YearlyInvoice
+export default ReactDataTable

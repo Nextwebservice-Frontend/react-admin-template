@@ -54,14 +54,14 @@ const GeneralSetting = () => {
         {/* Sidebar part bg-[#21252908]*/}
         <div className="mt-5 md:mt-0 lg:w-[50%]">
           <div className="bg-white dark:bg-[#2F3249] shadow-xl border dark:border-none rounded-lg">
-            <h1 className="text-3xl font-normal pl-4 mb-2 border-b py-2 bg-[#0d0e0e08] dark:bg-gray-500 dark:border-none dark:text-white text-black dark:rounded-sm">
+            <h1 className="text-3xl font-normal bg-[#DDDBFB] pl-4 mb-2 border-b py-2 bg-[#0d0e0e08] dark:bg-gray-500 dark:border-none dark:text-white text-black dark:rounded-sm">
               Sidebar
             </h1>
             <div className="w-full">
               <form className="">
                 <div className="flex flex-col md:flex-row justify-between lg:gap-4 w-full ">
                   <div className="ml-4 mr-4 lg:mr-4 md:w-[50%] ">
-                    <h1 className="md:mt-2 font-bold text-lg text-black dark:text-white">
+                    <h1 className="md:mt-2 font-bold text-lg  text-black dark:text-white">
                       Sidebar Logo
                       <span className="pl-1 text-red-400">
                         ( Recommended W:250px,H:150px)
@@ -144,7 +144,7 @@ const GeneralSetting = () => {
         {/* Invoice part */}
         <div className=" lg:w-[50%]">
           <div className="bg-white dark:bg-[#2F3249] shadow-xl border dark:border-none rounded-lg">
-            <h1 className="text-3xl font-normal pl-4 mb-2 border-b py-2 bg-[#0d0e0e08] dark:bg-gray-500 dark:border-none dark:text-white text-black dark:rounded-sm">
+            <h1 className="text-3xl bg-[#DDDBFB] font-normal pl-4 mb-2 border-b py-2 bg-[#0d0e0e08] dark:bg-gray-500 dark:border-none dark:text-white text-black dark:rounded-sm">
               Invoice
             </h1>
             <div className="w-full">
@@ -246,13 +246,13 @@ const GeneralSetting = () => {
 
         {/* Footer Text */}
         <div className="bg-white dark:bg-[#2F3249] shadow-xl border dark:border-none rounded-lg w-[100%]  lg:w-[50%]">
-          <h1 className="text-3xl font-normal pl-4 mb-2 border-b py-2 bg-[#0d0e0e08] dark:bg-gray-500 dark:border-none dark:text-white text-black dark:rounded-sm">
+          <h1 className="text-3xl font-normal bg-[#DDDBFB] pl-4 mb-2 border-b py-2 bg-[#0d0e0e08] dark:bg-gray-500 dark:border-none dark:text-white text-black dark:rounded-sm">
             Footer Text
           </h1>
           <div className="w-full">
             <form className="">
               <div className="pl-4 py-2 pr-6">
-                <p className="label-text text-base mr-7 pb-2 text-black dark:text-white">
+                <p className="label-text text-base mr-7  pb-2 text-black dark:text-white">
                   Footer Text
                   <span className="text-red-500 pl-1">(required)</span>
                 </p>

@@ -7,7 +7,7 @@ const ExpenseReceipt = () => {
     
             <div style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className='dark:bg-[#2F3349] rounded-md'>
                 <div className=" border dark:border-none p-4 mt-5 ">
-                    <div className='flex flex-row md:flex-row items-center justify-between md:gap-0 md:border dark:border-none mb-4 w-full '>
+                    <div className='flex flex-row md:flex-row items-center bg-[#DDDBFB] justify-between md:gap-0 md:border dark:border-none mb-4 w-full '>
                         <div className='flex w-full  dark:bg-gray-500 '>
                             <button className='btn rounded-none border-none bg-green-500 text-white'>ALL</button>
                         </div>
@@ -19,7 +19,7 @@ const ExpenseReceipt = () => {
                     </div>
                 <div className="relative rounded-sm " style={{ overflow: 'auto' }}>
                     <table className="w-full text-sm text-left rtl:text-right  border dark:border-none">
-                        <thead className="text-xs text-black uppercase dark:border-none border bg-[#f0f0f3] dark:bg-gray-500 text-center">
+                        <thead className="text-xs text-black uppercase dark:border-none border bg-[#DDDBFB] dark:bg-gray-500 text-center">
                                 <tr className='border dark:border-none'>
                                     <th
                                         scope="col"
