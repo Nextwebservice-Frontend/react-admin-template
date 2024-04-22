@@ -45,9 +45,11 @@ const countryOptions = [
 
 const CreateInvoice = () => {
   const [date, setDate] = useState(null);
+
+  
   return (
     <>
-      <div className="flex flex-col md:flex-row w-[96%] mx-auto md:w-[100%] gap-10 mb-20">
+      <div className="flex flex-col md:flex-row w-[96%] mx-auto md:w-[100%] gap-10 mb-20 bg-white">
         {/* Expanse receive list (1st part) */}
         <div className="border dark:border-gray-700 mt-7 w-full md:w-[76%] mx-auto rounded shadow-2xl pb-16 ">
           <div className="flex flex-col md:flex-row  justify-between px-5 pt-5 gap-2 md:gap-20 lg:gap-2">
@@ -299,17 +301,16 @@ const CreateInvoice = () => {
         <div className="w-[96%] md:w-[24%] m-2 md:m-0">
           {/* billing notes */}
           <div className="border-x dark:border-gray-900 mt-7 mx-auto rounded ">
-            <h4 className="text-lg text-black dark:text-white dark:bg-base-100 pl-3 py-2 font-bold bg-[#f7f7f7]">
+            <h4 className="text-lg text-black dark:text-white dark:bg-base-100 pl-3 font-bold bg-gray-200 py-2">
               <strong className="flex items-center gap-2 justify-start">
                 <FaAlignRight />
                 Billing Notes
               </strong>
             </h4>
-            <hr className="p-0 m-0 dark:invisible" />
-            <div className="pl-3 py-2">
-              <p className="label-text text-black dark:text-white text-base mr-7 pb-2">
+            <div className="pl-3">
+              <label className=" text-black dark:text-white text-base ">
                 Notes<span className="text-red-500">(required)</span>
-              </p>
+              </label>
               <textarea
                 className="textarea textarea-bordered w-[95%] bg-white dark:bg-gray-600"
                 placeholder="Bio"
@@ -330,14 +331,12 @@ const CreateInvoice = () => {
 
 
           <div className="border dark:border-none mt-7 mx-auto rounded">
-            <h4 className="text-lg text-black dark:text-white pl-3 py-2 border font-bold bg-[#f7f7f7] dark:bg-base-100 dark:border-none ">
+            <h4 className="text-lg text-black dark:text-white pl-3 border font-bold bg-gray-200 py-2 dark:bg-base-100 dark:border-none border-b">
               <strong className="flex items-center gap-2 justify-start">
                 <FaAlignRight />
                 Invoice Options
               </strong>
             </h4>
-            <hr className="p-0 m-0 " />
-
             <div className="w-[100%] px-2 mt-2">
               <label htmlFor="" className="text-black dark:text-white ">
                 Service Provider{" "}

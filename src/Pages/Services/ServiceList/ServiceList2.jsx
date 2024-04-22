@@ -49,7 +49,7 @@ const ServiceList2 = () => {
                     <button className='btn rounded-none dark:bg-gray-500 dark:text-white dark:hover:bg-green-600 border-none text-blue-600 bg-[#f7f7f7]'>Inactive</button>
                     <button className='w-[100%] dark:bg-[#2F3349] bg-[#f7f7f7]'></button>
                 </div>
-                <NewServiceModal></NewServiceModal>
+                <button  className='btn rounded-none bg-success text-white '>New Service</button>
             </div>
         </>
     );

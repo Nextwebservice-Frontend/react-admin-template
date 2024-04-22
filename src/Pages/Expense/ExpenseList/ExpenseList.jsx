@@ -1,13 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import ExpenseListModal from './ExpenseListModal';
+import CategoryModal from '../CategoryList/CategoryModal';
 
 const ExpenseList = () => {
     return (
         <div>
             <div>
                 <div className="flex flex-wrap align-items-center justify-content-between gap-2 my-5">
-                    <h1 className="w-full mx-auto  text-3xl dark:text-white text-black ">Expense List</h1>
+                    <p className="w-full mx-auto  text-3xl dark:text-white text-[#212529] text-[16px] md:text-[24px] lg:text-[28px] my-[12px]">Expense List</p>
                 </div>
                 <div className='border dark:border-black p-4'>
                     <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-none  mb-4 w-full'>
@@ -19,16 +20,12 @@ const ExpenseList = () => {
                                 <button className='btn rounded-none border-none text-blue-600 bg-[#f7f7f7] hover:bg-green-600 hover:text-white dark:bg-base-100 dar'>Inactive(0)</button>
                                 <button className='w-[100%]  bg-[#f7f7f7] dark:bg-base-100 '></button>
                             </div>
-                            <ExpenseListModal></ExpenseListModal>
-
-                            
-
+                            <CategoryModal></CategoryModal>
                         </div>
-
                     </div>
 
                     <div className="overflow-x-auto">
-                        <table className="table border dark:border-black">
+                        <table className="table border dark:border-black bg-white">
                             {/* head */}
                             <thead >
                                 <tr className='uppercase text-center font-bold text-black bg-[#F2F2F2] dark:bg-base-100 dark:border-black text-lg dark:text-white'>
