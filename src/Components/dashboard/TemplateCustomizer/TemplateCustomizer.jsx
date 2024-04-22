@@ -1,12 +1,10 @@
-import { TfiReload } from "react-icons/tfi";
+
 import { RxCross2 } from "react-icons/rx";
 import { FiSun } from "react-icons/fi";
 import { PiCloudSunLight } from "react-icons/pi";
 import { MdLaptopChromebook } from "react-icons/md";
 import Default from '../../../assets/default.svg';
 import Default_dark from '../../../assets/default-dark.svg';
-import Borderd from '../../../assets/border.svg';
-import Borderd_dark from '../../../assets/border-dark.svg';
 import SemiDark from '../../../assets/semi-dark.svg';
 import SemiDark_dark from '../../../assets/semi-dark-dark.svg';
 import Collapsed from '../../../assets/collapsed.svg';
@@ -27,13 +25,9 @@ const TemplateCustomizer = () => {
         themeChangerOpen,
         setThemeChangerOpen,
         setTheme,
-        navberType,
         setNavberType,
         setShowText,
-        showText,
-        Content,
         setContent,
-        semiDark,
         setSemidark
     } = useContext(ContextData)
     const [ThemeChangeData, setThemeChangeData] = useState({
@@ -76,12 +70,12 @@ const TemplateCustomizer = () => {
                         </button>
                     </span>
                 </div>
-                <div className="flex justify-between items-center mx-7 ">
-                    <button onClick={applyChanges} className="text-[#EAE8FD] text-xs bg-[#8E85F3] p-2 hover:scale-105 active:scale-95 transition-all rounded-sm  mb-4">
-                        Apply Changes
-                    </button>
-                    <button onClick={resetChanges} className="text-[#EAE8FD] text-xs bg-red-500 p-2 hover:scale-105 active:scale-95 transition-all rounded-sm mb-4">
+                <div className="grid grid-cols-2 gap-3 justify-between items-center mx-7 ">
+                    <button onClick={resetChanges} className="text-[#EAE8FD] w-full  bg-red-500 p-2 hover:scale-105 active:scale-95 transition-all rounded-sm mb-4">
                         Reset Changes
+                    </button>
+                    <button onClick={applyChanges} className="text-[#EAE8FD] w-full  bg-[#8E85F3] p-2 hover:scale-105 active:scale-95 transition-all rounded-sm  mb-4">
+                        Apply Changes
                     </button>
                 </div>
             </div>
@@ -136,7 +130,7 @@ const TemplateCustomizer = () => {
                                 semiDark: false
                             })
                         }} className="cursor-pointer">
-                            <div className="border rounded-md mb-[2px]">
+                            <div className={`border ${ThemeChangeData.semiDark ? '' : 'border-[#8E85F3]'} rounded-md mb-[2px]`}>
                                 <img src={theme === 'dark' || themeChack.matches ? Default_dark : Default} className=" rounded-md w-full" />
                             </div>
                             Default
@@ -147,7 +141,7 @@ const TemplateCustomizer = () => {
                                 semiDark: true
                             })
                         }} className="cursor-pointer">
-                            <div className="border rounded-md mb-[2px]">
+                            <div className={`border ${ThemeChangeData.semiDark ? 'border-[#8E85F3]' : ''} rounded-md mb-[2px]`}>
                                 <img src={theme === 'dark' || themeChack.matches ? SemiDark_dark : SemiDark} className=" rounded-md w-full" />
                             </div>
                             Semi Dark
@@ -166,7 +160,7 @@ const TemplateCustomizer = () => {
                             })
                             // setShowText(true)
                         }} className="cursor-pointer">
-                            <div className={`border rounded-md ${showText ? 'border-[#8E85F3]' : ''} mb-[2px]`}>
+                            <div className={`border rounded-md ${ThemeChangeData.showText ? 'border-[#8E85F3]' : ''} mb-[2px]`}>
                                 <img src={theme === 'dark' || themeChack.matches ? Expanded_dark : Expanded} className=" rounded-md w-full" />
                             </div>
                             Expanded
@@ -178,7 +172,7 @@ const TemplateCustomizer = () => {
                             })
                             // setShowText(false)
                         }} className="cursor-pointer">
-                            <div className={`border ${showText ? '' : 'border-[#8E85F3]'} rounded-md mb-[2px]`}>
+                            <div className={`border ${ThemeChangeData.showText ? '' : 'border-[#8E85F3] '} rounded-md mb-[2px]`}>
                                 <img src={theme === 'dark' || themeChack.matches ? Collapsed_dark : Collapsed} className=" rounded-md w-full" />
                             </div>
                             Collapsed
@@ -195,7 +189,7 @@ const TemplateCustomizer = () => {
                             // setNavberType('sticky')
 
                         }} className="cursor-pointer">
-                            <div className={`border rounded-md mb-[2px] ${navberType === 'sticky' ? 'border-[#8E85F3]' : ''}`}>
+                            <div className={`border rounded-md mb-[2px] ${ThemeChangeData.navberType === 'sticky' ? 'border-[#8E85F3]' : ''}`}>
                                 <img src={StickyNav} className=" rounded-md w-full" />
                             </div>
                             Sticky
@@ -207,7 +201,7 @@ const TemplateCustomizer = () => {
                             })
                             // setNavberType('static')
                         }} className="cursor-pointer">
-                            <div className={`border rounded-md mb-[2px] ${navberType === 'static' ? 'border-[#8E85F3]' : ''}`}>
+                            <div className={`border rounded-md mb-[2px] ${ThemeChangeData.navberType === 'static' ? 'border-[#8E85F3]' : ''}`}>
                                 <img src={StaticNav} className=" rounded-md w-full" />
                             </div>
                             Static
@@ -219,7 +213,7 @@ const TemplateCustomizer = () => {
                             })
                             // setNavberType('hidden')
                         }} className="cursor-pointer">
-                            <div className={`border rounded-md mb-[2px] ${navberType === 'hidden' ? 'border-[#8E85F3]' : ''}`}>
+                            <div className={`border rounded-md mb-[2px] ${ThemeChangeData.navberType === 'hidden' ? 'border-[#8E85F3]' : ''}`}>
                                 <img src={HiddenNav} className=" rounded-md w-full" />
                             </div>
                             Hidden
@@ -235,7 +229,7 @@ const TemplateCustomizer = () => {
                             // setContent(true)
                         }} className="cursor-pointer">
 
-                            <div className={`border ${Content ? 'border-[#8E85F3]' : ''} rounded-md mb-[2px]`}>
+                            <div className={`border ${ThemeChangeData.Content ? 'border-[#8E85F3]' : ''} rounded-md mb-[2px]`}>
                                 <img src={Compact} className=" rounded-md w-full" />
                             </div>
                             Compact
@@ -247,7 +241,7 @@ const TemplateCustomizer = () => {
                             })
                             // setContent(false)
                         }} className="cursor-pointer">
-                            <div className={`border ${Content ? '' : 'border-[#8E85F3]'} rounded-md mb-[2px]`}>
+                            <div className={`border ${ThemeChangeData.Content ? '' : 'border-[#8E85F3]'} rounded-md mb-[2px]`}>
                                 <img src={Wide} className=" rounded-md w-full" />
                             </div>
                             Wide

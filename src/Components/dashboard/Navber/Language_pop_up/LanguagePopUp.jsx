@@ -26,7 +26,7 @@ const LanguagePopUp = ({ showLanguagePopUp, setshowLanguagePopUp }) => {
                         <button key={index} onClick={() => {
                             setLanguage(item)
                             setshowLanguagePopUp(false)
-                        }} className={`${language===item?'bg-[#978EF4] text-gray-300':''} w-full my-1 dark:text-gray-300 flex justify-start items-center gap-3 text-gray-500 text-base hover:text-gray-500 hover:no-underline hover:bg-slate-100 dark:hover:bg-slate-500 p-1 rounded-md transition-all`}>
+                        }} className={`${language===item?'bg-[#978EF4] text-white':''} w-full my-1 dark:text-gray-300 flex justify-start items-center gap-3 text-gray-500 text-base hover:text-gray-500 hover:no-underline hover:bg-slate-100 dark:hover:bg-slate-500 p-1 rounded-md transition-all`}>
                             {item}
                         </button>)
                 }

@@ -1,14 +1,9 @@
 import { RiHomeSmile2Line, RiPagesLine } from "react-icons/ri";
 import { FaRegCircle } from "react-icons/fa";
-import { MdEmojiObjects, MdOutlineDashboard, MdOutlineLocalMall, MdOutlineMail, MdOutlineMedicalInformation } from "react-icons/md";
-import { GrChatOption } from "react-icons/gr";
-import { HiOutlineShoppingCart, HiOutlineTruck } from "react-icons/hi";
-import { VscFiles } from "react-icons/vsc";
-import { CiCalendarDate } from "react-icons/ci";
-import { TbFileDollar, TbLayoutKanban } from "react-icons/tb";
-import { IoBookOutline, IoSettingsOutline } from "react-icons/io5";
+import {  MdOutlineDashboard, MdOutlineLocalMall, MdOutlineMedicalInformation } from "react-icons/md";
+import { TbUserCheck } from "react-icons/tb";
+import {  IoSettingsOutline } from "react-icons/io5";
 import { AiFillAppstore } from "react-icons/ai";
-import { LuUsers2 } from "react-icons/lu";
 import { BiPrinter } from "react-icons/bi";
 export const SIderberNavLinks = [
     //groups
@@ -49,6 +44,13 @@ export const SIderberNavLinks = [
                         access: 'Collapsed-menu',
                         subMenu: false
                     },
+                    {
+                        link: '/newExpenseReceipt',
+                        menu: 'New Expense Receipt',
+                        icon: FaRegCircle,
+                        access: 'Collapsed-menu',
+                        subMenu: false
+                    },
                 ]
             },
             {
@@ -76,6 +78,13 @@ export const SIderberNavLinks = [
                     {
                         link: '/yearlyInvoiceList',
                         menu: 'Yearly Invoice',
+                        icon: FaRegCircle,
+                        access: 'Collapsed-menu',
+                        subMenu: false
+                    },
+                    {
+                        link: '/monthlyInvoice',
+                        menu: 'Monthly Invoice',
                         icon: FaRegCircle,
                         access: 'Collapsed-menu',
                         subMenu: false
@@ -115,6 +124,36 @@ export const SIderberNavLinks = [
                     {
                         link: '/paidList',
                         menu: 'Invoice List',
+                        icon: FaRegCircle,
+                        access: 'Collapsed-menu',
+                        subMenu: false
+                    },
+                    {
+                        link: '/createInvoice',
+                        menu: 'Create Invoice',
+                        icon: FaRegCircle,
+                        access: 'Collapsed-menu',
+                        subMenu: false
+                    },
+                  
+                ]
+            },   
+            {
+                link: false,
+                menu: 'Profile',
+                access: 'Collapsed-menu',
+                icon: TbUserCheck ,
+                dropDown: [
+                    {
+                        link: '/leadDetails',
+                        menu: 'lead Profile',
+                        icon: FaRegCircle,
+                        access: 'Collapsed-menu',
+                        subMenu: false
+                    },
+                    {
+                        link: '/createInvoice',
+                        menu: 'Create Invoice',
                         icon: FaRegCircle,
                         access: 'Collapsed-menu',
                         subMenu: false

@@ -45,7 +45,11 @@
   animation: accordionclose .8s;
 }
 #dBoardSideber .active {
-  background: #978EF4;
+  /* background: #7367F0;  */
+  background: -webkit-linear-gradient(left, #4b3bfa, #aaa3f6); 
+  background: -o-linear-gradient(right, #4b3bfa, #aaa3f6); 
+  background: -moz-linear-gradient(right, #4b3bfa, #aaa3f6);
+  background: linear-gradient(to right, #4b3bfa, #aaa3f6);
   color: #FFF;
   text-decoration: none;
 }

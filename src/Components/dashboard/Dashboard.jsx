@@ -198,7 +198,7 @@ const Dashboard = () => {
                             //check is there any sub dropdown menu avilable or not
                             return !dropDownItems.link &&
                               Array.isArray(dropDownItems.subMenu) ? (
-                              <>
+                              <div key={index}>
                                 <li id="dropDownButton"
                                   onClick={() => {//open sub accordion menu
                                     handelSubMenuAccordion(dropDownItems.menu);
@@ -228,13 +228,13 @@ const Dashboard = () => {
                                   {/* map over all subAccordion menus  */}
                                   {dropDownItems.subMenu.map((subMenu, index) => {
                                     return !subMenu.link &&
-                                      Array.isArray(subMenu.subMenu2) ? <div >
+                                      Array.isArray(subMenu.subMenu2) ? <div key={index}>
                                       <li id="dropDownButton"
                                         onClick={() => {//open sub accordion menu
                                           handelSubMenuAccordion2(subMenu.menu);
                                         }}
                                         className={`${showText ? "" : `${mouseEnterInSIderber ? "" : "hidden"}`}`}
-                                        key={index}
+
                                       >
                                         <span
 
@@ -286,7 +286,7 @@ const Dashboard = () => {
                                   }
                                   )}
                                 </ul>
-                              </>
+                              </div>
                             ) : (//is there is no subAccordion menu then return li 
                               HaveAcces.includes(dropDownItems.access) && <li
                                 className={`${showText ? "" : `${mouseEnterInSIderber ? "" : "hidden"}`}`}

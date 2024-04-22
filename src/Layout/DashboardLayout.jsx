@@ -100,8 +100,8 @@ const DashboardLayout = () => {
 
         {/* outlet  */}
 
-        <div id="contentScrollber" className="max-h-[100vh] overflow-y-auto overflow-x-hidden">
-          <div className={`w-full ${navberType} top-0 z-50`}>
+        <div id="contentScrollber" className="max-h-[100vh] overflow-y-auto overflow-x-hidden rounded-t-md">
+          <div className={`w-full ${navberType} top-0 z-50 rounded-md`}>
              <Navbar />
           </div>
           <Outlet />
