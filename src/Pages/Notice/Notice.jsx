@@ -29,15 +29,15 @@ const Notice = () => {
           </span>
           <div className="p-4 text-justify">
             <p className="mb-1 text-justify">এই সফটওয়্যারটি Tiayra Laser & Aesthetic Center এর জন্য প্রস্তুতকৃত।{" "}</p>
-            <ul className="">
-              <li className="flex justify-between items-center -mb-3">
-                <p>ইনভয়েস</p><p className="min-w-fit bg-[#DFF7E9] text-[#3ECD7E] font-bold text-xs py-[2px] px-1 rounded">Unlimited</p>
+            <ul className=" flex flex-col gap-1">
+              <li className="flex justify-between items-center ">
+                <p className=" -mb-2">ইনভয়েস</p><p className="min-w-fit bg-[#DFF7E9] text-[#3ECD7E] font-bold text-xs py-[2px] px-1 rounded">Unlimited</p>
               </li>
-              <li className="flex justify-between items-center -mb-3">
-                <p>ইনভয়েস</p><p className="min-w-fit bg-[#DFF7E9] text-[#3ECD7E] font-bold text-xs py-[2px] px-1 rounded">Unlimited</p>
+              <li className="flex justify-between items-center ">
+                <p className=" -mb-2">ইনভয়েস</p><p className="min-w-fit bg-[#DFF7E9] text-[#3ECD7E] font-bold text-xs py-[2px] px-1 rounded">Unlimited</p>
               </li>
-              <li className="flex justify-between items-center -mb-3">
-                <p>ইনভয়েস</p><p className="min-w-fit bg-[#FCE5E6] text-[#EC6364] font-bold text-xs py-[2px] px-1 rounded">limited</p>
+              <li className="flex justify-between items-center ">
+                <p className=" -mb-2">ইনভয়েস</p><p className="min-w-fit bg-[#FCE5E6] text-[#EC6364] font-bold text-xs py-[2px] px-1 rounded">limited</p>
               </li>
             </ul>
           </div>
@@ -89,15 +89,15 @@ const Notice = () => {
           <div className="p-4">
             এই সফটওয়্যারটি Tiayra Laser & Aesthetic Center এর জন্য প্রস্তুতকৃত।{" "}
             <br />
-            <ul className="">
+            <ul className="flex flex-col gap-4">
               <li className="flex justify-between items-center -mb-3">
-                <p>ইনভয়েস</p><p className="min-w-fit bg-[#DFF7E9] text-[#3ECD7E] font-bold text-xs py-[2px] px-1 rounded">Unlimited</p>
+                <p className=" -mb-2">ইনভয়েস</p><p className="min-w-fit bg-[#DFF7E9] text-[#3ECD7E] font-bold text-xs py-[2px] px-1 rounded">Unlimited</p>
               </li>
               <li className="flex justify-between items-center -mb-3">
-                <p>ইনভয়েস</p><p className="min-w-fit bg-[#DFF7E9] text-[#3ECD7E] font-bold text-xs py-[2px] px-1 rounded">Unlimited</p>
+                <p className=" -mb-2">ইনভয়েস</p><p className="min-w-fit bg-[#DFF7E9] text-[#3ECD7E] font-bold text-xs py-[2px] px-1 rounded">Unlimited</p>
               </li>
               <li className="flex justify-between items-center -mb-3">
-                <p>ইনভয়েস</p><p className="min-w-fit bg-[#FCE5E6] text-[#EC6364] font-bold text-xs py-[2px] px-1 rounded">limited</p>
+                <p className=" -mb-2">ইনভয়েস</p><p className="min-w-fit bg-[#FCE5E6] text-[#EC6364] font-bold text-xs py-[2px] px-1 rounded">limited</p>
               </li>
             </ul>
 
