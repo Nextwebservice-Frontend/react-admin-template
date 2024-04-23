@@ -182,7 +182,7 @@ const Dashboard = () => {
                       >
                         <item.icon className={`text-xl`} />
                         {/* check show menu text or not // if true then mouse entered or not  */}
-                        <p className={` ${showText?'w-[200px]':mouseEnterInSIderber?'w-[200px]':''}`}>{showText ? item?.menu : `${mouseEnterInSIderber ? item?.menu : ""}`}</p>
+                        <p className={` ${showText?'w-[180px]':mouseEnterInSIderber?'w-[180px]':''}`}>{showText ? item?.menu : `${mouseEnterInSIderber ? item?.menu : ""}`}</p>
                       </span>
                       <IoIosArrowForward
                         className={`transition-all ${showText ? "" : `${mouseEnterInSIderber ? "" : "hidden"}`} text-[12px] ${openAccordion.show && openAccordion.name === item?.menu ? "rotate-[90deg]" : "rotate-[0deg]"}`}
