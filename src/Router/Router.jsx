@@ -20,6 +20,8 @@ import MonthlyInvoice from "../Pages/MonthlyInvoice/MonthlyInvoice";
 import ExpenseList from "../Pages/Expense/ExpenseList/ExpenseList";
 import DataTableSample from "../Components/Shared/DataTable/DataTableSample";
 import LeadDetails from "../Pages/LeadDetails/LeadDetails";
+import DropDownSearch from "../Components/DropDown/DropDownSearch";
+import DropDownNoSearch from "../Components/DropDownNoSearch/DropDownNoSearch";
 import NewRoleSample from "../Pages/NewRole/NewRoleSample";
 // import PrivetRoute from "../Security/PrivetRoute";
 
@@ -117,7 +119,15 @@ const Router = createBrowserRouter([
                 path: '/leadDetails',
                 element: <LeadDetails></LeadDetails>
             },
-            //23-04-24
+            //23-04-24 tahna
+            {
+                path: '/searchDropdown',
+                element: <DropDownSearch></DropDownSearch>
+            },
+            {
+                path: '/NoSerachDropdown',
+                element: <DropDownNoSearch></DropDownNoSearch>
+            },
             
         ]
     },

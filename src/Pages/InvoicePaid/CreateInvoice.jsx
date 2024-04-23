@@ -9,6 +9,7 @@ import { Dropdown } from "semantic-ui-react";
 import 'semantic-ui-css/semantic.min.css'
 import React from "react";
 import { Calendar } from 'primereact/calendar';
+import DropDownSearch from "../../Components/DropDown/DropDownSearch";
 const options = [
   { value: "chocolate", label: "Chocolate" },
   { value: "strawberry", label: "Strawberry" },
@@ -103,11 +104,7 @@ const CreateInvoice = () => {
                 selection
                 options={countryOptions}
               />
-              {/* <Select
-                defaultValue={selectedOption}
-                onChange={setSelectedOption}
-                options={options}
-              /> */}
+             
             </div>
             <div className="w-[50%]">
               <label htmlFor="" className="hover:outline-none hover:border-none text-black dark:text-white ">
@@ -121,6 +118,7 @@ const CreateInvoice = () => {
                 options={countryOptions}
               />
             </div>
+           
           </div>
 
           <div className="flex  my-2 justify-start mx-4 ">
