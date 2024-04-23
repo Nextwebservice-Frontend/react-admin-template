@@ -35,18 +35,18 @@ const NewRoleSample = () => {
                 <input
                     type="text"
                     name="role"
-                    className="border text-gray-900 text-sm rounded-sm block w-full p-4  focus:outline-none"
+                    className="border text-gray-900 text-xl px-3 rounded-sm block w-full h-14 dark:bg-gray-500 dark:text-white focus:outline-none"
                     placeholder="Enter Role"
                     required
                 />
 
                 <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-full">
-                        <div className="w-full">
-                            <div className="top_header_bg dark:bg-blue-600 py-3 px-2 w-full flex justify-between items-center">
+                        <div className="w-full mt-2 border dark:border-gray-500 rounded-md shadow-md">
+                            <div className="top_header_bg dark:bg-gray-500 py-3 px-2 w-full flex justify-between items-center">
                                 <h2 className="text-black -mb-1 text-xl font-semibold">User</h2>
                             <Checkbox onChange={e => setChecked(e.checked)} checked={checked}></Checkbox>
                             </div>
-                            <div className="grid grid-cols-2 gap-10">
+                            <div className="p-3 grid grid-cols-2 gap-10">
                                 {categories.map((category) => {
                                     return (
                                         <div key={category.key} className="flex align-items-center">
