@@ -8,7 +8,7 @@ import YearlyInvoice from "../Pages/Reports/YearlyInvoice/YearlyInvoice";
 import GeneralSetting from "../Pages/Settings/GeneralSetting/GeneralSetting";
 import ExpenseReceipt from "../Pages/ExpenseReceipt/ExpenseReceipt/ExpenseReceipt";
 import CategoryList from "../Pages/Expense/CategoryList/CategoryList";
-import NewRole from "../Pages/NewRole/NewRole";
+// import NewRole from "../Pages/NewRole/NewRole";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import TinyMCE from "../Components/dashboard/TinyMCE/TinyMCE";
 import RoleTable from "../Pages/Role/RoleTable";
