@@ -137,7 +137,7 @@ const TopMenu = () => {
                                                                         </span>
                                                                         <ul id="dropDowns2"
                                                                             // check is subaccordion menu open or not 
-                                                                            className={`absolute left-0 hidden overflow-hidden bg-white z-40 px-2 min-w-72`}
+                                                                            className={`absolute left-20 hidden overflow-hidden bg-white z-40 px-2 min-w-72`}
                                                                         >
                                                                             {/* map over all subAccordion menus  */}
                                                                             {dropDownItems.subMenu.map((subMenu, index) => {
@@ -150,10 +150,10 @@ const TopMenu = () => {
                                                                                     >
                                                                                         <span
 
-                                                                                            className={`my-[6px] ${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-2  font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
+                                                                                            className={`my-[6px] px-3 text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline transition-all py-2  font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                                                                                         >
                                                                                             <span
-                                                                                                className={`flex ${showText ? "justify-start" : "justify-start"} w-full items-center gap-1`}
+                                                                                                className={`flex justify-start w-full items-center gap-1`}
                                                                                             >
                                                                                                 <dropDownItems.icon className="text-[10px]" />
                                                                                                 {showText ? subMenu?.menu : `${mouseEnterInSIderber ? subMenu?.menu : ""}`}

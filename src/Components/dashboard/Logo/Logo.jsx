@@ -8,7 +8,7 @@ import Shortlogo from '../../../assets/Shortlogo.png'
 const Logo = ({ show, setShow }) => {
     const { showText, setShowText, mouseEnterInSIderber, setmouseEnterInSIderber } = useContext(ContextData)
     return (
-        <div className={`flex ${showText?'pl-2':`${mouseEnterInSIderber?'pl-2':'pl-2'}`} justify-between  items-center my-2 w-full pb-3`}>
+        <div className={`flex pl-[3px] min-h-[40px] justify-between  items-center my-2 w-full pb-3`}>
             <div className={`flex items-center gap-[6px] ${showText?'':`${mouseEnterInSIderber?"":"pl-1"}`}`}>
                 {
                     showText ? <img src={logo} alt="" /> : mouseEnterInSIderber ? <img src={logo} alt="" /> : <img className=" w-8" src={Shortlogo} alt="" />

@@ -137,7 +137,7 @@ const Dashboard = () => {
       className={`w-full mx-auto h-[100vh] overflow-y-scroll overflow-x-hidden z-[70]`}>
       {/* logo   */}
       <div id="sideberScrollber"
-        className={`box-border overflow-x-hidden pb-4 w-[calc(100% - 2px)] ${showText ? 'px-2' : mouseEnterInSIderber ? 'px-2' : 'px-4'} `}>
+        className={`box-border overflow-x-hidden pb-4 w-[calc(100% - 2px)] ${showText ? 'px-2' : mouseEnterInSIderber ? 'px-2' : 'px-2'} `}>
         <Logo show={show} setShow={setShow} />
         {/* map over all the menu group  */}
         {sideBerlink.map((item, index) => (
@@ -145,11 +145,11 @@ const Dashboard = () => {
             {/* check is there any title for this menu group or not */}
             {item?.title && (
               <p
-                className={`font-medium uppercase ${showText ? 'block' : mouseEnterInSIderber ? 'block' : 'hidden'} opacity-85 text-xs pt-3 pb-1 pl-2 text-gray-500 dark:text-gray-300`}>
+                className={`font-medium uppercase  opacity-85 text-xs pt-3 pb-1 pl-2 text-gray-500 dark:text-gray-300`}>
                 {/* check show menu text or not // if true then mouse entered or not  */}
                 {showText
                   ? item?.title
-                  : `${mouseEnterInSIderber ? item?.title : ""}`}
+                  : `${mouseEnterInSIderber ? item?.title : "__"}`}
               </p>
             )}
             {Array.isArray(item?.NavItems) &&
@@ -158,11 +158,11 @@ const Dashboard = () => {
                   HaveAcces.includes(item.access) && <NavLink
                     key={index}
                     to={item.link}
-                    className={`my-[6px] text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 ${showText ? 'px-3' : mouseEnterInSIderber ? "px-3 justify-start" : 'justify-center'} text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[8px]  font-medium opacity-80  flex  items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
+                    className={`my-[6px] text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 ${showText ? 'px-3' : mouseEnterInSIderber ? "px-3 justify-start " : 'justify-center max-w-[40px]'} text-gray-600 dark:text-gray-100 hover:no-underline px-3 transition-all py-[8px]  font-medium opacity-80  flex  items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                   >
-                    <item.icon className={`text-xl`} />
+                    <item.icon className={`text-xl min-w-[20px] my-[2px]`} />
                     {/* check show menu text or not if true then mouse entered or not */}
-                    {showText ? item?.menu : `${mouseEnterInSIderber ? item?.menu : ""}`}
+                    <p className={` ${showText?'w-[180px]':mouseEnterInSIderber?'w-[180px]':'hidden '}`}>{showText ? item?.menu : `${mouseEnterInSIderber ? item?.menu : ""}`}</p>
                   </NavLink>
                 ) : (
                   // dropdown menus
@@ -172,20 +172,19 @@ const Dashboard = () => {
                   >
                     <li id="dropDownButton"
                       //accordion open function call
-                      //accordion open function call
                       onClick={() => HandelAccorDionOpen(item?.menu)}
-                      className={`${showText ? 'px-3 justify-between' : mouseEnterInSIderber ? "px-3 justify-between" : 'justify-center'} text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[8px]  font-semibold opacity-80 flex  items-center gap-2 hover:bg-gray-200 rounded-md my-[2px]`}
+                      className={`${showText ? 'px-3 justify-between' : mouseEnterInSIderber ? "px-3" : 'ml-[6px]'} justify-between text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[8px]  font-semibold opacity-80 flex  items-center gap-2 hover:bg-gray-200 rounded-md my-[2px]  relative`}
 
                     >
                       <span
-                        className={`flex ${showText ? "justify-start" : "justify-start"} items-center gap-1`}
+                        className={`flex ${showText ? "justify-start" : "justify-start"}  gap-1 relative`}
                       >
-                        <item.icon className={`text-xl`} />
+                        <item.icon className={`text-xl min-w-[20px] my-[2px]`} />
                         {/* check show menu text or not // if true then mouse entered or not  */}
                         <p className={` ${showText?'w-[180px]':mouseEnterInSIderber?'w-[180px]':''}`}>{showText ? item?.menu : `${mouseEnterInSIderber ? item?.menu : ""}`}</p>
                       </span>
                       <IoIosArrowForward
-                        className={`transition-all ${showText ? "" : `${mouseEnterInSIderber ? "" : "hidden"}`} text-[12px] ${openAccordion.show && openAccordion.name === item?.menu ? "rotate-[90deg]" : "rotate-[0deg]"}`}
+                        className={`transition-all absolute left-[220px] top-[50%] translate-y-[-50%] ${showText ? "" : `${mouseEnterInSIderber ? "" : "hidden"}`} text-[12px] ${openAccordion.show && openAccordion.name === item?.menu ? "rotate-[90deg]" : "rotate-[0deg]"}`}
                       />
                     </li>
                     <ul id="dropDowns"

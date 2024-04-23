@@ -44,10 +44,10 @@
 }
 #dBoardSideber .active {
   /* background: #7367F0;  */
-  background: -webkit-linear-gradient(left, #4b3bfa, #aaa3f6); 
-  background: -o-linear-gradient(right, #4b3bfa, #aaa3f6); 
-  background: -moz-linear-gradient(right, #4b3bfa, #aaa3f6);
-  background: linear-gradient(to right, #4b3bfa, #aaa3f6);
+  background: -webkit-linear-gradient(left, #4b3bfa, #978ff1); 
+  background: -o-linear-gradient(right, #4b3bfa, #978ff1); 
+  background: -moz-linear-gradient(right, #4b3bfa, #978ff1);
+  background: linear-gradient(to right, #4b3bfa, #978ff1);
   color: #FFF;
   text-decoration: none;
 }
@@ -156,12 +156,10 @@ animation: ThemeChangerTogglerClose 1s;
   top: 38px;
   display: block;
 }
-#dropDownButton:hover #dropDowns2{
-  animation: HoverAnimation 1s;
-  top: 38px;
-  display: block;
+#dropDownButton2:hover #dropDowns2{
+
 }
-/* animations  */
+
 @keyframes HoverAnimation {
   from {
     /* top: -999px; */
