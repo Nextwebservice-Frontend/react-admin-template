@@ -63,7 +63,7 @@ const TopMenu = () => {
 
                 {/* logo   */}
                 <div id="sideberScrollber"
-                    className={` flex justify-start items-center z-[70] bg-white  rounded`}>
+                    className={` flex justify-start items-center z-[70] bg-white py-2 rounded`}>
                     {/* map over all the menu group  */}
                     {sideBerlink.map((item, index) => (
                         <div className="flex justify-center items-center " key={index}>
