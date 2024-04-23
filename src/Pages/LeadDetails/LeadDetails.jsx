@@ -21,7 +21,7 @@ const countryOptions = [
 
 const LeadDetails = () => {
   return (
-    <div className="mb-16">
+    <div className="mb-16 dark:text-white">
       <h1 className=" py-4 w-full mx-auto  text-3xl dark:text-white text-black ">
         Personal Profile
       </h1>
@@ -71,19 +71,19 @@ const LeadDetails = () => {
 
             <div className=" pr-2 pl-4 mt-5">
               <p className="text-xl flex justify-start gap-2  m-0">
-                <span className=" text-xl text-black font-bold ">Email : </span>
+                <span className=" text-xl  font-bold ">Email : </span>
                 uttara@gmail.com
               </p>
               <p className="text-xl flex items-start justify-start gap-2 m-0">
-                <span className=" font-bold text-black">Mobile : </span>
+                <span className=" font-bold">Mobile : </span>
                 01200000000
               </p>
               <p className="text-xl flex items-start justify-start gap-2 m-0">
-                <span className=" font-bold text-black">Telephone : </span>
+                <span className=" font-bold">Telephone : </span>
                 uttara@gmail.com
               </p>
               <p className="text-xl flex  justify-start gap-2 m-0">
-                <span className=" font-bold text-black w-[18%]">
+                <span className=" font-bold w-[18%]">
                   Address :{" "}
                 </span>
                 <span className="text-lg w-[80%]">
@@ -92,14 +92,14 @@ const LeadDetails = () => {
                 </span>
               </p>
               <p className="text-xl flex items-start justify-start gap-2 m-0">
-                <span className=" font-bold text-black">District : </span>
+                <span className=" font-bold">District : </span>
                 Chittagong
               </p>
               <p className="text-xl flex items-start justify-start gap-2 m-0">
-                <span className=" font-bold text-black">Interest : </span>40%
+                <span className=" font-bold">Interest : </span>40%
               </p>
               <p className="text-xl flex items-start justify-start gap-2 m-0">
-                <span className="font-bold  text-black">Google Map : </span>Map
+                <span className="font-bold ">Google Map : </span>Map
                 Link
               </p>
             </div>
@@ -132,8 +132,8 @@ const LeadDetails = () => {
                       " rounded-sm py-2 font-semibold leading-5 m-2 p-2",
                       " focus:outline-none",
                       selected
-                        ? "bg-primary3 text-primary4 bg-blue-500 text-white "
-                        : " hover:bg-white/[0.12] hover:text-gray-500  "
+                        ? "bg-blue-500 text-white w-24"
+                        : " hover:bg-white/[0.12] hover:text-gray-500 dark:hover:bg-blue-500 dark:hover:text-white w-24"
                     )
                   }
                 >
@@ -145,8 +145,8 @@ const LeadDetails = () => {
                       " rounded-sm py-2 font-semibold leading-5 m-2",
                       " focus:outline-none",
                       selected
-                        ? "bg-primary3 text-primary4 bg-blue-500 text-white p-2"
-                        : "hover:bg-white/[0.12] hover:text-gray-500"
+                      ? "bg-blue-500 text-white w-24"
+                      : " hover:bg-white/[0.12] hover:text-gray-500 dark:hover:bg-blue-500 dark:hover:text-white w-24"
                     )
                   }
                 >
@@ -158,8 +158,8 @@ const LeadDetails = () => {
                       " rounded-sm py-2 font-semibold leading-5 m-2",
                       " focus:outline-none",
                       selected
-                        ? "bg-primary3 text-primary4 bg-blue-500 text-white p-2"
-                        : "hover:bg-white/[0.12] hover:text-gray-500"
+                      ? "bg-blue-500 text-white w-24"
+                      : " hover:bg-white/[0.12] hover:text-gray-500 dark:hover:bg-blue-500 dark:hover:text-white w-24"
                     )
                   }
                 >
@@ -171,8 +171,8 @@ const LeadDetails = () => {
                       " rounded-sm py-2 font-semibold leading-5 m-2",
                       " focus:outline-none",
                       selected
-                        ? "bg-primary3 text-primary4 bg-blue-500 text-white p-2"
-                        : "hover:bg-white/[0.12] hover:text-gray-500"
+                      ? "bg-blue-500 text-white w-24"
+                      : " hover:bg-white/[0.12] hover:text-gray-500 dark:hover:bg-blue-500 dark:hover:text-white w-24"
                     )
                   }
                 >
@@ -249,7 +249,7 @@ const LeadDetails = () => {
                 </Tab.Panel>
                 <Tab.Panel
                   className={classNames(
-                    "rounded-sm border border-primary3 ",
+                    "rounded-sm border dark:border-gray-400 border-primary3 ",
                     "ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
                   )}
                 >
@@ -258,17 +258,16 @@ const LeadDetails = () => {
                     className="border dark:border-none rounded-md dark:bg-[#2F3349] p-4"
                   >
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-none  mb-4 w-full">
-                      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-gray-600 border mb-4 w-full ">
-                        <div className="flex  w-ful">
+                      <div className="flex bg-blue-200 dark:bg-gray-600 flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-gray-600 border mb-4 w-full ">
+                        <div className="flex  w-ful ">
                           {/* <button className='btn rounded-none border-none bg-success text-white hover:bg-green-600 '>ALL(1)</button> */}
                           <Btn text="All" />
-                          <button className="btn rounded-none border-none text-blue-600 bg-[#f7f7f7] hover:bg-green-600 dark:hover:bg-green-600 hover:text-white dark:bg-gray-600 dark:text-white">
+                          <button className="btn rounded-none border-none text-blue-600 bg-blue-200 hover:bg-green-600 dark:hover:bg-green-600 hover:text-white dark:bg-gray-600 dark:text-white">
                             Active(1)
                           </button>
-                          <button className="btn rounded-none border-none text-blue-600 bg-[#f7f7f7] hover:bg-green-600  dark:hover:bg-green-600  hover:text-white dark:bg-gray-600 dark:text-white dar">
+                          <button className="btn rounded-none border-none text-blue-600 bg-blue-200 hover:bg-green-600  dark:hover:bg-green-600  hover:text-white dark:bg-gray-600 dark:text-white dar">
                             Inactive(0)
                           </button>
-                          <button className="w-[100%]  bg-[#f7f7f7] dark:bg-base-100 "></button>
                         </div>
 
                         <CategoryModal></CategoryModal>
@@ -279,7 +278,7 @@ const LeadDetails = () => {
                       <table className="table border dark:border-gray-600">
                         {/* head */}
                         <thead>
-                          <tr className="uppercase text-center font-bold text-black bg-[#F2F2F2] dark:bg-gray-500 dark:border-gray-600  text-lg dark:text-white">
+                          <tr className="uppercase text-center font-bold text-black bg-blue-200 dark:bg-gray-500 dark:border-gray-600  text-lg dark:text-white">
                             <th className=" ">Name</th>
                             <th className="border dark:border-gray-600">
                               status
@@ -317,7 +316,7 @@ const LeadDetails = () => {
                 </Tab.Panel>
                 <Tab.Panel
                   className={classNames(
-                    "rounded-sm border border-primary3 ",
+                    "rounded-sm border dark:border-gray-400 border-primary3 ",
                     "ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
                   )}
                 >
@@ -326,17 +325,16 @@ const LeadDetails = () => {
                     className="border dark:border-none rounded-md dark:bg-[#2F3349] p-4"
                   >
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-none  mb-4 w-full">
-                      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-gray-600 border mb-4 w-full ">
-                        <div className="flex  w-ful">
+                      <div className="flex bg-blue-200 dark:bg-gray-600 flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-gray-600 border mb-4 w-full ">
+                        <div className="flex  w-ful ">
                           {/* <button className='btn rounded-none border-none bg-success text-white hover:bg-green-600 '>ALL(1)</button> */}
                           <Btn text="All" />
-                          <button className="btn rounded-none border-none text-blue-600 bg-[#f7f7f7] hover:bg-green-600 dark:hover:bg-green-600 hover:text-white dark:bg-gray-600 dark:text-white">
+                          <button className="btn rounded-none border-none text-blue-600 bg-blue-200 hover:bg-green-600 dark:hover:bg-green-600 hover:text-white dark:bg-gray-600 dark:text-white">
                             Active(1)
                           </button>
-                          <button className="btn rounded-none border-none text-blue-600 bg-[#f7f7f7] hover:bg-green-600  dark:hover:bg-green-600  hover:text-white dark:bg-gray-600 dark:text-white dar">
+                          <button className="btn rounded-none border-none text-blue-600 bg-blue-200 hover:bg-green-600  dark:hover:bg-green-600  hover:text-white dark:bg-gray-600 dark:text-white dar">
                             Inactive(0)
                           </button>
-                          <button className="w-[100%]  bg-[#f7f7f7] dark:bg-base-100 "></button>
                         </div>
 
                         <CategoryModal></CategoryModal>
@@ -347,7 +345,7 @@ const LeadDetails = () => {
                       <table className="table border dark:border-gray-600">
                         {/* head */}
                         <thead>
-                          <tr className="uppercase text-center font-bold text-black bg-[#F2F2F2] dark:bg-gray-500 dark:border-gray-600  text-lg dark:text-white">
+                          <tr className="uppercase text-center font-bold text-black bg-blue-200 dark:bg-gray-500 dark:border-gray-600  text-lg dark:text-white">
                             <th className=" ">Name</th>
                             <th className="border dark:border-gray-600">
                               status
@@ -385,7 +383,7 @@ const LeadDetails = () => {
                 </Tab.Panel>
                 <Tab.Panel
                   className={classNames(
-                    "rounded-sm border border-primary3 ",
+                    "rounded-sm border dark:border-gray-400 border-primary3 ",
                     "ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
                   )}
                 >
@@ -394,17 +392,16 @@ const LeadDetails = () => {
                     className="border dark:border-none rounded-md dark:bg-[#2F3349] p-4"
                   >
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-none  mb-4 w-full">
-                      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-gray-600 border mb-4 w-full ">
-                        <div className="flex  w-ful">
+                      <div className="flex bg-blue-200 dark:bg-gray-600 flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 dark:border-gray-600 border mb-4 w-full ">
+                        <div className="flex  w-ful ">
                           {/* <button className='btn rounded-none border-none bg-success text-white hover:bg-green-600 '>ALL(1)</button> */}
                           <Btn text="All" />
-                          <button className="btn rounded-none border-none text-blue-600 bg-[#f7f7f7] hover:bg-green-600 dark:hover:bg-green-600 hover:text-white dark:bg-gray-600 dark:text-white">
+                          <button className="btn rounded-none border-none text-blue-600 bg-blue-200 hover:bg-green-600 dark:hover:bg-green-600 hover:text-white dark:bg-gray-600 dark:text-white">
                             Active(1)
                           </button>
-                          <button className="btn rounded-none border-none text-blue-600 bg-[#f7f7f7] hover:bg-green-600  dark:hover:bg-green-600  hover:text-white dark:bg-gray-600 dark:text-white dar">
+                          <button className="btn rounded-none border-none text-blue-600 bg-blue-200 hover:bg-green-600  dark:hover:bg-green-600  hover:text-white dark:bg-gray-600 dark:text-white dar">
                             Inactive(0)
                           </button>
-                          <button className="w-[100%]  bg-[#f7f7f7] dark:bg-base-100 "></button>
                         </div>
 
                         <CategoryModal></CategoryModal>
@@ -415,7 +412,7 @@ const LeadDetails = () => {
                       <table className="table border dark:border-gray-600">
                         {/* head */}
                         <thead>
-                          <tr className="uppercase text-center font-bold text-black bg-[#F2F2F2] dark:bg-gray-500 dark:border-gray-600  text-lg dark:text-white">
+                          <tr className="uppercase text-center font-bold text-black bg-blue-200 dark:bg-gray-500 dark:border-gray-600  text-lg dark:text-white">
                             <th className=" ">Name</th>
                             <th className="border dark:border-gray-600">
                               status
