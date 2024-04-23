@@ -151,13 +151,7 @@ export const SIderberNavLinks = [
                         access: 'Collapsed-menu',
                         subMenu: false
                     },
-                    {
-                        link: '/createInvoice',
-                        menu: 'Create Invoice',
-                        icon: FaRegCircle,
-                        access: 'Collapsed-menu',
-                        subMenu: false
-                    },
+                  
                   
                 ]
             },   
@@ -408,6 +402,30 @@ export const SIderberNavLinksbl = [
                         access: 'Collapsed-menu',
                         subMenu: false
                     },
+                    {
+                        link: '/createInvoice',
+                        menu: 'চালান তৈরি করুন',
+                        icon: FaRegCircle,
+                        access: 'Collapsed-menu',
+                        subMenu: false
+                    },
+                  
+                ]
+            },   
+            {
+                link: false,
+                menu: 'প্রোফাইল',
+                access: 'Collapsed-menu',
+                icon: RiPagesLine ,
+                dropDown: [
+                    {
+                        link: '/leadDetails',
+                        menu: 'লিড প্রোফাইল',
+                        icon: FaRegCircle,
+                        access: 'Collapsed-menu',
+                        subMenu: false
+                    },
+                   
                   
                 ]
             },   

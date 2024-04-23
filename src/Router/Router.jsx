@@ -117,6 +117,7 @@ const Router = createBrowserRouter([
                 path: '/leadDetails',
                 element: <LeadDetails></LeadDetails>
             },
+           
         ]
     },
     {
