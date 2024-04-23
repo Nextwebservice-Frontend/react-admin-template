@@ -5,6 +5,7 @@ import Title from "../../Utility/TItle/Title";
 import { Checkbox } from "primereact/checkbox";
 
 const NewRoleSample = () => {
+    const [checked, setChecked] = useState(false);
     const categories = [
         { name: 'Accounting', key: 'A' },
         { name: 'Marketing', key: 'M' },
@@ -25,11 +26,11 @@ const NewRoleSample = () => {
     };
 
     return (
-        <div>
+        <div className="dark:text-white">
             <Title title="New Role" />
-            <form className="border p-3">
+            <form className="border dark:border-gray-400 p-3">
                 <label className="text-sm font-semibold">
-                    Role Name <span className="text-red-500">(required)</span>
+                    Role Name <span className="text-red-500 dark:text-red-300">(required)</span>
                 </label>
                 <input
                     type="text"
@@ -39,11 +40,13 @@ const NewRoleSample = () => {
                     required
                 />
 
-                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                    <div className="p-2 grid grid-cols-2">
+                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-full">
                         <div className="w-full">
-                            <h2 className="bg-gray-800 text-white text-xl font-semibold p-2 w-full">User</h2>
-                            <div className="grid grid-cols-2 gap-10 justify-center items-center ">
+                            <div className="top_header_bg dark:bg-blue-600 py-3 px-2 w-full flex justify-between items-center">
+                                <h2 className="text-black -mb-1 text-xl font-semibold">User</h2>
+                            <Checkbox onChange={e => setChecked(e.checked)} checked={checked}></Checkbox>
+                            </div>
+                            <div className="grid grid-cols-2 gap-10">
                                 {categories.map((category) => {
                                     return (
                                         <div key={category.key} className="flex align-items-center">
@@ -56,7 +59,6 @@ const NewRoleSample = () => {
                                 })}
                             </div>
                         </div>
-                    </div>
                 </section>
             </form>
         </div>
