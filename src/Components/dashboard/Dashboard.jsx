@@ -134,10 +134,10 @@ const Dashboard = () => {
   return (
     <div
       id="dBoardSideber"
-      className={`w-full mx-auto h-[100vh] overflow-y-scroll z-[70]`}>
+      className={`w-full mx-auto h-[100vh] overflow-y-scroll overflow-x-hidden z-[70]`}>
       {/* logo   */}
       <div id="sideberScrollber"
-        className={`box-border  pb-4 w-[calc(100% - 2px)] ${showText ? 'px-2' : mouseEnterInSIderber ? 'px-2' : 'px-4'} `}>
+        className={`box-border overflow-x-hidden pb-4 w-[calc(100% - 2px)] ${showText ? 'px-2' : mouseEnterInSIderber ? 'px-2' : 'px-4'} `}>
         <Logo show={show} setShow={setShow} />
         {/* map over all the menu group  */}
         {sideBerlink.map((item, index) => (
@@ -182,7 +182,7 @@ const Dashboard = () => {
                       >
                         <item.icon className={`text-xl`} />
                         {/* check show menu text or not // if true then mouse entered or not  */}
-                        {showText ? item?.menu : `${mouseEnterInSIderber ? item?.menu : ""}`}
+                        <p className={` ${showText?'w-[200px]':mouseEnterInSIderber?'w-[200px]':''}`}>{showText ? item?.menu : `${mouseEnterInSIderber ? item?.menu : ""}`}</p>
                       </span>
                       <IoIosArrowForward
                         className={`transition-all ${showText ? "" : `${mouseEnterInSIderber ? "" : "hidden"}`} text-[12px] ${openAccordion.show && openAccordion.name === item?.menu ? "rotate-[90deg]" : "rotate-[0deg]"}`}
