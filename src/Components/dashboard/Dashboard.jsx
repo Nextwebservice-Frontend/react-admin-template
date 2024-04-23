@@ -145,7 +145,7 @@ const Dashboard = () => {
             {/* check is there any title for this menu group or not */}
             {item?.title && (
               <p
-                className={`font-medium uppercase  opacity-85 text-xs pt-3 pb-1 pl-2 text-gray-500 dark:text-gray-300`}>
+                className={`font-medium uppercase  opacity-85 text-xs pt-3 pb-1 pl-3 text-gray-500 dark:text-gray-300`}>
                 {/* check show menu text or not // if true then mouse entered or not  */}
                 {showText
                   ? item?.title
@@ -177,7 +177,7 @@ const Dashboard = () => {
 
                     >
                       <span
-                        className={`flex ${showText ? "justify-start" : "justify-start"}  gap-1 relative`}
+                        className={`flex justify-start gap-1 relative`}
                       >
                         <item.icon className={`text-xl min-w-[20px] my-[2px]`} />
                         {/* check show menu text or not // if true then mouse entered or not  */}
