@@ -35,8 +35,6 @@
   animation: NavberwidhtAnimationOpen 1s;
 }
 
-
-
 .accordionOpen {
   animation: accordionopen 2s;
 }
@@ -46,10 +44,10 @@
 }
 #dBoardSideber .active {
   /* background: #7367F0;  */
-  background: -webkit-linear-gradient(left, #4b3bfa, #aaa3f6); 
-  background: -o-linear-gradient(right, #4b3bfa, #aaa3f6); 
-  background: -moz-linear-gradient(right, #4b3bfa, #aaa3f6);
-  background: linear-gradient(to right, #4b3bfa, #aaa3f6);
+  background: -webkit-linear-gradient(left, #4b3bfa, #978ff1); 
+  background: -o-linear-gradient(right, #4b3bfa, #978ff1); 
+  background: -moz-linear-gradient(right, #4b3bfa, #978ff1);
+  background: linear-gradient(to right, #4b3bfa, #978ff1);
   color: #FFF;
   text-decoration: none;
 }
@@ -147,7 +145,44 @@ animation: ThemeChangerTogglerClose 1s;
 .ThemeChangerTogglerOpen{
   animation: ThemeChangerTogglerOpen .5s;
 }
-/* animations  */
+#dropDowns {
+  transition: .5s ease all;
+}
+#dropDowns2 {
+  transition: .5s ease all;
+}
+#dropDownButton:hover #dropDowns{
+  animation: HoverAnimation 1s;
+  top: 38px;
+  display: block;
+  z-index: 1000;
+}
+#dropDownButton2:hover #dropDowns2{
+  animation: HoverAnimation 1s;
+  top: 0px;
+  display: block;
+  z-index: 1000;
+}
+#dropDownButton3:hover #dropDowns3{
+  animation: HoverAnimation 1s;
+  top: 0px;
+  display: block;
+  z-index: 1000;
+}
+
+@keyframes HoverAnimation {
+  from {
+    /* top: -999px; */
+    opacity: 0;
+    max-height: 0px;
+  }
+
+  to {
+    opacity: 1;
+    max-height: 700px;
+  }
+}
+
 /* accordionOpen animations */
 @keyframes ThemeChangerTogglerOpen {
   from {

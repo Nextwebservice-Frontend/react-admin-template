@@ -32,6 +32,7 @@ const Navbar = () => {
     showSearchOption,
     setshowSearchOption,
     theme,
+    setShowTopMenu
   } = useContext(ContextData);
   //open search option
   const handelOpenSearchInput = () => {
@@ -61,6 +62,7 @@ const Navbar = () => {
         <div className="flex justify-start items-center gap-4">
           <IoIosMenu
             onClick={() => {
+              setShowTopMenu(false)
               setShow(true);
               setShowText(true);
             }}

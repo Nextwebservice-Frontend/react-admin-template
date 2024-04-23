@@ -45,6 +45,8 @@ const ContextProviders = ({ children }) => {
     const [themeChangerOpen, setThemeChangerOpen] = useState(false)
     const [navberType, setNavberType] = useState('sticky');
     const [Content, setContent] = useState(false)
+    // menu style 
+    const [showTopMenu,setShowTopMenu]=useState(false)
     // context data
     const sharedData = {
         //open sideber in tab or mobile
@@ -99,8 +101,12 @@ const ContextProviders = ({ children }) => {
         language,
         //semidark
         setLanguage,
+        //semi dark theme
         semiDark,
-        setSemidark
+        setSemidark,
+        //show top menu
+        showTopMenu,
+        setShowTopMenu
     }
     return (
         <ContextData.Provider value={sharedData}>
