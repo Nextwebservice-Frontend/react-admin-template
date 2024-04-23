@@ -508,7 +508,7 @@ export const SIderberNavLinksbl = [
                             },
                             {
                                 link: '/btn',
-                                menu: 'Demo submenu',
+                                menu: 'ডেমো সাবমেনু',
                                 icon: FaRegCircle,
                                 access: 'Dashboard',
                                 subMenu2: false

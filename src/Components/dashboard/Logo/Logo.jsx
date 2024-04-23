@@ -9,7 +9,7 @@ const Logo = ({ show, setShow }) => {
     const { showText, setShowText, mouseEnterInSIderber, setmouseEnterInSIderber } = useContext(ContextData)
     return (
         <div className={`flex pl-[3px] min-h-[40px] justify-between  items-center my-2 w-full pb-3`}>
-            <div className={`flex items-center gap-[6px] ${showText?'':`${mouseEnterInSIderber?"":"pl-1"}`}`}>
+            <div className={`flex items-center gap-[6px] ${showText ? '' : `${mouseEnterInSIderber ? "" : "pl-1"}`}`}>
                 {
                     showText ? <img src={logo} alt="" /> : mouseEnterInSIderber ? <img src={logo} alt="" /> : <img className=" w-8" src={Shortlogo} alt="" />
                 }
@@ -23,7 +23,10 @@ const Logo = ({ show, setShow }) => {
                 }
             </button>
             <button
-                onClick={() => setShow(!show)}
+                onClick={() => {
+                    setShow(!show)
+                }
+                }
                 className=" mt-2 cursor-pointer text-xl rounded-full block lg:hidden"
             >
                 <RxCross2 />

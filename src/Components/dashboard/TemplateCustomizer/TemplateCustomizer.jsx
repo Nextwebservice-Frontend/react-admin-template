@@ -16,6 +16,7 @@ import StaticNav from '../../../assets/static.svg';
 import HiddenNav from '../../../assets/hidden.svg';
 import Compact from '../../../assets/compact.svg';
 import Wide from '../../../assets/wide.svg';
+import TopMenu from '../../../assets/horizontal-fixed.svg';
 import { useContext, useEffect, useState } from "react";
 import { ContextData } from "../../../Providers/ContextProviders/ContextProviders";
 
@@ -28,14 +29,16 @@ const TemplateCustomizer = () => {
         setNavberType,
         setShowText,
         setContent,
-        setSemidark
+        setSemidark,
+        setShowTopMenu
     } = useContext(ContextData)
     const [ThemeChangeData, setThemeChangeData] = useState({
         theme: '',
         navberType: '',
         showText: true,
         Content: false,
-        semiDark: false
+        semiDark: false,
+        showTopMenu: false
     })
     const [themeChack, setthemeChack] = useState(window.matchMedia('(prefers-color-scheme: dark)'))
     useEffect(() => {
@@ -48,6 +51,7 @@ const TemplateCustomizer = () => {
         setContent(ThemeChangeData.Content)
         setTheme(ThemeChangeData.theme)
         setSemidark(ThemeChangeData.semiDark)
+        setShowTopMenu(ThemeChangeData.showTopMenu)
     }
     const resetChanges = () => {
         setNavberType('sticky')
@@ -55,6 +59,7 @@ const TemplateCustomizer = () => {
         setContent(false)
         setTheme('system')
         setSemidark(false)
+        setShowTopMenu(false)
     }
     return (
         <div id="themeChangerParent" style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 3px 2px' }} className={`sm:w-[400px] w-[300px] top-0 ${themeChangerOpen ? 'right-0 ThemeChangerOpen' : '-right-[400px] ThemeChangerClose'} themeChanger h-screen min-h-screen  bg-white absolute z-[60] dark:bg-[#2F3349] dark:text-gray-300`}>
@@ -151,8 +156,8 @@ const TemplateCustomizer = () => {
                 <hr className="w-full  my-6 mb-2" />
                 <div className="px-[26px]">
                     <button className="button">Layout</button>
-                    <h5 className="py-0 my-0 mt-1 mb-1 dark:text-gray-300">Menu (Navigation)</h5>
-                    <span className="grid grid-cols-3 gap-6 pt-2">
+                    <h5 className="py-0 my-0 mt-1 mb-1 lg:block hidden dark:text-gray-300">Menu (Navigation)</h5>
+                    <span className="lg:grid hidden grid-cols-3 gap-6 pt-2 ">
                         <span onClick={() => {
                             setThemeChangeData({
                                 ...ThemeChangeData,
@@ -176,6 +181,33 @@ const TemplateCustomizer = () => {
                                 <img src={theme === 'dark' || themeChack.matches ? Collapsed_dark : Collapsed} className=" rounded-md w-full" />
                             </div>
                             Collapsed
+                        </span>
+                    </span>
+                    <h5 className="py-0 my-0 mt-3 mb-1 dark:text-gray-300 lg:block hidden">Menu (Style)</h5>
+                    <span className="lg:grid hidden grid-cols-3 gap-6 pt-2">
+                        <span onClick={() => {
+                            setThemeChangeData({
+                                ...ThemeChangeData,
+                                showTopMenu: true
+                            })
+                            // setShowText(true)
+                        }} className="cursor-pointer">
+                            <div className={`border rounded-md ${ThemeChangeData.showTopMenu ? 'border-[#8E85F3]' : ''} mb-[2px]`}>
+                                <img src={theme === 'dark' || themeChack.matches ? TopMenu : TopMenu} className=" rounded-md w-full" />
+                            </div>
+                            Top menu
+                        </span>
+                        <span onClick={() => {
+                            setThemeChangeData({
+                                ...ThemeChangeData,
+                                showTopMenu: false
+                            })
+                            // setShowText(false)
+                        }} className="cursor-pointer">
+                            <div className={`border ${ThemeChangeData.showTopMenu ? '' : 'border-[#8E85F3] '} rounded-md mb-[2px]`}>
+                                <img src={theme === 'dark' || themeChack.matches ? Expanded_dark : Expanded_dark} className=" rounded-md w-full" />
+                            </div>
+                            Sideber
                         </span>
                     </span>
                     <h5 className="py-0 my-0 mt-4 mb-1 dark:text-gray-300">Navbar Type  </h5>

@@ -59,7 +59,7 @@ const TopMenu = () => {
     return (
         <div
             id="dBoardSideber"
-            className={` z-[70]`}>
+            className={` z-[70] xl:block hidden`}>
 
                 {/* logo   */}
                 <div id="sideberScrollber"
