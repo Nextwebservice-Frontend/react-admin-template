@@ -145,7 +145,7 @@ const Dashboard = () => {
             {/* check is there any title for this menu group or not */}
             {item?.title && (
               <p
-                className={`font-medium uppercase  opacity-85 text-xs pt-3 pb-1 pl-4 text-gray-500 dark:text-gray-300`}>
+                className={`font-medium uppercase  opacity-85 text-xs pt-3 pb-1 pl-3 text-gray-500 dark:text-gray-300`}>
                 {/* check show menu text or not // if true then mouse entered or not  */}
                 {showText
                   ? item?.title
@@ -259,9 +259,7 @@ const Dashboard = () => {
                                             className={`${showText ? "" : `${mouseEnterInSIderber ? "" : "hidden"}`}`}
                                             key={index}
                                           >
-                                            <Na
-                                            vLink
-
+                                            <NavLink
                                               to={subMenu2.link}
                                               className={`${showText ? 'px-3' : mouseEnterInSIderber ? "px-3" : ''} my-[6px] text-[15px] hover:pl-4 hover:text-rose-500 dark:hover:text-rose-500 text-gray-600 dark:text-gray-100 hover:no-underline px-1 transition-all py-[8px]  font-semibold opacity-80 flex justify-start items-center gap-2 hover:bg-gray-200 rounded-md tracking-wide`}
                                             >
