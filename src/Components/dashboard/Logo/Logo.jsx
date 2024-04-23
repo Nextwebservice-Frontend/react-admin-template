@@ -17,7 +17,7 @@ const Logo = ({ show, setShow }) => {
             <button onClick={() => {
                 setShowText(!showText)
                 setmouseEnterInSIderber(false)
-            }} className={`text-xl  ${!mouseEnterInSIderber && !showText ? 'hidden' : 'lg:block hidden'} mt-2 ml-2`}>
+            }} className={`text-xl  ${!mouseEnterInSIderber && !showText ? 'hidden' : 'lg:block hidden'} mt-2 dark:text-white ml-2`}>
                 {
                     showText ? <FaRegCircle /> : <FaRegDotCircle />
                 }
