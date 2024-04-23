@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "../../Reports/YearlyInvoice/CSS/TableTanStackCss.css";
 import { IoIosImages } from "react-icons/io";
 import InvoiceTerms from "./InvoiceTerm/InvoiceTerms";
+import TinyMCE2 from "../TinyMCE2";
 
 const GeneralSetting = () => {
   const [image, setImage] = useState("");
@@ -50,11 +51,11 @@ const GeneralSetting = () => {
         </h1>
       </div>
 
-      <div className="flex flex-col md:flex-row item-center justify-between gap-5">
-        {/* Sidebar part bg-[#21252908]*/}
+      <div className="flex flex-col lg:flex-row item-center justify-between gap-5">
+        {/* Sidebar part */}
         <div className="mt-5 md:mt-0 lg:w-[50%]">
           <div className="bg-white dark:bg-[#2F3249] shadow-xl border dark:border-none rounded-lg">
-            <h1 className="text-3xl font-normal bg-[#DDDBFB] pl-4 mb-2 border-b py-2 bg-[#0d0e0e08] dark:bg-gray-500 dark:border-none dark:text-white text-black dark:rounded-sm">
+            <h1 className="text-3xl font-normal bg-blue-200 pl-4 mb-2 border-b py-2 bg-[#0d0e0e08] dark:bg-gray-500 dark:border-none dark:text-white text-black dark:rounded-sm">
               Sidebar
             </h1>
             <div className="w-full">
@@ -133,7 +134,7 @@ const GeneralSetting = () => {
                 </div>
               </form>
             </div>
-            <div className=" pl-5 border dark:border-none py-2 px-6  text-end bg-[#0d0e0e08] dark:bg-gray-500 dark:rounded-sm">
+            <div className="py-2 px-6 border border-blue-200  bg-blue-200 dark:bg-gray-60 text-end  dark:rounded-sm">
               <button className="rounded-lg text-lg border-none hover:bg-green-400 font-normal bg-[#28C76F] text-white py-1 px-2">
                 Update Logo
               </button>
@@ -144,7 +145,7 @@ const GeneralSetting = () => {
         {/* Invoice part */}
         <div className=" lg:w-[50%]">
           <div className="bg-white dark:bg-[#2F3249] shadow-xl border dark:border-none rounded-lg">
-            <h1 className="text-3xl bg-[#DDDBFB] font-normal pl-4 mb-2 border-b py-2 bg-[#0d0e0e08] dark:bg-gray-500 dark:border-none dark:text-white text-black dark:rounded-sm">
+            <h1 className="text-3xl bg-blue-200 dark:bg-gray-600 font-normal pl-4 mb-2 border-b py-2 bg-[#0d0e0e08]  dark:border-none dark:text-white text-black dark:rounded-sm">
               Invoice
             </h1>
             <div className="w-full">
@@ -233,32 +234,36 @@ const GeneralSetting = () => {
       </div>
 
       <div className="flex flex-col lg:flex-row items-center justify-between mt-5 w-[100%] gap-5">
-        {/* invoice back color */}
         {/* invoice terms */}
-        <div className="pl-4 pr-6 w-[100%] lg:w-[50%] border dark:border-none rounded-lg shadow-xl ">
-          
-          <h1 className="w-full mx-auto  text-2xl dark:text-white text-black py-1">
-          Invoice Terms<span className="text-red-500 pl-1">(required)</span>
-        </h1>
-          <InvoiceTerms className=""></InvoiceTerms>
-         
+        <div className="bg-white dark:bg-[#2F3249] shadow-xl border dark:border-none rounded-lg w-[100%]  lg:w-[50%]">
+          <h1 className="text-3xl font-normal bg-blue-200 dark:bg-gray-600 pl-4 border-b py-2 bg-[#0d0e0e08]  dark:border-none dark:text-white text-black dark:rounded-sm">
+            Invoice Terms
+          </h1>
+          <div className="w-full">
+           <TinyMCE2></TinyMCE2>
+          </div>
+          <div className=" pl-5 border dark:border-none py-2 px-6  text-end bg-[#0d0e0e08] dark:bg-gray-500 dark:rounded-sm">
+            <button className="rounded-lg text-lg border-none hover:bg-green-400 font-normal bg-[#28C76F] text-white py-1 px-2">
+              Update Logo
+            </button>
+          </div>
         </div>
 
         {/* Footer Text */}
-        <div className="bg-white dark:bg-[#2F3249] shadow-xl border dark:border-none rounded-lg w-[100%]  lg:w-[50%]">
-          <h1 className="text-3xl font-normal bg-[#DDDBFB] pl-4 mb-2 border-b py-2 bg-[#0d0e0e08] dark:bg-gray-500 dark:border-none dark:text-white text-black dark:rounded-sm">
+        <div className="bg-white dark:bg-[#2F3249] shadow-xl border dark:border-none rounded-lg w-[100%]  lg:w-[50%] ">
+          <h6 className="text-3xl font-normal bg-blue-200 dark:bg-gray-600 pl-4 mb-2 border-b py-2 bg-[#0d0e0e08]  dark:border-none dark:text-white text-black dark:rounded-sm">
             Footer Text
-          </h1>
+          </h6>
           <div className="w-full">
             <form className="">
-              <div className="pl-4 py-2 pr-6">
-                <p className="label-text text-base mr-7  pb-2 text-black dark:text-white">
+              <div className="pl-4 pt-2 pr-6">
+                <h6 className=" text-base mr-7 text-black dark:text-white">
                   Footer Text
                   <span className="text-red-500 pl-1">(required)</span>
-                </p>
+                </h6>
                 <textarea
                   className="textarea textarea-bordered w-[100%] bg-white dark:bg-base-100 text-gray-900"
-                  placeholder="Test text"
+                  placeholder="Text"
                 ></textarea>
               </div>
             </form>
