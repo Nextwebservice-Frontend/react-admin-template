@@ -1,10 +1,22 @@
 /* eslint-disable no-unused-vars */
+
 import React, { useState } from 'react';
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 
+
 const ProfileModal = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [animate, setAnimate] = useState(false)
+
+    const handleAnimate = () => {
+        setAnimate(true)
+
+        setTimeout(() => {
+            setAnimate(false)
+        }, 1000);
+    }
+
     return (
         <>
             <div className="h-[60px] py-2 border-t w-full text-center dark:rounded-sm dark:border-none bg-[#f7f7fa] dark:bg-gray-500">
@@ -16,7 +28,7 @@ const ProfileModal = () => {
                     Password change
                 </button>
                 <Transition appear show={isOpen} as={Fragment}>
-                    <Dialog as="div" className="relative z-50" onClose={() => setIsOpen(true)} >
+                    <Dialog as="div" className={`relative z-50`} onClose={handleAnimate} >
                         <Transition.Child
                             as={Fragment}
                             enter="ease-out duration-300"
@@ -28,16 +40,16 @@ const ProfileModal = () => {
                         >
                             <div className="fixed inset-0 bg-black/25"  />
                         </Transition.Child>
-                        <div className="fixed inset-0 overflow-y-auto">
+                        <div className={`fixed inset-0 overflow-y-auto ${animate ? 'scale-animation': ''}`}>
                             <div className="flex min-h-full items-center justify-center text-center">
                                 <Transition.Child
                                     as={Fragment}
-                                    enter="ease-out duration-300"
-                                    enterFrom="opacity-0 scale-95"
-                                    enterTo="opacity-100 scale-100"
-                                    leave="ease-in duration-200"
-                                    leaveFrom="opacity-100 scale-100"
-                                    leaveTo="opacity-0 scale-95"
+                                    enter="transition-opacity duration-200"
+                                    enterFrom="opacity-0"
+                                    enterTo="opacity-100"
+                                    leave="transition-opacity duration-200"
+                                    leaveFrom="opacity-100"
+                                    leaveTo="opacity-0"
                                 >
                                     <Dialog.Panel className="w-[96%] md:w-[90%] lg:w-[75%]  xl:w-[910px] max-w-md:w-[60%] transform overflow-hidden rounded-2xl bg-white dark:bg-[#25293C] text-left align-middle shadow-xl transition-all my-10">
                                         <Dialog.Title

@@ -260,6 +260,24 @@ animation: ThemeChangerTogglerClose 1s;
     width: 60px;
   }
 }
+/* animation keyframe */
+.scale-animation {
+  animation: scaleAnimation 1s;
+}
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.02);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
 
 @media screen and (min-width:1024px) {
   .NavberwidhtAnimationClose {

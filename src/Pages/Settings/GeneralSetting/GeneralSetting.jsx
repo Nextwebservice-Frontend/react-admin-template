@@ -103,7 +103,7 @@ const GeneralSetting = () => {
                     <div className=" mt-2">
                       <label
                         htmlFor="width"
-                        className="text-xl leading-6 text-[#212529] dark:text-white font-serif"
+                        className="text-xl leading-6 text-[#212529] dark:text-white "
                       >
                         Logo Width
                         <span className="pl-1 text-red-400">(In pixel)</span>
@@ -118,7 +118,7 @@ const GeneralSetting = () => {
                     <div className="mt-4 mb-4">
                       <label
                         htmlFor="height"
-                        className="text-xl leading-6 text-[#212529] dark:text-white font-serif"
+                        className="text-xl leading-6 text-[#212529] dark:text-white "
                       >
                         Logo Height
                         <span className="pl-1 text-red-400">(In pixel)</span>
@@ -193,7 +193,7 @@ const GeneralSetting = () => {
                     <div className=" mt-2">
                       <label
                         htmlFor="width"
-                        className="text-xl leading-6 text-[#212529] dark:text-white font-serif"
+                        className="text-xl leading-6 text-[#212529] dark:text-white "
                       >
                         Logo Width
                         <span className="pl-1 text-red-400">(In pixel)</span>
@@ -208,7 +208,7 @@ const GeneralSetting = () => {
                     <div className="mt-4 mb-4">
                       <label
                         htmlFor="height"
-                        className="text-xl leading-6 text-[#212529] dark:text-white font-serif"
+                        className="text-xl leading-6 text-[#212529] dark:text-white "
                       >
                         Logo Height
                         <span className="pl-1 text-red-400">(In pixel)</span>

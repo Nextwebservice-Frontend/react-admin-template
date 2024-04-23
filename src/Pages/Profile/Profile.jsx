@@ -41,14 +41,14 @@ const Profile = () => {
             <h1 className="mt-2 text-2xl dark:text-white text-black">SuperAdmin</h1>
           </div>
           {/* superAdmin button */}
-          <button className="w-[24%] md:w-[32%] xl:w-[33%]  border mx-auto rounded-lg text-white text-xs xl:text-lg bg-[#6C757D] font-bol mb-3 dark:border-none dark:text-white">SuperAdmin</button>
-          <div className=" p-0 pl-5 mb-10">
+          <button className="w-[24%] md:w-[32%] xl:w-[33%]  border mx-auto rounded-lg text-white text-xs xl:text-lg bg-[#6C757D] font-bol  dark:border-none dark:text-white">SuperAdmin</button>
+          <div className=" p-0 pl-5 mb-5">
             {/* superAdmin name */}
-            <h2 className="dark:text-white"><span className=" font-bold text-lg md:text-base lg:text-base xl:text-lg dark:text-white text-black">Name :</span> SuperAdmin</h2>
+            <h6 className="dark:text-white"><span className=" font-bold text-lg md:text-base lg:text-base xl:text-lg dark:text-white text-black">Name :</span> SuperAdmin</h6>
             {/* superAdmin email */}
-            <p className="dark:text-white"><span className="font-bold text-lg md:text-base lg:text-base xl:text-lg text-black dark:text-white"> Email :</span><span className="lg:text-sm xl:text-base">admindhaka@gmail.com</span></p>
+            <h6 className="dark:text-white"><span className="font-bold text-lg md:text-base lg:text-base xl:text-lg text-black dark:text-white"> Email :</span><span className="lg:text-sm xl:text-base">admindhaka@gmail.com</span></h6>
             {/* superAdmin phone number*/}
-            <p className="dark:text-white"><span className="font-bold text-lg md:text-base lg:text-base xl:text-lg text-black dark:text-white">Mobile: </span><span className="lg:text-sm xl:text-base">01799600000</span></p>
+            <h6 className="dark:text-white"><span className="font-bold text-lg md:text-base lg:text-base xl:text-lg text-black dark:text-white">Mobile: </span><span className="lg:text-sm xl:text-base">01799600000</span></h6>
           </div>
           {/* profile modal component */}
           <ProfileModal ></ProfileModal>

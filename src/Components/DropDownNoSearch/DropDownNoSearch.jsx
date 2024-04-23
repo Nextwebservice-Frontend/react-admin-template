@@ -2,6 +2,7 @@
 import React from 'react';
 import { Dropdown } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
+import './CSSDrop/Drop.css'
 
 const options = [
     { key: 1, text: 'Choice 1', value: 1 },
