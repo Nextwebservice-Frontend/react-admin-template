@@ -276,3 +276,7 @@ animation: ThemeChangerTogglerClose 1s;
     animation: SideberClose 1s;
   }
 }
+
+.top_header_bg{
+  background-color: #DDDBFB;
+}
